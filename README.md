@@ -18,10 +18,19 @@ Overall structure (simplified and adapted from https://github.com/phonegap/phone
  e-mission-docs/
  |
  |__ assets/        # Images, etc
+ |   |__ overview/    # overview, end to end documentation that stiches together various components
+ |   |    |__ page1/  # documentation page image directory
+ |   |         |__ image1.png  # image in page1
+ |   |         |__ image2.png  # image in page1
+ |   |         |__ ...         # image in page1
+ |   |
+ |   |__ tutorials/ # step by step instructions to get users more familiar with making changes 
  |
  |__ docs/          # The documentation
  |   |
  |   |__ overview/    # overview, end to end documentation that stiches together various components
+ |   |    |__ page1.md  # documentation pages
+ |   |    .... 
  |   |
  |   |__ tutorials/ # step by step instructions to get users more familiar with making changes
 ```
@@ -30,7 +39,7 @@ Overall structure (simplified and adapted from https://github.com/phonegap/phone
 
 1. [Create a fork to make your changes](https://guides.github.com/activities/forking/)
 1. Create a branch for your change
-1. Add documentation pages to `docs`, and supporting images to `images`. You can do this directly through the github UI by creating or uploading files.
+1. Add documentation pages to `docs`, and supporting images to `assets`. You can do this directly through the github UI by creating or uploading files. Note the structure for `assets`.
 1. [Link images to text](https://guides.github.com/features/mastering-markdown/)
 1. Submit a pull request
 1. Note that image paths will need to be changed after merging, but I will take care of that manually for now.
