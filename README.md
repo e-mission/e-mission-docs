@@ -18,8 +18,6 @@ Overall structure (simplified and adapted from https://github.com/phonegap/phone
  e-mission-docs/
  |
  |__ assets/        # Images, etc
- |   |
- |   |__ styles/    # Stylus files rendered to /out/styles/**/*.css
  |
  |__ docs/          # The documentation
  |   |
