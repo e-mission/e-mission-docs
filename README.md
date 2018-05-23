@@ -25,3 +25,12 @@ Overall structure (simplified and adapted from https://github.com/phonegap/phone
  |   |
  |   |__ tutorials/ # step by step instructions to get users more familiar with making changes
 ```
+
+# Contributing
+
+1. [Create a fork to make your changes](https://guides.github.com/activities/forking/)
+1. Create a branch for your change
+1. Add documentation pages to `docs`, and supporting images to `images`. You can do this directly through the github UI by creating or uploading files.
+1. [Link images to text](https://guides.github.com/features/mastering-markdown/)
+1. Submit a pull request
+1. Note that image paths will need to be changed after merging, but I will take care of that manually for now.
