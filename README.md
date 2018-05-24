@@ -42,4 +42,4 @@ Overall structure (simplified and adapted from https://github.com/phonegap/phone
 1. Add documentation pages to `docs`, and supporting images to `assets`. You can do this directly through the github UI by creating or uploading files. Note the structure for `assets`.
 1. [Link images to text](https://guides.github.com/features/mastering-markdown/)
 1. Submit a pull request
-1. Note that image paths will need to be changed after merging, but I will take care of that manually for now.
+1. Please use relative paths (e.g. `../../assets/...`) instead of absolute paths (e.g. https://github.com/e-mission/e-mission-docs/assets/...) while including images. This will ensure that they work even after merging and cloning.
