@@ -37,7 +37,7 @@ After the onboarding is complete, you can load data for July 22 **2015** from th
 
 | Login screen | Expected error (only on iOS) | Diary for 22 July |  
 |--------------|-------------------------------------|-------------------|
-| ![login screen test user](https://github.com/e-mission/e-mission-docs/blob/setup-initial-structure/assets/overview/quickstart/login_screen_test_user.png) | ![expected ios error](https://github.com/e-mission/e-mission-docs/blob/setup-initial-structure/assets/overview/quickstart/expected_ios_error.png) | ![Diary view success](https://github.com/e-mission/e-mission-docs/blob/setup-initial-structure/assets/overview/quickstart/diary_view_success.png) | 
+| ![login screen test user](../../assets/overview/quickstart/login_screen_test_user.png) | ![expected ios error](../../assets/overview/quickstart/expected_ios_error.png) | ![Diary view success](../../assets/overview/quickstart/diary_view_success.png) | 
 
 ##### Server logs #####
 
