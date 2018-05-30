@@ -3,7 +3,7 @@ Change summary and consent
 
 All e-mission projects so far have wanted to change the summary and consent to reflect their use of the platform. The summary and consent are part of the onboarding module. The HTML for the module is at `www/templates/intro` and the corresponding javascript is at `www/js`. Summary and consent changes replace the displayed text, and are HTML-only changes.
 
-All the changes here assume that you have finished the install, and your installation satisfies *alll* the success criteria.
+All the changes here assume that you have finished the install, and your installation satisfies *all* the success criteria.
 
 ### Summary changes ###
 
@@ -29,5 +29,4 @@ All the changes here assume that you have finished the install, and your install
 
 | How to logout | New title (my cool app) |
 | ------------- | --------- |
-| ![how to logout](../../assets/tutorial/simple_client_changes/how_to_logout.png) 
-| ![new title (my cool app)](../../assets/tutorial/simple_client_changes/new_title_my_cool_app.png) |
+| ![how to logout](../../assets/tutorials/simple_client_changes/how_to_logout.png) | ![new title (my cool app)](../../assets/tutorials/simple_client_changes/new_title_my_cool_app.png) |
