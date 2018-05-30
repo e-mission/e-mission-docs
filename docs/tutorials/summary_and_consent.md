@@ -56,5 +56,5 @@ All the changes here assume that you have finished the install, and your install
 1. The consent page is now for the Trantor travel study.
 
 | How to logout | New title (my cool app) | New consent (trantor study) |
-| ------------- | --------- |
-| ![how to logout](../../assets/tutorials/simple_client_changes/how_to_logout.png) | ![new title (my cool app)](../../assets/tutorials/simple_client_changes/new_title_my_cool_app.png) | ![new consent (trantor study)](../../assets/tutorials/simple_client_changes/consent_for_trantor_study.png)
+| ------------- | --------- | ------------ |
+| ![how to logout](../../assets/tutorials/simple_client_changes/how_to_logout.png) | ![new title (my cool app)](../../assets/tutorials/simple_client_changes/new_title_my_cool_app.png) | ![new consent (trantor study)](../../assets/tutorials/simple_client_changes/consent_for_trantor_study.png) |
