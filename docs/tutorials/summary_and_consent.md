@@ -27,6 +27,34 @@ All the changes here assume that you have finished the install, and your install
 1. Log out (Profile -> Email) to restart the onboarding process
 1. The summary title is now `My Cool App`
 
-| How to logout | New title (my cool app) |
+### Consent changes ###
+
+1. Open `www/templates/intro/consent.html`
+1. Change `E-Mission: Data driven carbon emission reduction` to `My Cool App: Get suggestions on your commute`
+1. Change
+    ```
+    This app is part of a travel behavior research platform developed at the
+    University of California, Berkeley. The platform development is being led by <a
+    href="http://www.cs.berkeley.edu/~shankari">K. Shankari</a> under the
+    supervision of <a href="http://www.cs.berkeley.edu/~culler/">Prof. David
+    Culler</a>. Our goal is to collect information from users about travel behavior
+    across all modes, and use the aggregate information for better transportation
+    infrastructure planning.
+    ```
+    to
+    ```
+    This app is part of a study conducted by my cool research institute in
+    Terminus, First Foundation. The platform development is being led by 
+    Arkady Darrell under the supervision of Prof. Susan Calvin. Our goal
+    is to see if robotic scheduling can mitigate the unsustainable travel
+    behavior of the citizens of Trantor, in the presence of mind control by the
+    inhabitants of the Second Foundation.
+    ```
+1. Save the file
+1. The change is detected and the UI reloads.
+1. Log out (Profile -> Email) to restart the onboarding process
+1. The consent page is now for the Trantor travel study.
+
+| How to logout | New title (my cool app) | New consent (trantor study) |
 | ------------- | --------- |
-| ![how to logout](../../assets/tutorials/simple_client_changes/how_to_logout.png) | ![new title (my cool app)](../../assets/tutorials/simple_client_changes/new_title_my_cool_app.png) |
+| ![how to logout](../../assets/tutorials/simple_client_changes/how_to_logout.png) | ![new title (my cool app)](../../assets/tutorials/simple_client_changes/new_title_my_cool_app.png) | ![new consent (trantor study)](../../assets/tutorials/simple_client_changes/consent_for_trantor_study.png)
