@@ -7,8 +7,8 @@ Here are some initial tutorials to get you started on [angular1](https://www.tut
 
 As you look for your own tutorials, make sure they are using version 1 of the UI frameworks. We do not support the most recent version of the frameworks due to lack of porting resources. If you would like to port the UI from ionic1 to the most recent ionic, please let me know.
 
-[Change summary and consent](summary_and_consent.md)
-[Remove a tab](remove_tab.md)
-[Change colors](change_colors_to_your_theme.md)
-[Display a customized survey](customized_survey.md)
-[Change the trip end prompt](change_trip_end_prompt.md)
+1. [Change summary and consent](summary_and_consent.md)
+2. [Remove a tab](remove_tab.md)
+3. [Change colors](change_colors_to_your_theme.md)
+4. [Display a customized survey](customized_survey.md)
+5. [Change the trip end prompt](change_trip_end_prompt.md)
