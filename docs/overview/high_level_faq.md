@@ -4,7 +4,7 @@
 #### How do you deploy a custom UI on the base app? ####
 https://github.com/e-mission/e-mission-phone/wiki/You-have-a-branch-for-your-custom-client.-Now-what%3F
 
-#### I get a blank screen while loading the e-mission UI ####
+#### I get a blank screen while loading the e-mission phone UI ####
 This is the White Screen Of Death (WSOD) and typically indicates that you have an error preventing the scripts from loading.
 - First make sure that you have followed all setup instructions. Some of them download Javascript dependencies into the project. If they are not run, the files will be missing, and you will get errors. If in doubt, re-run the setup instructions, they are idempotent.
 - Next, check the UI logs in the terminal where you run the UI development server. UI logs are redirected by default, so if the error occurred after logging was set up, you can see the error there.
