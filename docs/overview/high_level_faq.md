@@ -12,4 +12,4 @@ This is the White Screen Of Death (WSOD) and typically indicates that you have a
   - For iOS, the debugger is built in to Safari (https://www.lifewire.com/how-to-enable-safari-develop-menu-2260894)
   - for android, the debugger is built in to chrome (http://geeklearning.io/apache-cordova-and-remote-debugging-on-android/).
   
-There is ample documentation on how to use these tools - e.g. search for "debug javascript error in cordova using safari" for tutorials, etc.
+There is ample documentation on how to use these tools - e.g. search for "debug javascript error in cordova using safari" for tutorials, etc. You might also find [this video](https://people.eecs.berkeley.edu/~shankari/syntax_error_wsod.mov) useful.
