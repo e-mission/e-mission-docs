@@ -13,3 +13,36 @@ This is the White Screen Of Death (WSOD) and typically indicates that you have a
   - for android, the debugger is built in to chrome (http://geeklearning.io/apache-cordova-and-remote-debugging-on-android/).
   
 There is ample documentation on how to use these tools - e.g. search for "debug javascript error in cordova using safari" for tutorials, etc. You might also find [this video](https://people.eecs.berkeley.edu/~shankari/syntax_error_wsod.mov) useful.
+
+#### I get an error while adding plugins ####
+
+Sometimes, if you are on a poor internet connection, you will encounter errors related to adding plugins while building the native versions of the phone apps. Retrying will just cause a different set of plugins to fail, since the underlying issue is the internet quality. In this case, a workaround is to manually clone and add the repositories, which seems to work.
+
+##### Plugin clone errors #####
+
+When you are trying to build and run the native code, you sometimes get plugin clone errors
+
+```
+$ npm run phonegap -- run ios | 2>&1 | grep --context=3 "Failed to restore plugin"
+...
+Failed to restore plugin "phonegap-plugin-contentsync" from config.xml. You might need to try adding it again. Error: Failed to fetch plugin git+https://github.com/e-mission/phonegap-plugin-contentsync.git via registry.
+...
+Failed to restore plugin "de.appplant.cordova.plugin.local-notification-ios9-fix" from config.xml. You might need to try adding it again. Error: Failed to fetch plugin https://github.com/shankari/cordova-plugin-local-notifications.git via registry.
+...
+Failed to restore plugin "cordova-plugin-inappbrowser" from config.xml. You might need to try adding it again. Error: Failed to fetch plugin git+https://github.com/shankari/cordova-plugin-inappbrowser.git via registry.
+```
+##### Workaround #####
+
+The workaround is to manually clone the repo(s), add the local copy(ies) and rebuild. So for the case above, you would do:
+
+```
+$ cd ..
+$ git clone https://github.com/e-mission/phonegap-plugin-contentsync.git
+$ git clone https://github.com/shankari/cordova-plugin-local-notifications.git
+$ git clone https://github.com/shankari/cordova-plugin-inappbrowser.git
+$ cd e-mission-devapp/
+$ cordova plugin add ../phonegap-plugin-contentsync/
+$ cordova plugin add ../cordova-plugin-local-notifications/
+$ cordova plugin add ../cordova-plugin-inappbrowser/
+$ cordova run ios
+```
