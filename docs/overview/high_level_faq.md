@@ -14,6 +14,11 @@ This is the White Screen Of Death (WSOD) and typically indicates that you have a
   
 There is ample documentation on how to use these tools - e.g. search for "debug javascript error in cordova using safari" for tutorials, etc. You might also find [this video](https://people.eecs.berkeley.edu/~shankari/syntax_error_wsod.mov) useful.
 
+#### How to get the app onto a real phone ####
+This really depends on whether you still plan to change the UI, or whether you are largely done with the UI changes and want to build a custom app for deployment, potentially with a different set of plugins.
+- *For changing the UI*: [Use the devapp on your phone](https://github.com/e-mission/e-mission-devapp/blob/master/README.md#installing-on-a-real-phone)
+- *For building a custom app*: [Build the phone app directly](https://github.com/e-mission/e-mission-phone/blob/master/README.md#updating-the-e-mission--plugins-or-adding-new-plugins)
+
 #### I get an error while adding plugins ####
 
 Sometimes, if you are on a poor internet connection, you will encounter errors related to adding plugins while building the native versions of the phone apps. Retrying will just cause a different set of plugins to fail, since the underlying issue is the internet quality. In this case, a workaround is to manually clone and add the repositories, which seems to work.
