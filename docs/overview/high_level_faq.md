@@ -14,6 +14,9 @@ This is the White Screen Of Death (WSOD) and typically indicates that you have a
   
 There is ample documentation on how to use these tools - e.g. search for "debug javascript error in cordova using safari" for tutorials, etc. You might also find [this video](https://people.eecs.berkeley.edu/~shankari/syntax_error_wsod.mov) useful.
 
+#### Can I connect the devapp to a real server with proper authentication for proper end-to-end testing? ####
+Yes. If you are using google auth, you [need to get keys from me and configure them](https://github.com/e-mission/e-mission-server/wiki/Configuring-authentication#more-detailsfaq). If you want to run the app on the phone for real end-to-end testing, [it is easier on android than on iOS](https://github.com/e-mission/e-mission-docs/blob/dev-app-auth-clarification/docs/overview/high_level_faq.md#how-to-get-the-app-onto-a-real-phone).
+
 #### How to get the app onto a real phone ####
 This really depends on whether you still plan to change the UI, or whether you are largely done with the UI changes and want to build a custom app for deployment, potentially with a different set of plugins.
 - *For changing the UI*: [Use the devapp on your phone](https://github.com/e-mission/e-mission-devapp/blob/master/README.md#installing-on-a-real-phone)
