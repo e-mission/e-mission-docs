@@ -22,6 +22,11 @@ they lose control over it, and it can be re-shared in ways that they do not
 expect. This argues for a more mediated sharing experience at a higher level in
 the data stack.
 
+Note that this high level overview recurs in many scenarios, and there is ongoing work,
+including in the RISE lab, around addressing some of these issues. We may be able to use
+some of these in our own work. For example, check out 
+[this talk from Dawn Song](https://keystone-enclave.org/files/dawn-nsf-2018-v5.pdf).
+
 This level of control involves integrating two existing research areas.
 
 ### Computation on encrypted data/secure execution ###
@@ -48,7 +53,8 @@ against this encrypted data?
 solve this problem? And once the data is decrypted, root on the server where it
 is running will have access to it, which is why it needs to run in a hardware
 enclave(https://keystone-enclave.org/). Does it make sense to run full algorithms in a hardware enclave? It looks like it is currently used primarily for contract checking. Will the overhead be too high?
-    - https://keystone-enclave.github.io/2018/03/24/dawn-nsf-2018.html
+    - https://keystone-enclave.org/
+    - https://en.wikipedia.org/wiki/Trusted_execution_environment
 
 ### Privacy-preserving aggregation ###
 For structural analysis, we need to see results across a wide range of users.
