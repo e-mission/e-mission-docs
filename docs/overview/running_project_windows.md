@@ -9,6 +9,7 @@ C:\var\tmp
 ### Python distribution
 After installing and configuring Anaconda, there is the following step:
 - *Setup the emission environment*
+
 instead of running the command stated in this step, please run the following commands into your command prompt:
 ```
 conda env update --name emission --file setup/environment36.yml
