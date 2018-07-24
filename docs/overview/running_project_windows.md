@@ -25,7 +25,7 @@ In the development section, we will change the step 3 "*Start the server*". Inst
 
 Note that in the field "*Value of the variable*" there are two paths separated by a semicolon. The first one is the path on your computer to the folder in which you installed Anaconda. The second is the path in your computer where you have the root folder of the server code.
 
-After doing so, you have to copy the e-mission.bat script  into the root of your project and run the following command:
+After doing so, you have to copy the e-mission.bat script (located at scripts/overview/running_project_windows) into the root of your project and run the following command:
 
 ```
 e-mission.bat . emission/net/api/cfc_webapp.py
