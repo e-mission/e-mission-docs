@@ -7,26 +7,23 @@ C:\var\tmp
 ```
 ## e-mission server
 ### Python distribution
-After installing and configuring Anaconda, there is the following step:
+After installing and configuring Anaconda, there is the following step "*Setup the emission environment*". Instead of running the command stated in this step, please run the following commands into your command prompt:
 
-- *Setup the emission environment*
-
-instead of running the command stated in this step, please run the following commands into your command prompt:
 ```
 conda env update --name emission --file setup/environment36.yml
 activate emission
 pip install six --upgrade
 ```
+
 Note that every time you need to run the code, you have to run the command ```activate emission```. Also, note that you must be at the root of the project in order to access the directory ```setup/``` in the first command stated before.
 
 ### Development
-In the development section, we will change the step 3 "Start the server". Instead of doing that, first, you have to create or update the following environment variable on windows:
+In the development section, we will change the step 3 "*Start the server*". Instead of doing that, first, you have to create or update the following environment variable on windows:
 
 - Name of the variable: PYTHONPATH
-
 - Value of the variable: C:\MyPath\Anaconda3;C:\MyPath\e-mission-server
 
-Note that in the field "value of the variable" there are two paths separated by a semicolon. The first one is the path on your computer to the folder in which you installed Anaconda. The second is the path in your computer where you have the root folder of the server code.
+Note that in the field "*Value of the variable*" there are two paths separated by a semicolon. The first one is the path on your computer to the folder in which you installed Anaconda. The second is the path in your computer where you have the root folder of the server code.
 
 After doing so, you have to copy the e-mission.bat script  into the root of your project and run the following command:
 
