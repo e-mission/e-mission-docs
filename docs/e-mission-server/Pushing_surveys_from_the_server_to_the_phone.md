@@ -1,3 +1,6 @@
+# Pushing Surveys from the Server to the Phone
+---
+
 In addition to periodic surveys that are generated through local processing on the phone (https://github.com/e-mission/e-mission-phone/wiki/How-to-embed-an-external-survey-in-the-app), the server can also push surveys to the phone. These pushes can be periodic (e.g. every `x` hours, at certain times, e.g. at 21:00 UTC every day, or based on travel patterns from users).
 
 The basic components of a server-generated survey push are:

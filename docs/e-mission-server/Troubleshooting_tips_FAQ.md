@@ -1,3 +1,6 @@
+# Troubleshooting Tips (FAQ)
+---
+
 ## Tools to use ##
 The main tools that you will want to use for troubleshooting are:
 - the logs that you configured in `conf/log` when you set up the server

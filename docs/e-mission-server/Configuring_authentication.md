@@ -1,3 +1,6 @@
+# Configuring Authentication
+---
+
 The server now supports multiple auth methods.
 The auth method is specified in the `webserver.conf` file - e.g. `"auth": "skip"`. Further configuration of the specified auth method is in the `conf/net/auth/<auth_method>.json` file.
 

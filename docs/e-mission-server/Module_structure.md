@@ -1,3 +1,6 @@
+# Module Structure
+---
+
 The e-mission server project largely follows the standard python project structure.
 However, it is a complex project with a lot of modules, so we present a high level overview of the modules, their structure and their purpose below. This representation might be more useful to visual thinkers.
 

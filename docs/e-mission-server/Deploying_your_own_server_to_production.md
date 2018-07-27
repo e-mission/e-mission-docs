@@ -1,3 +1,6 @@
+# Deploying Your Own Server to Production
+---
+
 Projects that want to control their own data under protocols different from e-mission, can run their own copy of e-mission. The e-mission server is easy to install on a laptop for local development, and the same steps can be used to install a basic server on *nix for small projects. This page lists the few additional steps for such a deployment. It also provides recommendations for <a href="#suggested-improvements">more complex deployments</a>. All the software is fairly standard, so the published documentation can form the basis of additional customization.
 
 ## Basic instructions ##

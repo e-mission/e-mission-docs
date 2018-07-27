@@ -1,3 +1,6 @@
+# Requesting Data as a Collaborator
+---
+
 The consent document for e-mission (https://e-mission.eecs.berkeley.edu/consent) allows the platform owner (@shankari in this case) to share de-linked raw data with other collaborators for research.
 
 > Time-delayed subsets of individual trajectory data, associated with their UUIDs but not email addresses, may by shared with collaborators, or released as research datasets to the community from time to time. If this is done, the time delay for sharing with collaborators will be at least one month, and the time delay for releasing to the community will be at least one year. Both collaborators and researchers will be asked to agree that they will publish only aggregate, non personally identifiable results, and will not re-share the data with others. 

@@ -1,3 +1,6 @@
+# Multi Layer Stack
+---
+
 The e-mission server stack can be configured in many ways, depending on the duration of data collection, the size of the sample, and the amount of background processing required.
 
 The single server installation (https://github.com/e-mission/e-mission-server/wiki/Deploying-your-own-server-to-production) is best for small-medium scale data collection (~ 2000 person hours of data), without any ongoing analysis. For any larger scale data collection (~ 10,000 person hours of data), you want a more sophisticated, multi-tier architecture. While your final architecture will depend on your exact requirements and available resources, this document outlines the architecture and setup that I use for the reference e-mission private data server and the e-mission open data server.

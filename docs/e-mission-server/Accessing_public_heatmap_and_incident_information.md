@@ -1,3 +1,6 @@
+# Accessing Public Heatmap and Incident Information
+---
+
 There are three main public API calls exposed by the e-mission API server. All
 of them share the following characteristics:
 - they are `HTTP POST` calls

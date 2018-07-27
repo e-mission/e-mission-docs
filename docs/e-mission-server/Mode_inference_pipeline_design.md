@@ -1,3 +1,6 @@
+# Mode Inference Pipeline Design
+---
+
 ## Design goals ##
 1. Separate model building and model application steps
 1. Seed model building from old-style (Moves) data
