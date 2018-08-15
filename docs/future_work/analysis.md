@@ -138,9 +138,11 @@ people can choose to tackle.
   attention/prompting for user interaction
 - Build a prompting mechanism that potentially works with an ensemble of
   regular algorithms and an attention budget. A SUPERB student worked on the
-  prompting harness earlier (pdf:
-  http://people.eecs.berkeley.edu/~shankari/Experiment_Diagram.pdf, code:
-  https://github.com/jensteff/e-mission-server/pull/1), but did not complete it.
+  prompting harness earlier.
+  - poster: http://people.eecs.berkeley.edu/~shankari/SteffensBerkeleyPoster.pdf
+  - slides: http://people.eecs.berkeley.edu/~shankari/SteffensEndOfSummerPresentationBerkeley.pptx
+  - one-slide architecture summary: http://people.eecs.berkeley.edu/~shankari/Experiment_Diagram.pdf
+  - current code: https://github.com/jensteff/e-mission-server/pull/1), but did not complete it.
 - Work with the person focusing on the privacy task to run at least static
   algorithms against private data. This has the most dependencies and is the
   least well-understood piece of the project.
