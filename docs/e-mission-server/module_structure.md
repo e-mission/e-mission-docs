@@ -1,0 +1,110 @@
+# Module Structure
+---
+
+The e-mission server project largely follows the standard python project structure.
+However, it is a complex project with a lot of modules, so we present a high level overview of the modules, their structure and their purpose below. This representation might be more useful to visual thinkers.
+
+![A visual representation of the structure below](https://github.com/shankari/e-mission-server/blob/mega_restructure/figs/e-mission-server-module-structure.png)
+
+- `runAllTests`: UNIX and windows scripts to run all the tests
+- `e-mission-*py`: UNIX and windows wrappers that invoke python and ipython with the appropriate python paths
+- `conf`: Contains sample files that should be renamed
+  - `config.json`
+  - `net`
+    - `auth`: Keys for authentication services.
+      - `google.json`: Google is the only one that we have integrated with so far
+    - `push_notify`: Keys for sending push notifications
+      - `parse.json`: We have currently integrated with parse for iOS push notifications. We can also try other providers, or roll our own builtin solution.
+    - `usercache`: Need to create if/when we integrate with other service providers
+    - `ext_service`: API keys for external services
+      - `moves`
+      - `facebook`: Once Sid integrates with it
+  - `analysis`: Various constants for the analysis
+     - `classification`: Constants for the trip and section segmentation
+- `bin`: utility python scripts that call functions defined in the main module. These can be simple bash-like scripts that just contain a sequence of calls to the real functions. These are likely to be somewhat fragile, because they are only tested when run. But since the underlying libraries are tested regularly, fixing them should be as easy as matching the current method signature of the library.
+- `emission`: main python library
+  - `client`: Ability to provide client or study specific defaults in addition to user-specific ones. *This currently in draft form and needs extensive thought and restructuring.*
+  - `net`: communication with the outside world
+    - `api`: the webserver and our API interface to the outside world
+      - `bottle.py`: lightweight webserver
+      - `webapp.py`: file which defines the API interface
+    - `auth`: provider of authentication services. We will use only JWT based authentication, but there are many providers. Or we can integrate with something like https://oauth.io/home
+      - `abstract.py`: abstract interface to the auth provider
+      - `none.py`: simple implementation that can be used for testing without registering for any keys
+      - `google.py`: google's provider
+      - potentially others if people want to add them
+    - `usercache`: bidirectional sync mechanism
+      - `abstract.py`: abstract interface to the user cache 
+      - `builtin.py`: builtin implementation using mongodb collections
+      - potentially others if people want to add them
+    - `ext_service`: calls to read data from external services
+       - `moves`: integration with the moves lifelogger
+         - `sdk.py`: SDK for integrating with the moves API
+         - `collect.py`: our script that uses the SDK to pull data from moves
+         - `register.py`: our script that handles the OAuth workflow with moves
+       - `facebook`: similar integration, once Sid gets to it
+         - `facebook_sdk.py`
+         - `collect.py`
+         - `register.py`
+    - `push_notify`: push notifications
+      - `ios_parse.py`: currently using parse
+      - `android.py`: if we want to use it for something specific...
+  - `storage`: Handling long-term storage
+    - `timeseries`: Storage of timeseries events
+      - `abstract.py`: abstract interface to the timeseries
+      - `builtin.py`: builtin implementation using MongoDB collections
+      - potentially others if we need performance improvements
+    - `decorations`: Meaningful decorations on the timeseries (see https://github.com/e-mission/e-mission-data-collection/wiki/Long-term-data-format-design-considerations). Do we need these in addition to wrapper classes? Think! What about different types of trips?
+      - `locations.py`
+      - `trips.py`: utility queries to traverse the trip hierarchy?
+      - `sections.py`
+  - `core`
+    - `wrapper`: Simple wrappers that can load and store the documents in the database, with appropriate conversions
+  - `simulation`: generation of fake data based on various models
+    - `trip_generation`: generate trips based on tour models.
+    - other fake data streams???
+  - `analysis`: The intelligence on top of the plumbing
+    - `plotting`: Libraries for plotting various things (locations, trips, sections, etc) using the framework du jour
+       - `pygmaps`: Plotting using google maps
+       - `leaflet`: Plotting using OSM + Leaflet
+    - `classification`: Various techniques for taking the streams of sensor data and "classifying" them. For our main use case, this involves segmenting them into trips and sections. For other streams, this could involve segmenting into areas of high and low fuel consumption, or good and bad pavement, or ???
+       - `cleaning`:
+       - `segmentation`:
+       - `inference`: infer the mode of the segments based on various data
+    - `modelling`: analysis of classified data to determine models
+       - `tour_model`: model a user's tours
+       - `user_model`: model a user's preferences
+       - `anomaly_detection`: find anomalies that don't match the model?
+    - `results`: Condense the classifications and models into user facing summaries.
+       - `precompute`: script to precompute all results ahead of time
+       - `carbon.py`: carbon footprint for the user
+       - `participation_score.py`: score focused mainly around engagement with the app, and confirming trips, with some components related to behavior change
+       - `recommendation`: generate user recommendations based on a user's tour models and user models. This is a little more complex than the others, because we can use the feedback from the recommendations to modify the user model, so it is bidirectional
+- `ui`: the user interface
+  - `server`: the server side webapp
+  - `phone`: the screens for the phone. It is not clear how these should be sent to the phone (whether as part of the sync, or just by loading from github). We will figure that out when we finish that part of the sync code. For now, this is a place to put the existing screens that we have.
+    - `carbon`
+      - `result_template.html`
+      - `js`
+        - `jquery` and so on and so forth
+    - `game`
+      - `index.html`
+      - `js`: ionic/angular javascript framework
+        - app.js
+        - controllers.js
+    - `leaderboard`
+      - `index.html`
+      - `js`
+        - `app.js`
+        - `controllers.js`
+    - `tour_model`
+      - `index.html`
+      - `js`
+        - `leaflet.js`
+        - `display.js`
+    - `recommendations`
+      - `index.html`
+      - `js`
+        - `leaflet.js`
+        - `app.js`
+        - `controllers.js`

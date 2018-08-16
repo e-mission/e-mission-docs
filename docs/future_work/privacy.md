@@ -12,8 +12,8 @@ patterns to infer the characteristics of their travel. At the structural
 level, we want to aggregate the data from citizens to see repeated problems
 that can be targeted for fixing.
 
-The primary difference between the privacy-sensitive analyses that users want
-to guard from, and the analyses that are useful is control and ownership.
+The primary difference between the intrusive and useful privacy-sensitive analyses
+is control and ownership.
 
 Users should own their data, the analysis that runs on it, and the way
 in which the results are used. While users do currently get to control what raw
