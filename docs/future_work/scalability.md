@@ -1,13 +1,13 @@
 ## Scalability Improvements ##
 This is the most straightforward task, so if you are new to research, you
-should consider starting with this. The first task is relatively well defined
-for a research project, although it still has some ambiguity around the metrics
-to use.
+should consider starting with this. The first task on the task list, in particular, 
+is relatively well defined for a research project, although it still has some
+ambiguity around the metrics to use.
 
-Current e-mission scalability, at least for the main server, is poor. Before I
+Current e-mission scalability, at least for a fully functioning server, is poor. Before I
 set up the multi-tier system
 (https://github.com/e-mission/e-mission-server/issues/530), we were running on
-an m3.xlarge server (). At that time, the analysis pipeline for ~ 50 active
+an m3.xlarge server (64-bit, 4 vCPU, 15 GB RAM). At that time, the analysis pipeline for ~ 50 active
 users would take more than a day to run. Even worse, the response time for
 users when the pipeline was running was pathetic, on the order of minutes
 rather than seconds. Users would give up the app because they assumed that it
@@ -31,14 +31,14 @@ I'm going to define a reasonable study as:
 - 6 months of data collection
 
 I'm going to define a reasonable amount of computing and storage resources as:
-- *compute*: `m5.xlarge` instance
+- *compute*: `m5.xlarge` instance (4 vCPU, 16 GB)
 - *storage*: 10 GB I/O optimized EB2 instance
 
-This means that the compute + storage for such a study should cost ....
+This means that the compute + storage for such a study should cost ~ $150 for compute + $30 for storage ~ $180 total.
 Ideally, we would be able to specify the users + duration supported for a bunch
 of discrete instance points - e.g. 
-- `m5.medium` instance + 1 GB GP2 EB2 instance
-- `m5.large` instance + 3 GB I/O optimized EB2 instance
+- `m5.large` instance + 1 GB GP2 EB2 instance (~$70 for compute + ~ 10 cents for storage = $70 total)
+- ...
 
 ### Explore new techniques ###
 Once the first task is done, we should explore other techniques for not just
@@ -62,7 +62,7 @@ choice for a single datastore? etc
       artificial data in the new format.
       - There won't be existing solutions for this since the data is specific
         to e-mission. You can try to see if there is something similar that you
-        can adapt, but time-bound it since it is unlikely.
+        can adapt, but set a time limit on the search since it is unlikely.
     - _Workload simulator_: A harness that generates API calls at a pre-defined
       rate against the system (e.g. x `get` calls/sec, y `put` calls/sec, z
       `getTimeline` calls/sec) and records the response time.
@@ -78,7 +78,7 @@ choice for a single datastore? etc
       server properly and launches the cronjobs.
       - There are approximately 1 million solutions for this. Use them. One of
         the current users (in Australia) supposedly worked on a Docker
-        configuration for e-mission. You can contact @asiripanich to see if you
+        configuration for e-mission. You can contact https://github.com/asiripanich to see if you
         can start with that.
 1. Run various workloads against various deployment configurations and figure
 out how the server scales
@@ -101,7 +101,7 @@ out how the server scales
       before rolling your own.
 
 ### A note on Not Invented Here ###
-Note that for several of these, there are existing solutions within the academia.
+Note that for several of these, there are existing solutions within academia.
 They will almost certainly not be as polished as commercial solutions, but
 please try to use them anyway. Grad students will be excited to have you use
 their work, and should be supportive as long as you are not asking them basic
