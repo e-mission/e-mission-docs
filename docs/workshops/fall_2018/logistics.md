@@ -1,4 +1,4 @@
-## e-mission workshop: understanding and influencing human travel behavior ##
+## e-mission workshop: understanding and influencing human travel behavior (logistics) ##
 
 ### Pre-requisites ###
 -------
