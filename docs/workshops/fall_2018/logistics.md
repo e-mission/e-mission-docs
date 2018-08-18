@@ -10,7 +10,7 @@ please install the app and collect data *before* the workshop. On the evening
 session of the first day (_e-mission overview_) you will download and
 experiment with the data you have collected.
 
-You can choose from different possible UI _client_s or _skin_s.
+You can choose from different possible UI _clients_ or _skins_.
 - Standard e-mission app: http://e-mission.eecs.berkeley.edu/
 - Travel survey from [CCI Berkeley](http://communityinnovation.berkeley.edu/) with popup mode/purpose: https://e-mission.eecs.berkeley.edu/#/client_setup?new_client=cci&clear_usercache=true&clear_local_storage=true
 - Spanish version of the above, from [Megumi Yamanaka](https://ced.berkeley.edu/academics/city-regional-planning/people/phd-students/megumi-yamanaka): https://e-mission.eecs.berkeley.edu/#/client_setup?new_client=megumibrt&clear_usercache=true&clear_local_storage=true
