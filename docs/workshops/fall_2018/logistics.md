@@ -19,7 +19,7 @@ You can choose from different possible UI _clients_ or _skins_.
 #### Sign up for github ####
 e-mission is hosted on [github](http://github.com/), so you will use github to
 download the code and submit improvements. We will also use github for the
-(asychronous discussion system)[#asynchronous-participation]. After you sign up
+[asychronous discussion system](#asynchronous-participation). After you sign up
 for github, please send me your github username (e.g. @shankari) via email so that I can add you
 to the e-mission organization and you can participate in the online discussion.
 
