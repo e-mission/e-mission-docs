@@ -36,10 +36,10 @@ skip this section.
 
 One of the challenges with coming up with a list of concepts to cover is that I
 don't know what you don't know. Therefore, I have come up with a very basic
-list and linked to short, introductory videos for each.  During the session, I
+list and linked to short (~ 5 mins avg), introductory videos for each.  During the session, I
 will ask questions to identify areas that are most unclear to the audience, and
 adapt the session accordingly.  If you are a non-CS major, please read/view
-this material _before_ the workshop.  If you don't like the videos that I
+this material _before_ the workshop - the videos are conceptual and have pretty pictures.  If you don't like the videos that I
 linked to, you can search on youtube and pick your own.  Wikipedia is also a
 good resource.
 
@@ -58,7 +58,7 @@ CS concepts:
 1. [What is a pipeline?](https://youtu.be/XZmG0nBHvkY)
 
 Open Source Software (OSS) concepts:
-1. Is OSS just a way to get free code? [summary](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar), [detail, tells a good story](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html)
+1. Is OSS just a way to get free code? [summary](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar), or [detail, tells a good story](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html)
 1. [Why do you need source control?](https://youtu.be/OqmSzXDrJBk)
 1. [Tell me about github, branches, forks and pull requests](https://youtu.be/K0mgc3efx-A)
 1. [What is this command line thingy?](https://youtu.be/IVquJh3DXUA)
@@ -68,7 +68,7 @@ The [Monday afternoon session](#evening-session-e-mission-overview) will
 largely be a hands-on session. If you want to get some context before diving
 in, you may want to skim through these papers before then.
 - [TRB paper describing how to use e-mission functionality](https://people.eecs.berkeley.edu/~shankari/emission_trb_2017_paper.pdf)
-- [The in-review paper on the e-mission architecture](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)
+- [The in-review paper on the e-mission architecture, please do not distribute](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)
 
 ### Asynchronous participation ###
 -------
