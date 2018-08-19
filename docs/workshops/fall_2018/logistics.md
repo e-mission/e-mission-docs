@@ -24,7 +24,51 @@ for github, please send me your github username (e.g. [@shankari](https://github
 to the e-mission organization and you can participate in the online discussion.
 
 #### Required reading/viewing ####
-Will be updated before Sunday PDT
+
+##### Background material #####
+The [Monday morning session](#morning-session-background-material) will not be
+specific to e-mission, but will instead focus on standard Computer Science (CS)
+concepts and tools. The primary objective is to be able to understand the
+concepts well enough to engage with the community and mentor undergraduates -
+it is hard to provide meaningful feedback on the database structure for
+e-mission without knowing what a database is. If you are a CS major, you can
+skip this section.
+
+One of the challenges with coming up with a list of concepts to cover is that I
+don't know what you don't know. Therefore, I have come up with a very basic
+list and linked to short, introductory videos for each.  During the session, I
+will ask questions to identify areas that are most unclear to the audience, and
+adapt the session accordingly.  If you are a non-CS major, please read/view
+this material _before_ the workshop.  If you don't like the videos that I
+linked to, you can search on youtube and pick your own.  Wikipedia is also a
+good resource.
+
+CS concepts:
+1. [What is a sensor?](https://youtu.be/MyWCvNBLy9c)
+1. [What is a database?](https://youtu.be/cA4c0yda8Hs)
+1. [What is HTML, CSS and Javascript?](https://youtu.be/gT0Lh1eYk78)
+1. [What is a hybrid app?](https://youtu.be/x0xg3cLpeF0)
+1. [What is a client-server architecture?](https://youtu.be/SwLdKeC8scE)
+1. [How does TCP/IP work?](https://youtu.be/PpsEaqJV_A0)
+1. [What is a URL?](https://youtu.be/OvF_pnJ6zrY)
+1. [What is an API?](https://youtu.be/s7wmiS2mSXY)
+1. [What are the different kinds of databases?](https://youtu.be/KOcwG5l6LgA)
+1. [What is authentication and authorization?](https://youtu.be/927KdwZZoU0)
+1. [What is machine learning?](https://youtu.be/1Hx8_BAfgj8)
+1. [What is a pipeline?](https://youtu.be/XZmG0nBHvkY)
+
+Open Source Software (OSS) concepts:
+1. Is OSS just a way to get free code? [summary](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar), [detail, tells a good story](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html)
+1. [Why do you need source control?](https://youtu.be/OqmSzXDrJBk)
+1. [Tell me about github, branches, forks and pull requests](https://youtu.be/K0mgc3efx-A)
+1. [What is this command line thingy?](https://youtu.be/IVquJh3DXUA)
+
+##### e-mission overview #####
+The [Monday afternoon session](#evening-session-e-mission-overview) will
+largely be a hands-on session. If you want to get some context before diving
+in, you may want to skim through these papers before then.
+- [TRB paper describing how to use e-mission functionality](https://people.eecs.berkeley.edu/~shankari/emission_trb_2017_paper.pdf)
+- [The in-review paper on the e-mission architecture](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)
 
 ### Asynchronous participation ###
 -------
