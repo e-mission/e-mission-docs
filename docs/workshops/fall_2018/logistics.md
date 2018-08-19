@@ -1,5 +1,6 @@
 ## e-mission workshop: understanding and influencing human travel behavior (logistics) ##
 
+
 ### Pre-requisites ###
 -------
 For the most efficient use of everybody's time, please do these *before* the start of the conference.
@@ -71,7 +72,7 @@ in, you may want to skim through these papers before then.
 - [The in-review paper on the e-mission architecture, please do not distribute](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)
 
 ##### roadmap ahead #####
-The [Tuesday afternoon session](#evening-session-roadmap-ahead) will discuss improvements that we would like to see, both big and small. I have outlined my thoughts on the [big CS/system goals](https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/overview.md). Undergraduates working on the analysis and privacy components have registered for the workshop and will hopefully attend this section. But as you go through the workshop, think through what features you would like to see, even if they are small. In the bazaar world, everybody gets to propose ideas that they think are important, and even small usability changes can have a big impact.
+The [Tuesday afternoon session](#evening-session-roadmap-ahead) will discuss improvements that we as a community would like to see, both big and small. I have outlined my thoughts on the [big CS/system goals](https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/overview.md). Undergraduates working on the analysis and privacy components have registered for the workshop and will hopefully attend this section. But as you go through the workshop, think through what features you would like to see, even if they are small. In [the bazaar world](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar#Lessons_for_creating_good_open_source_software), everybody gets to propose ideas that they think are important, and even small usability changes can have a big impact.
 
 ### Asynchronous participation ###
 -------
