@@ -70,7 +70,7 @@ in, you may want to skim through these papers before then.
 - [TRB paper describing how to use e-mission functionality](https://people.eecs.berkeley.edu/~shankari/emission_trb_2017_paper.pdf)
 - [The in-review paper on the e-mission architecture, please do not distribute](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)
 
-#### roadmap ahead ####
+##### roadmap ahead #####
 The [Tuesday afternoon session](#evening-session-roadmap-ahead) will discuss improvements that we would like to see, both big and small. I have outlined my thoughts on the [big CS/system goals](https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/overview.md). Undergraduates working on the analysis and privacy components have registered for the workshop and will hopefully attend this section. But as you go through the workshop, think through what features you would like to see, even if they are small. In the bazaar world, everybody gets to propose ideas that they think are important, and even small usability changes can have a big impact.
 
 ### Asynchronous participation ###
