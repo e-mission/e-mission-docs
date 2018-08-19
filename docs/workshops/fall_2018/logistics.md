@@ -58,7 +58,7 @@ CS concepts:
 1. [What is a pipeline?](https://youtu.be/XZmG0nBHvkY)
 
 Open Source Software (OSS) concepts:
-1. Is OSS just a way to get free code? [summary](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar), or [detail, tells a good story](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html)
+1. Is OSS just a way to get free code? The Cathedral and the Bazaar ([summary](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar), or [detail, tells a good story](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html)) tells you how it is a different way of approaching system building. 
 1. [Why do you need source control?](https://youtu.be/OqmSzXDrJBk)
 1. [Tell me about github, branches, forks and pull requests](https://youtu.be/K0mgc3efx-A)
 1. [What is this command line thingy?](https://youtu.be/IVquJh3DXUA)
