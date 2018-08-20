@@ -5,7 +5,7 @@ Read these papers for context.
 - [The in-review paper on the e-mission architecture, please do not distribute](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)
 
 In this session, we will:
-- [Set up the e-mission development environment](docs/overview/quickstart.md)
+- [Set up the e-mission development environment](../../overview/quickstart.md)
 - [Download your own data](#download-your-own-data)
 - [Explore the data](#explore-the-data)
 - [Change the UI](https://github.com/e-mission/e-mission-docs/tree/master/docs/tutorials)
