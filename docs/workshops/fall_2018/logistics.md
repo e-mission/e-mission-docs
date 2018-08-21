@@ -115,9 +115,11 @@ As outlined in the NCNC guide, we will:
 
 ### Agenda ###
 -------
+Can't join the async discussion? [Remember to send me your github username](#sign-up-for-github) (e.g. https://github.com/shankari/) so that I can add you to the team that can participate in the discussions.
+
 #### Monday, August 20th ####
 
-##### Morning session: background material #####
+##### Morning session: background material [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/1) #####
 Help project leads become with basic CS/open source concepts so that hey can point students in the right direction - e.g. what is a branch? what is a pull request? 
 ##### Evening session: e-mission overview #####
 Help everybody become more familiar with the features of e-mission. what is the e-mission architecture? how do I change the UI? what does the data look like? hands-on setup of end-to-end system. 
