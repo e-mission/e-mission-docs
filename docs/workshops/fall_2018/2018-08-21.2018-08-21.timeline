@@ -1,0 +1,683 @@
+[
+  {
+    "_id": {
+      "$oid": "5b7bbf64502d1764a2a4ee14"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534836580.3017995,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 0,
+        "minute": 29,
+        "second": 40,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T00:29:40.301800-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/put",
+      "ts": 1534836580.3015912,
+      "reading": 0.07051801681518555
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bbf64502d1764a2a4ee15"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534836580.3035908,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 0,
+        "minute": 29,
+        "second": 40,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T00:29:40.303591-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/put_cputime",
+      "ts": 1534836580.3015912,
+      "reading": 0.07037236914038658
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bbf64502d1764a2a4ee16"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534836580.9348295,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 0,
+        "minute": 29,
+        "second": 40,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T00:29:40.934829-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534836580.9345868,
+      "reading": 0.053733110427856445
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bbf64502d1764a2a4ee17"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534836580.9366653,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 0,
+        "minute": 29,
+        "second": 40,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T00:29:40.936665-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534836580.9345868,
+      "reading": 0.053623124957084656
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bcd3c502d1764a2a4ee78"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534840124.7768533,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 1,
+        "minute": 28,
+        "second": 44,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T01:28:44.776853-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534840124.7766154,
+      "reading": 0.0518033504486084
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bcd3c502d1764a2a4ee79"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534840124.7787325,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 1,
+        "minute": 28,
+        "second": 44,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T01:28:44.778733-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534840124.7766154,
+      "reading": 0.051689427345991135
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bdb4c502d1764a2a4eede"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534843724.2016764,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 2,
+        "minute": 28,
+        "second": 44,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T02:28:44.201676-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534843724.201427,
+      "reading": 0.04961109161376953
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bdb4c502d1764a2a4eedf"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534843724.2035286,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 2,
+        "minute": 28,
+        "second": 44,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T02:28:44.203529-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534843724.201427,
+      "reading": 0.04949332773685455
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7be95d502d1764a2a4ef37"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534847325.2256317,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 3,
+        "minute": 28,
+        "second": 45,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T03:28:45.225632-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534847325.2253904,
+      "reading": 0.050151824951171875
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7be95d502d1764a2a4ef38"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534847325.2274196,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 3,
+        "minute": 28,
+        "second": 45,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T03:28:45.227420-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534847325.2253904,
+      "reading": 0.05003326013684273
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bf781502d1764a2a4efa5"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534850945.2599547,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 4,
+        "minute": 29,
+        "second": 5,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T04:29:05.259955-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534850945.259713,
+      "reading": 0.05288982391357422
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bf781502d1764a2a4efa6"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534850945.261974,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 4,
+        "minute": 29,
+        "second": 5,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T04:29:05.261974-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534850945.259713,
+      "reading": 0.05277625843882561
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c0594502d1764a2a4f087"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534854548.511705,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 5,
+        "minute": 29,
+        "second": 8,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T05:29:08.511705-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534854548.5114806,
+      "reading": 0.04820895195007324
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c0594502d1764a2a4f088"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534854548.5134172,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 5,
+        "minute": 29,
+        "second": 8,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T05:29:08.513417-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534854548.5114806,
+      "reading": 0.04809483140707016
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c138b502d1764a2a4f0ea"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534858123.9322605,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 6,
+        "minute": 28,
+        "second": 43,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T06:28:43.932261-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534858123.9320228,
+      "reading": 0.049600839614868164
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c138b502d1764a2a4f0eb"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534858123.9341102,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 6,
+        "minute": 28,
+        "second": 43,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T06:28:43.934110-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534858123.9320228,
+      "reading": 0.0494808554649353
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c2ed6502d1764a2a4f287"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534865110.1428196,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 8,
+        "minute": 25,
+        "second": 10,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T08:25:10.142820-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get",
+      "ts": 1534865110.1425657,
+      "reading": 0.0497589111328125
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c2ed6502d1764a2a4f288"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534865110.1446664,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 8,
+        "minute": 25,
+        "second": 10,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T08:25:10.144666-07:00"
+    },
+    "data": {
+      "name": "POST_/usercache/get_cputime",
+      "ts": 1534865110.1425657,
+      "reading": 0.04963834956288338
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c3aa1502d1764a2a4f34e"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534868129.1449275,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 9,
+        "minute": 15,
+        "second": 29,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T09:15:29.144928-07:00"
+    },
+    "data": {
+      "name": "POST_/result/metrics/timestamp",
+      "ts": 1534868129.14472,
+      "reading": 0.05303001403808594
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c3aa1502d1764a2a4f34f"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534868129.1467376,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 9,
+        "minute": 15,
+        "second": 29,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T09:15:29.146738-07:00"
+    },
+    "data": {
+      "name": "POST_/result/metrics/timestamp_cputime",
+      "ts": 1534868129.14472,
+      "reading": 0.0529172457754612
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c3aa1502d1764a2a4f350"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534868129.2101426,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 9,
+        "minute": 15,
+        "second": 29,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T09:15:29.210143-07:00"
+    },
+    "data": {
+      "name": "POST_/profile/update",
+      "ts": 1534868129.2098682,
+      "reading": 0.05120730400085449
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7c3aa1502d1764a2a4f351"
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "metadata": {
+      "key": "stats/server_api_time",
+      "platform": "server",
+      "write_ts": 1534868129.2119079,
+      "time_zone": "America/Los_Angeles",
+      "write_local_dt": {
+        "year": 2018,
+        "month": 8,
+        "day": 21,
+        "hour": 9,
+        "minute": 15,
+        "second": 29,
+        "weekday": 1,
+        "timezone": "America/Los_Angeles"
+      },
+      "write_fmt_time": "2018-08-21T09:15:29.211908-07:00"
+    },
+    "data": {
+      "name": "POST_/profile/update_cputime",
+      "ts": 1534868129.2098682,
+      "reading": 0.05110366642475128
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b7bc23290c6b7556af11479"
+    },
+    "metadata": {
+      "key": "statemachine/transition",
+      "platform": "android",
+      "read_ts": 0,
+      "time_zone": "America/Los_Angeles",
+      "type": "message",
+      "write_ts": 1534836700.818
+    },
+    "user_id": {
+      "$uuid": "62d12a5a278944838e001b5ac22a2e95"
+    },
+    "data": {
+      "currState": "local.state.waiting_for_trip_start",
+      "transition": "local.transition.stopped_moving",
+      "ts": 1534836700.803
+    }
+  }
+]
