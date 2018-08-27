@@ -11,6 +11,7 @@
       - [e-mission overview](#e-mission-overview)
       - [roadmap ahead](#roadmap-ahead)
   - [Asynchronous participation](#asynchronous-participation)
+    - [Asynchronous participation procedure](#asynchronous-participation-procedure)
   - [Agenda](#agenda)
     - [Monday, August 20th](#monday-august-20th)
       - [Morning session: background material](#morning-session-background-material)
@@ -113,19 +114,32 @@ As outlined in the NCNC guide, we will:
       participation period will run for **one month ONLY**. On **Thursday, September 20th**,
       2018, the discussions will be turned off.
 
+#### Async participation procedure ####
+Although the participation is asynchronous, I would still like it to be interactive. It is known that asking questions, both listener-driven and speaker-driven, involves active recall and [helps solidify concepts in long-term memory](https://www.ncbi.nlm.nih.gov/pubmed/20804289).
+
+Therefore, I propose the following procedure:
+- I have seeded every discussion with some initial questions
+- Attendees should answer any unanswered questions for which you want to clarify your understanding
+   - first come, first served
+   - reference the question by adding a link to it like [this one](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/1/comments/2)
+- Attendees can add new questions if there is something unclear
+- I will check the discussion once a day, comment on answers and pose new questions to help you gain an understanding of the material
+- I will answer all unanswered questions at the end of the asynchronous workshop (**20th Sept 2018**)
+
 ### Agenda ###
 -------
-Can't join the async discussion? [Remember to send me your github username](#sign-up-for-github) (e.g. https://github.com/shankari/) so that I can add you to the team that can participate in the discussions.
+- **Can't join the async discussion?** [Remember to send me your github username](#sign-up-for-github) (e.g. https://github.com/shankari/) so that I can add you to the team that can participate in the discussions.
+- **How does the async discussion work?** [See the procedure!](#async-participation-procedure)
 
 #### Monday, August 20th ####
 
 ##### Morning session: background material [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/1) #####
 Help project leads become with basic CS/open source concepts so that hey can point students in the right direction - e.g. what is a branch? what is a pull request? 
-##### Evening session: e-mission overview #####
-Help everybody become more familiar with the features of e-mission. what is the e-mission architecture? how do I change the UI? what does the data look like? hands-on setup of end-to-end system. 
+##### Evening session: e-mission overview [hands on overview,](../hands-on-overview.md) [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/2) #####
+Help everybody become more familiar with the features of e-mission. what is the e-mission architecture? how do I change the UI? what does the data look like? hands-on setup of end-to-end system. Please try the steps in the [hands on overview](../hands-on-overview.md) before joining the discussion                                                                                                                                                                                                              .
 
 #### Tuesday, August 21th ####
-##### Morning session: improving the setup #####
+##### Morning session: improving the setup [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/3) #####
 How can we lower barriers to entry for deploying the system and analyzing the data? Hopefully, this will include improvements to documentation and scripts using your new-found OSS skills
-##### Evening session: roadmap ahead #####
+##### Evening session: roadmap ahead [CS view of future work,](../../future_work/overview.md) [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/4) #####
 What is the long-term direction that we want the project to go in? What are the potential improvements, how do we prioritize them, and who gets to tackle them?
