@@ -135,11 +135,11 @@ Therefore, I propose the following procedure:
 
 ##### Morning session: background material [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/1) #####
 Help project leads become with basic CS/open source concepts so that hey can point students in the right direction - e.g. what is a branch? what is a pull request? 
-##### Evening session: e-mission overview [hands on overview](../hands-on-overview.md) [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/2) #####
+##### Evening session: e-mission overview [hands on overview,](../hands-on-overview.md) [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/2) #####
 Help everybody become more familiar with the features of e-mission. what is the e-mission architecture? how do I change the UI? what does the data look like? hands-on setup of end-to-end system. Please try the steps in the [hands on overview](../hands-on-overview.md) before joining the discussion                                                                                                                                                                                                              .
 
 #### Tuesday, August 21th ####
 ##### Morning session: improving the setup [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/3) #####
 How can we lower barriers to entry for deploying the system and analyzing the data? Hopefully, this will include improvements to documentation and scripts using your new-found OSS skills
-##### Evening session: roadmap ahead [CS view of future work](../../future_work/overview.md) [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/4) #####
+##### Evening session: roadmap ahead [CS view of future work,](../../future_work/overview.md) [async discussion](https://github.com/orgs/e-mission/teams/em-workshop-2018/discussions/4) #####
 What is the long-term direction that we want the project to go in? What are the potential improvements, how do we prioritize them, and who gets to tackle them?
