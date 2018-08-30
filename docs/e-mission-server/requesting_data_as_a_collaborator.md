@@ -1,11 +1,15 @@
 # Requesting Data as a Collaborator
 ---
 
-The consent document for e-mission (https://e-mission.eecs.berkeley.edu/consent) allows the platform owner (@shankari in this case) to share de-linked raw data with other collaborators for research.
+The consent document for e-mission (https://e-mission.eecs.berkeley.edu/consent) allows the platform owner (@shankari in this case) to share **de-linked** raw data with other collaborators for research.
 
 > Time-delayed subsets of individual trajectory data, associated with their UUIDs but not email addresses, may by shared with collaborators, or released as research datasets to the community from time to time. If this is done, the time delay for sharing with collaborators will be at least one month, and the time delay for releasing to the community will be at least one year. Both collaborators and researchers will be asked to agree that they will publish only aggregate, non personally identifiable results, and will not re-share the data with others. 
 
-This document provides the procedure to request access to such data.
+It also allows other researchers to use it to conduct studies. In this case, all data, including the **link** between the email address and the UUID will be made available to the researcher.
+
+> If this platform is being used to collect data for a study conducted by another researcher, for example, from a Transportation Engineering Department, then you will be asked to assent to a separate document outlining the data association, retention and sharing policies for that study, **in addition to the policies above**. We will make all data, including the mapping between the email address and the UUID, directly available to the lead researcher for the main study. This will allow them to associate the automatically gathered information with demographic data, and any pre and post surveys that they conduct as part of their study. The other researcher may also choose to compensate you for your time, as described in the protocol document for that study.
+
+This document provides the procedure to request access to such kinds of data. Most of the procedure is common; differences between them are labelled **linked** and **de-linked**.
 
 ## Setup GPG ##
 
@@ -16,6 +20,7 @@ We will send and receive data encrypted/signed using GPG.
 
 ## Data request ##
 
+### De-linked ###
 Next, you need to formally request access by filling out a pdf form.
 
 1. I will send you an encrypted version of the form you need to fill out and a copy of *my* public key.
@@ -26,17 +31,26 @@ Next, you need to formally request access by filling out a pdf form.
 
 If all of this works, we know that we have bi-directional encrypted communication over email. Make sure to encrypt any privacy sensitive information (e.g. subsets of data for debugging) that you send to me in the future.
 
+### Linked ###
+You need to send me a copy of your IRB approval and your consent document to ensure that you have permission to collect data.
+
 ## Data retrieval ##
 
-As you can see from the consent document, you can get access to data that is time-delayed by 1 months.
-
+### De-linked ###
+1. As you can see from the consent document, you can get access to data that is time-delayed by 1 months.
 1. I will upload an encrypted zip file with ~ 3 months of data to google drive and send you a link.
-1. You need to decrypt it just like you decrypted the pdf form.
+
+Note that this data is very privacy-sensitive, so think through the answers carefully on the request form carefully and make sure that you follow them. Treat the data as you would like your data to be treated.
+
+### Linked ###
+1. I will upload an encrypted zip file with all your data to google drive and send you a link.
+
+
+### Both ###
+1. You need to decrypt it just like you decrypted the pdf form https://www.gnupg.org/gph/en/manual/x110.html.
 1. When unzipped, the data consists of multiple json files, one per user.
 1. The data will typically contain both raw sensed data (e.g. `background/location`) and processed data (e.g. `analysis/cleaned_trip`)
 1. Data formats for the json objects are at `emission/core/wrapper` (e.g. `emission/core/wrapper/location.py` and `emission/core/wrapper/cleanedtrip.py`)
-
-Note that this data is very privacy-sensitive, so think through the answers carefully on the request form carefully and make sure that you follow them. Treat the data as you would like your data to be treated.
 
 ## Data analysis ##
 
@@ -51,12 +65,30 @@ Load the data into your local database. Since this data contains information fro
 ```
 ./e-mission-py.bash bin/debug/load_multi_timeline_for_range.py all_users_sep_dec_2016/dump_
 ```
-As discussed earlier, these timelines also contain analysis results, so there is no need to re-run the intake pipeline. The script will automatically detect this and print the following line.
+
+#### Linked data ONLY ####
+You can load the email <-> UUID mapping also into the database by using the `-m MAPFILE` option (see below). In this case, the mapping will be loaded into the `get_uuid_db()` similar to the regular server. If you don't specify the `-m` option, then the users will be loaded with dummy names - `user001`, `user002` ... - and you can manipulate the mapping json file directly to find out their email addresses.
+
+```
+./e-mission-py.bash bin/debug/load_multi_timeline_for_range.py -m all_users.json all_users_sep_dec_2016/dump_
+```
+
+### Run the pipeline ###
+As discussed earlier, downloaded timelines typically contain analysis results, so there is no need to re-run the intake pipeline. The script will automatically detect this and print the following line.
 
 ```
 timeline contains analysis results, no need to run the intake pipeline
 ```
 
+If they do not contain analysis results, the script will print the line
+
+```
+all entries in the timeline contain only raw data, need to run the intake pipeline
+```
+
+In that case, you should [run the intake pipeline](https://github.com/e-mission/e-mission-docs/blob/master/docs/e-mission-server/deploying_your_own_server_to_production.md#the-analysis-pipeline) (`bin/intake_multiprocess.py`) to get the processed analysis results.
+
+### Clean up the loaded data ###
 You can also remove the data by using `bin/purge_database_json.py`, which will delete everything, or `bin/debug/purge_multi_timeline_for_range.py`, which will only delete the entries in that timeline - e.g.
 
 ```
