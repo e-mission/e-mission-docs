@@ -20,3 +20,18 @@ All papers assume that everybody has data for every time period. Is that true fo
 - what does it take to start experimenting with keystone? what is the keystone v1 release date?
 - is the workshop material online?
 - what would you recommend? computation against encrypted data or secure execution? is there a link to the pros and cons?
+- open source hardware - what is the state of tooling?
+- how do we access keystone hardware? do we have to actually burn an FPGA?
+- model is: decrypt, process, encrypt. how do get the secret key to decrypt?
+  - store data in datastore encrypted with user's SK
+  - user stores SK on unshared device (e.g. phone)
+  - user and enclave negotiate symmetric key exchange right after enclave verification
+  - user sends data to enclave encrypted with SK
+- Challenge: only user has SK, data is inaccessible without device storing SK (phone) being online. Conceptually, the enclave is like a little bit of the phone that can run cloud code.
+  - consistent with signal and WhatsApp. Is this what they do under the hood?
+  - how will this work for processing, e.g. re-running the pipeline?
+    - users will need to launch **their** pipeline in an enclave on every sync
+  - how will this work for aggregate queries?
+    - users may be offline when the query is received, or may not want to participate over data plans
+      - One idea: the query need not be instantaneous. Instead, it can include a time limit. The aggregator can poll users for data as long as the query is active. This means that users who come online only intermittently can also participate. Queries may take a day to run, but that is still faster than recruiting users and conducting a study.
+      - We can improve performance by allowing the queries to include the number of users to include. In that case, the aggregator can return as soon as the number of users has been reached, instead of waiting for the query to expire. This may also have implications in terms of the noise calculations and the protocol, but it is consistent with the previous issue of having data for only k/n users for a particular query.
