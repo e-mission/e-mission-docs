@@ -25,7 +25,7 @@ current time might not have made it to the server yet. On every pass, the stage
 processes data in the range (last ts processed, now)
 
 ### Troubleshooting ###
-- If you see the error "", it means that the stage is marked as still running.
+- If you see the error `curr_state.curr_run_ts = [0-9]*, while processing pipeline`, it means that the stage is marked as still running.
 Steps to resolve:
 1. Make sure that there isn't any other instance of the pipeline running.
 1. Assuming that is true:
