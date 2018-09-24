@@ -59,7 +59,7 @@ This is configured in two steps.
 - The auth method is configured in `conf/net/api/webserver.conf`
 - The settings for the auth method are configured in `conf/net/auth/<auth_method>.json`. 
 
-For more details on configuring an auth method, see https://github.com/e-mission/e-mission-server/wiki/Configuring-authentication
+For more details on configuring an auth method, see https://github.com/e-mission/e-mission-docs/blob/master/docs/e-mission-both/configuring_authentication.md 
 
 #### Configuring push ####
 We use silent push notifications on iOS as a backup in case the visit
