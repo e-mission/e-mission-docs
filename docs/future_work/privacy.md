@@ -20,14 +20,17 @@ in which the results are used. While users do currently get to control what raw
 data is collected from their smartphones, once the data has been collected,
 they lose control over it, and it can be re-shared in ways that they do not
 expect. This argues for a more mediated sharing experience at a higher level in
-the data stack.
+the data stack. Some examples are
+![Bad privacy examples](../../assets/future_work/privacy_examples_bad.png)
+
 
 Note that this high level overview recurs in many scenarios, and there is ongoing work,
 including in the RISE lab, around addressing some of these issues. We may be able to use
 some of these in our own work. For example, check out 
 [this talk from Dawn Song](https://keystone-enclave.org/files/dawn-nsf-2018-v5.pdf).
 
-This level of control involves integrating two existing research areas.
+This level of control involves integrating two existing research areas. An overall system diagram is 
+![Privacy system diagram](../../assets/future_work/privacy_final_design.png)
 
 ### Computation on encrypted data/secure execution ###
 Conceptually, for users to own their own data, they need to run a server that
