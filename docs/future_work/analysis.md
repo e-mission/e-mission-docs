@@ -77,7 +77,8 @@ that because the dataset is static, the algorithms cannot experiment with
 different data collection techniques or user interaction; they can only experiment
 with featurization and ML techniques such as k-NN, regression models, kernels etc.
 This is basically what kaggle does today; technically we could publish this dataset
-as part of a Kaggle contest.
+as part of a Kaggle contest.  This would conceptually look like
+![Static dataset benchmarking strategy](../../assets/future_work/benchmarking_strategy_static.png)
 
 #### Dynamic user interaction ####
 It is more challenging to account for differences in the _data collection_,
