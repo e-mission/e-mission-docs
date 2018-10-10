@@ -27,7 +27,7 @@ processes data in the range (last ts processed, now)
 ### Troubleshooting ###
 If you see the error `curr_state.curr_run_ts = [0-9]*, while processing pipeline`, it means that the stage is marked as still running.
 Steps to resolve:
-1. Make sure that there isn't any other instance of the pipeline running.
+1. Make sure that there isn't any other instance of the pipeline running (e.g. something like `$ ps -aef | grep intake`)
 1. Assuming that is true:
     - if you are running the pipeline on a small amount of local data (e.g. to
       reproduce on your desktop), reset the pipeline and re-run
