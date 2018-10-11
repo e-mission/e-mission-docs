@@ -30,9 +30,9 @@ Steps to resolve:
 1. Make sure that there isn't any other instance of the pipeline running (e.g. something like `$ ps -aef | grep intake`)
 1. Assuming that is true:
     - if you are running the pipeline on a small amount of local data (e.g. to
-      reproduce on your desktop), reset the pipeline and re-run
+      reproduce on your desktop), reset the pipeline (`$ bin/reset_pipeline.py`) and re-run
     - if you are running the pipeline on an ongoing production server, reset
-      the pipeline to a specific date and re-run. Note that this is a trickier
+      the pipeline to a specific date and re-run (`$ bin/reset_pipeline.py -h` for the format). Note that this is a trickier
       operation, so you may run into corner cases. In that case, file an issue, or
       fix it youself and send me a pull request!
 
