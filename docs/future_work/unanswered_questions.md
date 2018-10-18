@@ -41,21 +41,21 @@ All papers assume that everybody has data for every time period. Is that true fo
     - we can also estimate the data and see how bad the naive solution will be. Maybe we start with the naive solution and build in a performance optimization later.
 
 ## Experiment to set up a skeleton of secure execution for aggregate queries ##
-Outline of an experiment to set up a skeleton of secure execution for aggregate
+This is an outline of an experiment to set up a skeleton of secure execution for aggregate
 queries. This will allow us to verify that all the assumptions needed for the
 enclave based aggregation of queries before we delve deeper into the
 implementation.
 
 Terminology:
-`Q`: query script
-`e_a`: enclave running the aggregation script `s_a`
-`e_u1 ... e_un`: enclaves running the user script
+- `Q`: query script
+- `e_a`: enclave running the aggregation script `s_a`
+- `e_u1 ... e_un`: enclaves running the user script
 
 Setup:
 - Create two possible aggregator programs `s_a_valid` and `s_a_invalid`. Both
   programs will expect to receive messages from user enclaves, and will return
   a count of the number of messages received to the querier.
-- Change the scripts slightly (potentially through dummy strings) to ensure
+- Change the scripts slightly (potentially through included static dummy strings) to ensure
   that their hashes are slightly different.
 - Record the hashes `h_a_valid` and `h_a_invalid`
 - Create user programs that will receive an (IP address, valid hash) pair. The
@@ -66,6 +66,7 @@ Setup:
     - `n`: number of users
     - `aggregator`: aggregator program
     - `valid hash`
+    
   The script should spin up `e_a` with the specified aggregator program, and
   spin up `n` `e_u` with the (only, hardcoded) user program. It should then
   send messages to all the `e_u` with the IP of the aggregator and the
