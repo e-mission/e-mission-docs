@@ -26,9 +26,9 @@ processes data in the range (last ts processed, now)
 
 ### Resetting the pipeline ###
 If your pipeline state is messed up in any way, you can just reset the pipeline. The raw data is still present, so you can re-run the pipeline again. Re-running the pipeline after a reset should generate the same results, although it may take a LOOOONG time depending on the data that you have.
-    - if you are running the pipeline on a small amount of local data (e.g. to
+  - if you are running the pipeline on a small amount of local data (e.g. to
       reproduce on your desktop), reset the pipeline (`$ ./e-mission-py.sh bin/reset_pipeline.py`) and re-run
-    - if you are running the pipeline on an ongoing production server, reset
+  - if you are running the pipeline on an ongoing production server, reset
       the pipeline to a specific date and re-run (`$ ./e-mission-py.sh bin/reset_pipeline.py -h` for the format). Note that this is a trickier
       operation, so you may run into corner cases. In that case, file an issue, or
       fix it youself and send me a pull request!
