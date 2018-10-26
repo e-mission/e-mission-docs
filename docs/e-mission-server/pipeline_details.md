@@ -24,12 +24,8 @@ buffered at various stages along the way, data that was collected before the
 current time might not have made it to the server yet. On every pass, the stage
 processes data in the range (last ts processed, now)
 
-### Troubleshooting ###
-#### `curr_run_ts` = ...., while processing pipeline ####
-If you see the error `curr_state.curr_run_ts = [0-9]*, while processing pipeline`, it means that the stage is marked as still running.
-Steps to resolve:
-1. Make sure that there isn't any other instance of the pipeline running (e.g. something like `$ ps -aef | grep intake`)
-1. Assuming that is true:
+### Resetting the pipeline ###
+If your pipeline state is messed up in any way, you can just reset the pipeline. The raw data is still present, so you can re-run the pipeline again. Re-running the pipeline after a reset should generate the same results, although it may take a LOOOONG time depending on the data that you have.
     - if you are running the pipeline on a small amount of local data (e.g. to
       reproduce on your desktop), reset the pipeline (`$ ./e-mission-py.sh bin/reset_pipeline.py`) and re-run
     - if you are running the pipeline on an ongoing production server, reset
@@ -38,6 +34,13 @@ Steps to resolve:
       fix it youself and send me a pull request!
 
 Note that deleting the pipeline state entries without fully resetting the pipeline *will not work*. The processed results will not be deleted correctly, so you will end up with two sets of trips and sections, which will then mess up the downstream stages.
+
+### Troubleshooting ###
+#### `curr_run_ts` = ...., while processing pipeline ####
+If you see the error `curr_state.curr_run_ts = [0-9]*, while processing pipeline`, it means that the stage is marked as still running.
+Steps to resolve:
+1. Make sure that there isn't any other instance of the pipeline running (e.g. something like `$ ps -aef | grep intake`)
+1. Assuming that is true, [reset the pipeline](#resetting_the_pipeline)
 
 #### No errors, but data not processed ####
 Make sure that the pipeline state is such that your new data is actually considered fresh. Note that on every run, we only read data after the last timestamp processed. Each pipeline stage will print the time range that is considering, and how much fresh data matched it.
@@ -69,3 +72,5 @@ If we re-run the pipeline for the same user and have not received any new data i
 2018-10-26 15:04:41,462:DEBUG:140736223740800:Found 3 results
 2018-10-26 15:04:41,470:DEBUG:140736223740800:After de-duping, converted 3 points to 3
 ```
+
+If this happens, you want to force the pipeline to treat the old data as fresh. Which means that you basically need to [reset the pipeline](#resetting-the-pipeline).
