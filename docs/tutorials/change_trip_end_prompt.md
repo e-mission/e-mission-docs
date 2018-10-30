@@ -42,14 +42,14 @@ All the changes here assume that you have finished the install, and your install
 
 #### Testing ####
 In order to test this, you need to start or end a trip. The most accurate option, and the one with the least setup, to install the app onto a physical device and take a trip. But it is hard to make changes to the prompts in that case. To test the notifications in an emulator:
-    - Turn on locations
-        - on android: Settings -> Location -> High Accuracy. Then open the location extended controls for the emulator and "send" a location to the emulator.
-        - on iOS: Debug -> Location -> Freeway Drive 
-    - Start/stop the trip
-        - on both: (Developer Zone -> Start/Stop trip)
+  - Turn on locations
+    - on android: Settings -> Location -> High Accuracy. Then open the location extended controls for the emulator and "send" a location to the emulator.
+    - on iOS: Debug -> Location -> Freeway Drive 
+  - Start/stop the trip
+    - on both: (Developer Zone -> Start/Stop trip)
     - Extra things to note
-        - the android emulator does not generate locations by default. You need to open the location extended controls and "send" a location. If you don't send the location, the app will remain stuck in the `start` state and you will never see any notifications. You can also upload a GPX or KML file for more realism.
-        - iOS delivers all notifications to the app when it is in the foreground. so if you want to see a visual notification on iOS, connect safari debugger and put a breakpoint in `collect-settings.js` at line `cch.forceTransition(button.transition);`.  When it is hit, lock the emulator screen and resume execution. Now the notification will be visible. Alternatively, use android.
+      - the android emulator does not generate locations by default. You need to open the location extended controls and "send" a location. If you don't send the location, the app will remain stuck in the `start` state and you will never see any notifications. You can also upload a GPX or KML file for more realism.
+      - iOS delivers all notifications to the app when it is in the foreground. so if you want to see a visual notification on iOS, connect safari debugger and put a breakpoint in `collect-settings.js` at line `cch.forceTransition(button.transition);`.  When it is hit, lock the emulator screen and resume execution. Now the notification will be visible. Alternatively, use android.
 
 ### Configuring notifications ###
 
