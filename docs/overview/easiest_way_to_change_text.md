@@ -26,19 +26,17 @@ tested before deployment.
 
 ## Steps for making changes ##
 1. Find the file to change
-  - If your changes will be on master, you can search directly in github
-  - If your changes will be on a branch other than master
-    - clone the repo to your local computer
-    ```
-    $ git clone https://github.com/e-mission/e-mission-phone.git
-    ```
-    - switch to the branch you want to change
-    ```
-    $ git checkout --track origin/<your_branch>
-    ```
-    - search for the text using the standard tools for your computer (e.g.
-      using `grep`, opening in an IDE and searching in the project...)
-
+    - If your changes will be on master, you can search directly in github
+    - If your changes will be on a branch other than master
+      - clone the repo to your local computer
+      ```
+      $ git clone https://github.com/e-mission/e-mission-phone.git
+      ```
+      - switch to the branch you want to change
+      ```
+      $ git checkout --track origin/<your_branch>
+      ```
+      - search for the text using the standard tools for your computer (e.g. using `grep`, opening in an IDE and searching in the project...)
 1. Select your branch in the github UI
 ![branch selection github ui](../../assets/overview/easiest_way_to_change_text/branch_selection_github_ui.png)
 1. Navigate to the file(s) you found in step 1
