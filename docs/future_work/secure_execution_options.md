@@ -34,9 +34,52 @@ diagram - Figure 3 from the paper.
 ![Graphene architecture](../../assets/future_work/graphene_arch_diagram.png)
 
 In order to have a direct comparison, I tried to draw similar diagrams for the
-other two options as well.
+other two options as well. As you can see, there are multiple questions around
+how some of the other options work.
 
 | Graphene | Scone | Intel SDK |
 |--------- | ----- | --------- |
 | ![Graphene architecture](../../assets/future_work/graphene-arch.png) | ![Scone architecture](../../assets/future_work/scone-arch.png) | ![Intel SDK architecture](../../assets/future_work/intel-SDK-arch.png) |
 
+## Other questions
+
+There are some other questions that I would like to understand better before
+making the final decision.
+
+### How do Graphene and SCONE use their own C libraries?
+
+According to [the Intel SDK documentation](https://software.intel.com/en-us/sgx-sdk-dev-reference-writing-enclave-functions), enclave functions must use a trusted version of the C libraries supplied with the SDK. However, both Graphene and Scone use their own versions of the C library - graphene uses glibc (unclear whether modified or unmodified); scone uses a port of musl-libc. How does this allowed?
+
+One answer could be that if you use the SDK, you must use the trusted C libraries, but if you use your own loader, you can use anything else, including your own libc. Both graphene (page 647) and scone (page 694) do not use any part of the SDK other than the driver, and `aesmd`.
+
+### How does the SDK actually work?
+
+See questions in the diagram.
+
+### What is the story around linking libraries?
+
+This shouldn't really matter from a user perspective, except that UNIX tool
+results don't seem to match the claims in the documentation.
+
+#### Intel SDK
+- *Claim:* C/C++ calls to System provided C/C++/STL standard libraries are not supported from within the enclave. Trusted libraries that are specifically designed to be used inside enclaves are included with the SDK.
+- *Observation:* standard C libraries (from `/lib` and `/usr/lib`) are linked to an enclave application (e.g. https://github.com/njriasan/sgx-trust-management/tree/master/application). Maybe the SDK replaces the standard libraries? Note that `libsgx_urts.so` is also loaded from `/usr/lib`
+
+    ```
+    # ldd sgx-trust/application/app
+        linux-vdso.so.1 (0x00007ffff9dd9000)
+        libsgx_urts.so => /usr/lib/libsgx_urts.so (0x00007f1f1a89c000)
+        libcrypto.so.1.1 => /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 (0x00007f1f1a424000)
+        libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f1f1a205000)
+        libsgx_uae_service.so => /usr/lib/libsgx_uae_service.so (0x00007f1f19fc5000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f1f19bd4000)
+        libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007f1f199d0000)
+        libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f1f19642000)
+        libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f1f1942a000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007f1f1acc6000)
+        libprotobuf.so.10 => /usr/lib/x86_64-linux-gnu/libprotobuf.so.10 (0x00007f1f18fd1000)
+        libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f1f18c33000)
+        libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f1f18a16000)
+    ```
+
+### How does attestation work for interpreted languages such as python?
