@@ -82,4 +82,25 @@ results don't seem to match the claims in the documentation.
         libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f1f18a16000)
     ```
 
+#### Scone
+- *Claim:* Unsure. Page 696 says that the application is statically linked. Shared libraries are not supported by design so that all enclave code can be verified. However, Page700 says that the application and all dependent libraries are linked into a shared object file.
+- *Observation:* application library and scone library are linked as two dynamically loaded libraries for the cross-compiled scone application (e.g. `python3.5` in the scone python docker image)
+    ```
+    # ldd /usr/bin/python3.5
+        /opt/scone/lib/ld-scone-x86_64.so.1 (0x7f3209065000)
+        libpython3.5m.so.1.0 => /usr/lib/libpython3.5m.so.1.0 (0x7f32089fd000)
+        libc.scone-x86_64.so.1 => /opt/scone/lib/ld-scone-x86_64.so.1 (0x7f3209065000)
+    ```
+
+#### Graphene
+- *Claim:* Applications are dynamically-linked, and Graphene uses the manifest along with the custom loader to verify dynamically linked libraries.
+- *Observation:* ??? (need to install and experiment)
+
 ### How does attestation work for interpreted languages such as python?
+In all cases, it looks like attestation primarily works for statically linked native code. Graphene had to build in special functionality in order to support dynamically loaded native code. But then what happens for interpreted languages such as python?
+
+Presumably the CPU, even with Graphene, will attest the python interpreter. But the python interpreter can run any code. It can even be invoked interactively and run any commands provided by the user through the console. How can the clients then verify that a python application running in the enclave does what we want it to?
+
+- Does the file authentication option of Graphene (page 650) solve this problem? I don't see how it does given the option for console input. And yet, one of the use cases considered is R, which is also a scripting language, so they must have solved it.
+- How does scone solve this problem? scone has a python container, and an attestation service, so they must have solved this problem.
+- The SDK cannot solve this problem since it only supports C/C++. Please confirm :)
