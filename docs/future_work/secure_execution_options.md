@@ -18,13 +18,13 @@ running code is in an interpreted language (python).
 
 The three main options for running code in an enclave appear to be:
 1. *Use the SDK directly*: Intel has an SDK to help people write enclave
-programs. Programs need to be rewritten to use the SDK.
+programs. Programs need to be rewritten to use the SDK. [Link](https://software.intel.com/en-us/sgx-sdk-dev-reference-writing-enclave-functions)
 1. *Use a shim (scone)*: Use a simple libc that is rewritten to run within the enclave.
 Existing applications can be recompiled against the modified C library and run
-transparently within the enclave.
+transparently within the enclave. [Link](https://www.usenix.org/system/files/conference/osdi16/osdi16-arnautov.pdf)
 1. *Using a library OS (graphene)*: Use standard C libraries, but integrate a libraryOS
 into the enclave. The libraryOS will make calls to the "host", which will be
-translated into syscalls through the host kernel.
+translated into syscalls through the host kernel. [Link](https://www.usenix.org/system/files/conference/atc17/atc17-tsai.pdf)
 
 ## Comparison of the options
 Both scone and graphene have architecture diagrams, but I liked the graphene one 
