@@ -26,6 +26,15 @@ transparently within the enclave. [Link](https://www.usenix.org/system/files/con
 into the enclave. The libraryOS will make calls to the "host", which will be
 translated into syscalls through the host kernel. [Link](https://www.usenix.org/system/files/conference/atc17/atc17-tsai.pdf)
 
+## Our requirements
+
+It is also useful to clearly state our requirements as a basis for comparison. Since Graphene is open source, and @chiache has expressed interest in working with us to understand these requirements, I am also filing issues in the graphene repository for each of them. We can track more detailed implementation decisions there.
+
+1. We want to support containerized execution of code. Since users will be motionless for large stretches of time, *and* only push data at the end of their trips, the enclaves will be idle most of the time, and might as well be paused for greater scalability. If we do have a constant stream of aggregate queries, this may be less important, but we don't yet know what the aggregate query profile will look like. Filed [issue 383](https://github.com/oscarlab/graphene/issues/383).
+1. We want to support remote attestation. Our architecture relies on the ability for smartphones to remote attest the code running in the user enclaves that they upload data to, as well as for user enclaves to attest the aggregator enclave that will ensure differential privacy of the results. Commented on [issue 46](https://github.com/oscarlab/graphene/issues/46)
+1. We want to support secure execution of interpreted programs, in particular, python. This is because we expect that the algorithms that users choose to run in their enclaves will be contributed primarily by transportation or computational transportation researchers and will be written in python. Filed [issue 384](https://github.com/oscarlab/graphene/issues/384)
+
+
 ## Comparison of the options
 Both scone and graphene have architecture diagrams, but I liked the graphene one 
 better because I felt that the increased detail made it clearer. Here's the
