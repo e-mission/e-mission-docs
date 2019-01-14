@@ -27,7 +27,8 @@ For more details on how to hook up external surveys, either in response to a but
 - **Con:** _Less flexibility_. Unless the survey platform provides an API to query for results, the communication is one-way. The survey results typically cannot be reflected back on the phone UI.
 
 ### Custom objects ###
-e-mission supports storing user results directly on the server. They are stored as `manul/*` objects. Existing examples are `manual/mode_confirm` and `manual/purpose_confirm`. Since the objects are separate from any trips, you need to add information to the objects that allow them to be matched with any analysis results. You can look at the `mode_confirm` and `purpose_confirm` addition [issue](https://github.com/e-mission/e-mission-server/issues/532) and [pull request](https://github.com/e-mission/e-mission-server/pull/563) for more details.
+e-mission supports storing user results directly on the server. They are stored as `manul/*` objects. Existing examples are `manual/mode_confirm` and `manual/purpose_confirm`. Since the objects are separate from any trips, you need to add information to the objects that allow them to be matched with any analysis results. You can look at the `mode_confirm` and `purpose_confirm` addition [issue](https://github.com/e-mission/e-mission-server/issues/532) and [pull request](https://github.com/e-mission/e-mission-server/pull/563) for more details. As you can see, for a given trip, the matching user input objects can be retrieved using `get_user_input_for_trip_object` in `emission/storage/decorations/trip_queries.py`.
+
 
 If you need to add a new object type that is more complex than mode and purpose, you need to do book-keeping to register the object for use. The changes are pretty small in isolation, but there are quite a few of them. [This guide](adding_a_new_data_type.md) covers the details of adding new object types on both the phone and the server; you probably want to just add the objects as JSON.
 
