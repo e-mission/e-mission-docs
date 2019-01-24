@@ -1,3 +1,5 @@
+### Practial application ###
+
 From [_A Practical Application of Diﬀerential Privacy to Personalized Online Advertising_](https://eprint.iacr.org/2011/152.pdf?fbclid=IwAR2EC4Gz0rjVv_-XCsEAiFcmp4XN_7vwU9PyL1H3RlAdoBN0Pm-nQnSZBkM)
 
 I found section 2.1 particularly useful. For the classical definition of differential privacy, the attacker can choose the values of all entries except the ith entry, and for the ith entry, provide _x_i_ and _x'\_i_ that are possible matches. And the result of the query should not allow the user to distinguish between _x_i_ and _x'\_i_. That is pretty strong!
@@ -12,8 +14,7 @@ That feels intuitively wrong, but I guess it is a stronger result if it does not
 
 Their experimental methodology might also be interesting for us to try and get some kind of concrete intuition around this. It looks like they basically computed the direct result of the query, and the result of the query with added noise, and computed how far off the noisy result was. Which makes sense.
 
-My questions after reading that paper are:
-1. 
+### Correlation ###
 
 Comparing [_Privacy-Preserving Aggregation of Time-Series Data_](https://ssltest.cs.umd.edu/~elaine/docs/ndss2011.pdf) and [_Differentially private aggregation of distributed time-series with transformation and encryption_](http://dl.acm.org/citation.cfm?id=1807247),
 
@@ -45,4 +46,10 @@ They fix this with their frequency domain trick, which leads to the conclusion:
 
 > To the best of our knowledge, FPAk is the first differentially private technique (unlike [11, 20]) that of- fers practical utility for time-series data.
 
-So even the classical technique doesn't appear to be a problem if the number of queries <<< number of users. And if it does, we can use their frequency domain trick, or maybe there is a non-patented version in the literature?
+### Questions ###
+
+- So even the classical technique doesn't appear to be a problem if the number of queries <<< number of users. Is this right?
+- And if it does, we can use their frequency domain trick, or maybe there is a non-patented version in the literature? Is this right?
+- We have been worried for a while about the prospect of an attacker averaging out values from correlated queries to remove the noise. Why doesn't that happen in with the classical technique?
+
+
