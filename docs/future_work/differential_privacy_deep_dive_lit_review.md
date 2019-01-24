@@ -19,6 +19,8 @@ Their experimental methodology might also be interesting for us to try and get s
 Comparing [_Privacy-Preserving Aggregation of Time-Series Data_](https://ssltest.cs.umd.edu/~elaine/docs/ndss2011.pdf) and [_Differentially private aggregation of distributed time-series with transformation and encryption_](http://dl.acm.org/citation.cfm?id=1807247),
 
 The Shi/Song paper does not seem to address the notion of correlation at all. Their only consideration is that they basically support summation queries. So if I understand correctly, your function could even be to extract the lat/lng at a particular time point, although note that summing that would not be very useful :)
+
+
 The Rastogi/Nath paper does take correlation seriously. In fact, if I understand correctly, one of their primary contributions is to deal with correlation. But, and maybe this was surprising only to me, their focus is primarily on improving utility rather than privacy of correlated queries.
 Couple of things that I inferred from reading more closely with a focus on correlation:
 - the data for each user can be correlated, and that is fine since we are reducing it to a scalar value that is (assumed to be) independent of similar scalar values from other users
@@ -35,7 +37,7 @@ Couple of things that I inferred from reading more closely with a focus on corre
     
 - I think that the intuition behind this is that if the sensitivity of a single count query is 1, then the sensitivity of repeated count queries is `n`.
 
-> Consider a query Q counting the number of users whose weight in month 1 is greater than 200 lb. Then ∆(Q) is simply 1 as Q can differ by at most 1 on adding/removing a sin- gle user’s data. Now consider Q = Q1, . . . , Qn, where Qi counts users whose weight in month i is greater than 200 lb. Then ∆1(Q) is n (for the pair I,I′ which differ in a single user having weight >
+    > Consider a query Q counting the number of users whose weight in month 1 is greater than 200 lb. Then ∆(Q) is simply 1 as Q can differ by at most 1 on adding/removing a sin- gle user’s data. Now consider Q = Q1, . . . , Qn, where Qi counts users whose weight in month i is greater than 200 lb. Then ∆1(Q) is n (for the pair I,I′ which differ in a single user having weight >
 n (for the same pair I,I′).
 
 If the number of repeated queries is large compared to the sample size  then basically, the overall noise is so high that **repeated** query is useless, e.g.
