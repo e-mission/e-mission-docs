@@ -54,5 +54,6 @@ They fix this with their frequency domain trick, which leads to the conclusion:
 - And if it does, we can use their frequency domain trick, or maybe there is a non-patented version in the literature? Is this right?
 - We have been worried for a while about the prospect of an attacker averaging out values from correlated queries to remove the noise. Why doesn't that happen in with the classical technique?
    - I guess this where the privacy budget comes in. So in that case, why would the user establish the privacy budget? If we know how much noise is added in each query, can't we determine the number of queries that are permitted before the noise can be averaged out? 
+   - there is an intutive example with little math on page 12 of Lindell/Ormi, but I think that I need to digest that further. If anybody else got it, I'd love to get a tutorial...
 
 
