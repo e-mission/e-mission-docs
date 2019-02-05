@@ -48,10 +48,38 @@ They fix this with their frequency domain trick, which leads to the conclusion:
 
 > To the best of our knowledge, FPAk is the first differentially private technique (unlike [11, 20]) that of- fers practical utility for time-series data.
 
+### Sampling ###
+Murtagh et al. in [_Usable Differential Privacy: A Case Study with PSI∗_](https://arxiv.org/pdf/1809.04103.pdf) include a discussion on how sampling can ensure greater privacy without increasing the value of the privacy parameters:
+
+> Suppose we draw a random sample of rows from a database, and publish statistics about the sampled data instead of the full dataset. Sampling increases the uncertainty of the adversary about a user being in the sample. As a result, less noise is needed in order to satisfy the same level of privacy protection for the sampled data.
+
+The technical details can be seen in Lemma 1. Subsampling improves the privacy loss parameters by a factor of roughly `m/n` where `n` is the sample size and `m` is the total amount of data that satisfies our query conditions. The paper also explains how subsampling would meet this condition: 
+
+> As long as this subsample is truly random and the choice of the people in the subsample remain secret, the privacy amplification from secrecy of the sample comes for free. Because of the privacy/accuracy trade-off, these savings can actually be viewed as free boosts in accuracy while maintaining the same level of privacy.
+
+This seems like we can take random samples of individuals that satisfy a certain query condition and keep the people and data in the subsample secret, then we can use a lower bound of overall noise.
+
+### Privacy Parameters Assignment ###
+In [_Usable Differential Privacy: A Case Study with PSI∗_](https://arxiv.org/pdf/1809.04103.pdf), users have the responsibility to assign their own privacy parameters when submitting their data. Users are informed how to set such parameters as PSI provides an introduction to differential privacy and recommendations for parameters in accessible but accurate documentation. 
+
+1. Public information: It is not necessary to use differential privacy for public information. 
+2. Information the disclosure of which would not cause material harm, but which the University has chosen to keep confidential: (`epsilon = 1`, `delta = 10^-5` ) 
+3. Information that could cause risk of material harm to individuals or the University if disclosed: (`epsilon = 0.25`, `delta = 10^−6` ) 
+4. Information that would likely cause serious harm to individuals or the University if disclosed: (`epsilon = 0.05`, `delta = 10^−7` ) 
+5. Information that would cause severe harm to individuals or the University if disclosed: It is not recommended that the PSI tool be used with such severely sensitive data.
+
+It is still not clear how to modify these privacy parameters if users choose to add or remove data. And it is unclear from this context how these general guidelines would change if we segmented our privacy budgets into months and location areas.
+
 ### Questions ###
 
 - So even the classical technique doesn't appear to be a problem if the number of queries <<< number of users. Is this right?
+   - (JS Response): I do think the classical solution (assuming we have `k` correlated queries, ensure privacy by multiplying the noise of each of the correlated queries by `k`) would work.
+      - In a simple counting query example with 1,000,000 users and 12 correlated queries (global sensitivity is 1), the standard deviation  is around 200 which is a small percentage of the overall number of users.
+      - But we should determine the threshold (in terms of deviation) for which we can use the classical technique as this is more efficient.
+ 
 - And if it does, we can use their frequency domain trick, or maybe there is a non-patented version in the literature? Is this right?
+   - (JS Response): Yes as long as we know the query workload (i.e. the number of correlated queries). I don't think this is practical as analysts will not typically know the number of queries they need ahead of time. Thus, it would be important to look more into methods that are adaptive to one at a time queries such as the Private Multiplicative Weights Mechanism.
+
 - We have been worried for a while about the prospect of an attacker averaging out values from correlated queries to remove the noise. Why doesn't that happen in with the classical technique?
    - I guess this where the privacy budget comes in. So in that case, why would the user establish the privacy budget? If we know how much noise is added in each query, can't we determine the number of queries that are permitted before the noise can be averaged out? 
    - there is an intutive example with little math on page 12 of Lindell/Ormi, but I think that I need to digest that further. If anybody else got it, I'd love to get a tutorial...
