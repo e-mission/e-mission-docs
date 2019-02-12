@@ -77,6 +77,9 @@ environment within anaconda to avoid conflicts with other applications.
   ```
   $ source setup/setup.sh
   ```
+  
+  - If you want to use an ipython notebook, use `$ source setup/setup_notebook.sh` instead.
+  - If you want to use a less optimized version that uses less disk space, use `$ source setup/setup_nomkl.sh` instead. Note that this has not been extensively tested.
 
 - Verify that you are in the right environment - your prompt should start with
   `(emission)` and the `emission` environment should be starred.
