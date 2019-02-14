@@ -105,7 +105,7 @@ and then change the config to point to `/mnt/logs`, e.g.
 The connection settings on the phone are at `www/json/connectionConfig.json`. The sample file (`connectionConfig.production.json.sample`) should be filled in with the URL of the production server and the auth method from [Configuring Authentication](#configuring-authentication)
 
 Note, you should also cutomize your client-app with a custom server: [Create a new custom client](../e-mission-phone/create_a_new_custom_client.md).
-Currently, the aggregate related URLs (heatmap, metrics tab) are hardcoded in:
+Currently, the aggregate related URLs (heatmap, metrics tab) are hardcoded. They need to be changed to your server URL in:
 
 - `www/js/heatmap.js`
 - `www/js/metrics.js`
