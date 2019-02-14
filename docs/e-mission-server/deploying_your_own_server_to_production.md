@@ -104,6 +104,14 @@ and then change the config to point to `/mnt/logs`, e.g.
 #### Configuring the phone app ####
 The connection settings on the phone are at `www/json/connectionConfig.json`. The sample file (`connectionConfig.production.json.sample`) should be filled in with the URL of the production server and the auth method from [Configuring Authentication](#configuring-authentication)
 
+Note, you should also cutomize your client-app with a custom server: [Create a new custom client](../e-mission-phone/create_a_new_custom_client.md).
+Currently, the aggregate related URLs (heatmap, metrics tab) are hardcoded in:
+
+- `www/js/heatmap.js`
+- `www/js/metrics.js`
+
+It is also necessary to edit the Content-Security-Policy in `www/index.html` so that connections to your own server URL are allowed.
+
 ### Starting processes ###
 The server needs three ongoing processes. The instructions here are for *nix systems. I've filled in what I've found for Windows equivalents, but they are untested. Any Windows installers, please correct them as required.
 
