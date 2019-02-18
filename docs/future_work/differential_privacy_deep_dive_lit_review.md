@@ -70,6 +70,52 @@ In [_Usable Differential Privacy: A Case Study with PSI∗_](https://arxiv.org/p
 
 It is still not clear how to modify these privacy parameters if users choose to add or remove data. And it is unclear from this context how these general guidelines would change if we segmented our privacy budgets into months and location areas.
 
+### Spatio-temporal Data Publishing Literature ###
+[_Privacy-Preserving Release of Spatio-temporal Density_](http://real.mtak.hu/85930/1/Spatiotemporal_4_u.pdf):
+
+This paper publishes enables a differentially private release of counts periodically (hourly) over a limited time span (week). Specifically, the goal is to compute the spatio-temporal density from the original mobility data and release a perturbed and anonymized time series that can be used to answer any query ("Approach 3" in Section 3). Our approach would be their "Approach 1" which consists of interacting with the original data and releasing only the anonymized query result. They discuss how to implement Approach 1 in Section 3.1.2: Semantic anonymization and states the drawbacks:
+
+> ...they are data agnostic and may not exploit some inherent correlation between query results which are due to the nature of the location data. For example, query results usually follow a publicly known periodic trend, and adding noise in the frequency domain can provide more accurate answers.
+
+With a limited time interval, the authors are able to produce useable noisy count results. This is done by:
+
+- Sampling:
+   - Samples `l` entries for each location cell for each timestamp to reduce the overall global sensitivity.
+- Geographic similarities:
+   - If any location doesn't have at least `l` counts, nearby populated cells are first clustered until their aggregated counts become sufficiently large to resist noise. The key observation is that the time series of close cells follow very similar trends, but their counts usually have different magnitudes.
+- Temporal similarities:
+   - Uses a frequency domain method to produce a lower bound of noise, reminiscent of Rastogi/Nath.
+
+#### Takeaways ####
+ - Detailed and relevant related work and definition of problem.
+ - Detailed outline of interactive approach and mention of private multiplicative weight mechanism as being a potential noise generating tool with our interactive approach.
+ - Work limited by limited time stream and does not explicitly take into account trajectories with their coarse hourly count experiment.
+ 
+[_Differentially Private Real-Time Data Publishing over Infinite Trajectory Streams_](https://www.jstage.jst.go.jp/article/transinf/E99.D/1/E99.D_2015EDP7096/_pdf):
+
+#### Definitions ####
+This paper introduces lots of useful notations and definitions to formalize trajectory settings.
+ - `l_u`-trajectory: A sequence of successive spatiotemporal data points produced by a user `u`. Look at Definition 3 in Section 4 for the full definition.
+ - `l`-trajectory privacy: Ensures differential privacy over user specified lengths of trajectory streams. A more precise definition can be found in section 4.
+ - User-level privacy: Protecting the whole trajectory stream of a user.
+ - Even-level privacy: Protecting any single spatiotemporal data point.
+ 
+ 
+Paper also focuses on publishing spatio-temporal data over an infinite time interval (`t_0` to `t_present`), and although we want to focus on the interactive, one at a time queries, this paper does have some interesting ideas that are worth bringing up. 
+
+#### Privacy Publishing Scheme ####
+- Simple solution to allocating privacy budgets is uniform (Section 5.1).
+   - With a privacy budget `e` at a timestamp, uniformly allocate the privacy budget of `e/l_max` at each timestamp, where `l_max` is the maximum length of any user specificed trajectory length.
+- Their allocation solution aims to spend privacy budget when it is "worth".
+   - At a high level, spend privacy budget when there is enough change from the previous timestamp.
+- Add independent Laplacian noise and the useablility of this noise depends on the privacy budget chosen for that timestamp.
+
+
+#### Takeaways ####
+- Motivating definitions
+- Still only focus on publishing data continually (but over an infinite time interval) instead of one at a time queries.
+
+ 
 ### Questions ###
 
 - So even the classical technique doesn't appear to be a problem if the number of queries <<< number of users. Is this right?
