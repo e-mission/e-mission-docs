@@ -65,7 +65,7 @@ Conceptually, users can also choose to participate in aggregate queries for
 results, with controls for which results to share and how much aggregation they
 want to participate in.
 
-Related work:
+#### Related work: ####
 - [OpenPDS: Protecting the Privacy of Metadata through SafeAnswers](https://doi.org/10.1371/journal.pone.0098790)
 - [PDVLoc: A Personal Data Vault for Controlled Location Data Sharing](https://doi.org/10.1145/2523820)
 
@@ -74,6 +74,31 @@ However, differential privacy is challenging for timeseries data since it has
 so much structure. However, there has been prior work on differential privacy
 for certain kinds of aggregate queries against timeseries data.
 
-Related work:
+#### Related work: ####
 - [Privacy-Preserving Aggregation of Time-Series Data](https://amplab.cs.berkeley.edu/publication/privacy-preserving-aggregation-of-time-series-data/)
 - [Differentially private aggregation of distributed time-series with transformation and encryption](http://dl.acm.org/citation.cfm?id=1807247)
+
+
+#### Types of queries: ####
+
+We would like to support the following types of queries.
+- Point queries: These represent the kinds of queries that could be answered by a sufficiently complex sensor embedded in the infrastructure. For example:
+  - How many people travelled on road segment `x` (where `x` is the OSM id such as https://www.openstreetmap.org/way/242298339)
+  - What is the mode share on road segment `x` (e.g. 25% walk, 25% bike, 50% car)?
+  - Both of the above queries over various time ranges (e.g. 3pm - 5pm on weekdays in the summer, etc)
+- Trajectory queries: These are still count queries, but they represent information that you can only find out through trajectories. For example:
+  - Of the people passing through the intersection of Castro and the train tracks, how many are turning left?
+    - How many people are turning onto Shoreline right after that?
+    - Does this vary by mode?
+  - Where do people who come to the train station come from?
+    - counts on each of the access roads?
+    - for each access road, counts along blocks that are the origins of the trips?
+    - for each of the access roads, how long did it take for people to reach the train station along that route?
+  - Where do people who leave Mountain View City Hall between 3pm and 5pm on weekdays in the summer go (can be a polygon)?
+  - What is the distribution of travel times for travelers between Mountain View City Hall and the google campus in North Bayshore?
+- Model queries: In some ways, these are the easiest because they use standard machine learning, and there is a lot of existing work on federated databases. We should be able to do this for some subset of 
+  - Extract features of interest (e.g. time, cost, etc) from the aggregate of all the trips
+  - Create a logistic regression model and determine the population-level coefficients for the features
+  - Ideally, you would be able to do this for subsets of the population that can be chosen by the previous two methods - e.g.
+    - find the time and cost coefficients for all people who travel along Castro street.
+    - find the time and cost coefficients for all people who arrive at the Mountain View train station
