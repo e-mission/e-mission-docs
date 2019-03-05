@@ -96,6 +96,8 @@ environment within anaconda to avoid conflicts with other applications.
   xbos                     /..../anaconda/envs/xbos
   root                     /..../anaconda
   ```
+  
+- If you have setup the environment already and just need to switch to it, you can also use `source activate emission` to switch to the emission environment. To switch out of the emission environment, or to manipulate it in other ways, read the conda documentation on environments https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html Note that depending on the version of conda that you have installed, you may use `conda activate` or `source activate`
 
 - Remember to re-run the setup script every time you pull from the main repository because the dependencies may have changed.
 
