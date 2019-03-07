@@ -90,7 +90,7 @@ This option uses JWTs using the google identity solution with [cross-client auth
 - use the `ios` key for iOS, but encoded into the native app as a URL type
 - the `android` key is not used directly, but is required to be in the project to allow the android authentication to proceed
 
-![Google Auth Screenshot](../../assets/both/e-mission-both/google_auth_screenshot.png)
+![Google Auth Screenshot](../../assets/e-mission-both/google_auth_screenshot.png)
 
 If you have just created a set of keys, you can just duplicate them to make the old and new keys - e.g. in `conf/net/auth/google_auth.json`
 
