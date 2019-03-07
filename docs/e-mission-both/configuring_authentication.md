@@ -78,15 +78,23 @@ If you want to use a more full-featured authentication server, you could conside
 
 ### `google_auth`/`google-authutil` ###
 
-This option uses JWTs using the google identity solution. The JWTs are decrypted using google's public keys and decoded using the `google-auth` library.
+This option uses JWTs using the google identity solution with [cross-client authentication](https://developers.google.com/identity/protocols/CrossClientAuth#accessTokens). The JWTs are decrypted using google's public keys and decoded using the `google-auth` library.
 
 - If you are deploying a new UI on the existing e-mission app, you need to ask me to generate google client keys.
 - If you are deploying your own app, register your app in the google developer console and generate your own client keys.
 
 #### Configuration ####
 
-android and iOS keys from https://console.developers.google.com. Note that for android, we use the webserver key. And for iOS, the key needs to be encoded into the native app as a URL type.
+- create `android`, `ios` and `web application` credentials in the same project at https://console.developers.google.com
+- use the `web application` key for android
+- use the `ios` key for iOS, but encoded into the native app as a URL type
+- the `android` key is not used directly, but is required to be in the project to allow the android authentication to proceed
+
+![Google Auth Screenshot](../../assets/e-mission-both/google_auth_screenshot.png)
+
 If you have just created a set of keys, you can just duplicate them to make the old and new keys - e.g. in `conf/net/auth/google_auth.json`
+
+
 
 ```
   "client_key_old" : "11111111111-aaaaaaaaaaaaaaaa.apps.googleusercontent.com",
