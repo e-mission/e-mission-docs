@@ -112,7 +112,7 @@ If you have just created a set of keys, you can just duplicate them to make the 
 1. **Q:** How do I get the tokens from you? 
 
   **A:** Send me your GPG public key, including [create](https://www.gnupg.org/gph/en/manual/c14.html) and[ exporting ](https://www.gnupg.org/gph/en/manual/x56.html)if needed. I will send you an encrypted client `connectionConfig.json` file. You can copy the values from the client file to the server file.
-1. When configuring the authentication on the server
+1. When generating my own tokens:
     1. **Q:** For android, do we use `webapp` or `android` as application type? 
 
         **A:** `Web application`. You need to use the same web application clientID in both the client json and the server json. And unless you are planning to roll your own native app, you need to get the keys from me. Otherwise, the keystore that is configured for the project will be incorrect, and the auth won't work.
