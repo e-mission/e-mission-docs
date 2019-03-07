@@ -120,6 +120,10 @@ If you have just created a set of keys, you can just duplicate them to make the 
     1. **Q:** How do I configure the `webapp`? Do I have to add a redirect URL?
 
         **A:** See screenshots below. You do not need to add any restrictions since we are not really using a browser for authentication. We are using cross-client authentication using native code in a mobile app.
+        
+        | Selection | Configuration | Success |
+        | --------  | ------------- | --------|
+        | ![Selection](../../assets/e-mission-both/google_auth_client_id_selection.png) | ![Configuration](../../assets/e-mission-both/google_auth_client_id_creation_screen.png) | ![Success](../../assets/e-mission-both/google_auth_client_id_success.png) |
 
     1. **Q:** For ios, do we use `webapp` or `ios`  as application type? 
 
