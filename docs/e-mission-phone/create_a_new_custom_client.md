@@ -8,13 +8,12 @@ Document now, clean up later.
 1. change the package in the `id`
 1. reset the `android-versionCode`, `ios-CFBundleVersion` and `version`
 1. create a new appid in apple (https://developer.apple.com) with the new id specified in step 2
-1. *optional: iff you are supporting iOS/want push notifications*
-
-   create a new firebase project for the new package (https://console.firebase.google.com)
+1. the current version of the push plugin requires firebase to be configured even if you are not using i
+    - create a new firebase project for the new package (https://console.firebase.google.com)
     - set up an iOS app with the new appid from the previous step
     - go to Settings -> Cloud Messaging
     - upload your APNs Authentication Key (create one from the apple developer account under Keys -> APNs key if you don't have one)
-    - get the firebase sender ID and put it into the config.xml for the push plugin
+    - get the `google-services.json` and `GoogleService-Info.plist` and put them into the project root
 1. *optional: iff you want to support UI channels* create a new entry for the app in the ionic console
     - copy the app id (next to the project name) into the `config.xml` under `cordova-plugin-ionic`
 1. copy over `package.json` and make the same changes as `config.xml`
