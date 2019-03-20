@@ -105,17 +105,20 @@ The following are the steps that are necessary to upload data to the server.
 Steps 1-3 constitute the process of launching a user cloud. If the user cloud is already running then in step 2 rather than launch a new user cloud the known access location should just return the address of the user's user cloud which is already running (which it should be possible to authenticate, although we may want to produce some shared secret for existing user clouds).
 Step 5 launches a database instance. It will likely be necessary to keep the database running for much of the life of the user cloud. This step may instead consist of resuming the container or can be skipped if it is actively running.
 
+Below are diagrams showing a visual of the stages numbered with the appropriate steps. Untrusted entities are in pink while the trusted components are light green.
+
+
 ![Initial State](imgs/first_architecture_step.png)
 
-Initial state. Untrusted entities are in pink.
+Initial state.
 
 ![Initial State](imgs/second_architecture_step.png)
 
-Architecture after a user cloud is spawned. Untrusted entities are in pink.
+Architecture after a user cloud is spawned.
 
 ![Initial State](imgs/datastorage.png) 
 
-The process of storing data through a user cloud. Untrusted entities are in pink.
+The process of storing data through a user cloud.
 
 ### Performing a User Requested Algorithm
 
@@ -137,10 +140,24 @@ Steps 1-3 constitute the process of launching a user cloud. If the user cloud is
 Step 5 launches a database instance. It will likely be necessary to keep the database running for much of the life of the user cloud. This step may instead consist of resuming the container or can be skipped if it is actively running.
 Step 8 launches a microservice instance. If we want to reuse containers to avoid downtime then we probably want the user clouds to communicate with some load balancing entity instead. By observing the code we can verify no microservice will accept connections from two different user clouds simulataneously.
 
-![Initial State](imgs/first_architecture_step.png "Initial state. Untrusted entities are in pink.")
-![Initial State](imgs/second_architecture_step.png "Architecture after a user cloud is spawned. Untrusted entities are in pink.")
-![Initial State](imgs/next_to_last_architecture_step.png "The process of retrieving data on the a user cloud. Untrusted entities are in pink.")
-![Initial State](imgs/final_architecture_step.png "The process of running the algorithm with the allowed algorithm. Untrusted entities are in pink.")
+Below are diagrams showing a visual of the stages numbered with the appropriate steps. Untrusted entities are in pink while the trusted components are light green.
+
+![Initial State](imgs/first_architecture_step.png) 
+
+Initial state.
+
+
+![Initial State](imgs/second_architecture_step.png)
+
+Architecture after a user cloud is spawned.
+
+![Initial State](imgs/next_to_last_architecture_step.png) 
+
+"The process of retrieving data on the a user cloud.
+
+![Initial State](imgs/final_architecture_step.png) 
+
+The process of running the algorithm with the allowed algorithm.
 
 ### Participating an an Aggregated Algorithm
 
