@@ -105,9 +105,17 @@ The following are the steps that are necessary to upload data to the server.
 Steps 1-3 constitute the process of launching a user cloud. If the user cloud is already running then in step 2 rather than launch a new user cloud the known access location should just return the address of the user's user cloud which is already running (which it should be possible to authenticate, although we may want to produce some shared secret for existing user clouds).
 Step 5 launches a database instance. It will likely be necessary to keep the database running for much of the life of the user cloud. This step may instead consist of resuming the container or can be skipped if it is actively running.
 
-![Initial State](imgs/first_architecture_step.png "Initial state. Untrusted entities are in pink.")
-![Initial State](imgs/second_architecture_step.png "Architecture after a user cloud is spawned. Untrusted entities are in pink.")
-![Initial State](imgs/datastorage.png "The process of storing data through a user cloud. Untrusted entities are in pink.")
+![Initial State](imgs/first_architecture_step.png)
+
+Initial state. Untrusted entities are in pink.
+
+![Initial State](imgs/second_architecture_step.png)
+
+Architecture after a user cloud is spawned. Untrusted entities are in pink.
+
+![Initial State](imgs/datastorage.png) 
+
+The process of storing data through a user cloud. Untrusted entities are in pink.
 
 ### Performing a User Requested Algorithm
 
