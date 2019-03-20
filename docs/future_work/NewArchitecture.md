@@ -6,6 +6,7 @@ It is organized into the following sections:
   * Overview
   * Application Changes
   * Server Changes
+  * Detailed Description
   * Remaining Challenges
 
 ## Overview
@@ -35,7 +36,7 @@ To allow for secure data storage each user will need a secret key with which to 
 
 ### Upload Channel
 
-The encrypted data can be transmitted along any channel that can store the user's data properly (which will very depending on data storage choice) because the key is pressumed secret. This fundamentally means the data is useless unless the system processing it has direct access to the private key. Since we seek avoid doing all computation at the user level we need to provide a means of providing a user's private key to the server. To do so we rely on secure enclaves (which we will focus on later) to be able to uniquely hold this information securely. In order to actually upload this information we need to associate each user's enclave with a unique certificate to validate through TLS. As a result it is necessary to equip the application with information about where to find the user's server enclave.
+The encrypted data can be transmitted along any channel because the key is pressumed secret. This fundamentally means the data is useless unless the system processing it has direct access to the private key. Since we seek avoid doing all computation at the user level we need to provide a means of providing a user's private key to the server. To do so we rely on secure enclaves (which we will focus on later) to be able to uniquely hold this information securely. In order to actually upload this information we need to associate each user's enclave with a unique certificate to validate through TLS. As a result it is necessary to equip the application with information about where to find the user's server enclave.
 
 
 ### Algorithm Permissions
@@ -78,6 +79,75 @@ If a user wishes to run an algorithm they simply need to make a request to their
 
 It is also possible for a user to agree to be a participant in algorithms that aggregate over larger groups of data. This requires a few changes to the architecture and a different form of interaction. First to facility these algorithms that are not requested by the user it is necessary to have the server enclave available even when a user is offline. To do this we will keep the server enclave running with the private key and the user profile and only shut down the enclave upon request from the user or if it necessary to update details about the profile or key in a manner which modifies existing behavior. 
 Since aggregation also occurs independent of user requests it is no longer feasible to have the server enclave launch a microservice. Instead the group intending to perform aggregation with launch an aggregator enclave which will launch a new enclave per user which produces a scalar value based upon the user's data. That scalar enclave will communicate directly with the server enclave to get the data and will need to be stored in the profile. Then this scalar can be directly communicated to the aggregator enclave to compute the aggregate result over the data.
+
+
+## Detailed Description
+
+In this section we will provide a detailed description of the steps necessary for the architecture to function. In particular we will be discussing:
+
+  * Uploading Data
+  * Performing a User Requested Algorithm
+  * Participating in an Aggreagated Algorithm
+
+This section is important because the steps will be very close to the actual implementation. If there is an issue that is clear from this section it suggests the new for at a minimum an implementation redesign and possibly architectural changes.
+
+### Uploading Data
+
+The following are the steps that are necessary to upload data to the server.
+
+1. The user's smartphone makes a request to a known access location (essential a server at a known domain) with a request to spawn a user cloud instance.
+2. The known access location spawns a container to produce a "user cloud." This user cloud consists of a server running inside a secure enclave via Graphene. The known access location then replies to the smartphone with an address and port of the spawned user cloud.
+3. The smart phone connects to the known access location. The two establish a secure channel through SGX's remote attestation. All user cloud will run the same general program, so this component is trusted to only allow a new user to connect once at the beginning. While the known access location is untrusted the user cloud code's will be open source and its hash known, allowing us to verify the connection. Then the smartphone will send its private key and profile of allowed algorithm to the user cloud.
+4. The user sends some data to the user cloud that it wishes to store over the established secure connection.
+5. The user cloud spawns the user's database instance as a container and provides the instance with the private key. The instance can be any paricular database which runs on a section of a distributed file system reserved just for the user (so all contents can be encrypted with the user's private key).
+6. The user cloud sends the data to the database instance. This database instance will then store the data encrypted with the private key.
+
+Steps 1-3 constitute the process of launching a user cloud. If the user cloud is already running then in step 2 rather than launch a new user cloud the known access location should just return the address of the user's user cloud which is already running (which it should be possible to authenticate, although we may want to produce some shared secret for existing user clouds).
+Step 5 launches a database instance. It will likely be necessary to keep the database running for much of the life of the user cloud. This step may instead consist of resuming the container or can be skipped if it is actively running.
+
+![Initial State](imgs/first_architecture_step.png "Initial state. Untrusted entities are in pink.")
+![Initial State](imgs/second_architecture_step.png "Architecture after a user cloud is spawned. Untrusted entities are in pink.")
+![Initial State](imgs/datastorage.png "The process of storing data through a user cloud. Untrusted entities are in pink.")
+
+### Performing a User Requested Algorithm
+
+The following are the steps that are necessary to perform an algorithm on user data already stored by the user cloud.
+
+1. The user's smartphone makes a request to a known access location (essential a server at a known domain) with a request to spawn a user cloud instance.
+2. The known access location spawns a container to produce a "user cloud." This user cloud consists of a server running inside a secure enclave via Graphene. The known access location then replies to the smartphone with an address and port of the spawned user cloud.
+3. The smart phone connects to the known access location. The two establish a secure channel through SGX's remote attestation. All user cloud will run the same general program, so this component is trusted to only allow a new user to connect once at the beginning. While the known access location is untrusted the user cloud code's will be open source and its hash known, allowing us to verify the connection. Then the smartphone will send its private key and profile of allowed algorithm to the user cloud.
+4. The user submits a request for a particular algorithm. The user cloud validates this against to user profile and returns an indication of failure if the algorithm is not in the profile.
+5. The user cloud spawns the user's database instance as a container and provides the instance with the private key. The instance can be any paricular database which runs on a section of a distributed file system reserved just for the user (so all contents can be encrypted with the user's private key).
+6. The user cloud submits a request for a particular range of user data to the database instance.
+7. The database instance returns the cloud any data in the given range (or indicates none exists). The data is returned decrypted by the database.
+8. The user cloud spawns a container with the secure algorithm requested or communicates with a known server responsible for spawning microservices to spawn the intended algorithm. The algorithm is also inside an SGX secure enclave.
+9. The user cloud establishes a secure channel with the microservice container. The user cloud is able to verify this with the information from the user profile. Then the user cloud sends the data on which to perform the algorithm.
+10. The microservice conatiner returns the result of the algorithm to the user cloud.
+11. The user cloud sends the algorithm result to the user's smartphone.
+
+Steps 1-3 constitute the process of launching a user cloud. If the user cloud is already running then in step 2 rather than launch a new user cloud the known access location should just return the address of the user's user cloud which is already running (which it should be possible to authenticate, although we may want to produce some shared secret for existing user clouds).
+Step 5 launches a database instance. It will likely be necessary to keep the database running for much of the life of the user cloud. This step may instead consist of resuming the container or can be skipped if it is actively running.
+Step 8 launches a microservice instance. If we want to reuse containers to avoid downtime then we probably want the user clouds to communicate with some load balancing entity instead. By observing the code we can verify no microservice will accept connections from two different user clouds simulataneously.
+
+![Initial State](imgs/first_architecture_step.png "Initial state. Untrusted entities are in pink.")
+![Initial State](imgs/second_architecture_step.png "Architecture after a user cloud is spawned. Untrusted entities are in pink.")
+![Initial State](imgs/next_to_last_architecture_step.png "The process of retrieving data on the a user cloud. Untrusted entities are in pink.")
+![Initial State](imgs/final_architecture_step.png "The process of running the algorithm with the allowed algorithm. Untrusted entities are in pink.")
+
+### Participating an an Aggregated Algorithm
+
+The following are the steps that are necessary to perform an aggregation algorithm on a user's data. This assumes that a user has a currently running user cloud. If that is not met a request to the smartphone could be made directly which would prompt spanning a user cloud but because we want fast response times we will ignore that situation in this section.
+
+1. The aggregation algorithm will spawn microservice aggregation enclaves that will take a set user data and compress it to a scalar upon which aggregation can occur.
+2. The enclaves will make requests to user clouds one at a time.
+3. Each user cloud will produce a secure channel, verifying that the aggregation enclave is part of an allowed algorithm.
+4. The user cloud spawns the user's database instance as a container and provides the instance with the private key. The instance can be any paricular database which runs on a section of a distributed file system reserved just for the user (so all contents can be encrypted with the user's private key).
+5. The user cloud submits a request for a particular range of user data to the database instance.
+6. The database instance returns the cloud any data in the given range (or indicates none exists). The data is returned decrypted by the database.
+7. The user cloud sends the data to the aggregation enclave.
+8. The aggregation enclave reduces the data to a scalar performing its necessary action and returns the scalar to the aggregation algorithm to allow for aggregation.
+
+Step 4 launches a database instance. It will likely be necessary to keep the database running for much of the life of the user cloud. This step may instead consist of resuming the container or can be skipped if it is actively running.
 
 ## Remaining Challenges
 
