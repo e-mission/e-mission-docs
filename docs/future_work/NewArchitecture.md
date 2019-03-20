@@ -110,15 +110,15 @@ Below are diagrams showing a visual of the stages numbered with the appropriate 
 
 ![Initial State](imgs/first_architecture_step.png)
 
-Initial state.
+<p style="text-align: center;">Initial state.</p>
 
 ![Initial State](imgs/second_architecture_step.png)
 
-Architecture after a user cloud is spawned.
+<p style="text-align: center;">Architecture after a user cloud is spawned.</p>
 
 ![Initial State](imgs/datastorage.png) 
 
-The process of storing data through a user cloud.
+<p style="text-align: center;">The process of storing data through a user cloud.</p>
 
 ### Performing a User Requested Algorithm
 
@@ -144,20 +144,20 @@ Below are diagrams showing a visual of the stages numbered with the appropriate 
 
 ![Initial State](imgs/first_architecture_step.png) 
 
-Initial state.
+<p style="text-align: center;">Initial state.</p>
 
 
 ![Initial State](imgs/second_architecture_step.png)
 
-Architecture after a user cloud is spawned.
+<p style="text-align: center;">Architecture after a user cloud is spawned.</p>
 
 ![Initial State](imgs/next_to_last_architecture_step.png) 
 
-"The process of retrieving data on the a user cloud.
+<p style="text-align: center;">The process of retrieving data on the a user cloud.</p>
 
 ![Initial State](imgs/final_architecture_step.png) 
 
-The process of running the algorithm with the allowed algorithm.
+<p style="text-align: center;">The process of running the algorithm with the allowed algorithm.</p>
 
 ### Participating an an Aggregated Algorithm
 
