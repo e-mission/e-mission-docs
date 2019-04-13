@@ -83,7 +83,13 @@ This option uses JWTs using the google identity solution with [cross-client auth
 - If you are deploying a new UI on the existing e-mission app, you need to ask me to generate google client keys.
 - If you are deploying your own app, register your app in the google developer console and generate your own client keys.
 
-#### Configuration ####
+#### Deploying a New UI on Existing E-Mission App####
+
+- Ask me for the authentification tokens
+- Send me your GPG public key, including [create](https://www.gnupg.org/gph/en/manual/c14.html) and[ exporting ](https://www.gnupg.org/gph/en/manual/x56.html)if needed. I will send you an encrypted client `connectionConfig.json` file. You can copy the values from the client file to the server file.
+- Do NOT upload the tokens to a public repository
+
+#### Configuration for Deploying Own App####
 
 - create `android`, `ios` and `web application` credentials in the same project at https://console.developers.google.com
 - use the `web application` key for android
@@ -109,9 +115,6 @@ If you have just created a set of keys, you can just duplicate them to make the 
 1. **Q:** Can I use google auth with the devapp in order to test my development changes end to end?
    
   **A:** Yes! But you still need to get tokens from me because the native app needs to have the right keystore/client ID configured in the URL schemes.
-1. **Q:** How do I get the tokens from you? 
-
-  **A:** Send me your GPG public key, including [create](https://www.gnupg.org/gph/en/manual/c14.html) and[ exporting ](https://www.gnupg.org/gph/en/manual/x56.html)if needed. I will send you an encrypted client `connectionConfig.json` file. You can copy the values from the client file to the server file.
 1. When generating my own tokens:
     1. **Q:** For android, do we use `webapp` or `android` as application type? 
 
