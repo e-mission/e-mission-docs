@@ -157,7 +157,7 @@ sqlite>
 While you can directly use sqlite to manipulate the data, the sqlite shell is
 hard to work with, and timestamps are complicated for human brains. So I have a
 script to convert the database into text file with human-readable timestamps
-that you can grep through.
+that you can grep through. The script is in the e-mission-phone repo (in the bin directory).
 
 ```
 $ python bin/csv_export_add_date.py /tmp/loggerDB
