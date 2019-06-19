@@ -92,13 +92,11 @@ On each of the apps involved in the evaluation, follow the instructions at the [
 
 Configuration steps:
 
-| At step               | Do action            |
-|-----------------------|----------------------|
+| At step               | Do action            | At step | Do action |
+|-----------------------|----------------------|-------- |---------- |
 | ![Login with phone label](../../assets/em-benchmark/login_with_phone_label.png) | When prompted, login with phone labels defined in the
-evaluation spec (e.g. `ucb-sdb-android-1`/`ucb-sdb-ios-1`/...) |
-| ![Select evaluation from list](../../assets/em-benchmark/select_evaluation_from_list.png) | Select evaluation from the list for the `evaluation_author_email` above |
-| ![Select the calibration to perform](../../assets/em-benchmark/select_calibration.png) | Select calibration or evaluation regime |
-| ![Select trip start end](../../assets/em-benchmark/select_trip_start_end.png)| Select trip, select start/end etc |
+evaluation spec (e.g. `ucb-sdb-android-1`/`ucb-sdb-ios-1`/...) | ![Select evaluation from list](../../assets/em-benchmark/select_evaluation_from_list.png) | Select evaluation from the list for the `evaluation_author_email` above |
+| ![Select the calibration to perform](../../assets/em-benchmark/select_calibration.png) | Select calibration or evaluation regime | ![Select trip start end](../../assets/em-benchmark/select_trip_start_end.png)| Select trip, select start/end etc |
 
 Note that as part of selecting the evaluation, the current phone is matched to its role/profile in the evaluation spec. So if the phone label changes, the selected spec needs to be deleted and re-selected.
 
