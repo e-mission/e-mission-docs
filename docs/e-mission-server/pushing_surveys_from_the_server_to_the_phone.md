@@ -18,5 +18,5 @@ The `bin/push/send_survey.py` help message lists the ways to select users. In ad
 The code corresponding to these specs is at `emission/net/ext_service/push/query` - we welcome contributions of other query specs that you have found useful.
 
 ### Survey ###
-The survey spec is used to specify the survey to push. The spec is similar to the one used on the phone (https://github.com/e-mission/e-mission-phone/wiki/How-to-embed-an-external-survey-in-the-app) although a fun fact is that this came first :) Again, you specify the URL of the survey and the field that the uuid is populated into. 
+The survey spec is used to specify the survey to push. The spec is similar to the one used on the phone (https://github.com/e-mission/e-mission-docs/blob/master/docs/e-mission-phone/how_to_embed_an_external_survey_in_the_app.md) although a fun fact is that this came first :) Again, you specify the URL of the survey and the field that the uuid is populated into. 
 As before, the examples are at `emission/net/ext_service/push/sample.specs/push`
