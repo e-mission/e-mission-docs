@@ -1,0 +1,14 @@
+site_name: e-mission
+
+pages:
+
+- Introduction: 'readme.md'
+
+- LICENCE : LICENSE
+
+
+# INSTALL
+- MANUAL INSTALL : 'e-mission-server/manual_install.md'   
+- DEPLOYING YOUR OWN SERVER TO PRODUCTION : 'e-mission-server/deploying_your_own_server_to_production.md'  
+- CONFIGURING AUTHENTICATION : 'e-mission-both/configuring_authentication.md'  
+- MULTI LAYER STACK : 'e-mission-server/multi_layer_stack.md'  
