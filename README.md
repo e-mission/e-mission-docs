@@ -80,7 +80,7 @@ SET-UP AN ENVIRONMENT FOR UI-ONLY CHANGES : https://github.com/e-mission/e-missi
 FRONT-END FAQ : https://github.com/e-mission/e-mission-docs/blob/master/docs/overview/high_level_faq.md  
 
 SMALL CHANGES  
-1) CHANGING TEXT TRHU THE GITHUB UI : https://github.com/e-mission/e-mission-docs/blob/master/docs/overview/easiest_way_to_change_text.md
+1) CHANGING TEXT THRU THE GITHUB UI : https://github.com/e-mission/e-mission-docs/blob/master/docs/overview/easiest_way_to_change_text.md
 2) CHANGES NEEDED WHEN THE SET OF TABS CHANGES
 https://github.com/e-mission/e-mission-docs/blob/master/docs/e-mission-phone/changes_needed_when_the_set_of_tabs_changes.md
 3) EMBED AN EXTERNAL SURVEY IN THE APP
@@ -104,10 +104,10 @@ SUPPORTING USER INPUT : https://github.com/e-mission/e-mission-docs/blob/master/
 ## future work  
 OVERVIEW  : http://github.com/e-mission/e-mission-docs/tree/master/docs/future_work  
 1) PRIVACY : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/privacy.md  
-PRIVACY LITT. REVIEW : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/differential_privacy_deep_dive_lit_review.md  
+PRIVACY LIT. REVIEW : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/differential_privacy_deep_dive_lit_review.md  
 SECURE EXECUTION OPTIONS : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/secure_execution_options.md  
 2) ANALYSIS : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/analysis.md  
-3) SCALABALITY : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/scalability.md  
+3) SCALABILITY : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/scalability.md  
 
 UNANSWERED QUESTIONS : https://github.com/e-mission/e-mission-docs/blob/master/docs/future_work/unanswered_questions.md (split privacy and secure exec parts?)  
 
