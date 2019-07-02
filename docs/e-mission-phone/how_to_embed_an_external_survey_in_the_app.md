@@ -7,9 +7,19 @@ app at any time. Certain fields in the survey can be automatically filled out
 by the app. This allows researchers to correlate the survey to any
 automatically sensed data.
 
+## Open source survey platform (potentially self-hosted)
+
+The FabMob team have contributed an integration with LimeSurvey, which is an
+open source survey framework. The survey server can potentially be self-hosted,
+and you can add a survey tab that lists completed and pending surveys. Please see
+[server limesurvey support](../../docs/e-mission-server/adding_limesurvey_support.md) for more details.
+
+## Generic, closed-source surveys (e.g. Qualtrics/Google Forms/Survey Monkey)
+
 The app currently supports two kinds of auto-filled information. It has been
 tested in qualtrics, but the basic idea should work for any survey platform
-that identifies answer fields by ids.
+that identifies answer fields by ids. Note that this only gives the user a single
+chance to answer the survey and does not allow them to see their answers or edit them later.
 
 ### Auto-fill UUID ###
 The app can fill in the user's UUID into a field of the survey. This ensures
