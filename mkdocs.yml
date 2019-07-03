@@ -18,7 +18,7 @@ nav:
     - Tutorial:
         - 'Workshop intro': 'hands-on-overview.md'
         - 'Workshop fall 2018': 'logistics.md'
-        Small UI changes:
+        - Small UI changes:
             - 'Quickstart': 'quickstart.md'
             - 'Easiest way to change text': 'easiest_way_to_change_text.md'
             - 'Simple client changes': 'simple_client_changes.md'
