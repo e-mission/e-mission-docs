@@ -27,7 +27,6 @@ nav:
             - '5. Change trip en prompt': 'dev/tutorial/small_ui_changes/change_trip_end_prompt.md'
             - '6. Remove tabs': 'dev/tutorial/small_ui_changes/remove_tab.md'
             - '7. Changes needed when the set of tabs changes': 'dev/tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes.md'
-            - '8. How to embed an external survey in the app': 'dev/tutorial/small_ui_changes/how_to_embed_an_external_survey_in_the_app.md'
     - Architecture:
         - '1. Data model': 'dev/archi/data_model.md'
         - '2. Module structure': 'dev/archi/module_structure.md'
@@ -41,9 +40,9 @@ nav:
         - '5. How to embed an external survey in the app': 'dev/front/how_to_embed_an_external_survey_in_the_app.md'
         - '6. Accessing public heatmap and incident info': 'dev/front/accessing_public_heatmap_and_incident_information.md'
     - Back (Server):
-        - '1. Adding a new data type': 'back/adding_a_new_data_type.md'
-        - '2. Supporting user inputs': 'back/supporting_user_inputs.md'
-        - '3. Pushing surveys from server to phone': 'back/pushing_surveys_from_the_server_to_the_phone.md'
+        - '1. Adding a new data type': 'dev/back/adding_a_new_data_type.md'
+        - '2. Supporting user inputs': 'dev/back/supporting_user_inputs.md'
+        - '3. Pushing surveys from server to phone': 'dev/back/pushing_surveys_from_the_server_to_the_phone.md'
     - Future:
         - '1. Overview': 'dev/future/overview.md'
         - '2. Privacy': 'dev/future/privacy.md'
