@@ -1,20 +1,19 @@
 site_name: e-mission Documentation
 nav:
 - Home: 'README.md'
-- License: 'LICENSE.md'
-- Install:
+- 1. Install:
     - '1. Manual install': 'install/manual_install.md'
     - '2. Deploying your own server to production': 'install/deploying_your_own_server_to_production.md'
     - '3. Configuring authentication': 'install/configuring_authentication.md'
     - '4. Multi-layer stack': 'install/multi_layer_stack.md'
-- Use the app:
+- 2. Use the app:
     - 'Use the-app': 'end_user.md'
-- Manage the service:
+- 3. Manage the service:
     - '1. Troubleshooting the app': 'troubleshooting_app_faq.md'
     - '2. Troubleshooting the server': 'troubleshooting_server_faq.md'
     - '3. Evaluation procedure': 'evaluation_procedure.md'
     - '4. Requesting data as a collaborator': 'requesting_data_as_a_collaborator.md'
-- Develop:
+- 4. Develop:
     - Tutorial:
         - 'Workshop intro': 'hands-on-overview.md'
         - 'Workshop fall 2018': 'logistics.md'
@@ -51,7 +50,7 @@ nav:
         - '5. Analysis': 'analysis.md'
         - '6. Scalability': 'scalability.md'
         - '7. Unanswered questions': 'unanswered_questions.md'
-- Contribute to the doc: 
+- 5. Contribute to the doc: 
         - 'Contributing': 'CONTRIBUTING.md'
         - 'Docs reorganisation' : 'migration_reason.md'
 
