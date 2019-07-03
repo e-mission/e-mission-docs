@@ -14,7 +14,7 @@ Android provides a native support to localize its applications by using `resourc
 </resources>
 ```
 
-When you are creating your plugin for **e-mission**, you will want to put your strings into an external **xml** file to ensure the i18n support and then place the file in `res/values`.  You can then call those strings in your code by using :
+When you are creating your plugin for **e-mission**, you will want to put your strings into an external **xml** file to ensure the i18n support and then place the file in `res/values`.  You can then call those strings in your code by using:
 
 ```java
 context.getString(R.string.<key of your string>);
@@ -46,7 +46,7 @@ Like Android, do not forget to add the following line in your `plugin.xml`.
 You can find further information in the [iOS documentation](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW1).
 ## While working on the phone app
 
-To support i18n in the phone app, we are using (angular-translate)[https://angular-translate.github.io/]. Each strings will be placed into the file `i18n/en.json`. You can define a *namespace* when you are working on a specific file to ensure a better readability.
+To support i18n in the phone app, we are using [angular-translate](https://angular-translate.github.io/). Each strings will be placed into the file `i18n/en.json`. You can define a *namespace* when you are working on a specific file to ensure a better readability.
 
 ```json
     "trip-confirm": {
@@ -87,13 +87,13 @@ You can find more information about **Variable Replacement** in the [doc](https:
 
 >**WARNING**: Do not forget to add `$translate` to your controller or service. 
 
-If you want to retrieve the language used by the user, you can use :
+If you want to retrieve the language used by the user, you can use:
 
 ```js
 $translate.use();
 ```
 
-To translate a string directly in the Javascript, you can use :
+To translate a string directly in the Javascript, you can use:
 
 ```js
 $translate.instant('key of the string');
@@ -103,19 +103,19 @@ $translate.instant('key of the string');
 
 Because each language as different format for date and hour, we are using the JavaScript library [moment](https://momentjs.com/) to handle that. 
 
-To display hours in the adequate format, you can use : 
+To display hours in the adequate format, you can use: 
 
 ```js
 moment(dt).format("LT");
 ```
 
-To display date : 
+To display date: 
 
 ```js
 moment(day).format('LL');
 ```
 
-You can also use the following lines to retrieve weekdays and months :
+You can also use the following lines to retrieve weekdays and months:
 
 ```js
 moment.weekdaysMin()
