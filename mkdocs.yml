@@ -9,7 +9,7 @@ nav:
     - 'Multi-layer stack': 'install/multi_layer_stack.md'
 - Use (for end users):
     - 'Use the-app': 'end_user.md'
-- Manage (for admins and support)
+- Manage (for admins and support):
     - 'Troubleshooting the app': 'troubleshooting_app_faq.md'
     - 'Troubleshooting the server': 'troubleshooting_server_faq.md'
     - 'Evaluation procedure': 'evaluation_procedure.md'
