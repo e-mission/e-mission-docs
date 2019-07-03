@@ -1,11 +1,15 @@
 site_name: e-mission Docs
+repo_url: https://github.com/e-mission/
+site_url: https://e-mission.eecs.berkeley.edu/
+site_description: the documentation of e-mission, an open source personal mobility tracking software from UC Berkeley EECS lab
+
 nav:
 - Home: 'README.md'
 - 1. Install:
-    - '1. Manual install': 'docs/install/manual_install.md'
-    - '2. Deploying your own server to production': 'docs/install/deploying_your_own_server_to_production.md'
-    - '3. Configuring authentication': 'docs/install/configuring_authentication.md'
-    - '4. Multi-layer stack': 'docs/install/multi_layer_stack.md'
+    - '1. Manual install': 'install/manual_install.md'
+    - '2. Deploying your own server to production': 'install/deploying_your_own_server_to_production.md'
+    - '3. Configuring authentication': 'install/configuring_authentication.md'
+    - '4. Multi-layer stack': 'install/multi_layer_stack.md'
 - 2. Use:
     - 'Use the app': 'docs/end_user.md'
 - 3. Manage:
