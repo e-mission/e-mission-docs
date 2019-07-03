@@ -1,4 +1,4 @@
-site_name: e-mission Documentation
+site_name: e-mission Docs
 nav:
 - Home: 'README.md'
 - 1. Install:
