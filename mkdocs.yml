@@ -6,9 +6,9 @@ nav:
     - '2. Deploying your own server to production': 'install/deploying_your_own_server_to_production.md'
     - '3. Configuring authentication': 'install/configuring_authentication.md'
     - '4. Multi-layer stack': 'install/multi_layer_stack.md'
-- 2. Use the app:
-    - 'Use the-app': 'end_user.md'
-- 3. Manage the service:
+- 2. Use:
+    - 'Use the app': 'end_user.md'
+- 3. Manage:
     - '1. Troubleshooting the app': 'troubleshooting_app_faq.md'
     - '2. Troubleshooting the server': 'troubleshooting_server_faq.md'
     - '3. Evaluation procedure': 'evaluation_procedure.md'
@@ -50,7 +50,7 @@ nav:
         - '5. Analysis': 'analysis.md'
         - '6. Scalability': 'scalability.md'
         - '7. Unanswered questions': 'unanswered_questions.md'
-- 5. Contribute to the doc: 
+- 5. Contribute to docs: 
         - 'Contributing': 'CONTRIBUTING.md'
         - 'Docs reorganisation' : 'migration_reason.md'
 
