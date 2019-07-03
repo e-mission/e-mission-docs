@@ -1,18 +1,14 @@
 site_name: Traceur FabMob e-mission
 nav:
 - Home: 'README.md'
-- Install
+- Install:
     - 'Manual install': 'install/manual_install.md'
     - 'Deploying your own server to production': 'install/deploying_your_own_server_to_production.md'
     - 'Configuring authentication': 'install/configuring_authentication.md'
     - 'Multi-layer stack': 'install/multi_layer_stack.md'
-- Use
-    - 'end_ser.md'
-- Develop
-    - Architecture
-    - Front (Web/Mobile app)
-    - Back (Server)
-    - Future 
+- Use:
+    - 'Use the app': 'end_user.md'
+
 - About:
     - 'License': 'license.md'
     - 'Release Notes': 'release-notes.md'
