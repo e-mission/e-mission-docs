@@ -1,7 +1,4 @@
 site_name: e-mission Docs
-repo_url: https://github.com/e-mission/
-site_url: https://e-mission.eecs.berkeley.edu/
-site_description: the documentation of e-mission, an open source personal mobility tracking software from UC Berkeley EECS lab
 
 nav:
 - Home: 'README.md'
@@ -12,12 +9,12 @@ nav:
     - '3. Configuring authentication': 'install/configuring_authentication.md'
     - '4. Multi-layer stack': 'install/multi_layer_stack.md'
 - 2. Use:
-    - 'Use the app': 'end_user.md'
+    - 'Use the app': 'use/end_user.md'
 - 3. Manage:
-    - '1. Troubleshooting the app': 'troubleshooting_app_faq.md'
-    - '2. Troubleshooting the server': 'troubleshooting_server_faq.md'
-    - '3. Evaluation procedure': 'evaluation_procedure.md'
-    - '4. Requesting data as a collaborator': 'requesting_data_as_a_collaborator.md'
+    - '1. Troubleshooting the app': 'manage/troubleshooting_app_faq.md'
+    - '2. Troubleshooting the server': 'manage/troubleshooting_server_faq.md'
+    - '3. Evaluation procedure': 'manage/evaluation_procedure.md'
+    - '4. Requesting data as a collaborator': 'manage/requesting_data_as_a_collaborator.md'
 - 4. Develop:
     - Tutorial:
         - 'Workshop intro': 'dev/tutorial/hands-on-overview.md'
@@ -55,7 +52,7 @@ nav:
         - '5. Analysis': 'dev/future/analysis.md'
         - '6. Scalability': 'dev/future/scalability.md'
         - '7. Unanswered questions': 'dev/future/unanswered_questions.md'
-- 5. Contribute to docs: 
+- 5. Documenting: 
         - 'Contributing': 'contribute_to_the_doc/CONTRIBUTING.md'
         - 'Docs reorganisation' : 'contribute_to_the_doc/migration_reason.md'
 
