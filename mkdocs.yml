@@ -5,7 +5,7 @@ site_description: the documentation of e-mission, an open source personal mobili
 
 nav:
 - Home: 'README.md'
-_ Issues: 'https://github.com/e-mission/e-mission-docs/issues'
+- Issues: 'https://github.com/e-mission/e-mission-docs/issues'
 - 1. Install:
     - '1. Manual install': 'install/manual_install.md'
     - '2. Deploying your own server to production': 'install/deploying_your_own_server_to_production.md'
