@@ -1,10 +1,8 @@
 # Welcome to the e-mission Documentation!
 
-This repo contains all the documentation for the e-mission project, and [almost all the issues](https://github.com/e-mission/e-mission-docs/issues/). More information on the rationale behind the change can be found in the [migration reasons](https://github.com/e-mission/e-mission-docs/blob/master/docs/migration_reason.md).
+This repo contains all the documentation for the e-mission project, and [almost all the issues](https://github.com/e-mission/e-mission-docs/issues/). More information on the rationale behind the change can be found in the [migration reasons](docs/contribute_to_the_doc/migration_reason.md).
 
-This page is an entry point to all the doc in the repo. 
-
-There are some specialized READMEs [in the individual repositories](https://github.com/e-mission), but they are gradually being moved in here. This means that if you have any questions, you should first search here and if you don't find any existing issues, you should file an issue here.
+There are some specialized READMEs [in the individual repositories](https://github.com/e-mission), but they are gradually being moved in here. This means that if you have any questions, you should first search here and if you don't find any existing issues, you should [file an issue here](https://github.com/e-mission/e-missiond-docs/issue).
 
 ## e-mission web site :  
 https://e-mission.eecs.berkeley.edu/    
