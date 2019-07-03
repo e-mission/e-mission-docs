@@ -1,14 +1,57 @@
 site_name: Traceur FabMob e-mission
 nav:
 - Home: 'README.md'
+- License: 'LICENSE.md'
 - Install:
     - 'Manual install': 'install/manual_install.md'
     - 'Deploying your own server to production': 'install/deploying_your_own_server_to_production.md'
     - 'Configuring authentication': 'install/configuring_authentication.md'
     - 'Multi-layer stack': 'install/multi_layer_stack.md'
-- Use:
-    - 'Use the app': 'end_user.md'
+- Use (for end users):
+    - 'Use the-app': 'end_user.md'
+- Manage (for admins and support)
+    - 'Troubleshooting the app': 'troubleshooting_app_faq.md'
+    - 'Troubleshooting the server': 'troubleshooting_server_faq.md'
+    - 'Evaluation procedure': 'evaluation_procedure.md'
+    - 'Requesting data as a collaborator': 'requesting_data_as_a_collaborator.md'
+- Develop:
+    - Tutorial:
+        - 'Workshop intro': 'hands-on-overview.md'
+        - 'Workshop fall 2018': 'logistics.md'
+        Small UI changes:
+            - 'Quickstart': 'quickstart.md'
+            - 'Easiest way to change text': 'easiest_way_to_change_text.md'
+            - 'Simple client changes': 'simple_client_changes.md'
+            - 'Summary and consent': 'summary_and_consent.md'
+            - 'Change trip en prompt': 'change_trip_end_prompt.md'
+            - 'Remove tabs': 'remove_tab.md'
+            - 'Changes needed when the set of tabs changes': 'changes_needed_when_the_set_of_tabs_changes.md'
+            - 'How to embed an external survey in the app': 'how_to_embed_an_external_survey_in_the_app.md'
+    - Architecture:
+        - 'Data model': 'data_model.md'
+        - 'Module structure': 'module_structure.md'
+        - 'Mode inference pipeline': 'mode_inference_pipeline_design.md'
+        - 'Pipeline details': 'pipeline_details.md'
+    - Front (Web/Mobile app):
+        - 'Phone module structure': 'phone_module_structure.md'
+        - 'App UI dev FAQ': 'high_level_faq.md'
+        - 'Create a new custom client': 'create_a_new_custom_client.md'
+        - 'You have a branch for you custom client, now what?': 'you_have_a_branch_for_your_custom_client_now_what.md'
+        - 'How to embed an external survey in the app': 'how_to_embed_an_external_survey_in_the_app.md'
+        - 'Accessing public heatmap and incident info': 'accessing_public_heatmap_and_incident_information.md'
+    - Back (Server):
+        - 'Adding a new data type': 'adding_a_new_data_type.md'
+        - 'Supporting user inputs': 'supporting_user_inputs.md'
+        - 'Pushing surveys from server to phone': 'pushing_surveys_from_the_server_to_the_phone.md'
+    - Future:
+        - 'Overview': 'overview.md'
+        - 'Privacy': 'privacy.md'
+        - 'privacy litt. review': 'differential_privacy_deep_dive_lit_review.md'
+        - 'Secure execution': 'secure_execution_options.md'
+        - 'Analysis': 'analysis.md'
+        - 'Scalability': 'scalability.md'
+        - Unanswered questions'': 'unanswered_questions.md'
+- Contribute to the doc: 
+        - 'Contributing': 'CONTRIBUTING.md'
+        - 'Docs reorganisation' : 'migration_reason.md'
 
-- About:
-    - 'License': 'license.md'
-    - 'Release Notes': 'release-notes.md'
