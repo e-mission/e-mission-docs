@@ -61,13 +61,13 @@ To support i18n in the phone app, we are using [angular-translate](https://angul
 
 ### In HTML
 
-When you want to read a string in your HTML file, you can do it by adding `translate` to the HTML balise and by putting `{'key of the string'}` between the balises. 
+When you want to read a string in your HTML file, you can do it by adding `translate` to the HTML tag and by putting `{'key of the string'}` between the tags. 
 
 ```html
 <div translate>{{'trip-confirm.recenttrip'}}</div>
 ```
 
-You can also define a namespace for the child of the balise by adding `translate-namespace=<name of the namespace>`. 
+You can also define a namespace for the child of the tag by adding `translate-namespace=<name of the namespace>`. 
 
 ```html
 <div translate-namespace="trip-confirm">
