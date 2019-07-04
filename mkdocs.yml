@@ -1,14 +1,60 @@
-site_name: e-mission
+site_name: e-mission Docs
 
-pages:
+nav:
+- Home: 'README.md'
+- Issues: 'https://github.com/e-mission/e-mission-docs/issues'
+- 1. Install:
+    - '1. Manual install': 'install/manual_install.md'
+    - '2. Deploying your own server to production': 'install/deploying_your_own_server_to_production.md'
+    - '3. Configuring authentication': 'install/configuring_authentication.md'
+    - '4. Multi-layer stack': 'install/multi_layer_stack.md'
+- 2. Use:
+    - 'Use the app': 'use/end_user.md'
+- 3. Manage:
+    - '1. Troubleshooting the app': 'manage/troubleshooting_app_faq.md'
+    - '2. Troubleshooting the server': 'manage/troubleshooting_server_faq.md'
+    - '3. Evaluation procedure': 'manage/evaluation_procedure.md'
+    - '4. Requesting data as a collaborator': 'manage/requesting_data_as_a_collaborator.md'
+    - '5. Pushing surveys from server to phone': 'manage/pushing_surveys_from_the_server_to_the_phone.md'
+    - '5b. Adding LimeSurvey': 'manage/adding_limesurvey_support.md'
+- 4. Develop:
+    - Tutorial:
+        - 'Workshop intro': 'dev/tutorial/hands-on-overview.md'
+        - 'Workshop fall 2018': 'dev/tutorial/logistics.md'
+        - Small UI changes:
+            - '1. Quickstart': 'dev/tutorial/small_ui_changes/quickstart.md'
+            - '2. Easiest way to change text': 'dev/tutorial/small_ui_changes/easiest_way_to_change_text.md'
+            - '3. Simple client changes': 'dev/tutorial/small_ui_changes/simple_client_changes.md'
+            - '4. Summary and consent': 'dev/tutorial/small_ui_changes/summary_and_consent.md'
+            - '5. Change trip en prompt': 'dev/tutorial/small_ui_changes/change_trip_end_prompt.md'
+            - '6. Remove tabs': 'dev/tutorial/small_ui_changes/remove_tab.md'
+            - '7. Changes needed when the set of tabs changes': 'dev/tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes.md'
+    - Architecture:
+        - '1. Data model': 'dev/archi/data_model.md'
+        - '2. Module structure': 'dev/archi/module_structure.md'
+        - '3. Mode inference pipeline': 'dev/archi/mode_inference_pipeline_design.md'
+        - '4. Pipeline details': 'dev/archi/pipeline_details.md'
+    - Front (Web/Mobile app):
+        - '1. Phone module structure': 'dev/front/phone_module_structure.md'
+        - '2. App UI dev FAQ': 'dev/front/high_level_faq.md'
+        - '3. Create a new custom client': 'dev/front/create_a_new_custom_client.md'
+        - '4. You have a branch for you custom client, now what?': 'dev/front/you_have_a_branch_for_your_custom_client_now_what.md'
+        - '5a. Guidelines to i18n ': 'dev/front/guidelines_to_support_i18n.md'
+        - '5b. How to add a language ': 'dev/front/how_to_add_a_language.md'
+        - '6. How to embed an external survey in the app': 'dev/front/how_to_embed_an_external_survey_in_the_app.md'
+        - '7. Accessing public heatmap and incident info': 'dev/front/accessing_public_heatmap_and_incident_information.md'
+    - Back (Server):
+        - '1. Adding a new data type': 'dev/back/adding_a_new_data_type.md'
+        - '2. Supporting user inputs': 'dev/back/supporting_user_inputs.md'
+    - Future:
+        - '1. Overview': 'dev/future/overview.md'
+        - '2. Privacy': 'dev/future/privacy.md'
+        - '3. privacy litt. review': 'dev/future/differential_privacy_deep_dive_lit_review.md'
+        - '4. Secure execution': 'dev/future/secure_execution_options.md'
+        - '5. Analysis': 'dev/future/analysis.md'
+        - '6. Scalability': 'dev/future/scalability.md'
+        - '7. Unanswered questions': 'dev/future/unanswered_questions.md'
+- 5. Documenting: 
+        - 'Contributing': 'contribute_to_the_doc/CONTRIBUTING.md'
+        - 'Docs reorganisation' : 'contribute_to_the_doc/migration_reason.md'
 
-- Introduction: 'readme.md'
-
-- LICENCE : LICENSE
-
-
-# INSTALL
-- MANUAL INSTALL : 'e-mission-server/manual_install.md'   
-- DEPLOYING YOUR OWN SERVER TO PRODUCTION : 'e-mission-server/deploying_your_own_server_to_production.md'  
-- CONFIGURING AUTHENTICATION : 'e-mission-both/configuring_authentication.md'  
-- MULTI LAYER STACK : 'e-mission-server/multi_layer_stack.md'  
