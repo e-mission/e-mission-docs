@@ -29,7 +29,7 @@ You can find further information in the [Android documentation](https://develope
 
 ## While working on native iOS
 
-iOS uses the same logic than Android but the strings are placed in `strings` files instead of `xml`. Moreover, those files are placed in an `en.lproj` directory and the translated files in a `<language>.lproj` directory.
+iOS uses the same logic as Android but the strings are placed in `strings` files instead of `xml`. Moreover, those files are placed in an `en.lproj` directory and the translated files in a `<language>.lproj` directory.
 
 If you want to call those strings in your code, you can use `NSLocalizedStringFromTable` in Objective-C.
 
@@ -43,8 +43,9 @@ Like Android, do not forget to add the following line in your `plugin.xml`.
 <resource-file src="res/ios/en.lproj/<filename>.strings" target="en.lproj/<filename>.strings"/>
 ```
 
-You can find further information in the [iOS documentation](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW1).
-## While working on the phone app
+You can find further information in the [iOS documentation](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW1).  
+
+## While working on the Cordova phone app
 
 To support i18n in the phone app, we are using [angular-translate](https://angular-translate.github.io/). Each strings will be placed into the file `i18n/en.json`. You can define a *namespace* when you are working on a specific file to ensure a better readability.
 
@@ -75,7 +76,7 @@ You can also define a namespace for the child of the tag by adding `translate-na
 </div>
 ```
 
-It is also possible to use variable within translations by simply adding the variables into the translation and then interpolating them by adding `translate-values={variablename: variable}`.
+It is also possible to use variables within translations by simply adding the variables into the translation and then interpolating them by adding `translate-values={variablename: variable}`.
 
 ```html
 <div translate=".recenttrip" translate-values="{startTime: getFormattedTime(mapCtrl.start_ts), endTime: getFormattedTime(mapCtrl.end_ts)}"></div>
@@ -101,7 +102,7 @@ $translate.instant('key of the string');
 
 ### Working with date
 
-Because each language as different format for date and hour, we are using the JavaScript library [moment](https://momentjs.com/) to handle that. 
+Because each language has different format for date and hour, we are using the JavaScript library [moment](https://momentjs.com/) to handle that. 
 
 To display hours in the adequate format, you can use: 
 
