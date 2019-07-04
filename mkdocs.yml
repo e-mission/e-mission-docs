@@ -39,8 +39,8 @@ nav:
         - '2. App UI dev FAQ': 'dev/front/high_level_faq.md'
         - '3. Create a new custom client': 'dev/front/create_a_new_custom_client.md'
         - '4. You have a branch for you custom client, now what?': 'dev/front/you_have_a_branch_for_your_custom_client_now_what.md'
-        - '5a. Guidelines to i18n ': 'guidelines_to_support_i18n.md'
-        - '5b. How to add a language ': 'how_to_add_a_language.md'
+        - '5a. Guidelines to i18n ': 'dev/front/guidelines_to_support_i18n.md'
+        - '5b. How to add a language ': 'dev/front/how_to_add_a_language.md'
         - '6. How to embed an external survey in the app': 'dev/front/how_to_embed_an_external_survey_in_the_app.md'
         - '7. Accessing public heatmap and incident info': 'dev/front/accessing_public_heatmap_and_incident_information.md'
     - Back (Server):
