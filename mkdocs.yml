@@ -15,6 +15,8 @@ nav:
     - '2. Troubleshooting the server': 'manage/troubleshooting_server_faq.md'
     - '3. Evaluation procedure': 'manage/evaluation_procedure.md'
     - '4. Requesting data as a collaborator': 'manage/requesting_data_as_a_collaborator.md'
+    - '5. Pushing surveys from server to phone': 'manage/pushing_surveys_from_the_server_to_the_phone.md'
+    - '5b. Adding LimeSurvey': 'manage/adding_limesurvey_support.md'
 - 4. Develop:
     - Tutorial:
         - 'Workshop intro': 'dev/tutorial/hands-on-overview.md'
@@ -42,7 +44,6 @@ nav:
     - Back (Server):
         - '1. Adding a new data type': 'dev/back/adding_a_new_data_type.md'
         - '2. Supporting user inputs': 'dev/back/supporting_user_inputs.md'
-        - '3. Pushing surveys from server to phone': 'dev/back/pushing_surveys_from_the_server_to_the_phone.md'
     - Future:
         - '1. Overview': 'dev/future/overview.md'
         - '2. Privacy': 'dev/future/privacy.md'
