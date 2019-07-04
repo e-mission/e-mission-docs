@@ -5,8 +5,8 @@ In addition to the normal survey support, it is possible to configure a LimeSurv
 
 ## Dependencies
 
-- Python **LimeSurvey RC2 API**, you can found it on GitHub by following this link :
-https://github.com/lindsay-stevens/limesurveyrc2api,
+- Python **LimeSurvey RC2 API**, you can find it on GitHub by following this link :
+https://github.com/lindsay-stevens/limesurveyrc2api,  
 - [LimeSurvey](https://www.limesurvey.org/).
   
 ## Configuring LimeSurvey 
@@ -33,24 +33,25 @@ On your LimeSurvey admin interface :
 }
 ```
 
-The `url_surveys` will be used to build an URL to be send when the user will retrieve his surveys with the phone app.
+The `url_surveys` will be used to build an URL to be sent when the user will retrieve his/her surveys with the phone app.
 
 ## Sending a LimeSurvey survey
 
 For each new survey you will want to send, it will be necessary to quickly configure it. 
 
 1. After clicking on *Create a new survey*, go to the *Participant settings* tab,
-2. Change the default token length to 32 instead of 15 (by passing the length to 32, this will allow us to create an invitation token based on the `uuid` of the user),
+2. Change the **default token length to 32** instead of 15 (by passing the length to 32, this will allow us to create an invitation token based on the `uuid` of the user),
 3. Activate *Enable token-base response persistence*,
 4. Optionally, if you want to allow the user to change his response you can enable *Allow multiple responses or update responses with one tokens*,
 5. After the creation of the survey, into the settings of the survey go into *Survey menu -> Survey participants* and click on "Initialise participant table". 
 
-After customising your survey, you can now send it to the user ! To send a survey, you can check [Pushing Surveys from the Server to the Phone](https://github.com/e-mission/e-mission-docs/blob/master/docs/e-mission-server/pushing_surveys_from_the_server_to_the_phone.md). However, use `limesurvey.sample` into the `emission/net/ext_service/push/sample.specs/push` as example. The *survey id* (`sid`) can be found either at the end of the survey url or in the LimeSurvey interface into *Survey settings -> Overview*. 
+After customising your survey, you can now send it to the user !   
+To send a survey, you can check [Pushing Surveys from the Server to the Phone](pushing_surveys_from_the_server_to_the_phone.md). However, use `limesurvey.sample` into the `emission/net/ext_service/push/sample.specs/push` as example. The *survey id* (`sid`) can be found either at the end of the survey url or in the LimeSurvey interface in *Survey settings -> Overview*. 
 
 ```json
 {
     "alert_type": "survey",
-    "title": "Avez-vous covoituré ?",
+    "title": "Did you rideshare ?",
     "message": "3 questions - Approx. 1 min",
     "image": "icon",
     "force-start": 1,
