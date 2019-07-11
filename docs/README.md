@@ -1,5 +1,7 @@
 # Welcome to the e-mission Documentation!
 
+[![Documentation Status](https://readthedocs.org/projects/e-mission/badge/?version=latest)](https://e-mission.readthedocs.io/en/latest/?badge=latest)
+
 This repo contains all the documentation for the e-mission project, and [almost ALL THE ISSUES](https://github.com/e-mission/e-mission-docs/issues/). More information on the rationale behind the change can be found in the [migration reasons](docs/contribute_to_the_doc/migration_reason.md).
 
 There are some specialized READMEs [in the individual repositories](https://github.com/e-mission), but they are gradually being moved in here. This means that if you have any questions, you should first search here and if you don't find any [existing issues](https://github.com/e-mission/e-mission-docs/issues/), you should [file an issue here](https://github.com/e-mission/e-missiond-docs/issue).
@@ -7,6 +9,7 @@ There are some specialized READMEs [in the individual repositories](https://gith
 ### [e-mission web site](https://e-mission.eecs.berkeley.edu/)   
 ### [CODE on GitHub](https://github.com/e-mission)     
 ### [LICENCE BSD-3](https://github.com/e-mission/e-mission-docs/blob/master/LICENSE)  
+### Thanks to [@PatGendre](https://github.com/PatGendre) from [FabMob](https://github.com/fabmob/), you can now [Read The Docs](https://e-mission.readthedocs.io/en/latest/)
 
 ## What is e-mission
 E-mission is an open source mobility platform developed at the [RISE](http://rise.cs.berkeley.edu/) and [BETS](https://bets.cs.berkeley.edu/) labs in the UC Berkeley EECS Department.  
