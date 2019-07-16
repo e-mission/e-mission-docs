@@ -94,15 +94,15 @@ Configuration steps:
 
 | At step               | Do action            | At step | Do action |
 |-----------------------|----------------------|-------- |---------- |
-| ![Login with phone label](../../assets/em-benchmark/login_with_phone_label.png) | When prompted, login with phone labels defined in the evaluation spec (e.g. `ucb-sdb-android-1`/`ucb-sdb-ios-1`/...) | ![Select evaluation from list](../../assets/em-benchmark/select_evaluation_from_list.png) | Select evaluation from the list for the `evaluation_ author_email` above |
-| ![Select the calibration to perform](../../assets/em-benchmark/select_calibration.png) | Select calibration or evaluation regime | ![Select trip start end](../../assets/em-benchmark/select_trip_start_end.png)| Select trip, start or end etc |
+| ![Login with phone label](../assets/em-benchmark/login_with_phone_label.png) | When prompted, login with phone labels defined in the evaluation spec (e.g. `ucb-sdb-android-1`/`ucb-sdb-ios-1`/...) | ![Select evaluation from list](../assets/em-benchmark/select_evaluation_from_list.png) | Select evaluation from the list for the `evaluation_ author_email` above |
+| ![Select the calibration to perform](../assets/em-benchmark/select_calibration.png) | Select calibration or evaluation regime | ![Select trip start end](../assets/em-benchmark/select_trip_start_end.png)| Select trip, start or end etc |
 
 Note that as part of selecting the evaluation, the current phone is matched to its role/profile in the evaluation spec. So if the phone label changes, the selected spec needs to be deleted and re-selected.
 
 ## calibrate the phones to ensure that battery drain is consistent ##
 
 1. Select the same calibration regime on all the phones
-1. Check that the data is being collected properly by using the
+2. Check that the data is being collected properly by using the
 `Validate_calibration` https://github.com/e-mission/e-mission-eval-public-data/blob/master/calibration_templates/Validate_calibration.ipynb notebook
 1. If some of the phones do not have any transitions sent to the server yet,
 use Profile -> Force Sync to force them to send the data and ensure that the

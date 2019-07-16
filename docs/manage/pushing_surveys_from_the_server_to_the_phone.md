@@ -11,9 +11,10 @@ Once the selection and the survey specs have been determined, the survey can be 
 
 ### Selection ###
 The `bin/push/send_survey.py` help message lists the ways to select users. In addition to the standard email and uuid options, you can also specify a `query_spec` that identifies users based on their travel patterns. The existing codebase includes three sample queries (`emission/net/ext_service/push/sample.specs/query`):
+
 1. `platform`: which matches queries for a particular platform (`android` v/s `ios`)
-1. `point_count`: which counts the number of times a particular user has traversed a georegion
-1. `trip_metrics`: which uses trip related information such as distance, count and duration
+2. `point_count`: which counts the number of times a particular user has traversed a georegion
+3. `trip_metrics`: which uses trip related information such as distance, count and duration
 
 The code corresponding to these specs is at `emission/net/ext_service/push/query` - we welcome contributions of other query specs that you have found useful.
 

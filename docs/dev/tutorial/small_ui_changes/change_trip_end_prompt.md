@@ -2,6 +2,7 @@ Change the trip-end prompt
 ---
 
 e-mission supports generating notifications on the phone at various transitions of the trip state machine. These are currently:
+
 - trip start
 - trip end
 - tracking off
@@ -141,6 +142,6 @@ Notifications are configured using the format from the [local notifications plug
 
 | Default prompt (iOS) | Default prompt (android) | New prompt (iOS) | New prompt (android |
 | ------------- | --------- | ------------ | ----------- |
-| ![default prompt ios](../../assets/tutorials/change_trip_end_prompt/default_prompt_ios.png) | ![default prompt android](../../assets/tutorials/change_trip_end_prompt/default_prompt_android.png) | ![new prompt ios)](../../assets/tutorials/change_trip_end_prompt/new_prompt_ios.png) | ![new prompt android)](../../assets/tutorials/change_trip_end_prompt/new_prompt_android.png) | 
-| ![default prompt expand view ios](../../assets/tutorials/change_trip_end_prompt/default_prompt_expand_view_ios.png) | | ![new prompt expand view ios)](../../assets/tutorials/change_trip_end_prompt/new_prompt_expand_view_ios.png) | | 
-| ![default prompt expand ios](../../assets/tutorials/change_trip_end_prompt/default_prompt_expand_ios.png) | | | | 
+| ![default prompt ios](../../../assets/tutorials/change_trip_end_prompt/default_prompt_ios.png) | ![default prompt android](../../../assets/tutorials/change_trip_end_prompt/default_prompt_android.png) | ![new prompt ios)](../../../assets/tutorials/change_trip_end_prompt/new_prompt_ios.png) | ![new prompt android)](../../../assets/tutorials/change_trip_end_prompt/new_prompt_android.png) | 
+| ![default prompt expand view ios](../../../assets/tutorials/change_trip_end_prompt/default_prompt_expand_view_ios.png) | | ![new prompt expand view ios)](../../../assets/tutorials/change_trip_end_prompt/new_prompt_expand_view_ios.png) | | 
+| ![default prompt expand ios](../../../assets/tutorials/change_trip_end_prompt/default_prompt_expand_ios.png) | | | | 

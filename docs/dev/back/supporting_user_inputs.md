@@ -21,7 +21,7 @@ Given that user inputs are to be stored separately from analysis results anyway,
 ### External surveys ###
 e-mission supports hooking up to surveys created using web survey platforms such as qualtrics, survey monkey or google forms. In order to link the results to the sensed data, selected fields in the survey can be populated with the user and trip information. If only the user UUID is populated, no PII is sent to the web survey platform. If both user and trip fields are populated, trip start and end times are sent. These do not appear to be highly privacy sensitive in the absence of location information, but you should probably disclose it in your consent document.
 
-For more details on how to hook up external surveys, either in response to a button press, or in response to a notification, see [the more detailed instructions](../e-mission-phone/how_to_embed_an_external_survey_in_the_app.md)
+For more details on how to hook up external surveys, either in response to a button press, or in response to a notification, see [the more detailed instructions](../front/how_to_embed_an_external_survey_in_the_app.md)
 
 - **Pro:** _Ease of use_. External surveys are easy to create since they have nice survey building tools
 - **Con:** _Less flexibility_. Unless the survey platform provides an API to query for results, the communication is one-way. The survey results typically cannot be reflected back on the phone UI.

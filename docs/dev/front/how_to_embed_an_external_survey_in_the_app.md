@@ -12,7 +12,7 @@ automatically sensed data.
 The FabMob team have contributed an integration with LimeSurvey, which is an
 open source survey framework. The survey server can potentially be self-hosted,
 and you can add a survey tab that lists completed and pending surveys. Please see
-[server limesurvey support](../../docs/manage/adding_limesurvey_support.md) for more details.
+[server limesurvey support](../../manage/adding_limesurvey_support.md) for more details.
 
 ## Generic, closed-source surveys (e.g. Qualtrics/Google Forms/Survey Monkey)
 
