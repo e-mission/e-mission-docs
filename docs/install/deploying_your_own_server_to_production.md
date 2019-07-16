@@ -104,7 +104,7 @@ and then change the config to point to `/mnt/logs`, e.g.
 #### Configuring the phone app ####
 The connection settings on the phone are at `www/json/connectionConfig.json`. The sample file (`connectionConfig.production.json.sample`) should be filled in with the URL of the production server and the auth method from [Configuring Authentication](#configuring-authentication)
 
-Note, you should also cutomize your client-app with a custom server: [Create a new custom client](../e-mission-phone/create_a_new_custom_client.md).
+Note, you should also cutomize your client-app with a custom server: [Create a new custom client](../dev/front/create_a_new_custom_client.md).
 Currently, the aggregate related URLs (heatmap, metrics tab) are hardcoded. They need to be changed to your server URL in:
 
 - `www/js/heatmap.js`
@@ -133,30 +133,23 @@ The server needs three ongoing processes. The instructions here are for *nix sys
   where `/code/` and `/log/` are separate encrypted filesystems.
 
   1. Note that supervisord only runs on python 2.7, although e-mission is now on python 3.6. You need to set up a parallel py27 environment to run it. https://github.com/e-mission/e-mission-server/issues/530#issuecomment-351776014
-
   ```
   $ conda create -n py27 python=2.7
   $ source activate py27
   ```
-  
   2. Setup supervisord and configure it based on the instructions (http://supervisord.org/installing.html) - e.g.
-
   ```
   $ pip install supervisor
   $ echo_supervisord_conf > ~/supervisord.conf
   ```
-
   3. Since supervisord will run from the `py27` environment, but we want e-mission to run from the `emission` environment, use an absolute path in the batch file `/code/e-mission-server/e-mission-py.bash` by replacing `python -> /home/ubuntu/miniconda3/envs/emission/bin/python`.
-
-
-  3. Run supervisord (http://supervisord.org/running.html) - e.g.
-
-   ```
-   $ supervisord -c ~/supervisord.conf
-   $ ps -aef | grep python
-    ubuntu 24344     1  0 04:02 ?        00:00:00 /home/ubuntu/miniconda3/envs/py27/bin/python /home/ubuntu/miniconda3/envs/py27/bin/supervisord -c /home/ubuntu/supervisord.conf
-    root   24347 24346 17 04:02 ?        00:00:00 /home/ubuntu/miniconda3/envs/emission/bin/python emission/net/api/cfc_webapp.py
-   ```
+  4. Run supervisord (http://supervisord.org/running.html) - e.g.
+  ```
+  $ supervisord -c ~/supervisord.conf
+  $ ps -aef | grep python
+  ubuntu 24344     1  0 04:02 ?        00:00:00 /home/ubuntu/miniconda3/envs/py27/bin/python /home/ubuntu/miniconda3/envs/py27/bin/supervisord -c /home/ubuntu/supervisord.conf
+  root   24347 24346 17 04:02 ?        00:00:00 /home/ubuntu/miniconda3/envs/emission/bin/python emission/net/api/cfc_webapp.py
+  ```
   5. If your install requires a password for sudo, you may only see one python program after start, and get an error in the  `/log/emission/emissionpy.err.log` file (`sudo: no tty present and no askpass program specified`). You can fix this by [enabling passwordless sudo for your root/admin user](http://jeromejaglale.com/doc/unix/ubuntu_sudo_without_password).
 
 ##### Windows #####

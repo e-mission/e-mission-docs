@@ -90,7 +90,7 @@ This option uses JWTs using the google identity solution with [cross-client auth
 - use the `ios` key for iOS, but encoded into the native app as a URL type
 - the `android` key is not used directly, but is required to be in the project to allow the android authentication to proceed
 
-![Google Auth Screenshot](../../assets/e-mission-both/google_auth_screenshot.png)
+![Google Auth Screenshot](../assets/e-mission-both/google_auth_screenshot.png)
 
 If you have just created a set of keys, you can just duplicate them to make the old and new keys - e.g. in `conf/net/auth/google_auth.json`
 
@@ -106,29 +106,33 @@ If you have just created a set of keys, you can just duplicate them to make the 
 
 #### More details/FAQ ####
 
-1. **Q:** Can I use google auth with the devapp in order to test my development changes end to end?
+
+  1. **Q:** Can I use google auth with the devapp in order to test my development changes end to end?
    
-  **A:** Yes! But you still need to get tokens from me because the native app needs to have the right keystore/client ID configured in the URL schemes.
-1. **Q:** How do I get the tokens from you? 
+    **A:** Yes! But you still need to get tokens from me because the native app needs to have the right keystore/client ID configured in the URL schemes.
+    
+  2. **Q:** How do I get the tokens from you? 
 
-  **A:** Send me your GPG public key, including [create](https://www.gnupg.org/gph/en/manual/c14.html) and[ exporting ](https://www.gnupg.org/gph/en/manual/x56.html)if needed. I will send you an encrypted client `connectionConfig.json` file. You can copy the values from the client file to the server file.
-1. When generating my own tokens:
-    1. **Q:** For android, do we use `webapp` or `android` as application type? 
+     **A:** Send me your GPG public key, including [create](https://www.gnupg.org/gph/en/manual/c14.html) and[ exporting ](https://www.gnupg.org/gph/en/manual/x56.html)if needed. I will send you an encrypted client `connectionConfig.json` file. You can copy the values from the client file to the server file.
 
-        **A:** `Web application`. You need to use the same web application clientID in both the client json and the server json. And unless you are planning to roll your own native app, you need to get the keys from me. Otherwise, the keystore that is configured for the project will be incorrect, and the auth won't work.
+  3. When generating my own tokens:
+     1.  **Q:** For android, do we use `webapp` or `android` as application type? 
 
-    1. **Q:** How do I configure the `webapp`? Do I have to add a redirect URL?
+          **A:** `Web application`. You need to use the same web application clientID in both the client json and the server json. And unless you are planning to roll your own native app, you need to get the keys from me. Otherwise, the keystore that is configured for the project will be incorrect, and the auth won't work.
 
-        **A:** See screenshots below. You do not need to add any restrictions since we are not really using a browser for authentication. We are using cross-client authentication using native code in a mobile app.
-        
-        | Selection | Configuration | Success |
-        | --------  | ------------- | --------|
-        | ![Selection](../../assets/e-mission-both/google_auth_client_id_selection.png) | ![Configuration](../../assets/e-mission-both/google_auth_client_id_creation_screen.png) | ![Success](../../assets/e-mission-both/google_auth_client_id_success.png) |
+      1.  **Q:** How do I configure the `webapp`? Do I have to add a redirect URL?
 
-    1. **Q:** For ios, do we use `webapp` or `ios`  as application type? 
+          **A:** See screenshots below. You do not need to add any restrictions since we are not really using a browser for authentication. We are using cross-client authentication using native code in a mobile app.
+          
+          | Selection | Configuration | Success |
+          | --------  | ------------- | --------|
+          | ![Selection](../assets/e-mission-both/google_auth_client_id_selection.png) | ![Configuration](../assets/e-mission-both/google_auth_client_id_creation_screen.png) | ![Success](../assets/e-mission-both/google_auth_client_id_success.png) |
 
-        **A:** `iOS`. Again, you need to use the same ID in both the client json and the server json. And unless you are planning to roll your own native app, you need to get the keys from me. Otherwise, the URL scheme(s) that are configured for in the app will be incorrect, and the auth won't work.
-    1. **Q:** By “client_key”, do you mean `clientID` or `clientSecret`? 
+      2.  **Q:** For ios, do we use `webapp` or `ios`  as application type? 
 
-        **A:** `clientID`
+          **A:** `iOS`. Again, you need to use the same ID in both the client json and the server json. And unless you are planning to roll your own native app, you need to get the keys from me. Otherwise, the URL scheme(s) that are configured for in the app will be incorrect, and the auth won't work.
+          
+      3. **Q:** By “client_key”, do you mean `clientID` or `clientSecret`? 
+
+          **A:** `clientID`
 
