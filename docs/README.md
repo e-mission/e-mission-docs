@@ -8,7 +8,7 @@ There are some specialized READMEs [in the individual repositories](https://gith
 
 ### [e-mission web site](https://e-mission.eecs.berkeley.edu/)   
 ### [CODE on GitHub](https://github.com/e-mission)     
-### [LICENCE BSD-3](https://github.com/e-mission/e-mission-docs/blob/master/LICENSE)  
+### [LICENCE BSD-3](https://github.com/e-mission/e-mission-docs/blob/master/docs/LICENSE.md)  
 ### Thanks to [@PatGendre](https://github.com/PatGendre) from [FabMob](https://github.com/fabmob/), you can now [Read The Docs](https://e-mission.readthedocs.io/en/latest/)
 
 ## What is e-mission
