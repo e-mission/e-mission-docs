@@ -158,6 +158,45 @@ They will only work once the intake pipeline has run and moved the data into the
 Trips are converted from draft -> processed when the intake pipeline has been run successfully on them.
 - Instructions for running the intake pipeline for a single user (in debug mode): https://github.com/e-mission/e-mission-server#quick-start
 - Instructions for running the intake pipeline as part of a cronjob: https://github.com/e-mission/e-mission-server/wiki/Deploying-your-own-server-to-production#the-analysis-pipeline
+Actually there's no instructions on how to setup an actual cronjob, so here's my little tutorial.
+Since we are using source to set the environment for the intake script to run in, we create a little bash script by the name cron_intake.sh:
+```
+#!/bin/bash
+source activate emission
+./e-mission-py.bash bin/intake_multiprocess.py 4
+```
+make sure it's executable:
+```
+chmod a+x cron_intake.sh
+```
+Since we've couldn't figure out how to get the cronjob working inside the docker container, we are going to create the cronjob outside of the container on the host machine. As a first test, we can run this script from outside the container:
+```
+docker exec docker_web-server_1 /bin/bash /usr/src/app/cron_intake.sh
+```
+where docker_web-server_1 is the name of your running container.
+Now for the cronjob. Make sure you are logged in as the user you created the containers with and edit the crontab.
+```
+crontab -e
+```
+And add the line like this to execute the pipeline every minute. This shouldn't be a problem since there's usually not a lot of trips coming in at the same time. For a higher volume solution, you should probably check if concurrent running cronjobs really don't cause any problems.
+```
+* * * * * docker exec docker_web-server_1 /bin/bash /usr/src/app/cron_intake.sh
+```
+Also, you should make sure the cron daemon is actually running with:
+```
+service crond status
+```
+or, on other systems like Ubuntu 16, the service is called "cron", not "crond", so it's
+```
+service cron status
+```
+If you see that it's running, all is setup. If not, launch the service with: (put in cron or crond depending on your system)
+```
+service crond start
+```
+
+
+
 
 #### Check 1: Was there an error while running the pipeline? ####
 
