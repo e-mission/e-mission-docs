@@ -41,7 +41,8 @@ Note that deleting the pipeline state entries without fully resetting the pipeli
 If you see the error `curr_state.curr_run_ts = [0-9]*, while processing pipeline`, it means that the stage is marked as still running.
 Steps to resolve:
 1. Make sure that there isn't any other instance of the pipeline running (e.g. something like `$ ps -aef | grep intake`)
-1. Assuming that is true, [reset the pipeline](#resetting_the_pipeline)
+1. Assuming that is true, [reset the pipeline](#resetting_the_pipeline)   
+You can reset the pipeline only back to the day before the error occurred (`-d` option). Also, before the pipeline to run the pipeline, you have to check that for the user(s) for which you had the error, the curr_ is not null in mongodb (Example: `db.getCollection('Stage_pipeline_state').find({"user_id": LUUID("3a2299d0-605a-4d92-bef8-1058d145d301")})`) or you will have to reset the `curr_run_ts` to `null` for that user and for the pipeline stage where it is not `null`.
 
 #### No errors, but data not processed ####
 Make sure that the pipeline state is such that your new data is actually considered fresh. Note that on every run, we only read data after the last timestamp processed. Each pipeline stage will print the time range that is considering, and how much fresh data matched it.
@@ -73,5 +74,5 @@ If we re-run the pipeline for the same user and have not received any new data i
 2018-10-26 15:04:41,462:DEBUG:140736223740800:Found 3 results
 2018-10-26 15:04:41,470:DEBUG:140736223740800:After de-duping, converted 3 points to 3
 ```
-
 If this happens, you want to force the pipeline to treat the old data as fresh. Which means that you basically need to [reset the pipeline](#resetting-the-pipeline).
+
