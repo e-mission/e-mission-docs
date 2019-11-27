@@ -291,4 +291,21 @@ and re-run it.
     ```
 
 - After resetting the pipeline, you need to re-run the intake pipeline using
-  the standard process.
+  the standard process.   
+  
+### Some users don't have access to the server ###
+  
+It may happen that a user cannot access the server from the e-mission app. .
+You can check this by verifying that the user can access the e-mission website (configured in conf/net/api/webserver.conf) from a navigator in his/her smartphone using 3G/4G. (This happens when connecting via the cellular network, not via wifi.)  
+This seems to be depending on the mobile operator, or even on the mobile data plan, and is linked to the https TLS protocol.  
+This has been reported in [issue 459](https://github.com/e-mission/e-mission-docs/issues/459).  
+The following table shows when this is likely to happen, and that a Reverse Proxy (RP) solves the issue.  
+
+|                              | on 3G/4G with some operators | on 3G/4G with most operators | on WiFi |
+| ---------------------------- | ---------------------------- | ---------------------------- | ------- |
+| with Reverse Proxy           | ok                           | ok                           | ok      | 
+| without Reverse Proxy        | no TLS access                | ok                           | ok      |
+  
+The solution is to set up a reverse proxy, as explained in the [Install pages](https://github.com/fabmob/e-mission-docs/blob/e-mission-contrib/docs/install/deploying_your_own_server_to_production.md).  
+
+  
