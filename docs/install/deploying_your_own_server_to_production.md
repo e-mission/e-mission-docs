@@ -214,6 +214,18 @@ $ sudo mount /dev/mapper/foo <mount_point>
 
 ### Running behind a reverse proxy/load balancer ###
 
+TROUBLESHOOTING : If some encounter cannot access the app and the e-mission web site, setting up a Reverse Proxy (RP) is a solution (see: [troubleshooting server FAQ ](https://github.com/fabmob/e-mission-docs/blob/e-mission-contrib/docs/manage/troubleshooting_server_faq.md)).
+
+Here is [an example Apache httpd virtual host configuration](https://github.com/fabmob/e-mission-docs/blob/master/docs/assets/RP-conf.sample) for an e-mission RP.   
+In our case the original port for the bottle.py e-mission web server was 8080.   
+We added a reverse proxy on apache2 httpd listening on 8080, and passing the requests to the e-mission server now on port 8081.  
+Besides adding a virtual host in the httpd.conf and changing the port number in the e-mission conf/net/api/webserver.conf file to 8081, it is necessary to install the mod_proxy and mod_ssl extension and configure SSL (with letsencryt, e.g.).  
+
+For more explanations see the following links:
+https://www.digitalocean.com/community/tutorials/how-to-use-apache-as-a-reverse-proxy-with-mod_proxy-on-ubuntu-16-04   
+https://admin-ahead.com/forum/general-linux/configure-to-listen-on-multiple-ports-apache/   
+https://httpd.apache.org/docs/2.4/en/vhosts/examples.html   
+
 You can also choose to run the server behind a reverse proxy/load balancer such as `ngnix`. In that case, the actual e-mission server will continue to run over HTTP. However, in order to make the development flow smoother, if the server is running over HTTP as opposed to HTTPS, it has no security. It uses the `dummy-dev` authentication method, which returns the user email as the (dummy) authentication token. This means that anybody who knows a users' email address can download their detailed timeline. This is very bad.
 
 To force authentication, edit `emission/net/api/cfc_webapp.py` and set `skipAuth = False`.
