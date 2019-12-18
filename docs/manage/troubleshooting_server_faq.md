@@ -195,6 +195,17 @@ If you see that it's running, all is setup. If not, launch the service with: (pu
 service crond start
 ```
 
+our crontab finally looked like this
+```
+SHELL=/bin/bash
+BASH_ENV="/root/.bashrc"
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/snap/bin
+
+* * * * * /bin/bash -c ". ~/.bashrc; docker exec -t docker_web-server_1 /bin/bash /usr/src/app/cron_intake.sh &>> intakedocker-crontest.txt"
+```
+the magic ingredient I think was to add /snap/bin to the PATH. Because we installed docker as snap package, it was never in the bash path and also .bashrc didn't add it but it was always in the environment through some other system-level black magic
+
+
 
 
 
