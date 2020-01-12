@@ -25,6 +25,6 @@ Read these papers for understand context.
 - [The in-review paper on the e-mission architecture, please do not distribute](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)  
 
 ## roadmap
-The next features and enhancement can be guessed from the [ISSUES](https://github.com/e-mission/e-mission-docs/issues)  
-We have formed a project commmittee and are discussing options for [joining an open source foundation for long-term IP and financial support](dev/future/foundations.md)
-The current are described in [Develop/Future](dev/future/overview.md)   
+- The next features and enhancement can be guessed from the [ISSUES](https://github.com/e-mission/e-mission-docs/issues)  
+- We have formed a project commmittee and are discussing options for [joining an open source foundation for long-term IP and financial support](dev/future/foundations.md)
+- The current large scale research features are described in [Develop/Future](dev/future/overview.md)   
