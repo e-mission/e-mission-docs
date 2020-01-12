@@ -7,6 +7,7 @@ Here's a list of potential open source foundations we can join and the related p
 | [Eclipse openMobility Working Group](https://openmobility.eclipse.org/) | Eclipse SUMO, Eclipse MUSTANG | Mustang recently joined (Oct 2019), both seem to be simulation-based |
 | [Open Mobility Foundation](https://www.openmobilityfoundation.org/) | Open spec (MDS) focuse on micro-mobility, want to expand to other areas | Lots of cities involved, and want to broaden scope beyond micro-mobility |
 | [Open Transit Software Foundation](https://opentransitsoftwarefoundation.org) | One Bus Away | One Bus Away developers and agencies |
+| [Zephyr Foundation](https://zephyrtransport.org/) | ??? | They have a list of useful tools, but I don't see anything that they have directly built |
 | [Software Freedom Conservancy](https://sfconservancy.org/) | Open Trip Planner | ??? |
 | [Urban Data Science Toolkit](https://github.com/UDST) | UrbanSim | Foundation under consideration |
 
