@@ -26,5 +26,5 @@ Read these papers for understand context.
 
 ## roadmap
 The next features and enhancement can be guessed from the [ISSUES](https://github.com/e-mission/e-mission-docs/issues)  
-Project organisation and funding (to be completed)  
+We have formed a project commmittee and are discussing options for [joining an open source foundation for long-term IP and financial support](dev/future/foundations.md)
 The current are described in [Develop/Future](dev/future/overview.md)   
