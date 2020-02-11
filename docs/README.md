@@ -19,8 +19,8 @@ the client is a Cordova application for both Android and iOS.
 The application has been initially designed to be reused in research and academic projects either for conducting and as a good learning project for CS students. It is also freely reusable for any other user cases (LINK to list to be added here). 
 
 ## Gallery (a first glimpse at the app UI)
-E-mission has been reused in several projects, here are short videos showing different versions of the UI, which have been presented at the last TRB conference in January 2020 :   
-- E-mission provides [personal mobility metrics including CO2 emissions](https://nextcloud.damajash.org/s/MTE4y3tJeX4g6sG/download) (MeCO2 a CO2 coach developed in Berlin by DFKI's OSLab)   
+E-mission has been reused in several projects, here are [short videos showing different versions of the UI](https://nextcloud.damajash.org/s/MTE4y3tJeX4g6sG), which have been presented at the last TRB conference in January 2020 :   
+- E-mission provides [personal mobility metrics including CO2 emissions](https://github.com/fabmob/e-mission-docs/blob/e-mission-contrib/docs/assets/overview/meco2_demo_short.mp4) (MeCO2 a CO2 coach developed in Berlin by DFKI's OSLab)   
 - E-mission can [let the end-user complete the mode and purpose](https://github.com/fabmob/e-mission-docs/blob/e-mission-contrib/docs/assets/overview/mode_purpose_short.mp4) after trip completion   
 - E-mission can [embark third-pary online surveys](https://github.com/fabmob/e-mission-docs/blob/e-mission-contrib/docs/assets/overview/survey_demo_shorter.mp4) (a feature developed by the University of New South Wales)   
 - E-mission can be adapted to [mobility nudge experimentations like the Tripaware project](https://github.com/fabmob/e-mission-docs/blob/e-mission-contrib/docs/assets/overview/tripaware_emotion_demo_short.mp4) conducted at UC Berkley in 2018   
