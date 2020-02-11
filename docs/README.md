@@ -18,6 +18,13 @@ The server is a python web application, the data is stored in a mongoDB database
 the client is a Cordova application for both Android and iOS.  
 The application has been initially designed to be reused in research and academic projects either for conducting and as a good learning project for CS students. It is also freely reusable for any other user cases (LINK to list to be added here). 
 
+## Gallery (a first glimpse at the app UI)
+E-mission has been reused in several projects, here are short videos showing different versions of the UI, which have been presented at the last TRB conference in January 2020 :   
+- E-mission provides personal mobility metrics including CO2 emissions (MeCO2 a CO2 coach developed in Berlin by DFKI's OSLab)   
+- E-mission can let the end-user complete the mode and purpose after trip completion   
+- E-mission can embark third-pary online surveys (a feature developed by the University of New South Wales)   
+- E-mission can be adapted to mobility nudge experimentations like the tripaware project conducted at UC Berkley in 2018   
+
 ## Overview
 Read these papers for understand context.
 
