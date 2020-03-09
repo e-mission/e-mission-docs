@@ -34,15 +34,25 @@ $ git clone https://github.com/<username>/<repository>.git
 You now have a local copy on your computer.
 
 ## 3. Add the local copy of your plugin to the e-mission phone project
+First, open another terminal or git bash window and move to the location on your computer where you have your local `e-mission-phone` project.
 
-Run the following command to remove the existing plugin
+For example:
+```bash
+$ cd ~/workshop/e-mission-phone
+```
+
+Next, remove the existing plugin
 ```bash
 $ cordova plugin remove edu.berkeley.eecs.emission.<repository>
 ```
-> Substitute plugin repository name for `<repository>`.
 
-Make changes to the plugin
+Then, add your local plugin to the `e-mission-phone`
 
-run `cordova prepare` command
+```bash
+$ cordova plugin add ~/plugins/<repository>
+```
+> Substitute the name of the repository for `<repository>`.
 
-> Any time you make changes to the plugin, remove it and re-add it to the e-mission phone project.
+run `cordova prepare` to recompile the project.
+
+> Any time you make changes to the plugin, remove it and re-add it to the e-mission-phone project.
