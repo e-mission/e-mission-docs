@@ -7,13 +7,15 @@ You will also need a local copy of the [e-mission-phone]() project. Follow these
 
 ## 1. Fork the plugin repository
 Go to the GitHub URL of the plugin you would like to test for example; ` https://github.com/e-mission/cordova-usercache` and click on the  **Fork** button.
-> Add image here
+
+![Fork a project](../../assets/test_changes_to_a_plugin/fork-project.png)
 
 **Fork** will create a copy of the repository in your Github account so you can make changes to the project.
 
 ## 2. Create a local copy on your computer
 Navigate to your own Github copy of the repository and copy the url.
-> Add image here
+
+![Fork a project](../../assets/test_changes_to_a_plugin/copy-project-url.png)
 
 Open your terminal or git bash window.
 
