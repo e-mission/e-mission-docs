@@ -158,7 +158,10 @@ They will only work once the intake pipeline has run and moved the data into the
 Trips are converted from draft -> processed when the intake pipeline has been run successfully on them.
 - Instructions for running the intake pipeline for a single user (in debug mode): https://github.com/e-mission/e-mission-server#quick-start
 - Instructions for running the intake pipeline as part of a cronjob: https://github.com/e-mission/e-mission-server/wiki/Deploying-your-own-server-to-production#the-analysis-pipeline
-Actually there's no instructions on how to setup an actual cronjob, so here's my little tutorial.
+- Examples on how to setup the intake pipeline cronjob inside the docker container are here https://github.com/e-mission/e-mission-docker/tree/master/examples/em-server-multi-tier-cronjob 
+
+If for some motives you need to run the cronjob outside the docker container, here's my little tutorial.
+
 Since we are using source to set the environment for the intake script to run in, we create a little bash script by the name cron_intake.sh:
 ```
 #!/bin/bash
