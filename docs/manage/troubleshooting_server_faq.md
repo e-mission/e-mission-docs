@@ -172,7 +172,7 @@ make sure it's executable:
 ```
 chmod a+x cron_intake.sh
 ```
-Since we've couldn't figure out how to get the cronjob working inside the docker container, we are going to create the cronjob outside of the container on the host machine. As a first test, we can run this script from outside the container:
+As a first test, we can run this script from outside the container:
 ```
 docker exec docker_web-server_1 /bin/bash /usr/src/app/cron_intake.sh
 ```
