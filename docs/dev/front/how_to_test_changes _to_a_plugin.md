@@ -3,7 +3,7 @@
 ## Prerequisites
 You should have Git installed on you local machine.
 
-You will also need a local copy of the [e-mission-phone]() project. Follow these [instructions](https://github.com/e-mission/e-mission-phone/blob/master/README.md) to get a copy.
+You will also need a local copy of the [e-mission-phone](https://github.com/e-mission/e-mission-phone) project. Follow these [instructions](https://github.com/e-mission/e-mission-phone/blob/master/README.md) to get a copy.
 
 ## 1. Fork the plugin repository
 Go to the GitHub URL of the plugin you would like to test for example; ` https://github.com/e-mission/cordova-usercache` and click on the  **Fork** button.
