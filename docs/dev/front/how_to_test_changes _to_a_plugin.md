@@ -56,3 +56,40 @@ $ cordova plugin add ~/plugins/<repository>
 run `cordova prepare` to recompile the project.
 
 > Any time you make changes to the plugin, remove it and re-add it to the e-mission-phone project.
+
+<br/><br/>
+
+# Quick and Easy development using the IDE
+While the above approach helps test small changes, It is very time-consuming when it comes to complex ones. A faster way is to use an IDE for the appropriate platform. 
+
+## 1. First, prepare and build your e-mission-phone project to generates all the required files.
+
+```bash
+# Copy files into platforms for building
+$ cordova prepare
+
+# Build the platform specific code
+cordova build <platform>
+```
+> Replace the `<platform>` with either `ios` or `android`.
+
+## 2. Then, open the project in your IDE.
+
+### For Android development:
+
+Launch Android Studio and select the Android platform directory in your project `(<project-location>/e-mission-phone/platforms/android)`.
+
+Answer yes for the Gradle Sync question
+
+Once it finishes importing, you should be able to build and run the app directly from Android Studio. See [Android Studio Overview](https://developer.android.com/studio/intro/index.html) and [Building and Running from Android Studio](https://developer.android.com/studio/run/index.html) for more details.
+
+### For IOS development:
+Launch Xcode and select the IOS platform directory in your project `(<project-location>/e-mission-phone/platforms/ios/emission.xcworkspace)`.
+
+> Note: The last path (`/emission.xcworkspace`) is your app name appended to `.xcworkspace`. In our case, the app name is `emission`.
+
+## 3. Finally, test your plugin using your IDE.
+
+Make the necessary changes to the native code and test them in the IDE.
+
+Then copy the code changes from the IDE back into your local plugin.
