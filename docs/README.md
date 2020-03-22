@@ -18,6 +18,13 @@ The server is a python web application, the data is stored in a mongoDB database
 the client is a Cordova application for both Android and iOS.  
 The application has been initially designed to be reused in research and academic projects either for conducting and as a good learning project for CS students. It is also freely reusable for [any other user cases](https://github.com/e-mission/e-mission-docs/blob/master/docs/use/deployments.md). If you are using e-mission in your work, please submit a PR, or send shankari@eecs.berkeley.edu an email so that you can be added to this list.
 
+## Gallery (a first glimpse at the app UI)
+E-mission has been reused in several projects, here are [short videos showing different versions of the UI](https://nextcloud.damajash.org/s/MTE4y3tJeX4g6sG), which have been presented at the last TRB conference in January 2020 :   
+- E-mission provides [personal mobility metrics including CO2 emissions](https://nextcloud.damajash.org/s/aFPRpfLYy9GPoe2) (MeCO2 a CO2 coach developed in Berlin by DFKI's OSLab)   
+- E-mission can [let the end-user complete the mode and purpose](https://nextcloud.damajash.org/s/f2z28gK7e84WPWS) after trip completion   
+- E-mission can [embark third-pary online surveys](https://nextcloud.damajash.org/s/CRZg4zQY2gKWMnF) (a feature developed by the University of New South Wales)   
+- E-mission can be adapted to [mobility nudge experimentations like the Tripaware project](https://nextcloud.damajash.org/s/n2ESGrRYdCmSaX6) conducted at UC Berkley in 2018   
+
 ## Overview
 Read these papers for understand context.
 
