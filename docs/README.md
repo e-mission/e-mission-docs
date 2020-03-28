@@ -31,11 +31,11 @@ e-mission was the **first open source mobility platform**, with the initial vers
 | [radar.io](https://radar.io/documentation) | US | [BetterPoint](https://www.betterpoints.ltd/about-us/) | UK | [TrackAndKnow](https://trackandknowproject.eu/) | EU-wide |   |    |
 
 ### SDKs
-Although e-mission is an end-to-end system, it is also modular. The sensing components are cordova plugins and can be incorporated into any app. The server modules are open source and should be able to process any data in the correct format. All the deployments so far, [with the exception of UW](https://github.com/e-mission/e-mission-docs/issues/501), have focused on customizing the UI and have not really modified the plugin list. If you are interested in experimenting with plugin subsets, I am happy to work more closely with you. Please also [let the community know how it goes](https://github.com/e-mission/e-mission-docs/issues/505). @PatGendre also generated this comparitive list of background location tracking SDKs. If you would like to add other SDKs to this list, please [send a pull request](contribute_to_the_doc/CONTRIBUTING.md).
+Although e-mission is an end-to-end system, it is also modular. The sensing components are cordova plugins and can be incorporated into any app. The server modules are open source and should be able to process any data in the correct format. All the deployments so far, [with the exception of UW](https://github.com/e-mission/e-mission-docs/issues/501), have focused on customizing the custom app UI and have not really modified the plugin list. If you are interested in experimenting with plugin subsets, I am happy to work more closely with you. Please also [let the community know how it goes](https://github.com/e-mission/e-mission-docs/issues/505). @PatGendre also generated this comparative list of background location tracking SDKs. If you would like to add other SDKs to this list, please [send a pull request](contribute_to_the_doc/CONTRIBUTING.md).
 
 | Project       | Open/Closed source | Notes |
 |---------------|--------------------|-------|
-| [Itinerum]    | Open source        |app, not SDK. will merge in 2020, pending funding |
+| [Itinerum](https://www.itinerum.ca/)    | Open source        |app, not SDK. will merge in 2020, pending funding |
 | [TransistorSoft Background Geolocation](https://github.com/transistorsoft/react-native-background-geolocation)| Closed source | Much richer set of interfaces, including react native and flutter |
 | [Sentiance](https://docs.sentiance.com/sdk/) | Closed source | Includes trip and mode detection |
 | [Radar.io](https://radar.io/documentation/sdk) | Closed source | the API seems to be limited to geofences, focused on retail? |
