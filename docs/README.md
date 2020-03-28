@@ -6,6 +6,7 @@ This repo contains all the documentation for the e-mission project, and [almost 
 
 There are some specialized READMEs [in the individual repositories](https://github.com/e-mission), but they are gradually being moved in here. This means that if you have any questions, you should first search here and if you don't find any [existing issues](https://github.com/e-mission/e-mission-docs/issues/), you should [file an issue here](https://github.com/e-mission/e-missiond-docs/issue).
 
+## Getting started
 - [e-mission web site](https://e-mission.eecs.berkeley.edu/)   
 - [CODE on GitHub](https://github.com/e-mission)     
 - [LICENCE BSD-3](https://github.com/e-mission/e-mission-docs/blob/master/docs/LICENSE.md)  
