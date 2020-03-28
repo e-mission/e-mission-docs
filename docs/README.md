@@ -23,7 +23,7 @@ The application has been initially designed to be reused in research and academi
 e-mission was the **first open source mobility platform**, with the initial versions created in 2016. Itinerum, the only other open source mobility platform, was developed much earlier, but only open sourced in 2018. e-mission and Itinerum have applied for funding to **merge** in 2020 and are both members of the Project Management Committee. As far as we know, the merged project will be **the only** open source mobility platform.
 
 ### End to end apps
-@PatGendre generated this list of closed source apps that are similar to e-mission. Since Patrick is from France, they have a strong European focus. If you would like to add other companies to this list, please (send a pull request)[contribute_to_the_doc/CONTRIBUTING.md].
+@PatGendre generated this list of closed source apps that are similar to e-mission. Since Patrick is from France, they have a strong European focus. If you would like to add other companies to this list, please [send a pull request](contribute_to_the_doc/CONTRIBUTING.md).
 
 | Company       | Region       | Company     | Region       | Company       | Region     | Company       | Region     |
 |---------------|--------------|-------------|--------------|---------------|------------|---------------|------------|
