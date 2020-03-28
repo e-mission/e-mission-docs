@@ -23,21 +23,15 @@ The application has been initially designed to be reused in research and academi
 e-mission was the **first open source mobility platform**, with the initial versions created in 2016. Itinerum, the only other open source mobility platform, was developed much earlier, but only open sourced in 2018. e-mission and Itinerum have applied for funding to **merge** in 2020 and are both members of the Project Management Committee. As far as we know, the merged project will be **the only** open source mobility platform.
 
 ### End to end apps
-@PatGendre generated this list of closed source apps that are similar to e-mission. Since Patrick is from France, they have a strong European focus.
+@PatGendre generated this list of closed source apps that are similar to e-mission. Since Patrick is from France, they have a strong European focus. If you would like to add other companies to this list, please (send a pull request)[contribute_to_the_doc/CONTRIBUTING.md].
 
-| Company       | Region       |
-|---------------|--------------|
-| [MOBIDOT](http://www.mobidot.nl/en/about_mobidot.php) | NL           |
-| [MotionTag](https://motion-tag.com/en/mobility/) | DE |
-| [moprim](https://www.moprim.com/products/) | FI |
-| [TravelVu](https://en.trivector.se/it-systems/travelvu/) | SE | 
-| [RMove](https://rmove.rsginc.com/) | US |
-| [radar.io](https://radar.io/documentation) | ?? |
-| [BetterPoint](https://www.betterpoints.ltd/about-us/) | UK |
-| [TrackAndKnow](https://trackandknowproject.eu/) | EU-wide |
+| Company       | Region       | Company     | Region       | Company       | Region     | Company       | Region     |
+|---------------|--------------|-------------|--------------|---------------|------------|---------------|------------|
+| [MOBIDOT](http://www.mobidot.nl/en/about_mobidot.php) | NL | [MotionTag](https://motion-tag.com/en/mobility/) | DE | [TravelVu](https://en.trivector.se/it-systems/travelvu/) | SE | [RMove](https://rmove.rsginc.com/) | US | 
+| [radar.io](https://radar.io/documentation) | US | [BetterPoint](https://www.betterpoints.ltd/about-us/) | UK | [TrackAndKnow](https://trackandknowproject.eu/) | EU-wide |   |    |
 
 ### SDKs
-Although e-mission is an end-to-end system, it is also modular. The sensing components are cordova plugins and can be incorporated into any app. The server modules are open source and should be able to process any data in the correct format. All the deployments so far, [with the exception of UW](https://github.com/e-mission/e-mission-docs/issues/501), have focused on customizing the UI and have not really modified the plugin list. If you are interested in experimenting with plugin subsets, please [let the community know how it goes](https://github.com/e-mission/e-mission-docs/issues/505). @PatGendre also generated this comparitive list of background location tracking SDKs.
+Although e-mission is an end-to-end system, it is also modular. The sensing components are cordova plugins and can be incorporated into any app. The server modules are open source and should be able to process any data in the correct format. All the deployments so far, [with the exception of UW](https://github.com/e-mission/e-mission-docs/issues/501), have focused on customizing the UI and have not really modified the plugin list. If you are interested in experimenting with plugin subsets, I am happy to work more closely with you. Please also [let the community know how it goes](https://github.com/e-mission/e-mission-docs/issues/505). @PatGendre also generated this comparitive list of background location tracking SDKs. If you would like to add other SDKs to this list, please [send a pull request](contribute_to_the_doc/CONTRIBUTING.md).
 
 | Project       | Open/Closed source | Notes |
 |---------------|--------------------|-------|
@@ -46,6 +40,7 @@ Although e-mission is an end-to-end system, it is also modular. The sensing comp
 | [Sentiance](https://docs.sentiance.com/sdk/) | Closed source | Includes trip and mode detection |
 | [Radar.io](https://radar.io/documentation/sdk) | Closed source | the API seems to be limited to geofences, focused on retail? |
 | [LocoKit](https://www.bigpaua.com/locokit/docs/) | Open source | iOS only, "ML based" |
+| [moprim](https://www.moprim.com/products/) | Closed source | no public documentation |
 
 ## Gallery (a first glimpse at the app UI)
 E-mission has been reused in several projects, here are [short videos showing different versions of the UI](https://nextcloud.damajash.org/s/MTE4y3tJeX4g6sG), which have been presented at the last TRB conference in January 2020 :   
