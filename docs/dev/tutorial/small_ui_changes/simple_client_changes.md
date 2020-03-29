@@ -9,6 +9,6 @@ As you look for your own tutorials, make sure they are using version 1 of the UI
 
 1. [Change summary and consent](summary_and_consent.md)
 2. [Remove a tab](remove_tab.md)
-3. [Change colors](change_colors_to_your_theme.md)
-4. [Display a customized survey](customized_survey.md)
+3. Change colors (:construction:)
+4. Display a customized survey (:construction:)
 5. [Change the trip end prompt](change_trip_end_prompt.md)
