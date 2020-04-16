@@ -65,14 +65,11 @@ management tool called 'conda'.
 The distribution also includes an environment management tool called 'conda'. We will set up a separate `emission`
 environment within anaconda to avoid conflicts with other applications.
 
-- Install the anaconda distribution (https://www.anaconda.com/download). Any
-  installer should be fine - setting up the `emission` environment will
-  automatically choose the correct version of python. Since all required
-  packages will be installed using the environment, if you are comfortable with
-  the command line, you can also download the minimalist `miniconda` installer
-  https://conda.io/miniconda.html
-  
-- Notice : It may happen that the creation of the emission env (see below) doesn't work with the latest anaconda or miniconda version (maybe because e-mission runs on python 3.6). For instance, the setup doesn't work with latest miniconda3 4.7.12 but works with 4.4.10. (see the archive here: https://repo.anaconda.com/miniconda/)
+- Install miniconda
+
+  ```
+  $ source setup/setup_conda.sh
+  ```
 
 - Setup the `emission` environment.
 
