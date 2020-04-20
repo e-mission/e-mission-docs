@@ -70,6 +70,7 @@ environment within anaconda to avoid conflicts with other applications.
   ```
   $ source setup/setup_conda.sh
   ```
+  IMPORTANT: this script works for MacOSX and Ubuntu based Linux distributions, the OS must be specified on the command with one of two choices: ```Linux-x86_64``` or ```MacOSX-x86_64```. The final command would be this ```source setup/setup_conda.sh Linux-x86_64``` or this ```source setup/setup_conda.sh MacOSX-x86_64```.
 
 - Setup the `emission` environment.
 
@@ -123,6 +124,13 @@ Tip: Run "bower install" instead if you are prompted password for 'https://githu
 
 ## Run ##
 ---------
+
+IMPORTANT: If you have used the ```setup_conda.sh``` script, you will need to run the command 
+  ```
+  $HOME/miniconda/etc/profile.d/conda.sh
+  ```
+  on every new terminal. This is due to the installation being made through a script, which doesn't modify the ```bashrc```                       with the correct path.
+
 
 1. On OSX, start the database  (Note: mongodb appears to be installed as a service on Windows devices and it starts automatically on reboot). 
 
