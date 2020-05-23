@@ -48,6 +48,7 @@ E-mission has been reused in several projects, here are [short videos showing di
 - E-mission can [let the end-user complete the mode and purpose](https://nextcloud.damajash.org/s/f2z28gK7e84WPWS) after trip completion   
 - E-mission can [embark third-pary online surveys](https://nextcloud.damajash.org/s/CRZg4zQY2gKWMnF) (a feature developed by the University of New South Wales)   
 - E-mission can be adapted to [mobility nudge experimentations like the Tripaware project](https://nextcloud.damajash.org/s/n2ESGrRYdCmSaX6) conducted at UC Berkley in 2018   
+- E-mission can be integrated with external survey tools by [automatically filling in survey fields with sensed information](https://nextcloud.damajash.org/s/4CxeNpWDAiqSkpa). The survey prompt can [even be context sensitive](https://nextcloud.damajash.org/s/3qp8Mcwcy36HjSi).
 
 ## Overview
 Read these papers for understand context.
