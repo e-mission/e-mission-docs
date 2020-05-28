@@ -3,13 +3,13 @@
 
 Projects that want to control their own data under protocols different from e-mission, can run their own copy of e-mission.
 
-**We recommend using [docker for installation on production](https://github.com/e-mission/e-mission-docker/tree/master/examples/em-server-multi-tier-cronjob).**
+**We recommend using [docker for installation on production](https://github.com/e-mission/e-mission-docker)** In particular, we recommend using the [multi-tier setup example](https://github.com/e-mission/e-mission-docker/tree/master/examples/em-server-multi-tier-cronjob), which creates separate webapp and analysis containers and automatically sets up a cronjob on the analysis container. You can set the config options below in a `conf` directory which is automatically mounted into the containers as a volume
 
 However, if for some reason, you really want to run e-mission on a server where you cannot use docker, this document outlines the steps to set up a manual installation of e-mission on a server of your choice. Note that this assumes a unix or unix-like server. If you only have access to Windows, please provision a unix docker container or VM and use it instead.
 
 ## Basic instructions ##
 
-The e-mission server is easy to install on a laptop for local development, and the same steps can be used to install a basic server on \*nix for small projects. This page lists the few additional steps for such a deployment. It also provides recommendations for <a href="#suggested-improvements">more complex deployments</a>. These are intended as deployment notes and reasonably experienced sysadmin. If you are not sure 
+The e-mission server is easy to install on a laptop for local development, and the same steps can be used to install a basic server on \*nix for small projects. This page lists the few additional steps for such a deployment. It also provides recommendations for <a href="#suggested-improvements">more complex deployments</a>. These are intended as deployment notes for reasonably experienced sysadmin. If you are not sure what is going on here, please use the docker installation. If you need additional help on how to run the commands, please check the commands in the Dockerfile. The Dockerfile is validated through CI, so it is always known to work.
 
 ### Development installation ###
 Install the server following the development installation instructions (https://github.com/e-mission/e-mission-docs/blob/master/docs/install/manual_install.md).
@@ -118,7 +118,7 @@ Currently, the aggregate related URLs (heatmap, metrics tab) are hardcoded. They
 It is also necessary to edit the Content-Security-Policy in `www/index.html` so that connections to your own server URL are allowed.
 
 ### Starting processes ###
-The server needs three ongoing processes. The instructions here are for *nix systems. I've filled in what I've found for Windows equivalents, but they are untested. Any Windows installers, please correct them as required.
+The server needs three ongoing processes.
 
 #### The webserver ####
   It would be good to have this set up with a watchdog so that it can
