@@ -1,19 +1,24 @@
 # Deploying Your Own Server to Production
 ---
 
-Projects that want to control their own data under protocols different from e-mission, can run their own copy of e-mission. The e-mission server is easy to install on a laptop for local development, and the same steps can be used to install a basic server on *nix for small projects. This page lists the few additional steps for such a deployment. It also provides recommendations for <a href="#suggested-improvements">more complex deployments</a>. All the software is fairly standard, so the published documentation can form the basis of additional customization.
+Projects that want to control their own data under protocols different from e-mission, can run their own copy of e-mission.
+
+**We recommend using [docker for installation on production](https://github.com/e-mission/e-mission-docker/tree/master/examples/em-server-multi-tier-cronjob).**
+
+However, if for some reason, you really want to run e-mission on a server where you cannot use docker, this document outlines the steps to set up a manual installation of e-mission on a server of your choice. Note that this assumes a unix or unix-like server. If you only have access to Windows, please provision a unix docker container or VM and use it instead.
 
 ## Basic instructions ##
 
+The e-mission server is easy to install on a laptop for local development, and the same steps can be used to install a basic server on \*nix for small projects. This page lists the few additional steps for such a deployment. It also provides recommendations for <a href="#suggested-improvements">more complex deployments</a>. These are intended as deployment notes and reasonably experienced sysadmin. If you are not sure 
+
 ### Development installation ###
-Install the server following the development dependencies (https://github.com/e-mission/e-mission-server#dependencies) and installation instructions (https://github.com/e-mission/e-mission-server#development). Note that:
-> deployment is as simple as pulling from the repo to the real server and changing the config files slightly.
+Install the server following the development installation instructions (https://github.com/e-mission/e-mission-docs/blob/master/docs/install/manual_install.md).
 
 ```
 $ git clone https://github.com/e-mission/e-mission-server.git
 ```
 
-While following the instructions to start the server, make sure to point to the python binary from the anaconda distribution.
+While following the instructions to start the server, **make sure to point to the python binary from the anaconda distribution**.
 
 ### Upgrade to production ###
 - Install NTP (https://help.ubuntu.com/lts/serverguide/NTP.html). If this is
@@ -152,10 +157,6 @@ The server needs three ongoing processes. The instructions here are for *nix sys
   ```
   5. If your install requires a password for sudo, you may only see one python program after start, and get an error in the  `/log/emission/emissionpy.err.log` file (`sudo: no tty present and no askpass program specified`). You can fix this by [enabling passwordless sudo for your root/admin user](http://jeromejaglale.com/doc/unix/ubuntu_sudo_without_password).
 
-##### Windows #####
-The suggestion to replace supervisord is to use honcho or a windows service. Note that there might be tricky things to do with a batch file and polling to actually get watchdog functionality. Alternatively, you can use cygwin and apparently then supervisord just works.
-https://stackoverflow.com/questions/7629813/is-there-windows-analog-to-supervisord
-
 #### The analysis pipeline ####
 
 This pipeline segments the trips, segments legs within the trips, smoothes, assigns modes, etc. It is run via a cronjob. You can customize the frequency of the cronjob depending on the load on the server. A typical `cronjob` that runs once a day is
@@ -163,18 +164,6 @@ This pipeline segments the trips, segments legs within the trips, smoothes, assi
 ```
 @daily cd /mnt/e-mission/e-mission-server && PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/intake_multiprocess.py 3 >> /mnt/logs/emission/intake.stdinout 2>&1
 ```
-
-##### Windows #####
-The suggestion to replace cron is to use the scheduled tasks from the control panel, or the schtasks cmdlets from Windows powershell.
-
-https://stackoverflow.com/questions/132971/what-is-the-windows-version-of-cron
-
-https://technet.microsoft.com/en-us/library/cc725744(v=ws.11).aspx
-
-You can also install cygwin and get it to work with some effort.
-
-https://stackoverflow.com/questions/707184/how-do-you-run-a-crontab-in-cygwin-on-windows
-
 
 #### The iOS silent push ####
 As described earlier, we use iOS silent push as a backup for trip end
@@ -189,9 +178,6 @@ using `cron`.
 */30 * * * * cd /mnt/e-mission/e-mission-server && PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/push/silent_ios_push.py 1800 >> /home/e-mission/silent_ios_push.stdinoutlog 2>&1
 @hourly cd /mnt/e-mission/e-mission-server && PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/push/silent_ios_push.py 3600 >> /home/e-mission/silent_ios_push.stdinoutlog 2>&1
 ```
-##### Windows #####
-These are also cronjobs so the same techniques as the previous section (https://github.com/e-mission/e-mission-server/wiki/Deploying-your-own-server-to-production/_edit#windows-1) apply.
-
 ## Suggested improvements ##
 
 ### cryptfs (suggested) ###
@@ -237,26 +223,3 @@ To force authentication, edit `emission/net/api/cfc_webapp.py` and set `skipAuth
 821       print "Running with HTTPS turned OFF, skipAuth = True"
 822
 ```
-
-### Running the database on a different server ###
-
-You can also choose to run the database on a different server for greater scalability.
-In that case, you need to change this line from `emission/core/get_database.py`
-from `localhost` to your database server.
-
-```
-_current_db = MongoClient('localhost').Stage_database
-```
-
-The easiest option is to connect using the DB server hostname/IP - e.g.
-
-```
-_current_db = MongoClient('192.168.0.5').Stage_database
-```
-
-but you can also use more complex configurations if your DB server is sharded, for example. A full list of the connection options is at http://api.mongodb.com/python/2.7/api/pymongo/mongo_client.html#pymongo.mongo_client.MongoClient
-
-Make sure to set up a NAT and put your database server into it to reduce the
-risk of unauthorized access.
-
-TODO: Use a config setting instead of requiring code edits
