@@ -56,6 +56,8 @@ Read these papers for understand context.
 - [TRB paper describing how to use e-mission functionality](https://people.eecs.berkeley.edu/~shankari/emission_trb_2017_paper.pdf)  
 - [The in-review paper on the e-mission architecture, please do not distribute](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)  
 - e-mission started as [Shankari's PhD thesis](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-180.html)
+- A proof of concept of [user private clouds in @njriasan's thesis](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-130.html)
+- A proof of concept for differentially private queries aggregating information over UPC [in @jackcsullivan's thesis](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-69.html)
 
 ## roadmap
 - The next features and enhancement can be guessed from the [ISSUES](https://github.com/e-mission/e-mission-docs/issues)  
