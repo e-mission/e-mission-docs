@@ -1,4 +1,4 @@
-5 examples of common but simple client changes
+6 examples of common but simple client changes
 ---
 
 e-mission UI uses the open source [Ionic1](https://ionicframework.com/docs/v1/) Framework, which in turn is built on the [Angular1](https://angularjs.org/) Framework. There are multiple ionic1 and angular1 tutorials on the web, please go through them and familiarize yourself with their model-view-controller concepts. In particular, you want to get a sense of how `$scope` works and how it is used to display dynamic values in a HTML view. You might also want to read up on how to use CSS to change the UI look and feel.
@@ -12,3 +12,4 @@ As you look for your own tutorials, make sure they are using version 1 of the UI
 3. [Change colors](change_colors_to_your_theme.md)
 4. [Display a customized survey](customized_survey.md)
 5. [Change the trip end prompt](change_trip_end_prompt.md)
+6. [Schedule the trip end prompt](scheduling-trip-end-prompt.md)
