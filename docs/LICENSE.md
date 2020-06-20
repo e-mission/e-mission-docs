@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2, e-mission
+Copyright (c) 2014-2020, UC Regents
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
