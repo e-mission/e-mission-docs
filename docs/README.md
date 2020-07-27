@@ -17,7 +17,7 @@ E-mission is an open source mobility platform developed at the [RISE](http://ris
 E-mission includes a mobile application for Android and iOS, with user consent, automatically collects the user's travel patterns and sends them to the server so as to derive personal mobility information and analyses; depending on user consent for sharing his/her data, the data can also be used for aggregate mobility data studies. The application is also a tool for collecting information filled in by the user (such as incidents, ground truth information about his/her trip purpose and transportation mode, or answers to questions asked in external surveys).  
 The server is a python web application, the data is stored in a mongoDB database; 
 the client is a Cordova application for both Android and iOS.  
-The application has been initially designed to be reused in research and academic projects either for conducting and as a good learning project for CS students. It is also freely reusable for [any other user cases](docs/use/deployments.md). If you are using e-mission in your work, please submit a PR, or send shankari@eecs.berkeley.edu an email so that you can be added to this list.
+The application has been initially designed to be reused in research and academic projects either for conducting and as a good learning project for CS students. It is also freely reusable for [any other user cases](use/deployments.md). If you are using e-mission in your work, please submit a PR, or send shankari@eecs.berkeley.edu an email so that you can be added to this list.
 
 ## Why e-mission?
 e-mission was the **first open source mobility platform**, with the initial versions created in 2016. Itinerum, the only other open source mobility platform, was developed much earlier, but only open sourced in 2018. e-mission and Itinerum have applied for funding to **merge** in 2020 and are both members of the Project Management Committee. As far as we know, the merged project will be **the only** open source mobility platform.
@@ -61,5 +61,5 @@ Read these papers for understand context.
 
 ## roadmap
 - The next features and enhancement can be guessed from the [ISSUES](https://github.com/e-mission/e-mission-docs/issues)  
-- We have formed a [project commmittee](docs/project_committee.md) to help guide the direction and roadmap
+- We have formed a [project commmittee](project_committee.md) to help guide the direction and roadmap
 - The current large scale research features are described in [Develop/Future](dev/future/overview.md)   
