@@ -13,3 +13,4 @@ The members of the e-mission project committee are drawn from a diverse set of b
 | Gabriel Plassat | ADEME/FabMob| Government | France |
 | Zachary Patterson | Concordia   | Academia   | Canada |
 | K. Shankari  | UC Berkeley | Academia  | USA |
+| Amarin Siripanich | UNSW Sydney | Academia  | Australia |
