@@ -172,3 +172,42 @@ SurveyLaunch.startSurveyForCompletedTrip("https://berkeley.qualtrics.com/jfe/for
 
 An example of a commit that implemented such a change is 
 https://github.com/e-mission/e-mission-phone/commit/46eb53952d379808f994903dbd9a9d5a935b127a
+
+### Testing external survey launches ###
+
+If the survey is being launched from local javascript code, testing is pretty
+easy. But if it designed to be launched from a remote push notification,
+testing gets harder.
+- push notifications don't work on iOS
+- push notifications do work on android, but require a valid FCM client + server setup
+
+Adding a simple screen to test notifications using the instructions below can
+help with local testing before moving on to actual device testing. Remember to
+revert the changes after the UX testing is done!
+
+Download the new code (use "Save Link As.." to download the HTML correctly)
+
+1. [Patch file (`test_external_surveys.patch`)](samples/test_external_surveys.patch)
+1. [New screen (`test_survey.html`)](samples/test_survey.html)
+
+Apply it
+
+```
+$ patch -p1 -i .../test_external_surveys.patch
+$ cp .../test_survey.html www/templates/intro
+```
+
+Rebuild and rerun.
+
+```
+$ npx cordova emulate android
+$ npx cordova emulate ios
+```
+
+
+The new screen post-login screen will launch surveys on demand. Edit the code
+in `launch.js` to launch your survey instead.
+
+| Launch survey sample code |  Launch survey UI |
+|-------------- | ---------- |
+| ![](../../assets/e-mission-both/launch_survey_sample_code.png) | ![](../../assets/e-mission-both/launch_survey_sample_ui.png) |
