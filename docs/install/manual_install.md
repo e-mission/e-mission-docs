@@ -41,8 +41,20 @@ is as simple as pulling new changes.
 ## Dependencies: ##
 -------------------
 
-### Database: ###
-1. Install [Mongodb](http://www.mongodb.org/), version 3.4
+### Database (mongodb) ###
+Start [Mongodb](http://www.mongodb.org/), version 3.4.
+
+#### Using docker (recommended) ####
+
+```
+$ docker run mongo:3.4 -p 27017:27017
+```
+
+Note that the command above _does not persist_ the data if the container is restarted. Docker has additional options for persistence, composition, etc.
+
+#### Using manual install ####
+
+
   2. *Windows*: mongodb appears to be installed as a service on Windows devices and it starts automatically on reboot
   3. *OSX*: You want to install homebrew and then use homebrew to install mongodb. Follow these instruction on how to do so ---> (https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/)
   4. *Ubuntu*: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
@@ -97,7 +109,13 @@ environment within anaconda to avoid conflicts with other applications.
   root                     /..../anaconda
   ```
   
-- If you have setup the environment already and just need to switch to it, you can also use `conda activate emission` to switch to the emission environment. To switch out of the emission environment, or to manipulate it in other ways, read the conda documentation on environments https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+- If you have setup the environment already and just need to switch to it, 
+
+  ```
+  $ source setup/activate.sh
+  ```
+
+  To switch out of the emission environment, or to manipulate it in other ways, read the conda documentation on environments https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
 - Remember to re-run the setup script every time you pull from the main repository because the dependencies may have changed.
 
@@ -112,6 +130,9 @@ environment within anaconda to avoid conflicts with other applications.
   $ cd ..
   $ rm -rf e-mission-server
   ```
+  
+- If you are not using 
+
 
 ### Javascript dependencies ###
 
@@ -125,14 +146,14 @@ Tip: Run "bower install" instead if you are prompted password for 'https://githu
 ## Run ##
 ---------
 
-IMPORTANT: If you have used the ```setup_conda.sh``` script, you will need to run the command 
-  ```
-  $HOME/miniconda/etc/profile.d/conda.sh
-  ```
-  on every new terminal. This is due to the installation being made through a script, which doesn't modify the ```bashrc```                       with the correct path.
+1. Activate the `emission` conda environment
+
+   ```
+   $ source setup/activate.sh
+   ```
 
 
-1. On OSX, start the database  (Note: mongodb appears to be installed as a service on Windows devices and it starts automatically on reboot). 
+1. For OSX manual installs, start the database  (Note: mongodb appears to be installed as a service on Windows devices and it starts automatically on reboot). 
 
         $ mongod
         2018-05-23T11:06:07.576-0700 I CONTROL  [initandlisten] MongoDB starting : pid=60899 port=27017 dbpath=/data/db 64-bit ...
