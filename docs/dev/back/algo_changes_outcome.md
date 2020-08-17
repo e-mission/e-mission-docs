@@ -22,14 +22,14 @@ reasonable start.
 I've figured out how to run test cases outside the test framework and pass in additional flags. 
 We modify the test cases to accept the branch name, and `evaluation` and `persistence` flags:
   - If the "evaluation" flag is set:
-      - the test registers the newly created user at the beginning of the test with an "email" = "<branch>_<testname>"
+      - the test registers the newly created user at the beginning of the test with an `email` = `<branch>_<testname>`
       - the test does not clear the entries for the user when the test is complete
   - if the "persistence" flag is set:
       - the test saves the downloaded ground truth into `/tmp/<branch>_<testname>.json`
 
 ### Testing procedure ###
 
-After these modifications, the procedure becomes:
+After these modifications, we can use the `bin/compare_algo_changes.py` script to compare the results:
 - Run the test cases on the old branch by passing in the branch name, and an "evaluation" flag
 - Run the test cases on the new branch by passing in the branch name, and "evaluation" and "persistence" flags
 - For each test, connect to the server with two different phones, one to `<oldbranch>_<testname>`, and the other to `<newbranch>_<testname>`
