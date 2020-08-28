@@ -1,7 +1,7 @@
 # How to add a language
 ---
 
-For now, only English and French are available but in the future we hope to cover more languages. 
+For now, only English, French and Italian are available but in the future we hope to cover more languages. 
 
 ## Update the phone app
 
@@ -51,6 +51,10 @@ By default, the fallback language is english but it can easily be modified by ju
 ```
 
 You can find more information about the fallback language in the [documentation](https://angular-translate.github.io/docs/#/guide/08_fallback-languages). 
+
+### Translating the files
+
+All the text that needs to be translated are in https://github.com/e-mission/e-mission-translate. Please double check the key list against the corresponding `en` versions since the non-en translations are not guaranteed to be updated. The mapping from the translated files to the corresponding `en` files is in the `README`.
 
 ## Adding custom translations
 
