@@ -52,13 +52,19 @@ object on the server is https://github.com/e-mission/e-mission-server/pull/517
           ...
           <resource-file src="res/ios/usercachekeys.plist"/>
 
-    - If you are storing the object as raw JSON, use similar methods, but pass in a JSONObject on android and an NSDictionary on iOS.
+    - If you are storing the object as raw JSON, use similar methods, but pass in a JSONObject on android, an NSDictionary on iOS and a JSON object in Javascript
 
         ```
              JSONObject configWrapper = UserCacheFactory.getUserCache(ctxt).getLocalStorage(eventName, false);
             ...
             if (modified) {
                 UserCacheFactory.getUserCache(ctxt).putLocalStorage(eventName, configWrapper);
+            }
+        ```
+        
+        ```
+            $window.cordova.plugins.BEMUserCache.putMessage(MODE_CONFIRM_KEY, $scope.draftMode).then(function () {
+                .....
             }
         ```
 
@@ -87,6 +93,9 @@ iOS, local storage
 
          NSDictionary* notifyConfigWrapper = [[BuiltinUserCache database] getLocalStorage:eventName
 
+Javascript, messages
+
+         return UnifiedDataLoader.getUnifiedMessagesForInterval("statemachine/transition", tq)
 
 To check whether the data was saved correctly to the phone database, you can
 email the database to yourself (Profile -> Check sensed data -> Email). The database
