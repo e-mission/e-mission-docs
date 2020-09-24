@@ -24,6 +24,27 @@ This is the default, and is intended to make the development process easier.  It
 
 Anybody who knows the incoming email address/token/identifier can access the user's data.  If this identifier is well known, like an email address or phone number, this option is horribly insecure. If this identifier is secret, like a password or a token from a list, then it is somewhat secure. However, it is a very unsophisticated method - it does not enforce strong passwords, or support password recovery, 2 factor authentication or security questions. If your user loses their password, their password is compromised, or they want to switch their phone, all their data is lost.
 
+The default prompt for prompted-auth is "Dummy dev mode". If you want to use a different prompt, you have to specify it as prompt - e.g. in the `www/json/connectionConfig.json`:
+
+```
+    "android": {
+        "auth": {
+            "method": "prompted-auth",
+            "prompt": "Enter a unique passphrase",
+            "clientID": "ignored"
+        }
+    },
+    "ios": {
+        "auth": {
+            "method": "prompted-auth",
+            "prompt": "Enter a unique passphrase",
+            "clientID": "ignored"
+        }
+    }
+```
+
+Read an related usage issue [here](https://github.com/e-mission/e-mission-docs/issues/577). 
+
 ### `token_list`/`prompted-auth` ###
 
 This method is designed for short, controlled studies with extensive participant interaction. A list of pre-created _tokens_ (essentially pre-recreated passwords) is stored on the server, and participants are handed tokens in person as they are recruited. The incoming token is checked against the pre-created list - if it exists, it is valid, if not, it is not.
