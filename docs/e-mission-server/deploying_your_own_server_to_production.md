@@ -74,6 +74,14 @@ Push notifications are configured in `conf/net/ext_service/push.json`.
 - If you are deploying your own app, create an ionic account, register your
   app, and obtain an auth token for push.
 
+The push notification feature is "off" by default. We have a placeholder push notification config so everything will compile, but you need to get the push notification config for your own app from your own firebase account. You would get an  `INVALID_SENDER` error if you compile the app without push notifications configured.  Alternatively, if you don't want/need push notifications, you can remove the push plugin and the error will go away:
+
+```
+npx cordova plugin rm phonegap-push
+```
+
+Check with your study admin if you need this feature. 
+
 
 #### Configuring other services ####
 The server has a number of integrations with both internal and external
