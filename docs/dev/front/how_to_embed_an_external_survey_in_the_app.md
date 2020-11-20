@@ -96,6 +96,11 @@ and in HTML
 <button class="button button-icon ion-clipboard" ng-click="startSurvey()">Survey</button>
 ```
 
+#### Example of using prefilled values ####
+
+- For google forms: https://github.com/e-mission/e-mission-docs/issues/582
+- For Kobotoolbox or other enketo based products: https://github.com/e-mission/e-mission-docs/issues/587
+
 #### Example of using element `XPath` ####
 
 XPaths specify a traversal through the HTML DOM to uniquely identify an
@@ -149,6 +154,7 @@ and in HTML
 ```
 <button class="button button-icon ion-clipboard" ng-click="startSurvey()">Survey</button>
 ```
+
 
 ### Auto-fill UUID and trip information ###
 The app can also fill in trip start and end timestamps and formatted times.
