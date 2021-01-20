@@ -47,7 +47,7 @@ Start [Mongodb](http://www.mongodb.org/), version 3.4.
 #### Using docker (recommended) ####
 
 ```
-$ docker run mongo:3.4 -p 27017:27017
+$ docker run -p 27017:27017 mongo:3.4
 ```
 
 Note that the command above _does not persist_ the data if the container is restarted. Docker has additional options for persistence, composition, etc.
