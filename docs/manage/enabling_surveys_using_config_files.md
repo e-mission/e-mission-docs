@@ -38,7 +38,7 @@ Create a "config login link" using this format (filling in `YOUR_STUDY_OR_PROGRA
 emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github
 ```
 
-Create this link above, and then copy and paste it into Safari/Google Chrome to get past the config login step of the app. _If you make changes to the config file after you have already loaded it into the app, you **MUST uninstall the app from your emulator and reinstall it to re-load the changes you made to the config.** If you only make a change to the survey file however, you do not need to uninstall/reinstall the app because the `formPath` is downloaded dynamically._
+Create this link above, and later once we have created the config file, we will copy and paste it into Safari/Google Chrome to get past the config login step of the app. 
 
 ### Docker-Compose option
 
@@ -210,364 +210,32 @@ or
 ...
 ```
 
-9. Now that your config file has been completed, you can compare it to some of our examples below (in the section _Examples of configs with varying surveys (for reference)_) to make sure you have written it correctly:
+9. Now that your config file has been completed, you can compare it to some of our examples in the section below _Examples of configs with varying surveys (for reference)_ to make sure you have written it correctly.
 
 # Wrap up:
 
-1. Publish your changes to your fork of  `nrel-openpath-deploy-configs`
+1. Publish your changes to your fork of  `nrel-openpath-deploy-configs`.
 
-2. Start the emulator and uninstall/reinstall your `em-devapp.app` so that it opens up the config login screen and prompts you to scan into your Study/Program.  into Safari to get past the config login screen.
+2. Start the emulator and uninstall/reinstall your `em-devapp.app` so that it opens up with the config login screen and prompts you to scan into a Study/Program.
 
-3. Open Safari in the emulator and paste in your `emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github`, and it should automatically open up e-mission and login your app to the study/program you've created
+3. Open Safari in the emulator and paste in your `emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github`, and it should automatically open up e-mission and your config will successfully be loaded into the app with the study/program you've created.
 
+_If you make changes to the config file after you have already loaded it into the app, you **MUST uninstall the app from your emulator and reinstall it to re-load the changes you made to the config.** If you only make a change to the survey file however, you do not need to uninstall/reinstall the app because the `formPath` is downloaded dynamically._
 
 # Examples of configs with varying surveys _(for reference)_
 
-## Basic Config Template _(without any buttons or surveys, and MULTILABEL for trip-labels)_
-----
-`[your program name].nrel-op.json`
-```json
-{
-    "version": "...",
-    "ts": "...",
-    "intro": {
-        "program_or_study": "...",
-        "start_month": "...",
-        "start_year": "...",
-        "program_admin_contact": "...",
-        "deployment_partner_name": "...",
-        "translated_text": {
-            "en": {
-                "deployment_name": "...",
-                "summary_line_1": "...",
-                "summary_line_2": "...",
-                "summary_line_3": "...",
-                "short_textual_description": "...",
-                "why_we_collect": "...",
-                "research_questions": ["...", "..."]
-            }
-        }
-    },
-    "survey_info": {
-      "surveys": {
-        "UserProfileSurvey": {
-          "formPath": "json/demo-survey-v2.json",
-          "version": 1,
-          "compatibleWith": 1,
-          "dataKey": "manual/demographic_survey",
-          "labelTemplate": {
-            "en": "Answered",
-            "es": "Contestada"
-          }
-        }
-      },
-      "trip-labels": "MULTILABEL"
-    },
-    "display_config": {
-        "use_imperial": false
-    },
-    "profile_controls": {
-        "support_upload": true,
-        "trip_end_notification": true
-    }
-}
-```
+* Basic Config Template _(without any buttons or surveys, and MULTILABEL for trip-labels)_
 
-## TimeuseSurvey Config Template _(using the timeuse survey for trip-notes and place-notes, and MULTILABEL for trip-labels)_
-----
-`[your program name].nrel-op.json`
-```json
-{
-    "version": "...",
-    "ts": "...",
-    "intro": {
-        "program_or_study": "...",
-        "start_month": "...",
-        "start_year": "...",
-        "program_admin_contact": "...",
-        "deployment_partner_name": "...",
-        "translated_text": {
-            "en": {
-                "deployment_name": "...",
-                "summary_line_1": "...",
-                "summary_line_2": "...",
-                "summary_line_3": "...",
-                "short_textual_description": "...",
-                "why_we_collect": "...",
-                "research_questions": ["...", "..."]
-            }
-        }
-    },
-    "survey_info": {
-      "surveys": {
-        "UserProfileSurvey": {
-          "formPath": "json/demo-survey-v2.json",
-          "version": 1,
-          "compatibleWith": 1,
-          "dataKey": "manual/demographic_survey",
-          "labelTemplate": {
-            "en": "Answered",
-            "es": "Contestada"
-          }
-        },
-        "TimeUseSurvey": {
-          "formPath": "https://raw.githubusercontent.com/sebastianbarry/nrel-openpath-deploy-configs/surveys-info-and-surveys-data/survey-resources/data-json/time-use-survey-form-v9.json",
-          "version": 9,
-          "compatibleWith": 1,
-          "labelVars": {
-            "pca": {
-              "key": "Personal_Care_activities",
-              "type": "length"
-            },
-            "erea": {
-              "key": "Employment_related_a_Education_activities",
-              "type": "length"
-            },
-            "da": {
-              "key": "Domestic_activities",
-              "type": "length"
-            },
-            "ral": {
-              "key": "Recreation_and_leisure",
-              "type": "length"
-            },
-            "vwaca": {
-              "key": "Voluntary_work_and_care_activities",
-              "type": "length"
-            },
-            "other": {
-              "key": "Other",
-              "type": "length"
-            }
-          },
-          "labelTemplate": {
-            "en": "{ pca, plural, =0 {} other {# Personal Care, }}{ erea, plural, =0 {} other {# Employment/Education, } }{ da, plural, =0 {} other {# Domestic, } }{ ral, plural, =0 {} other {# Recreation/Leisure, } }{ vwaca, plural, =0 {} other {# Voluntary Work, } }{ other, plural, =0 {} other {# Other} }",
-            "es": "{ pca, plural, =0 {} other {# Cuidado Personal, }}{ erea, plural, =0 {} other {# Empleo/Educación, } }{ da, plural, =0 {} other {# Domésticas, } }{ ral, plural, =0 {} other {# Recreación/Ocio, } }{ vwaca, plural, =0 {} other {# Voluntariado, } }{ other, plural, =0 {} other {# Otro} }"
-          }
-        }
-      },
-      "buttons": {
-        "trip-notes": {
-          "surveyName": "TimeUseSurvey",
-          "not-filled-in-label": {
-            "en": "Add Activity",
-            "es": "Añadir actividad"
-          }
-        },
-        "place-notes": {
-          "surveyName": "TimeUseSurvey",
-          "not-filled-in-label": {
-            "en": "Add Activity",
-            "es": "Añadir actividad"
-          }
-        }
-      },
-      "trip-labels": "MULTILABEL"
-    },
-    "display_config": {
-        "use_imperial": false
-    },
-    "profile_controls": {
-        "support_upload": true,
-        "trip_end_notification": true
-    }
-}
-```
+[https://github.com/sebastianbarry/nrel-openpath-deploy-configs/blob/surveys-info-and-surveys-data/configs/dev-emulator-study.nrel-op.json]
 
-## TripConfirm Config Template _(not using trip-notes or place-notes, and ENKETO for trip-labels)_
-----
-`[your program name].nrel-op.json`
-```json
-{
-    "version": "...",
-    "ts": "...",
-    "intro": {
-        "program_or_study": "...",
-        "start_month": "...",
-        "start_year": "...",
-        "program_admin_contact": "...",
-        "deployment_partner_name": "...",
-        "translated_text": {
-            "en": {
-                "deployment_name": "...",
-                "summary_line_1": "...",
-                "summary_line_2": "...",
-                "summary_line_3": "...",
-                "short_textual_description": "...",
-                "why_we_collect": "...",
-                "research_questions": ["...", "..."]
-            }
-        }
-    },
-    "survey_info": {
-      "surveys": {
-        "TripConfirmSurvey": {
-          "formPath": "https://raw.githubusercontent.com/sebastianbarry/nrel-openpath-deploy-configs/surveys-info-and-surveys-data/survey-resources/data-json/trip-end-survey-multiple-select.json",
-          "version": 1.2,
-          "compatibleWith": 1,
-          "dataKey": "manual/trip_user_input",
-          "labelVars": {
-            "modes": {
-              "key": "travel_mode",
-              "type": "length"
-            },
-            "purposes": {
-              "key": "destination_purpose",
-              "type": "length"
-            }
-          },
-          "labelTemplate": {
-            "en": "${purposes} purpose${purposes > 1 ? 's': ''}, ${modes} mode${modes > 1 ? 's': ''}",
-            "es": "${purposes} propósito${purposes > 1 ? 's': ''}, ${modes} modo${modes > 1 ? 's': ''}"
-          }
-        },
-        "UserProfileSurvey": {
-          "formPath": "json/demo-survey-v2.json",
-          "version": 1,
-          "compatibleWith": 1,
-          "dataKey": "manual/demographic_survey",
-          "labelVars": {
-            
-          },
-          "labelTemplate": {
-            "en": "Answered",
-            "es": "Contestada"
-          }
-        }
-      },
-      "buttons": {
-      },
-      "trip-labels": "ENKETO"
-    },
-    "display_config": {
-        "use_imperial": false
-    },
-    "profile_controls": {
-        "support_upload": true,
-        "trip_end_notification": true
-    }
-}
-```
+* TimeuseSurvey Config Template _(using the timeuse survey for trip-notes and place-notes, and MULTILABEL for trip-labels)_
 
-## Timeuse + TripConfirm Config Template _(using the timeuse survey for trip-notes and place-notes, and ENKETO for trip-labels)_
-----
-`[your program name].nrel-op.json`
-```json
-{
-    "version": "...",
-    "ts": "...",
-    "intro": {
-        "program_or_study": "...",
-        "start_month": "...",
-        "start_year": "...",
-        "program_admin_contact": "...",
-        "deployment_partner_name": "...",
-        "translated_text": {
-            "en": {
-                "deployment_name": "...",
-                "summary_line_1": "...",
-                "summary_line_2": "...",
-                "summary_line_3": "...",
-                "short_textual_description": "...",
-                "why_we_collect": "...",
-                "research_questions": ["...", "..."]
-            }
-        }
-    },
-    "survey_info": {
-      "surveys": {
-        "TripConfirmSurvey": {
-          "formPath": "https://raw.githubusercontent.com/sebastianbarry/nrel-openpath-deploy-configs/surveys-info-and-surveys-data/survey-resources/data-json/trip-end-survey-multiple-select.json",
-          "version": 1.2,
-          "compatibleWith": 1,
-          "dataKey": "manual/trip_user_input",
-          "labelVars": {
-            "modes": {
-              "key": "travel_mode",
-              "type": "length"
-            },
-            "purposes": {
-              "key": "destination_purpose",
-              "type": "length"
-            }
-          },
-          "labelTemplate": {
-            "en": "{ purposes, plural, =0 {No purposes} one {1 purpose} other {# purposes} }, { modes, plural, =0 {No modes} one {1 mode} other {# modes} }",
-            "es": "{ purposes, plural, =0 {No propósitos} one {1 propósito} other {# propósitos} }, { modes, plural, =0 {No modos} one {1 modo} other {# modos} }"
-          }
-        },
-        "UserProfileSurvey": {
-          "formPath": "json/demo-survey-v2.json",
-          "version": 1,
-          "compatibleWith": 1,
-          "dataKey": "manual/demographic_survey",
-          "labelTemplate": {
-            "en": "Answered",
-            "es": "Contestada"
-          }
-        },
-        "TimeUseSurvey": {
-          "formPath": "https://raw.githubusercontent.com/sebastianbarry/nrel-openpath-deploy-configs/surveys-info-and-surveys-data/survey-resources/data-json/time-use-survey-form-v9.json",
-          "version": 9,
-          "compatibleWith": 1,
-          "labelVars": {
-            "pca": {
-              "key": "Personal_Care_activities",
-              "type": "length"
-            },
-            "erea": {
-              "key": "Employment_related_a_Education_activities",
-              "type": "length"
-            },
-            "da": {
-              "key": "Domestic_activities",
-              "type": "length"
-            },
-            "ral": {
-              "key": "Recreation_and_leisure",
-              "type": "length"
-            },
-            "vwaca": {
-              "key": "Voluntary_work_and_care_activities",
-              "type": "length"
-            },
-            "other": {
-              "key": "Other",
-              "type": "length"
-            }
-          },
-          "labelTemplate": {
-            "en": "{ pca, plural, =0 {} other {# Personal Care, }}{ erea, plural, =0 {} other {# Employment/Education, } }{ da, plural, =0 {} other {# Domestic, } }{ ral, plural, =0 {} other {# Recreation/Leisure, } }{ vwaca, plural, =0 {} other {# Voluntary Work, } }{ other, plural, =0 {} other {# Other} }",
-            "es": "{ pca, plural, =0 {} other {# Cuidado Personal, }}{ erea, plural, =0 {} other {# Empleo/Educación, } }{ da, plural, =0 {} other {# Domésticas, } }{ ral, plural, =0 {} other {# Recreación/Ocio, } }{ vwaca, plural, =0 {} other {# Voluntariado, } }{ other, plural, =0 {} other {# Otro} }"
-          }
-        }
-      },
-      "buttons": {
-        "trip-notes": {
-          "surveyName": "TimeUseSurvey",
-          "not-filled-in-label": {
-            "en": "Add Activity",
-            "es": "Añadir actividad"
-          }
-        },
-        "place-notes": {
-          "surveyName": "TimeUseSurvey",
-          "not-filled-in-label": {
-            "en": "Add Activity",
-            "es": "Añadir actividad"
-          }
-        }
-      },
-      "trip-labels": "ENKETO"
-    },
-    "display_config": {
-        "use_imperial": false
-    },
-    "profile_controls": {
-        "support_upload": true,
-        "trip_end_notification": true
-    }
-}
-```
+[https://github.com/sebastianbarry/nrel-openpath-deploy-configs/blob/surveys-info-and-surveys-data/configs/dev-emulator-program.nrel-op.json]
 
-----
+* TripConfirm Config Template _(not using trip-notes or place-notes, and ENKETO for trip-labels)_
+
+[https://github.com/sebastianbarry/nrel-openpath-deploy-configs/blob/surveys-info-and-surveys-data/configs/dev-emulator-study-tripconfirm.nrel-op.json]
+
+* Timeuse + TripConfirm Config Template _(using the timeuse survey for trip-notes and place-notes, and ENKETO for trip-labels)_
+
+[https://github.com/sebastianbarry/nrel-openpath-deploy-configs/blob/surveys-info-and-surveys-data/configs/dev-emulator-program-tripconfirm.nrel-op.json]
