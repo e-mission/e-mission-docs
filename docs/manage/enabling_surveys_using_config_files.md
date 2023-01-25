@@ -3,20 +3,51 @@
 
 The config files found in e-mission/nrel-openpath-deploy-configs are the basis for adding survey support for buttons
 
+For this guide, we assume:
+- Familiarity with cloning/forking/branching for github
+- Familiarity with docker and docker-compose
+- Familiarity with iPhone emulator and iPhone emulator must be setup already
+- Familiarity with e-mission-devapp (https://github.com/e-mission/e-mission-devapp) and getting the devapp to run on your emulator
+- Familiarity with the e-mission-server / e-mission-phone stack and starting and connecting both e-mission-server and e-mission-phone
+
 ## Before we begin:
 
-If you are going to create/test your own version of the config files, you must make sure that your config file will be read in by e-mission-phone by doing the following:
+1. Make sure to set your e-mission/e-mission-phone branch to `places-survey` (https://github.com/sebastianbarry/e-mission-phone/tree/places-survey).
 
-_From the `e-mission-phone` root directory, navigate to `www/js/config/dynamic_config.js`. From here in the `DynamicConfig` Factory, there is a function named readConfigFromServer which contains the declaration for variable `const downloadURL = "..."`_ **Change the value of `downloadURL` to be the filepath for your config directory**
+2. Make sure to set your e-mission/e-mission-server branch to `add-trip-place-additions` (https://github.com/shankari/e-mission-server/tree/add_trip_place_additions).
+
+3. For e-mission/nrel-openpath-deploy-configs, fork the nrel-openpath-deploy-configs branch `surveys-info-and-surveys-data` (https://github.com/sebastianbarry/nrel-openpath-deploy-configs/tree/surveys-info-and-surveys-data) so that you can create your own config files.
+    - Place any Enketo survey JSON files you would like to use in your Study/Program, into your forked directory `nrel-openpath-deploy-configs/survey-resources/data-json`.
+
+4. If you are going to create/test your own version of the config files, you must make sure that your config file will be read in by e-mission-phone by doing the following:
+
+_From the `e-mission-phone` root directory, navigate to `www/js/config/dynamic_config.js`. From here in the `DynamicConfig` Factory, there is a function named readConfigFromServer which contains the declaration for variable `const downloadURL = "..."`_ **Change the value of `downloadURL` to be the filepath for your config directory**.
 ```javascript
 // The URL prefix from which config files will be downloaded and read.
 // Change this if you supply your own config files.
 const downloadURL = "https://raw.githubusercontent.com/sebastianbarry/nrel-openpath-deploy-configs/surveys-info-and-surveys-data/configs/"+label+".nrel-op.json"
 ```
 
-The `label` variable used by `downloadURL` is defined by the `label=` field in the "config login link" you use during the config login screen (Screenshot here). **Create a "config login link" using this format (filling in `YOUR_STUDY_OR_PROGRAM_LABEL` with your own label):**
+5. The `label` variable used by `downloadURL` is defined in the `label=` field of the "config login link". _**How do you get to the config login screen?:**_ You only see this screen the very first time you open the app or after you have uninstalled/reinstalled the `em-devapp.app` _**How do you get past the config login screen?:**_ You use the config login link either by clicking/navigating to the link from a browser, or scanning the Study/Program QR code which is coded to the config login link (this step does not work on iPhone emulators as there is no camera to scan the QR code).
 
-`emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github`
+### Manual option
+
+(a). Create a "config login link" using this format (filling in `YOUR_STUDY_OR_PROGRAM_LABEL` with your own label)
+
+```h
+emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github
+```
+
+(b). Open Safari in the emulator and paste in your link, and it should automatically open up e-mission
+
+
+Create this link above, and then copy and paste it into Safari/Google Chrome to get past the config login step of the app. _If you make changes to the config file after you have already loaded it into the app, you **MUST uninstall the app from your emulator and reinstall it to re-load the changes you made to the config.** If you only make a change to the survey file however, you do not need to uninstall/reinstall the app because the `formPath` is downloaded dynamically._
+
+6. Start the emulator and uninstall/reinstall your `em-devapp.app` so that after we make the config in the next seciton, we can load in the new config file. Copy and paste your `emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github`
+
+### Docker-Compose option
+
+No steps yet.
 
 --- 
 
@@ -117,6 +148,7 @@ In your config file:
     - Keep in mind this path is read from `e-mission-phone/www/js/survey/enketo/service.js`, so if your `mySurvey.json` file is in `e-mission-phone/www/json` you would name this field `"formPath": "../../../json/mySurvey.json"`
   - This can also be an online path, i.e. `const downloadURL = "https://raw.githubusercontent.com/sebastianbarry/nrel-openpath-deploy-configs/surveys-info-and-surveys-data/surveys/mySurvey.json"`
     - Keep in mind that if this is an online path, if you do not have internet connection when the app reads in the survey it will not have the survey data.
+  - As as standard, put your survey JSON files in your forked path `nrel-openpath-deploy-configs/surveys-info-and-surveys-data/surveys`
 - **`"version":`** defines the version number of your survey
 - **`"compatibleWith":`** should be set to 1 (SB: I am not sure what compatibleWith is or how it is used by our app)
 - **`"dataKey":`** defines the data key, which is the location where the survey results data will be saved when the survey results are pushed to e-mission-server
@@ -183,7 +215,12 @@ or
 ...
 ```
 
-9. Now that your config file has been completed, you can compare it to some of our examples to make sure you have written it correctly:
+9. Now that your config file has been completed, you can compare it to some of our examples below (in the section _Examples of configs with varying surveys (for reference)_) to make sure you have written it correctly:
+
+# Wrap up:
+
+1. Publish your 
+
 
 # Examples of configs with varying surveys _(for reference)_
 
