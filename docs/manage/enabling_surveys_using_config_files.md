@@ -32,18 +32,13 @@ const downloadURL = "https://raw.githubusercontent.com/sebastianbarry/nrel-openp
 
 ### Manual option
 
-(a). Create a "config login link" using this format (filling in `YOUR_STUDY_OR_PROGRAM_LABEL` with your own label)
+Create a "config login link" using this format (filling in `YOUR_STUDY_OR_PROGRAM_LABEL` with your own label)
 
 ```h
 emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github
 ```
 
-(b). Open Safari in the emulator and paste in your link, and it should automatically open up e-mission
-
-
 Create this link above, and then copy and paste it into Safari/Google Chrome to get past the config login step of the app. _If you make changes to the config file after you have already loaded it into the app, you **MUST uninstall the app from your emulator and reinstall it to re-load the changes you made to the config.** If you only make a change to the survey file however, you do not need to uninstall/reinstall the app because the `formPath` is downloaded dynamically._
-
-6. Start the emulator and uninstall/reinstall your `em-devapp.app` so that after we make the config in the next seciton, we can load in the new config file. Copy and paste your `emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github`
 
 ### Docker-Compose option
 
@@ -219,7 +214,11 @@ or
 
 # Wrap up:
 
-1. Publish your 
+1. Publish your changes to your fork of  `nrel-openpath-deploy-configs`
+
+2. Start the emulator and uninstall/reinstall your `em-devapp.app` so that it opens up the config login screen and prompts you to scan into your Study/Program.  into Safari to get past the config login screen.
+
+3. Open Safari in the emulator and paste in your `emission://join_study?label=YOUR_STUDY_OR_PROGRAM_LABEL&source=github`, and it should automatically open up e-mission and login your app to the study/program you've created
 
 
 # Examples of configs with varying surveys _(for reference)_
