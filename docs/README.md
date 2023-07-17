@@ -1,4 +1,4 @@
-# Welcome to the e-mission Documentation!
+# Welcome to the NREL OpenPATH Documentation!
 
 [![Documentation Status](https://readthedocs.org/projects/e-mission/badge/?version=latest)](https://e-mission.readthedocs.io/en/latest/?badge=latest)
 
@@ -7,20 +7,18 @@ This repo contains all the documentation for the e-mission project, and [almost 
 There are some specialized READMEs [in the individual repositories](https://github.com/e-mission), but they are gradually being moved in here. This means that if you have any questions, you should first search here and if you don't find any [existing issues](https://github.com/e-mission/e-mission-docs/issues/), you should [file an issue here](https://github.com/e-mission/e-missiond-docs/issue).
 
 ## Getting started
-- [e-mission web site](https://e-mission.eecs.berkeley.edu/)   
+- [NREL OpenPATH web site](https://nrel.gov/openpath)   
 - [CODE on GitHub](https://github.com/e-mission)     
 - [LICENCE BSD-3](https://github.com/e-mission/e-mission-docs/blob/master/docs/LICENSE.md)  
 - Thanks to [@PatGendre](https://github.com/PatGendre) from [FabMob](https://github.com/fabmob/), you can now [Read The Docs](https://e-mission.readthedocs.io/en/latest/)
 
-## What is e-mission
-E-mission is an open source mobility platform developed at the [RISE](http://rise.cs.berkeley.edu/) and [BETS](https://bets.cs.berkeley.edu/) labs in the UC Berkeley EECS Department.  
+## What is NREL OpenPATH (née e-mission)
+NREL OpenPATH (née e-mission) is an open source mobility platform developed at the [RISE](http://rise.cs.berkeley.edu/) and [BETS](https://bets.cs.berkeley.edu/) labs in the UC Berkeley EECS Department. It is currently maintained by the National Renewable Energy Laboratory (NREL) with support from the US Department of Energy (DOE) Vehicle Technologies Office (VTO).
+
 E-mission includes a mobile application for Android and iOS, with user consent, automatically collects the user's travel patterns and sends them to the server so as to derive personal mobility information and analyses; depending on user consent for sharing his/her data, the data can also be used for aggregate mobility data studies. The application is also a tool for collecting information filled in by the user (such as incidents, ground truth information about his/her trip purpose and transportation mode, or answers to questions asked in external surveys).  
 The server is a python web application, the data is stored in a mongoDB database; 
 the client is a Cordova application for both Android and iOS.  
 The application has been initially designed to be reused in research and academic projects either for conducting and as a good learning project for CS students. It is also freely reusable for [any other user cases](use/deployments.md). If you are using e-mission in your work, please submit a PR, or send shankari@eecs.berkeley.edu an email so that you can be added to this list.
-
-## Why e-mission?
-e-mission was the **first open source mobility platform**, with the initial versions created in 2016. Itinerum, the only other open source mobility platform, was developed much earlier, but only open sourced in 2018. e-mission and Itinerum have applied for funding to **merge** in 2020 and are both members of the Project Management Committee. As far as we know, the merged project will be **the only** open source mobility platform.
 
 ### End to end apps
 @PatGendre generated this list of closed source apps that are similar to e-mission. Since Patrick is from France, they have a strong European focus. If you would like to add other companies to this list, please [send a pull request](contribute_to_the_doc/CONTRIBUTING.md).
@@ -53,8 +51,8 @@ E-mission has been reused in several projects, here are [short videos showing di
 ## Overview
 Read these papers for understand context.
 
-- [TRB paper describing how to use e-mission functionality](https://people.eecs.berkeley.edu/~shankari/emission_trb_2017_paper.pdf)  
-- [The in-review paper on the e-mission architecture, please do not distribute](https://people.eecs.berkeley.edu/~shankari/em-arch.pdf)  
+- [TRB paper describing how to use e-mission functionality]([https://people.eecs.berkeley.edu/~shankari/emission_trb_2017_paper.pdf](https://www.researchgate.net/publication/327115169_e-mission_An_Open-Source_Smartphone_Platform_for_Collecting_Human_Travel_Data))  
+- [The in-review paper on the e-mission architecture, please do not distribute](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-88.html)  
 - e-mission started as [Shankari's PhD thesis](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-180.html)
 - A proof of concept of [user private clouds in @njriasan's thesis](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-130.html)
 - A proof of concept for differentially private queries aggregating information over UPC [in @jackcsullivan's thesis](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-69.html)
