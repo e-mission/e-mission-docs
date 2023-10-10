@@ -17,7 +17,7 @@ After these two commands run sucessfully, you should be able to run the server a
 
 Sometimes, you will have specific data that you want to load into the emulator. Once you have the two g-zipped files in a local directory, you can load the data into an opcode:
 
-`./e-mission-py bin/debug/load_multi_timeline_for_range.py [path/to/files/with/prefix` -- this path might look something like `/Users/name/Downloads/my_test_data/test_data` where `my_test_data` is a folder containing the two g-zipped files that each start with `test_data`
+`./e-mission-py bin/debug/load_multi_timeline_for_range.py [path/to/files/with/prefix]` -- this path might look something like `/Users/name/Downloads/my_test_data/test_data` where `my_test_data` is a folder containing the two g-zipped files that each start with `test_data`
 
 The data will automatically create a "user email" for this opcode, by default it will be "user-0". This can be updated with: `edb.get_uuid_db().update_one({"user_email": "user-0"}, {"$set": {"user_email": "nrelop_usaid-laos-ev_default_test-1"}})`
 
@@ -27,7 +27,7 @@ Then, process the data by running the pipeline.
 
 If you updated to a valid opcode, you can now start the server and log into the devapp with that opcode
 
-## Not on Working with Deployment Configs
+## Note on Working with Deployment Configs
 
 There are development configs designed to be used with the local server. They include `dev-emulator-program`, `dev-emulator-study`, and `dev-emulator-timeuse`. 
 
