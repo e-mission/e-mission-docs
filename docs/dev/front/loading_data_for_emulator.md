@@ -19,7 +19,7 @@ Sometimes, you will have specific data that you want to load into the emulator. 
 
 `./e-mission-py bin/debug/load_multi_timeline_for_range.py [path/to/files/with/prefix]` -- this path might look something like `/Users/name/Downloads/my_test_data/test_data` where `my_test_data` is a folder containing the two g-zipped files that each start with `test_data`
 
-The data will automatically create a "user email" for this opcode, by default it will be "user-0". This can be updated with: `edb.get_uuid_db().update_one({"user_email": "user-0"}, {"$set": {"user_email": "nrelop_usaid-laos-ev_default_test-1"}})`
+The script will automatically create a "user email" for this opcode, by default it will be "user-0". This can be updated with: `edb.get_uuid_db().update_one({"user_email": "user-0"}, {"$set": {"user_email": "nrelop_[valid opcode]"}})`
 
 Then, process the data by running the pipeline.
 
