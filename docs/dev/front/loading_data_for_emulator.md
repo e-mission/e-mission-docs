@@ -35,7 +35,7 @@ Sometimes, it is useful to load data into a deployment config for testing, demo,
 1. Fork `nrel-openpath-deploy-configs`
 2. Modify the config you want to work on, making sure that there is no `server` defined (if no server is defined, the app will connect to the local server, as desired).
 3. Update the downloadURL in `dynamicConfig` for the version of `e-mission-phone` you are running to `https://raw.githubusercontent.com/[MY-REPO]/nrel-openpath-deploy-configs/[MY-BRANCH]/configs/${label}.nrel-op.json`
-4. Now you can use a development config with the local server
+4. Now you can use a deployment config with the local server
 
 ## Notes on making up a valid opcode
 - opcodes must begin with `nrelop`
