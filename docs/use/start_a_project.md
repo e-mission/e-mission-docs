@@ -6,7 +6,7 @@ The first step is to contact NREL to draw up an agreement, if you have not conta
 
 ### Fill Out the Form
 
-In order to provide you with a deployment suited to your project's specific needs, we use a special JSON file to configure your app. To create that file, please fill out the form: HERE. Please follow all instructions carefully, as this allows the automated workflow to function as intended and your file to be ready faster!
+In order to provide you with a deployment suited to your project's specific needs, we use a special JSON file to configure your app. To create that file, please fill out the form: [HERE](https://github.com/e-mission/nrel-openpath-deploy-configs/issues/new?assignees=&labels=new+config&projects=&template=add-new-config.yml&title=New+Project+Configuration+-+%5BPROJECT%5D). Please follow all instructions carefully, as this allows the automated workflow to function as intended and your file to be ready faster!
 
 You will be asked to provide information such as the name of your project, the purpose behind it, project-specific translations, and preferences for app configurations like the onboarding survey, trip labeling, and reminder schemes. It might help to gather the information before beginning to fill out the form. 
 
