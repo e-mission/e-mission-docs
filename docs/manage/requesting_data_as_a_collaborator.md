@@ -1,63 +1,14 @@
-# Requesting Data as a Collaborator
+# Requesting & Using Data as a Collaborator
 ---
 
-The consent document for e-mission (https://e-mission.eecs.berkeley.edu/consent) allows the platform owner (@shankari in this case) to share **de-linked** raw data with other collaborators for research.
+The **Transportation Secure Data Center (TSDC)**  hosts data collected by OpenPATH during a variety of surveys.  This data can be used to replicate previous study findings, generate new visualizations, or simply to explore the platform's capabilites.  To request data from a specific program, please visit the TSDC [website](https://www.nrel.gov/transportation/secure-transportation-data/index.html).
 
-> Time-delayed subsets of individual trajectory data, associated with their UUIDs but not email addresses, may by shared with collaborators, or released as research datasets to the community from time to time. If this is done, the time delay for sharing with collaborators will be at least one month, and the time delay for releasing to the community will be at least one year. Both collaborators and researchers will be asked to agree that they will publish only aggregate, non personally identifiable results, and will not re-share the data with others. 
-
-It also allows other researchers to use it to conduct studies. In this case, all data, including the **link** between the email address and the UUID will be made available to the researcher.
-
-> If this platform is being used to collect data for a study conducted by another researcher, for example, from a Transportation Engineering Department, then you will be asked to assent to a separate document outlining the data association, retention and sharing policies for that study, **in addition to the policies above**. We will make all data, including the mapping between the email address and the UUID, directly available to the lead researcher for the main study. This will allow them to associate the automatically gathered information with demographic data, and any pre and post surveys that they conduct as part of their study. The other researcher may also choose to compensate you for your time, as described in the protocol document for that study.
-
-This document provides the procedure to request access to such kinds of data. Most of the procedure is common; differences between them are labelled **linked** and **de-linked**.
-
-## Setup GPG ##
-
-We will send and receive data encrypted/signed using GPG.
-1. The steps for creating a GPG keypair are at https://www.gnupg.org/gph/en/manual/c14.html.
-1. Create a keypair and export it.
-1. Send me (@shankari, shankari@eecs.berkeley.edu) the public key via email.
-
-## Data request ##
-
-### De-linked ###
-Next, you need to formally request access by filling out a pdf form.
-
-1. I will send you an encrypted version of the form you need to fill out and a copy of *my* public key.
-1. Decrypt it using https://www.gnupg.org/gph/en/manual/x110.html.
-1. Fill it out and sign it physically.
-1. Also sign it electronically https://www.gnupg.org/gph/en/manual/x135.html
-1. Encrypt it using my public key https://www.gnupg.org/gph/en/manual/x110.html and send it to me
-
-If all of this works, we know that we have bi-directional encrypted communication over email. Make sure to encrypt any privacy sensitive information (e.g. subsets of data for debugging) that you send to me in the future.
-
-### Linked ###
-You need to send me a copy of your IRB approval and your consent document to ensure that you have permission to collect data.
-
-## Data retrieval ##
-
-### De-linked ###
-1. As you can see from the consent document, you can get access to data that is time-delayed by 1 months.
-1. I will upload an encrypted zip file with ~ 3 months of data to google drive and send you a link.
-
-Note that this data is very privacy-sensitive, so think through the answers carefully on the request form carefully and make sure that you follow them. Treat the data as you would like your data to be treated.
-
-### Linked ###
-1. I will upload an encrypted zip file with all your data to google drive and send you a link.
-
-
-### Both ###
-1. You need to decrypt it just like you decrypted the pdf form https://www.gnupg.org/gph/en/manual/x110.html.
-1. When unzipped, the data consists of multiple json files, one per user.
-1. The data will typically contain both raw sensed data (e.g. `background/location`) and processed data (e.g. `analysis/cleaned_trip`)
-1. Data formats for the json objects are at `emission/core/wrapper` (e.g. `emission/core/wrapper/location.py` and `emission/core/wrapper/cleanedtrip.py`)
-
-## Data analysis ##
+## Data Analysis - Server ##
 
 While it is possible to analyse the raw data, it is large, so you may want to load it into a database to work with. That will also allow you to write code that is compatible with the server, so that we can more easily incorporate your analysis into the standard e-mission server.
 
 ### Install the server ###
-Follow the README and install e-mission server locally on your own laptop.
+Follow the [README](https://github.com/e-mission/e-mission-server) and install e-mission server locally on your own laptop.
 
 ### Load the data ###
 Load the data into your local database. Since this data contains information from mutiple users, and you presumably want to retain the uuids, to correlate with other surveys that you might have performed, you should use the `load_multi_timeline_for_range.py` script. Since there are multiple files, the timeline will typically be a directory, and you should pass in the prefix. For example, if the user files are `all_users_sep_dec_2016/dump_0109c47b-e640-411e-8d19-e481c52d7130`, `all_users_sep_dec_2016/dump_026f8d13-4d7a-4f8f-8d35-0ec22b0f8f8b, ...,` you should run the following command line.
@@ -95,8 +46,7 @@ You can also remove the data by using `bin/purge_database_json.py`, which will d
 ./e-mission-py.bash bin/debug/purge_multi_timeline_for_range.py all_users_sep_dec_2016
 ```
 
-### Play with the data ###
-
+### Play with the Data ###
 An example ipython notebook that shows data access parameters is at
 https://github.com/e-mission/e-mission-server/blob/master/Timeseries_Sample.ipynb
 
@@ -104,7 +54,40 @@ It has examples on how to access raw data, processed data, and plot points.
 Please use the timeseries interfaces as opposed to direct mongodb queries wherever possible.
 That will make it easier to migrate to other, more scalable timeseries later.
 
-Again, data formats are at 
-https://github.com/e-mission/e-mission-server/tree/master/emission/core/wrapper
+## Alternative Analysis Methods ##
 
-Let me (@shankari) know if you have any further questions...
+There are a few ways to explore the data beyond the server.  Generally, these methods require a "mongodump" file -- a collection of data, archived in `.tar.gz` format.  Here are the broad steps you need to take in order to work with this data:
+
+1. **Start Docker**:  Ensure you have docker installed on your machine, and a `docker-compose.yml` file saved to your chosen repository.  The following command should start the development environment:
+    ```bash
+    $ docker-compose -f [example-docker-compose].yml up
+    ```
+    Example docker config files can be found [ADD_LINK]().
+2. **Load your data**:  There are a few ways to go about this:
+    - Certain repositories will have a `load_mongodump.sh` script.  Given the correct docker was started in the previous step, this should load all of the data for you.  
+        - Depending on the data being analyzed, loading the entire mongodump may take a _very_ long time.  Ensure that docker's resources are properly increased, and ample time is set aside for the loading process.
+    - If a portion of data is needed, the mongodump unzipped, and its individual components loaded into the docker.
+        - First, unpack your mongo dump file by running `tar -xvf [your_mongo_dump.tar.gz]`
+        - Navigate to the unzipped folder.  Create a new directory, `./dump/Stage_database/`.  Copy your data files into this new directory.
+        - Copy the new `./dump/Stage_database` directory into your Docker's `/tmp/` directory.  This can be done by dragging and dropping the directory via the Docker Desktop client, or done via the command line.
+        - Using the following commands, connect to your docker image, 
+            ```bash
+            $ docker exec -it [your_docker_image_name] /bin/bash
+            root@12345:/ cd tmp; mongorestore
+            ```
+        - More information on this approach can be found in the public dashboard [ReadMe](https://github.com/e-mission/em-public-dashboard/blob/main/README.md#large-dataset-workaround).
+
+
+In general, it is best to follow the instructions of the repository you are working with. There are subtle differences between them, and these instructions are intended as general guidance only.
+
+### Public Dashboard ###
+This repository has several ipython notebooks that may be used to visualize raw data.  For detailed instructions on working with the dashboard, please consult the repository's [ReadMe](https://github.com/e-mission/em-public-dashboard/blob/main/README.md).
+
+### Private Eval ###
+Like the public dashboard, this repository contains several notebooks that may be used to process raw data.  Rather than focusing on visualization, these notebooks are designed to evaluated the efficacy of OpenPATH, test new algorithms, and provide some additional visualizations. Further details, including how to load data into this repository, may be found in the repository's [ReadMe](https://github.com/e-mission/e-mission-eval-private-data/blob/master/README.md)
+
+## Final Notes ## 
+
+For more information on how data is formatted, feel free to explore the [/core/wrapper/](https://github.com/e-mission/e-mission-server/tree/master/emission/core/wrapper) portion of the server repository.
+
+Please contact @shankari if you have any further questions!
