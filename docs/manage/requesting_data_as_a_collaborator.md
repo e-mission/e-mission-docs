@@ -62,7 +62,26 @@ There are a few ways to explore the data beyond the server.  Generally, these me
     ```bash
     $ docker-compose -f [example-docker-compose].yml up
     ```
-    Example docker config files can be found [ADD_LINK]().
+    Example docker config files can be found in the server repository [here](https://github.com/e-mission/e-mission-server/blob/d2f38bc18d5c415888451e7ad98d40325a74c999/emission/integrationTests/docker-compose.yml#L4). The general construction of a compose file is as follows:
+
+    ```yml
+    version: "3"
+    services:
+    db:
+        image: mongo:4.4.0
+        volumes:
+        - mongo-data:/data/db
+        networks:
+        - emission
+        ports:
+        - "27017:27017" # May change depending on repo
+
+    networks:
+    emission:
+
+    volumes:
+    mongo-data:
+    ```
 2. **Load your data**:  There are a few ways to go about this:
     - Certain repositories will have a `load_mongodump.sh` script.  Given the correct docker was started in the previous step, this should load all of the data for you.  
         - Depending on the data being analyzed, loading the entire mongodump may take a _very_ long time.  Ensure that docker's resources are properly increased, and ample time is set aside for the loading process.
@@ -88,6 +107,6 @@ Like the public dashboard, this repository contains several notebooks that may b
 
 ## Final Notes ## 
 
-For more information on how data is formatted, feel free to explore the [/core/wrapper/](https://github.com/e-mission/e-mission-server/tree/master/emission/core/wrapper) portion of the server repository.
+For more information on how data is formatted, feel free to explore the [emission/core/wrapper/](https://github.com/e-mission/e-mission-server/tree/master/emission/core/wrapper) portion of the server repository.
 
 Please contact @shankari if you have any further questions!
