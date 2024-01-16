@@ -1,11 +1,65 @@
 # Requesting & Using Data as a Collaborator
 ---
+## Sourcing Data
 
 The **Transportation Secure Data Center (TSDC)**  hosts data collected by OpenPATH during a variety of surveys.  This data can be used to replicate previous study findings, generate new visualizations, or simply to explore the platform's capabilites.  To request data from a specific program, please visit the TSDC [website](https://www.nrel.gov/transportation/secure-transportation-data/index.html).
 
-## Data Analysis - Server ##
+## Working With Data  ##
 
-While it is possible to analyse the raw data, it is large, so you may want to load it into a database to work with. That will also allow you to write code that is compatible with the server, so that we can more easily incorporate your analysis into the standard e-mission server.
+After requesting data from TSDC, you should receive a "mongodump" file -- a collection of data, archived in `.tar.gz` format.  Here are the broad steps you need to take in order to work with this data:
+
+1. **Start Docker**:  Ensure you have docker installed on your machine, and a `docker-compose.yml` file saved to your chosen repository.  The following command should start the development environment:
+    ```bash
+    $ docker-compose -f [example-docker-compose].yml up
+    ```
+    Example docker config files can be found in the server repository [here](https://github.com/e-mission/e-mission-server/blob/d2f38bc18d5c415888451e7ad98d40325a74c999/emission/integrationTests/docker-compose.yml#L4). The general construction of a compose file is as follows:
+
+    ```yml
+    version: "3"
+    services:
+    db:
+        image: mongo:4.4.0
+        volumes:
+        - mongo-data:/data/db
+        networks:
+        - emission
+        ports:
+        - "27017:27017" # May change depending on repo
+
+    networks:
+    emission:
+
+    volumes:
+    mongo-data:
+    ```
+2. **Load your data**:  There are a few ways to go about this:
+    - Certain repositories will have a `load_mongodump.sh` script.  Given the correct docker was started in the previous step, this should load all of the data for you.  
+        - Depending on the data being analyzed, loading the entire mongodump may take a _very_ long time.  Ensure that docker's resources are properly increased, and ample time is set aside for the loading process.
+    - If only a portion of data is needed, the mongodump may be unzipped, and its individual components loaded into the docker.
+        - First, unpack your mongo dump file by running `tar -xvf [your_mongo_dump.tar.gz]`
+        - Navigate to the unzipped folder.  Create a new directory, `./dump/Stage_database/`.  Copy your data files into this new directory.
+        - Copy the new `./dump/Stage_database` directory into your Docker's `/tmp/` directory.  This can be done by dragging and dropping the directory into the Docker Desktop client, or done via the command line.
+        - Using the following commands, connect to your docker image, 
+            ```bash
+            $ docker exec -it [your_docker_image_name] /bin/bash
+            root@12345:/ cd tmp; mongorestore
+            ```
+        - More information on this approach can be found in the public dashboard [ReadMe](https://github.com/e-mission/em-public-dashboard/blob/main/README.md#large-dataset-workaround).
+
+
+In general, it is best to follow the instructions of the repository you are working with. There are subtle differences between them, and these instructions are intended as general guidance only.
+
+### Public Dashboard ###
+This repository has several ipython notebooks that may be used to visualize raw data.  For detailed instructions on working with the dashboard, please consult the repository's [ReadMe](https://github.com/e-mission/em-public-dashboard/blob/main/README.md).
+
+### Private Eval ###
+Like the public dashboard, this repository contains several notebooks that may be used to process raw data.  These notebooks are designed to evaluated the efficacy of OpenPATH, test new algorithms, and provide some additional visualizations. Further details, including how to load data into this repository, may be found in the repository's [ReadMe](https://github.com/e-mission/e-mission-eval-private-data/blob/master/README.md)
+
+---
+
+## Internal Data Analysis ##
+
+In the past, user-specific data was analyzed with scripts found in the [e-mission-server](https://github.com/e-mission/e-mission-server) repository.  This method of analysis is now reserved for internal debugging only.  In other words, **if you are an external collaborator, please use the methods detailed in the previous section!**   
 
 ### Install the server ###
 Follow the [README](https://github.com/e-mission/e-mission-server) and install e-mission server locally on your own laptop.
@@ -54,56 +108,7 @@ It has examples on how to access raw data, processed data, and plot points.
 Please use the timeseries interfaces as opposed to direct mongodb queries wherever possible.
 That will make it easier to migrate to other, more scalable timeseries later.
 
-## Alternative Analysis Methods ##
-
-There are a few ways to explore the data beyond the server.  Generally, these methods require a "mongodump" file -- a collection of data, archived in `.tar.gz` format.  Here are the broad steps you need to take in order to work with this data:
-
-1. **Start Docker**:  Ensure you have docker installed on your machine, and a `docker-compose.yml` file saved to your chosen repository.  The following command should start the development environment:
-    ```bash
-    $ docker-compose -f [example-docker-compose].yml up
-    ```
-    Example docker config files can be found in the server repository [here](https://github.com/e-mission/e-mission-server/blob/d2f38bc18d5c415888451e7ad98d40325a74c999/emission/integrationTests/docker-compose.yml#L4). The general construction of a compose file is as follows:
-
-    ```yml
-    version: "3"
-    services:
-    db:
-        image: mongo:4.4.0
-        volumes:
-        - mongo-data:/data/db
-        networks:
-        - emission
-        ports:
-        - "27017:27017" # May change depending on repo
-
-    networks:
-    emission:
-
-    volumes:
-    mongo-data:
-    ```
-2. **Load your data**:  There are a few ways to go about this:
-    - Certain repositories will have a `load_mongodump.sh` script.  Given the correct docker was started in the previous step, this should load all of the data for you.  
-        - Depending on the data being analyzed, loading the entire mongodump may take a _very_ long time.  Ensure that docker's resources are properly increased, and ample time is set aside for the loading process.
-    - If a portion of data is needed, the mongodump unzipped, and its individual components loaded into the docker.
-        - First, unpack your mongo dump file by running `tar -xvf [your_mongo_dump.tar.gz]`
-        - Navigate to the unzipped folder.  Create a new directory, `./dump/Stage_database/`.  Copy your data files into this new directory.
-        - Copy the new `./dump/Stage_database` directory into your Docker's `/tmp/` directory.  This can be done by dragging and dropping the directory via the Docker Desktop client, or done via the command line.
-        - Using the following commands, connect to your docker image, 
-            ```bash
-            $ docker exec -it [your_docker_image_name] /bin/bash
-            root@12345:/ cd tmp; mongorestore
-            ```
-        - More information on this approach can be found in the public dashboard [ReadMe](https://github.com/e-mission/em-public-dashboard/blob/main/README.md#large-dataset-workaround).
-
-
-In general, it is best to follow the instructions of the repository you are working with. There are subtle differences between them, and these instructions are intended as general guidance only.
-
-### Public Dashboard ###
-This repository has several ipython notebooks that may be used to visualize raw data.  For detailed instructions on working with the dashboard, please consult the repository's [ReadMe](https://github.com/e-mission/em-public-dashboard/blob/main/README.md).
-
-### Private Eval ###
-Like the public dashboard, this repository contains several notebooks that may be used to process raw data.  Rather than focusing on visualization, these notebooks are designed to evaluated the efficacy of OpenPATH, test new algorithms, and provide some additional visualizations. Further details, including how to load data into this repository, may be found in the repository's [ReadMe](https://github.com/e-mission/e-mission-eval-private-data/blob/master/README.md)
+---
 
 ## Final Notes ## 
 
