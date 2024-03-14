@@ -7,7 +7,8 @@ First execute `mapping_dictionaries.ipynb` before launching any other notebooks.
     - Make sure the default charts are loaded at the first instance of loading the website.
     - Make sure all the charts are being launched or the error table is displayed.
 2. Test with loading and unloading different program/study dataset. 
-    - Load different datasets, run the scripts to execute the notebooks to make sure the charts are being generate properly. Ensure to unload the datasets, and re-load the new dataset.
+    - Load different datasets, run the scripts to execute the notebooks to make sure the charts are being generate properly.
+    - Between datasets, drop the old dataset and load the new dataset.
     - Also check with empty MongoDB.
 3. After the code has been merged, validate the changes on the Staging.
     - Generate a snapshot of the charts from the staging website.
