@@ -71,7 +71,7 @@ This will load the dataset saved in the MongoDB as `Stage_database`.
 
 What if we want to load a different dataset than staging, and test for a different program/study.
 Let us consider the example below: 
-(Note: This might need to updated once https://github.com/e-mission/e-mission-docs/issues/1048 issue is checked-in.)
+- (Note: This might need to updated once https://github.com/e-mission/e-mission-docs/issues/1048 issue is checked-in.)
 ```
 services:
     notebook-server:
@@ -105,7 +105,7 @@ Execution of notebooks
 $ (emission) root@06f07def2c0e:/usr/src/app/saved-notebooks# PYTHONPATH=.. python bin/update_mappings.py mapping_dictionaries.ipynb
 $ (emission) root@06f07def2c0e:/usr/src/app/saved-notebooks# PYTHONPATH=.. python bin/generate_plots.py generic_metrics.ipynb default
 ```
-Refer to additional charts from https://github.com/e-mission/em-public-dashboard/blob/main/viz_scripts/docker/crontab
+Refer to additional notebooks from https://github.com/e-mission/em-public-dashboard/blob/main/viz_scripts/docker/crontab
 
 Then go to http://localhost:3274/
 
