@@ -55,39 +55,6 @@ docker-compose -f docker-compose.yml up
 
  Key difference amongst these two docker-compose file is the `CRON_MODE=TRUE` in case of `docker-compose.yml` while its disabled for `docker-compose.dev.yml`.
 
-# Changes required in docker-compose.dev.yml and/or docker-compose.yml to load different dataset
-
-The default `docker-compose.yml` looks like:
-```
-services:
-    notebook-server:
-        environment:
-        - DB_HOST=db
-        - WEB_SERVER_HOST=0.0.0.0
-        - CRON_MODE=TRUE
-        - STUDY_CONFIG=stage-program
-```
-This will load the dataset saved in the MongoDB as `Stage_database`.
-
-What if we want to load a different dataset than staging, and test for a different program/study.
-Let us consider the example below: 
-- (Note: This might need to updated once https://github.com/e-mission/e-mission-docs/issues/1048 issue is checked-in.)
-```
-services:
-    notebook-server:
-        environment:
-        - DB_HOST=mongodb://db/openpath_prod_usaid_laos_ev
-        - WEB_SERVER_HOST=0.0.0.0
-        - CRON_MODE=TRUE
-        - STUDY_CONFIG=usaid-laos-ev
-```
-1. For testing different config: Change the STUDY_CONFIG, as
- `STUDY_CONFIG=<program/study type>`
- Example: `STUDY_CONFIG=stage-program`
-1. Similarly, change the `DB_HOST=<dataset>`
-Example: `DB_HOST=mongodb://db/openpath_prod_usaid_laos_ev`
-to load the dataset `openpath_prod_usaid_laos_ev` which has been loaded into the MongoDB.
-
 # Execution of different public dashboard notebooks automatically (without launching Jupyter notebook)
 ---
 
