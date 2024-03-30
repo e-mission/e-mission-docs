@@ -1,9 +1,7 @@
 # Adding a New Data Type
 ---
 
-More advanced users may want to collect new types of data. The app currently stores data in a local sqlite database and pushes it to the server:
-- at the end of every trip (on iOS)
-- every hour (on both android and iOS)
+More advanced users may want to collect new types of data. The app currently stores data in a local sqlite database and pushes it to the server at the end of every trip, and potentially every hour (if there is unpushed data).
 
 This document outlines the steps to save a new datastructure to the phone buffer and have it show up in the timeseries object of the server.
 
