@@ -20,15 +20,6 @@ We have two docker-compose yml files, one specifically to aid in running in deve
 
 1. About the `docker-compose.dev.yml` file:
  - This is useful if you want to launch the Jupyter notebook and execute the code block and explore output of each code blocks.
- ```
-services:
-    notebook-server:
-        environment:
-        - DB_HOST=db
-        - WEB_SERVER_HOST=0.0.0.0
-        - CRON_MODE=
-        - STUDY_CONFIG=stage-program
-```
 
 To launch docker-compose.dev.yml:
 ```
@@ -38,15 +29,6 @@ docker-compose -f docker-compose.dev.yml up
 2. About the `docker-compose.yml` file:
  - This is useful if you want to execute the scripts to run all the required notebooks, without making any changes in the existing notebooks.
  - Note: We use cron jobs to execute the different notebooks in a scheduled way daily to generate the charts.
- ```
-services:
-    notebook-server:
-        environment:
-        - DB_HOST=db
-        - WEB_SERVER_HOST=0.0.0.0
-        - CRON_MODE=TRUE
-        - STUDY_CONFIG=stage-program
-```
 
 To launch docker-compose.yml:
 ```
@@ -54,6 +36,26 @@ docker-compose -f docker-compose.yml up
 ```
 
  Key difference amongst these two docker-compose file is the `CRON_MODE=TRUE` in case of `docker-compose.yml` while its disabled for `docker-compose.dev.yml`.
+
+ - `docker-compose.yml`:
+ ```
+services:
+    notebook-server:
+        environment:
+        - ....
+        - CRON_MODE=
+        - ....
+```
+
+- `docker-compose.dev.yml`
+```
+services:
+    notebook-server:
+        environment:
+        - ....
+        - CRON_MODE=TRUE
+        - ....
+```
 
  # Changes required in docker-compose.dev.yml and/or docker-compose.yml to load different dataset
 
