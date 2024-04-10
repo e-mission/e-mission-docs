@@ -19,7 +19,7 @@ First execute `mapping_dictionaries.ipynb` before launching any other notebooks.
 We have two docker-compose yml files, one specifically to aid in running in development mode. Another to run in production - alike mode.
 
 1. About the `docker-compose.dev.yml` file:
- - This is useful in case, you want to launch the Jupyter notebook and execute the code block and explore output of each code blocks.
+ - This is useful if you want to launch the Jupyter notebook and execute the code block and explore output of each code blocks.
  ```
 services:
     notebook-server:
@@ -36,7 +36,7 @@ docker-compose -f docker-compose.dev.yml up
 ```
 
 2. About the `docker-compose.yml` file:
- - This is useful in case, you want to execute the scripts to run all the required notebooks, without making any changes in the existing notebooks.
+ - This is useful if you want to execute the scripts to run all the required notebooks, without making any changes in the existing notebooks.
  - Note: We use cron jobs to execute the different notebooks in a scheduled way daily to generate the charts.
  ```
 services:
