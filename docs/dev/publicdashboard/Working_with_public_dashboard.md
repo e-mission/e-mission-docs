@@ -10,7 +10,7 @@ First execute `mapping_dictionaries.ipynb` before launching any other notebooks.
     - Load different datasets, run the scripts to execute the notebooks to make sure the charts are being generate properly.
     - Between datasets, drop the old dataset and load the new dataset.
     - Also check with empty MongoDB.
-3. After the code has been merged, validate the changes on the Staging.
+3. After the code has been merged, validate the changes on the staging.
     - Generate a snapshot of the charts from the staging website.
     - Request for the dataset for staging-program.
     - Validate the changes for both the charts and the Front end aspect.
