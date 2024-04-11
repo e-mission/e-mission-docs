@@ -1,5 +1,6 @@
 # Note on execution of public dashboard to launch the notebook
-First execute `mapping_dictionaries.ipynb` before launching any other notebooks.
+- First execute `mapping_dictionaries.ipynb` before launching any other notebooks.
+- Make sure the `Year` and `Month` parameter for the executing notebook is not `None` while executing the `generate_plots.py` script. If it's set to None, it will not generate the charts.
 
 # Test Scenario for Public Dashboard changes:
 1. Front end testing
@@ -102,8 +103,6 @@ Then go to http://localhost:3274/
 For example, if you want to test for usaid-laos-ev:
     http://localhost:3274/?study_config=usaid-laos-ev
 and test.
-
-Note: Make sure the Year and Month parameter for the executing notebook is not None. If it's set to None, it will not generate the charts.
 
 # Launch and explore the database
 
