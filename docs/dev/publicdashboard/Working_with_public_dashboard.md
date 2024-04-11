@@ -1,6 +1,5 @@
 # Note on execution of public dashboard to launch the notebook
 - First execute `mapping_dictionaries.ipynb` before launching any other notebooks.
-- Make sure the `Year` and `Month` parameter for the executing notebook is not `None` while executing the `generate_plots.py` script. If it's set to None, it will not generate the charts.
 
 # Test Scenario for Public Dashboard changes:
 1. Front end testing
@@ -89,7 +88,7 @@ $ docker exec -it em-public-dashboard-notebook-server-1 /bin/bash
 $ root@06f07def2c0e:/usr/src/app# source setup/activate.sh
 $ (emission) root@06f07def2c0e:/usr/src/app# cd saved-notebooks
 ```
-
+- Note: Make sure the `Year` and `Month` parameter for the executing notebook is not `None` while executing the `generate_plots.py` script. If it's set to None, it will not generate the charts.
 Execution of notebooks
 ```
 $ (emission) root@06f07def2c0e:/usr/src/app/saved-notebooks# PYTHONPATH=.. python bin/update_mappings.py mapping_dictionaries.ipynb
