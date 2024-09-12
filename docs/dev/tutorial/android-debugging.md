@@ -37,7 +37,7 @@ Start the emulator:
 emulator -avd <avd-name>
 ```
 
-`adb` should connect to the emulator automatically, `adb devices` to verify.
+`adb` should connect to the emulator automatically, run `adb devices` to verify.
 
 ## Real Phone
 
