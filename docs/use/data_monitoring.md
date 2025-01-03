@@ -4,7 +4,8 @@
 For basic summaries of the data, the public dashboard will be the easiest access point. The public dashboard is accessible to anyone on the internet, and contains a wide set of data visualizations updated daily. To view the dashboard, navigate to https://[your-deployment]-openpath.nrel.gov/public/. To remove charts from the display click the "x". To add charts, select the chart and month from the menu then click "add". Charts can be resized by dragging the lower right corner. Click the "more info" button where present to view a the data shown in the chart in a table. Charts can be saved by right clicking and copying or saving the image to your local computer. 
 
 ## Admin dashboard
-For more detailed representations and data export, the admin dashboard is provided to program administrators. You should have received and email inviting you to activate your account when the deployment was initialized, and you will be required to use two factor authentication. There are a few sections in the administrator dashboard:
+For more detailed representations and data export, the admin dashboard is provided to program administrators. You should have received and email inviting you to activate your account when the deployment was initialized, and you will be required to use two factor authentication. The dashboard may take a while to load, depending on the size of the deployment, but we are actively working on optimizations.  
+There are a few sections in the administrator dashboard:
 - landing page: shows recent data regarding onboarding and active users
 - data: page which supports viewing and export of raw data, split into several tabs:
   - users: shows user data, including first and most recent trip date, number of trips, and number of labeled trips - very useful for monitoring progress and participation
