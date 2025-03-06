@@ -66,12 +66,14 @@ While the above approach helps test small changes, It is very time-consuming whe
 
 ```bash
 # Copy files into platforms for building
-$ cordova prepare
+$ npx cordova prepare
 
 # Build the platform specific code
-cordova build <platform>
+npx cordova build <platform>
 ```
 > Replace the `<platform>` with either `ios` or `android`.
+
+> Make sure you also ["bundle the js webpack"](https://github.com/e-mission/e-mission-phone?tab=readme-ov-file#building-the-app) or there will be no app UI
 
 ## 2. Then, open the project in your IDE.
 
