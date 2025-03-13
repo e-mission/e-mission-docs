@@ -91,7 +91,6 @@ $ (emission) root@06f07def2c0e:/usr/src/app# cd saved-notebooks
 - Note: Make sure the `Year` and `Month` parameter for the executing notebook is not `None` while executing the `generate_plots.py` script. If it's set to None, it will not generate the charts.
 Execution of notebooks
 ```
-$ (emission) root@06f07def2c0e:/usr/src/app/saved-notebooks# PYTHONPATH=.. python bin/update_mappings.py mapping_dictionaries.ipynb
 $ (emission) root@06f07def2c0e:/usr/src/app/saved-notebooks# PYTHONPATH=.. python bin/generate_plots.py generic_metrics.ipynb default
 ```
 Refer to additional notebooks from https://github.com/e-mission/em-public-dashboard/blob/main/viz_scripts/docker/crontab
