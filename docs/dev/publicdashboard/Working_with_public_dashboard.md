@@ -4,7 +4,7 @@
     - Make sure the default charts are loaded at the first instance of loading the website.
     - Make sure all the charts are being launched or the error table is displayed.
 2. Test with loading and unloading different program/study dataset. 
-    - Load different datasets, run the scripts to execute the notebooks to make sure the charts are being generate properly.
+    - Load different datasets, run the scripts to execute the notebooks and make sure the charts are generated properly.
     - Between datasets, drop the old dataset and load the new dataset.
     - Also check with empty MongoDB.
 3. After the code has been merged, validate the changes on the staging environment.
