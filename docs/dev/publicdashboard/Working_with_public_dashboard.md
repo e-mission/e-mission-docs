@@ -1,6 +1,3 @@
-# Note on execution of public dashboard to launch the notebook
-- First execute `mapping_dictionaries.ipynb` before launching any other notebooks.
-
 # Test Scenario for Public Dashboard changes:
 1. Front end testing
     - Make sure the dropdown menu have valid list of metrics.
