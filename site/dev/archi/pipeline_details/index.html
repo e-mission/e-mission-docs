@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>4. Pipeline details - e-mission Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../install/manual_install/" class="dropdown-item">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../use/end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="../module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="../mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../front/phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="../../front/high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="../../front/create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="../../front/you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="../../front/guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="../../front/how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="../../front/how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="../../front/accessing_public_heatmap_and_incident_information/" class="dropdown-item">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="../../back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../future/overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="../../future/privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="../../future/differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="../../future/secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="../../future/analysis/" class="dropdown-item">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="../../future/scalability/" class="dropdown-item">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="../../future/unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../mode_inference_pipeline_design/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../front/phone_module_structure/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#pipeline-design-and-running" class="nav-link">Pipeline design and running</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="pipeline-design-and-running">Pipeline design and running<a class="headerlink" href="#pipeline-design-and-running" title="Permanent link">&para;</a></h2>
+<p>As we have seen multiple times, the data flow involves non-immutable, read-only
+data directly from the user, either through automatic sensing on the phone, or
+through user inputs. This immutable data is processed by the pipeline to
+generate inferred results. The pipeline state controls the running of the pipeline.</p>
+<h3 id="execution-model">Execution model<a class="headerlink" href="#execution-model" title="Permanent link">&para;</a></h3>
+<p>The pipeline for a single user is intended to be single-threaded, with the
+stages running sequentially. Pipelines for multiple users can run in parallel.</p>
+<p>In addition, every pipeline stage should:
+- only work on fresh data, for improved performance
+- work on all unprocessed data, for correctness</p>
+<p>We ensure this by maintaining state for each pipeline stage. The state includes
+- <em>the time at which the stage started running</em>: This is set when the stage
+starts running and unset when the stage completes. It is used to enforce
+single threading; if this value is set for a particular, then other instances
+of the stage should not run.
+- <em>the timestamp of the last data point processed</em> Note that this is the
+<em>not</em> the timestamp at which the stage was last run. Since the data can be
+buffered at various stages along the way, data that was collected before the
+current time might not have made it to the server yet. On every pass, the stage
+processes data in the range (last ts processed, now)</p>
+<h3 id="resetting-the-pipeline">Resetting the pipeline<a class="headerlink" href="#resetting-the-pipeline" title="Permanent link">&para;</a></h3>
+<p>If your pipeline state is messed up in any way, you can just reset the pipeline. The raw data is still present, so you can re-run the pipeline again. Re-running the pipeline after a reset should generate the same results, although it may take a LOOOONG time depending on the data that you have.
+  - if you are running the pipeline on a small amount of local data (e.g. to
+      reproduce on your desktop), you can reset the entire pipeline (<code>$ ./e-mission-py.bash bin/reset_pipeline.py -all</code>) and re-run
+  - if you ran the pipeline for a single user, you can reset the pipeline for that user (<code>$ ./e-mission-py.bash bin/reset_pipeline.py [-u|-e]</code>)
+  - if you are running the pipeline on an ongoing production server, reset
+      the pipeline to a specific date and re-run (<code>$ ./e-mission-py.sh bin/reset_pipeline.py -h</code> for the format). Note that this is a trickier
+      operation, so you may run into corner cases. In that case, file an issue, or
+      fix it youself and send me a pull request!</p>
+<p>Note that deleting the pipeline state entries without fully resetting the pipeline <em>will not work</em>. The processed results will not be deleted correctly, so you will end up with two sets of trips and sections, which will then mess up the downstream stages.</p>
+<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
+<h4 id="curr_run_ts-while-processing-pipeline"><code>curr_run_ts</code> = ...., while processing pipeline<a class="headerlink" href="#curr_run_ts-while-processing-pipeline" title="Permanent link">&para;</a></h4>
+<p>If you see the error <code>curr_state.curr_run_ts = [0-9]*, while processing pipeline</code>, it means that the stage is marked as still running.
+Steps to resolve:
+1. Make sure that there isn't any other instance of the pipeline running (e.g. something like <code>$ ps -aef | grep intake</code>)
+1. Assuming that is true, <a href="#resetting-the-pipeline">reset the pipeline</a> <br />
+You can reset the pipeline only back to the day before the error occurred (<code>-d</code> option). Also, before the pipeline to run the pipeline, you have to check that for the user(s) for which you had the error, the curr_ is not null in mongodb (Example: <code>db.getCollection('Stage_pipeline_state').find({"user_id": LUUID("3a2299d0-605a-4d92-bef8-1058d145d301")})</code>) or you will have to reset the <code>curr_run_ts</code> to <code>null</code> for that user and for the pipeline stage where it is not <code>null</code>.</p>
+<h4 id="no-errors-but-data-not-processed">No errors, but data not processed<a class="headerlink" href="#no-errors-but-data-not-processed" title="Permanent link">&para;</a></h4>
+<p>Make sure that the pipeline state is such that your new data is actually considered fresh. Note that on every run, we only read data after the last timestamp processed. Each pipeline stage will print the time range that is considering, and how much fresh data matched it.</p>
+<p>For example, the following logs indicate that when this stage was run, it starts from the beginning <code>None</code> and finds 617 locations to process. At the end, we have finished processing until 2018-10-08T02:58:11.356361.</p>
+<div class="highlight"><pre><span></span><code>2018-10-17 20:15:32,290:INFO:140735562040192:**********UUID 2b267782-a822-4b4b-954b-7f5b216c7eef: segmenting into trips**********
+2018-10-17 20:15:32,291:INFO:140735562040192:For stage PipelineStages.TRIP_SEGMENTATION, start_ts is None
+2018-10-17 20:15:32,296:DEBUG:140735562040192:curr_query = {&#39;user_id&#39;: UUID(&#39;2b267782-a822-4b4b-954b-7f5b216c7eef&#39;), &#39;$or&#39;: [{&#39;metadata.key&#39;: &#39;background/filtered_location&#39;}], &#39;metadata.write_ts&#39;: {&#39;$lte&#39;: 1539832527.2915819}}, sort_key = metadata.write_ts
+2018-10-17 20:15:32,296:DEBUG:140735562040192:orig_ts_db_keys = [&#39;background/filtered_location&#39;], analysis_ts_db_keys = []
+2018-10-17 20:15:32,583:DEBUG:140735562040192:finished querying values for [&#39;background/filtered_location&#39;], count = 173
+2018-10-17 20:15:32,671:DEBUG:140735562040192:finished querying values for [], count = 0
+2018-10-17 20:15:32,677:DEBUG:140735562040192:orig_ts_db_matches = 173, analysis_ts_db_matches = 0
+2018-10-17 20:15:32,718:DEBUG:140735562040192:Found 173 results
+2018-10-17 20:15:32,726:DEBUG:140735562040192:After de-duping, converted 173 points to 173
+2018-10-17 20:15:33,519:INFO:140735562040192:For stage PipelineStages.TRIP_SEGMENTATION, last_ts_processed = 2018-10-08T02:58:11.356361
+</code></pre></div>
+<p>If we re-run the pipeline for the same user and have not received any new data in the interim, we will see that we query from the last processed ts (<code>2018-10-08T02:58:11.356361</code>), which returns only 3 points. So there really isn't any new data to process.</p>
+<p><div class="highlight"><pre><span></span><code>2018-10-26 15:04:41,426:INFO:140736223740800:**********UUID 2b267782-a822-4b4b-954b-7f5b216c7eef: segmenting into trips**********
+2018-10-26 15:04:41,427:INFO:140736223740800:For stage PipelineStages.TRIP_SEGMENTATION, start_ts = 2018-10-08T02:58:11.356361
+2018-10-26 15:04:41,432:DEBUG:140736223740800:curr_query = {&#39;invalid&#39;: {&#39;$exists&#39;: False}, &#39;user_id&#39;: UUID(&#39;2b267782-a822-4b4b-954b-7f5b216c7eef&#39;), &#39;$or&#39;: [{&#39;metadata.key&#39;: &#39;background/filtered_location&#39;}], &#39;metadata.write_ts&#39;: {&#39;$lte&#39;: 1540591476.4273138, &#39;$gte&#39;: 1538967491.356361}}, sort_key = metadata.write_ts
+2018-10-26 15:04:41,432:DEBUG:140736223740800:orig_ts_db_keys = [&#39;background/filtered_location&#39;], analysis_ts_db_keys = []
+2018-10-26 15:04:41,432:DEBUG:140736223740800:finished querying values for [&#39;background/filtered_location&#39;]
+2018-10-26 15:04:41,432:DEBUG:140736223740800:finished querying values for []
+2018-10-26 15:04:41,462:DEBUG:140736223740800:Found 3 results
+2018-10-26 15:04:41,470:DEBUG:140736223740800:After de-duping, converted 3 points to 3
+</code></pre></div>
+If this happens, you want to force the pipeline to treat the old data as fresh. Which means that you basically need to <a href="#resetting-the-pipeline">reset the pipeline</a>.</p>
+<h4 id="attributeerror-property-x-is-read-only">AttributeError: property X is read-only<a class="headerlink" href="#attributeerror-property-x-is-read-only" title="Permanent link">&para;</a></h4>
+<p>If you encounter errors like <code>AttributeError: property location is read-only</code> during pipeline execution, this means the analysis code is trying to modify wrapper data using property access instead of dictionary access.</p>
+<p>See the <a href="../data_model/#working-with-read-only-wrappers">Working with Read-Only Wrappers</a> section in the data model documentation for detailed explanations and solutions.</p>
+<p>Quick fix: Replace <code>obj.property = value</code> with <code>obj["property"] = value</code> in your analysis code.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

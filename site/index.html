@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>e-mission Docs</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="." class="nav-link active" aria-current="page">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="install/manual_install/" class="dropdown-item">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="install/deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="install/configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="install/multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="use/end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev/tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="dev/tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev/tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="dev/tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="dev/tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="dev/tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="dev/tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="dev/tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="dev/tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev/archi/data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="dev/archi/module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="dev/archi/mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="dev/archi/pipeline_details/" class="dropdown-item">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev/front/phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="dev/front/high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="dev/front/create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="dev/front/you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="dev/front/guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="dev/front/how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="dev/front/how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="dev/front/accessing_public_heatmap_and_incident_information/" class="dropdown-item">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev/back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="dev/back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev/future/overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="dev/future/privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="dev/future/differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="dev/future/secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="dev/future/analysis/" class="dropdown-item">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="dev/future/scalability/" class="dropdown-item">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="dev/future/unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="install/manual_install/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#welcome-to-the-nrel-openpath-documentation" class="nav-link">Welcome to the NREL OpenPATH Documentation!</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#getting-started" class="nav-link">Getting started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-is-nrel-openpath-nee-e-mission" class="nav-link">What is NREL OpenPATH (née e-mission)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#gallery-a-first-glimpse-at-the-app-ui" class="nav-link">Gallery (a first glimpse at the app UI)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#roadmap" class="nav-link">roadmap</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="welcome-to-the-nrel-openpath-documentation">Welcome to the NREL OpenPATH Documentation!<a class="headerlink" href="#welcome-to-the-nrel-openpath-documentation" title="Permanent link">&para;</a></h1>
+<p><a href="https://e-mission.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/e-mission/badge/?version=latest" /></a></p>
+<p>This repo contains all the documentation for the e-mission project, and <a href="https://github.com/e-mission/e-mission-docs/issues/">almost ALL THE ISSUES</a>. More information on the rationale behind the change can be found in the <a href="contribute_to_the_doc/migration_reason/">migration reasons</a>.</p>
+<p>There are some specialized READMEs <a href="https://github.com/e-mission">in the individual repositories</a>, but they are gradually being moved in here. This means that if you have any questions, you should first search here and if you don't find any <a href="https://github.com/e-mission/e-mission-docs/issues/">existing issues</a>, you should <a href="https://github.com/e-mission/e-missiond-docs/issue">file an issue here</a>.</p>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://nrel.gov/openpath">NREL OpenPATH web site</a>   </li>
+<li><a href="https://github.com/e-mission">CODE on GitHub</a>     </li>
+<li><a href="https://github.com/e-mission/e-mission-docs/blob/master/docs/LICENSE.md">LICENCE BSD-3</a>  </li>
+<li>Thanks to <a href="https://github.com/PatGendre">@PatGendre</a> from <a href="https://github.com/fabmob/">FabMob</a>, you can now <a href="https://e-mission.readthedocs.io/en/latest/">Read The Docs</a></li>
+</ul>
+<h2 id="what-is-nrel-openpath-nee-e-mission">What is NREL OpenPATH (née e-mission)<a class="headerlink" href="#what-is-nrel-openpath-nee-e-mission" title="Permanent link">&para;</a></h2>
+<p>NREL OpenPATH (née e-mission) is an open source mobility platform developed at the <a href="http://rise.cs.berkeley.edu/">RISE</a> and <a href="https://bets.cs.berkeley.edu/">BETS</a> labs in the UC Berkeley EECS Department. It is currently maintained by the National Renewable Energy Laboratory (NREL) with support from the US Department of Energy (DOE) Vehicle Technologies Office (VTO).</p>
+<p>E-mission includes a mobile application for Android and iOS, with user consent, automatically collects the user's travel patterns and sends them to the server so as to derive personal mobility information and analyses; depending on user consent for sharing his/her data, the data can also be used for aggregate mobility data studies. The application is also a tool for collecting information filled in by the user (such as incidents, ground truth information about his/her trip purpose and transportation mode, or answers to questions asked in external surveys).<br />
+The server is a python web application, the data is stored in a mongoDB database; 
+the client is a Cordova application for both Android and iOS.<br />
+The application has been initially designed to be reused in research and academic projects either for conducting and as a good learning project for CS students. It is also freely reusable for <a href="use/deployments/">any other user cases</a>. If you are using e-mission in your work, please submit a PR, or send <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#104;&#97;&#110;&#107;&#97;&#114;&#105;&#64;&#101;&#101;&#99;&#115;&#46;&#98;&#101;&#114;&#107;&#101;&#108;&#101;&#121;&#46;&#101;&#100;&#117;">&#115;&#104;&#97;&#110;&#107;&#97;&#114;&#105;&#64;&#101;&#101;&#99;&#115;&#46;&#98;&#101;&#114;&#107;&#101;&#108;&#101;&#121;&#46;&#101;&#100;&#117;</a> an email so that you can be added to this list.</p>
+<h3 id="end-to-end-apps">End to end apps<a class="headerlink" href="#end-to-end-apps" title="Permanent link">&para;</a></h3>
+<p><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PatGendre" title="GitHub User: PatGendre">@PatGendre</a> generated this list of closed source apps that are similar to e-mission. Since Patrick is from France, they have a strong European focus. If you would like to add other companies to this list, please <a href="contribute_to_the_doc/CONTRIBUTING/">send a pull request</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Company</th>
+<th>Region</th>
+<th>Company</th>
+<th>Region</th>
+<th>Company</th>
+<th>Region</th>
+<th>Company</th>
+<th>Region</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.mobidot.nl/en/about_mobidot.php">MOBIDOT</a></td>
+<td>NL</td>
+<td><a href="https://motion-tag.com/en/mobility/">MotionTag</a></td>
+<td>DE</td>
+<td><a href="https://en.trivector.se/it-systems/travelvu/">TravelVu</a></td>
+<td>SE</td>
+<td><a href="https://rmove.rsginc.com/">RMove</a></td>
+<td>US</td>
+</tr>
+<tr>
+<td><a href="https://radar.io/documentation">radar.io</a></td>
+<td>US</td>
+<td><a href="https://www.betterpoints.ltd/about-us/">BetterPoint</a></td>
+<td>UK</td>
+<td><a href="https://trackandknowproject.eu/">TrackAndKnow</a></td>
+<td>EU-wide</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sdks">SDKs<a class="headerlink" href="#sdks" title="Permanent link">&para;</a></h3>
+<p>Although e-mission is an end-to-end system, it is also modular. The sensing components are cordova plugins and can be incorporated into any app. The server modules are open source and should be able to process any data in the correct format. All the deployments so far, <a href="https://github.com/e-mission/e-mission-docs/issues/501">with the exception of UW</a>, have focused on customizing the custom app UI and have not really modified the plugin list. If you are interested in experimenting with plugin subsets, I am happy to work more closely with you. Please also <a href="https://github.com/e-mission/e-mission-docs/issues/505">let the community know how it goes</a>. <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/PatGendre" title="GitHub User: PatGendre">@PatGendre</a> also generated this comparative list of background location tracking SDKs. If you would like to add other SDKs to this list, please <a href="contribute_to_the_doc/CONTRIBUTING/">send a pull request</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Open/Closed source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.itinerum.ca/">Itinerum</a></td>
+<td>Open source</td>
+<td>app, not SDK. will merge in 2020, pending funding</td>
+</tr>
+<tr>
+<td><a href="https://github.com/transistorsoft/react-native-background-geolocation">TransistorSoft Background Geolocation</a></td>
+<td>Closed source</td>
+<td>Much richer set of interfaces, including react native and flutter</td>
+</tr>
+<tr>
+<td><a href="https://docs.sentiance.com/sdk/">Sentiance</a></td>
+<td>Closed source</td>
+<td>Includes trip and mode detection</td>
+</tr>
+<tr>
+<td><a href="https://radar.io/documentation/sdk">Radar.io</a></td>
+<td>Closed source</td>
+<td>the API seems to be limited to geofences, focused on retail?</td>
+</tr>
+<tr>
+<td><a href="https://www.bigpaua.com/locokit/docs/">LocoKit</a></td>
+<td>Open source</td>
+<td>iOS only, "ML based"</td>
+</tr>
+<tr>
+<td><a href="https://www.moprim.com/products/">moprim</a></td>
+<td>Closed source</td>
+<td>no public documentation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gallery-a-first-glimpse-at-the-app-ui">Gallery (a first glimpse at the app UI)<a class="headerlink" href="#gallery-a-first-glimpse-at-the-app-ui" title="Permanent link">&para;</a></h2>
+<p>E-mission has been reused in several projects, here are <a href="https://nextcloud.damajash.org/s/MTE4y3tJeX4g6sG">short videos showing different versions of the UI</a>, which have been presented at the last TRB conference in January 2020 : <br />
+- E-mission provides <a href="https://nextcloud.damajash.org/s/aFPRpfLYy9GPoe2">personal mobility metrics including CO2 emissions</a> (MeCO2 a CO2 coach developed in Berlin by DFKI's OSLab) <br />
+- E-mission can <a href="https://nextcloud.damajash.org/s/f2z28gK7e84WPWS">let the end-user complete the mode and purpose</a> after trip completion <br />
+- E-mission can <a href="https://nextcloud.damajash.org/s/CRZg4zQY2gKWMnF">embark third-pary online surveys</a> (a feature developed by the University of New South Wales) <br />
+- E-mission can be adapted to <a href="https://nextcloud.damajash.org/s/n2ESGrRYdCmSaX6">mobility nudge experimentations like the Tripaware project</a> conducted at UC Berkley in 2018 <br />
+- E-mission can be integrated with external survey tools by <a href="https://nextcloud.damajash.org/s/4CxeNpWDAiqSkpa">automatically filling in survey fields with sensed information</a>. The survey prompt can <a href="https://nextcloud.damajash.org/s/3qp8Mcwcy36HjSi">even be context sensitive</a>.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Read these papers for understand context.</p>
+<ul>
+<li><a href="[https://people.eecs.berkeley.edu/~shankari/emission_trb_2017_paper.pdf](https://www.researchgate.net/publication/327115169_e-mission_An_Open-Source_Smartphone_Platform_for_Collecting_Human_Travel_Data)">TRB paper describing how to use e-mission functionality</a>  </li>
+<li><a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-88.html">The in-review paper on the e-mission architecture, please do not distribute</a>  </li>
+<li>e-mission started as <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-180.html">Shankari's PhD thesis</a></li>
+<li>A proof of concept of <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-130.html">user private clouds in @njriasan's thesis</a></li>
+<li>A proof of concept for differentially private queries aggregating information over UPC <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2019/EECS-2019-69.html">in @jackcsullivan's thesis</a></li>
+</ul>
+<h2 id="roadmap">roadmap<a class="headerlink" href="#roadmap" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The next features and enhancement can be guessed from the <a href="https://github.com/e-mission/e-mission-docs/issues">ISSUES</a>  </li>
+<li>We have formed a <a href="project_committee/">project commmittee</a> to help guide the direction and roadmap</li>
+<li>The current large scale research features are described in <a href="dev/future/overview/">Develop/Future</a>   </li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-08-21 00:39:04.369104+00:00
+-->

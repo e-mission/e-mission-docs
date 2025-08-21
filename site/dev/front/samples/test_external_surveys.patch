@@ -1,0 +1,60 @@
+diff --git a/www/js/intro.js b/www/js/intro.js
+index 5cc9f5b6..83da8e77 100644
+--- a/www/js/intro.js
++++ b/www/js/intro.js
+@@ -1,6 +1,6 @@
+ 'use strict';
+ 
+-angular.module('emission.intro', ['emission.splash.startprefs',
++angular.module('emission.intro', ['emission.splash.startprefs', 'emission.survey.launch',
+                                   'ionic-toast'])
+ 
+ .config(function($stateProvider) {
+@@ -19,7 +19,7 @@ angular.module('emission.intro', ['emission.splash.startprefs',
+ })
+ 
+ .controller('IntroCtrl', function($scope, $state, $window, $ionicSlideBoxDelegate,
+-    $ionicPopup, $ionicHistory, ionicToast, $timeout, CommHelper, StartPrefs, $translate) {
++    $ionicPopup, $ionicHistory, ionicToast, $timeout, CommHelper, StartPrefs, $translate, SurveyLaunch) {
+ 
+   $scope.platform = $window.device.platform;
+   $scope.osver = $window.device.version.split(".")[0];
+@@ -161,7 +161,7 @@ angular.module('emission.intro', ['emission.splash.startprefs',
+       // $scope.next();
+       ionicToast.show(userEmail, 'middle', false, 2500);
+       CommHelper.registerUser(function(successResult) {
+-        $scope.finish();
++        $scope.next();
+       }, function(errorResult) {
+         $scope.alertError('User registration error', errorResult);
+         $scope.finish();
+@@ -189,6 +189,16 @@ angular.module('emission.intro', ['emission.splash.startprefs',
+     }
+   };
+ 
++  $scope.launchWithID = function () {
++    SurveyLaunch.startSurveyWithID("https://berkeley.qualtrics.com/SE/?SID=SV_9t6KnGlK1qxOGGN", "QR~QID3");
++  }
++
++  $scope.launchWithXPath = function () {
++    SurveyLaunch.startSurveyWithXPath(
++        "https://docs.google.com/forms/d/e/1FAIpQLSd_7VICYb8AfLQPIt8pg9AYsXW_rrHQBfsv-NSviO7Dgk7fyg/viewform",
++        "/html/body/div/div[2]/form/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input");
++  }
++
+   $scope.finish = function() {
+     // this is not a promise, so we don't need to use .then
+     StartPrefs.markIntroDone();
+diff --git a/www/templates/intro/intro.html b/www/templates/intro/intro.html
+index f4fdc0e3..8295cf47 100644
+--- a/www/templates/intro/intro.html
++++ b/www/templates/intro/intro.html
+@@ -12,5 +12,8 @@
+       <ion-slide>
+         <ng-include src="'templates/intro/login.html'"></ng-include>
+       </ion-slide>
++      <ion-slide>
++        <ng-include src="'templates/intro/test_survey.html'"></ng-include>
++      </ion-slide>
+     </ion-slide-box>
+ </ion-view>

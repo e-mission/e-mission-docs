@@ -108,6 +108,60 @@ AttributeError                            Traceback (most recent call last)
 AttributeError: property reading is read-only
 ```
 
+## Working with Read-Only Wrappers ##
+
+While wrappers are designed to be read-only, there are cases during analysis
+where you need to modify wrapper data. This typically happens in the analysis
+pipeline when stitching together trips and places or when updating derived
+properties.
+
+### Dictionary vs Property Access ###
+
+Although you cannot modify wrapper properties using dot notation (e.g., `obj.property = value`),
+you can modify the underlying data using dictionary-style access:
+
+```python
+# This will fail - property access is read-only
+last_place.location = new_location  # AttributeError: property location is read-only
+
+# This works - dictionary access allows modification
+last_place["location"] = new_location  # ✓ Success
+```
+
+Here's a complete example:
+
+```python
+# Assume we have a place wrapper object
+place_entry = get_place_entry()  # Returns a wrapper object
+place = place_entry.data
+
+# Reading data works with both approaches
+print(place.location)        # Property access (read-only)
+print(place["location"])     # Dictionary access (read-only)
+
+# Writing data only works with dictionary access
+# place.location = new_loc   # This fails!
+place["location"] = new_loc  # This works!
+
+# You can also modify other properties this way
+place["duration"] = new_duration
+place["enter_fmt_time"] = new_enter_time
+```
+
+### When to Use Dictionary Access ###
+
+Use dictionary-style access when:
+- Modifying wrapper data during analysis (e.g., trip segmentation, cleaning)
+- Updating derived properties after computation
+- Stitching together related objects in the pipeline
+
+Use property access when:
+- Reading data (both approaches work)
+- You want to ensure the data remains immutable
+- Writing new analysis code that should not modify existing data
+
+### Creating New Entries ###
+
 In order to create a new entry, you can use createEntry with a data object.
 There are examples of creating entries all over the analysis pipeline, but
 here's an example similar to the one above.
@@ -161,5 +215,40 @@ In [24]: new_entry = ecwe.Entry.create_entry(entry.user_id, entry.metadata.key, 
 
 In [25]: new_entry.data
 Out[25]: Statsevent({'name': 'modified', 'reading': 5000, 'ts': 12345678, 'fmt_time': 'this is the formatted_time'})
+```
+
+### Troubleshooting Read-Only Errors ###
+
+If you encounter an error like:
+```
+AttributeError: property location is read-only
+AttributeError: property duration is read-only  
+AttributeError: property <property_name> is read-only
+```
+
+This means you're trying to modify a wrapper property using dot notation. The fix is to use dictionary-style access instead:
+
+```python
+# Instead of this (which causes the error):
+obj.property = value
+
+# Use this:
+obj["property"] = value
+```
+
+Common examples in the analysis pipeline:
+
+```python
+# Trip segmentation example
+# last_place.location = start_loc.loc        # ❌ Causes error
+last_place["location"] = start_loc.loc       # ✅ Works
+
+# Duration updates
+# trip_entry.duration = new_duration         # ❌ Causes error  
+trip_entry["duration"] = new_duration        # ✅ Works
+
+# Time updates
+# place_entry.enter_fmt_time = fmt_time      # ❌ Causes error
+place_entry["enter_fmt_time"] = fmt_time     # ✅ Works
 ```
 

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>7. Accessing public heatmap and incident info - e-mission Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../install/manual_install/" class="dropdown-item">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../use/end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../archi/data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="../../archi/module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="../../archi/mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="../../archi/pipeline_details/" class="dropdown-item">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="../high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="../create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="../you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="../guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="../how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="../how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="../../back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../future/overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="../../future/privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="../../future/differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="../../future/secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="../../future/analysis/" class="dropdown-item">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="../../future/scalability/" class="dropdown-item">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="../../future/unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../how_to_embed_an_external_survey_in_the_app/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../back/adding_a_new_data_type/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#accessing-public-heatmap-and-incident-information" class="nav-link">Accessing Public Heatmap and Incident Information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="accessing-public-heatmap-and-incident-information">Accessing Public Heatmap and Incident Information<a class="headerlink" href="#accessing-public-heatmap-and-incident-information" title="Permanent link">&para;</a></h1>
+<hr />
+<p>There are three main public API calls exposed by the e-mission API server. All
+of them share the following characteristics:
+- they are <code>HTTP POST</code> calls
+- they do not currently require an API key for access. If we get popular enough
+  to be the target for DDOS attacks, we will revisit this decision.
+- they take a time range as input. The time range can be specified either in
+  UTC, as a range, or in local time, as a filter.</p>
+<p>These APIs are all currently very slow, because the prototype system is running
+on a single AWS host. The performance will improve after Nov 1<sup>st</sup>, when I split the
+functionality among multiple hosts.</p>
+<p>The three public API calls are:
+- <code>/result/heatmap/pop.route/&lt;time_type&gt;</code>
+- <code>/result/heatmap/incidents/&lt;time_type&gt;</code>
+- <code>/result/metrics/&lt;time_type&gt;</code></p>
+<p>The <code>&lt;time_type&gt;</code> is either <code>timestamp</code> or <code>local_date</code>. The actual query range
+is specified in POST fields.</p>
+<p>Without any further ado, here are some examples of how to use these
+calls. I've chosen python as the language for demonstrating them since most
+data scientists are familiar with it, but any language that can send http post
+requests will work as well.</p>
+<h3 id="travel-point-queries">Travel point queries<a class="headerlink" href="#travel-point-queries" title="Permanent link">&para;</a></h3>
+<h4 id="retrieving-data-from-2nd-oct-to-3rd-oct-across-all-modes-and-the-entire-world">Retrieving data from 2<sup>nd</sup> Oct to 3<sup>rd</sup> Oct across all modes and the entire world<a class="headerlink" href="#retrieving-data-from-2nd-oct-to-3rd-oct-across-all-modes-and-the-entire-world" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ ipython
+Python 2.7.11 |Anaconda 2.0.1 (x86_64)| (default, Dec  6 2015, 18:57:58)
+Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+
+IPython 4.2.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython&#39;s features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python&#39;s own help system.
+object?   -&gt; Details about &#39;object&#39;, use &#39;object??&#39; for extra details.
+
+In [1]: import arrow
+
+In [2]: start_ts = arrow.get(&quot;2017-10-02&quot;).timestamp
+
+In [3]: end_ts = arrow.get(&quot;2017-10-03&quot;).timestamp
+
+In [4]: post_fields = {
+        &quot;modes&quot;: None,
+        &quot;start_time&quot;: start_ts,
+        &quot;end_time&quot;: end_ts,
+        &quot;sel_region&quot;: None
+}
+
+In [5]: import requests
+
+In [6]: result = requests.post(&quot;https://e-mission.eecs.berkeley.edu/result/heatmap/pop.route/timestamp&quot;, json=post_fields)
+
+In [7]: result.status_code
+Out[7]: 200
+
+In [8]: result.json()[&#39;lnglat&#39;][0:5]
+Out[8]:
+[[-117.07978918462588, 32.769079182443484],
+ [-122.26395704827273, 37.87331020231461],
+ [-110.77774474290837, 35.15781189961038],
+ [-110.77774474290837, 35.15781189961038],
+ [-110.77774474290837, 35.15781189961038]]
+
+In [9]: len(result.json()[&#39;lnglat&#39;])
+Out[9]: 16607
+</code></pre></div>
+<h4 id="modifying-the-prior-query-to-only-retrieve-walk-and-bike-data">Modifying the prior query to only retrieve walk and bike data<a class="headerlink" href="#modifying-the-prior-query-to-only-retrieve-walk-and-bike-data" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>In [10]: post_fields[&quot;modes&quot;] = [&quot;WALKING&quot;, &quot;ON_FOOT&quot;, &quot;BICYCLING&quot;]
+
+In [11]: result = requests.post(&quot;https://e-mission.eecs.berkeley.edu/result/heatmap/pop.route/timestamp&quot;, json=post_fields)
+
+In [12]: result.status_code
+Out[12]: 200
+
+In [13]: len(result.json()[&#39;lnglat&#39;])
+Out[13]: 3312
+</code></pre></div>
+<h4 id="modifying-the-prior-query-to-only-retrieve-data-around-hearst-street-in-berkeley-ca">Modifying the prior query to only retrieve data around Hearst Street in Berkeley, CA<a class="headerlink" href="#modifying-the-prior-query-to-only-retrieve-data-around-hearst-street-in-berkeley-ca" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>In [15]: result = requests.post(&quot;https://e-mission.eecs.berkeley.edu/result/heatmap/pop.route/timestamp&quot;, json=post_fields)
+
+In [16]: len(result.json()[&#39;lnglat&#39;])
+Out[16]: 112
+</code></pre></div>
+<h3 id="incident-queries">Incident queries<a class="headerlink" href="#incident-queries" title="Permanent link">&para;</a></h3>
+<p>Incident queries are very similar to heatmap queries, only sent to a different URL. Some other differences are:
+- they don't support modes
+- since they are user-reported and not collected in the background, there are
+  typically few of them.</p>
+<h4 id="retrieving-all-incidents-from-june-to-oct">Retrieving all incidents from June to Oct<a class="headerlink" href="#retrieving-all-incidents-from-june-to-oct" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ ipython
+Python 2.7.11 |Anaconda 2.0.1 (x86_64)| (default, Dec  6 2015, 18:57:58)
+Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+
+IPython 4.2.0 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython&#39;s features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python&#39;s own help system.
+object?   -&gt; Details about &#39;object&#39;, use &#39;object??&#39; for extra details.
+
+In [1]: import arrow
+
+In [2]: start_ts = arrow.get(&quot;2017-06-01&quot;).timestamp
+
+In [3]: end_ts = arrow.get(&quot;2017-10-01&quot;).timestamp
+
+In [4]: post_fields = {
+        &quot;start_time&quot;: start_ts,
+        &quot;end_time&quot;: end_ts,
+        &quot;sel_region&quot;: None
+}
+
+In [5]: import requests
+
+In [7]: result = requests.post(&quot;https://e-mission.eecs.berkeley.edu/result/heatmap/incidents/timestamp&quot;, json=post_fields)
+
+In [8]: result.status_code
+Out[8]: 200
+
+In [9]: len(result.json()[&quot;incidents&quot;])
+Out[9]: 42
+
+In [10]: result.json()[&quot;incidents&quot;][0:5]
+Out[10]:
+[{u&#39;fmt_time&#39;: u&#39;2017-06-09T10:51:41-07:00&#39;,
+  u&#39;loc&#39;: {u&#39;coordinates&#39;: [-122.06568002700806, 37.36993549376299],
+   u&#39;type&#39;: u&#39;Point&#39;},
+  u&#39;local_dt&#39;: {u&#39;day&#39;: 9,
+   u&#39;hour&#39;: 10,
+   u&#39;minute&#39;: 51,
+   u&#39;month&#39;: 6,
+   u&#39;second&#39;: 41,
+   u&#39;timezone&#39;: u&#39;America/Los_Angeles&#39;,
+   u&#39;weekday&#39;: 4,
+   u&#39;year&#39;: 2017},
+  u&#39;stress&#39;: 0,
+  u&#39;ts&#39;: 1497030701},
+ {u&#39;fmt_time&#39;: u&#39;2017-06-09T10:04:41-07:00&#39;,
+  u&#39;loc&#39;: {u&#39;coordinates&#39;: [-122.07375526777469, 37.38112434837758],
+   u&#39;type&#39;: u&#39;Point&#39;},
+  u&#39;local_dt&#39;: {u&#39;day&#39;: 9,
+   u&#39;hour&#39;: 10,
+   u&#39;minute&#39;: 4,
+   u&#39;month&#39;: 6,
+   u&#39;second&#39;: 41,
+   u&#39;timezone&#39;: u&#39;America/Los_Angeles&#39;,
+   u&#39;weekday&#39;: 4,
+   u&#39;year&#39;: 2017},
+  u&#39;stress&#39;: 0,
+  u&#39;ts&#39;: 1497027881},
+....
+</code></pre></div>
+<p>This query can be also modified to return incidents for a particular area. Note that incidents cannot be filtered by mode, so any mode field in the query is ignored.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

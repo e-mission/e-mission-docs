@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>6. Scalability - e-mission Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../install/manual_install/" class="dropdown-item">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../use/end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../archi/data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="../../archi/module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="../../archi/mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="../../archi/pipeline_details/" class="dropdown-item">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../front/phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="../../front/high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="../../front/create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="../../front/you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="../../front/guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="../../front/how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="../../front/how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="../../front/accessing_public_heatmap_and_incident_information/" class="dropdown-item">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="../../back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="../privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="../differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="../secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="../analysis/" class="dropdown-item">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="../unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../analysis/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../unanswered_questions/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#scalability-improvements" class="nav-link">Scalability Improvements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="scalability-improvements">Scalability Improvements<a class="headerlink" href="#scalability-improvements" title="Permanent link">&para;</a></h2>
+<p>This is the most straightforward task, so if you are new to research, you
+should consider starting with this. The first task on the task list, in particular, 
+is relatively well defined for a research project, although it still has some
+ambiguity around the metrics to use.</p>
+<p>Current e-mission scalability, at least for a fully functioning server, is poor. Before I
+set up the multi-tier system
+(<a href="https://github.com/e-mission/e-mission-server/issues/530">https://github.com/e-mission/e-mission-server/issues/530</a>), we were running on
+an m3.xlarge server (64-bit, 4 vCPU, 15 GB RAM). At that time, the analysis pipeline for ~ 50 active
+users would take more than a day to run. Even worse, the response time for
+users when the pipeline was running was pathetic, on the order of minutes
+rather than seconds. Users would give up the app because they assumed that it
+was not working.</p>
+<p>This is pretty surprising, since the pipeline only looks at unprocessed
+entries, so should be <code>O(nActiveUsers)</code>. The only explanation for this is that
+the underlying storage layer is not scaling linearly, and stored data from
+inactive users is causing queries, even on only active users, to be slow. It is
+true that some of the inactive users had a lot of entries - for example, some
+of them were test phones that were reading data at the maximum frequency
+possible. However, the total number of users, both active and inactive, was
+under 5000, which seems low to have a minutes-long response time.</p>
+<h3 id="improve-current-scalability">Improve current scalability<a class="headerlink" href="#improve-current-scalability" title="Permanent link">&para;</a></h3>
+<p>The first goal of this task is to improve the performance of the server so that
+projects can run a reasonable study without spending too much money.
+I'm going to define a reasonable study as:
+- 10,000 people
+- location data every 30sec on android/15m on iOS
+- 6 months of data collection</p>
+<p>I'm going to define a reasonable amount of computing and storage resources as:
+- <em>compute</em>: <code>m5.xlarge</code> instance (4 vCPU, 16 GB)
+- <em>storage</em>: 10 GB I/O optimized EB2 instance</p>
+<p>This means that the compute + storage for such a study should cost ~ $150 for compute + $30 for storage ~ <span class="arithmatex"><span class="MathJax_Preview">180 total.
+Ideally, we would be able to specify the users + duration supported for a bunch
+of discrete instance points - e.g. 
+- <code>m5.large</code> instance + 1 GB GP2 EB2 instance (~ instance + 1 GB GP2 EB2 instance (~</span><script type="math/tex">180 total.
+Ideally, we would be able to specify the users + duration supported for a bunch
+of discrete instance points - e.g. 
+- <code>m5.large</code> instance + 1 GB GP2 EB2 instance (~ instance + 1 GB GP2 EB2 instance (~</script></span>70 for compute + ~ 10 cents for storage = $70 total)
+- ...</p>
+<h3 id="explore-new-techniques">Explore new techniques<a class="headerlink" href="#explore-new-techniques" title="Permanent link">&para;</a></h3>
+<p>Once the first task is done, we should explore other techniques for not just
+performance but elasticity. For example, can we use serverless (e.g. lambda)
+calculations to run the analysis? If so, we technically need only storage, no
+dedicated compute resources. Can we offload old raw data into lower cost, low
+performance storage to reduce costs?...</p>
+<p>We should also work closely with the privacy team to adapt to their proposed
+architecture. For example, should we split out the storage into separate
+independent units so that they can encrypt them separately? Or should we
+continue storing all data into one database, just encrypted with different
+keys? Is the storage choice for multiple separate datastores different from the
+choice for a single datastore? etc</p>
+<h3 id="task-list">Task list<a class="headerlink" href="#task-list" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Create a workload generator. The work generator should consist of three parts:<ul>
+<li><em>Synthetic data generator</em>: There is an existing trip generator
+  (<a href="https://github.com/e-mission/e-mission-server/tree/master/emission/simulation">https://github.com/e-mission/e-mission-server/tree/master/emission/simulation</a>),
+  however it is obsolete. We need to replace it with a generator that creates
+  artificial data in the new format.</li>
+<li>There won't be existing solutions for this since the data is specific
+    to e-mission. You can try to see if there is something similar that you
+    can adapt, but set a time limit on the search since it is unlikely.</li>
+<li><em>Workload simulator</em>: A harness that generates API calls at a pre-defined
+  rate against the system (e.g. x <code>get</code> calls/sec, y <code>put</code> calls/sec, z
+  <code>getTimeline</code> calls/sec) and records the response time.</li>
+<li>Note that this can be combined with the synthetic data generator - the
+    generated data can be inserted into the system using API calls. This
+    mode is closer to the operation of a real system.</li>
+<li>Note that there are probably existing solutions for this. Look around
+    first. Don't fall into the Not Invented Here trap.</li>
+<li><em>Server Launcher</em>: This is optional, but it will probably make your life
+  easier, and will make end-users' lives easier as well. Write a script
+  that, given a particular deployment configuration, creates an e-mission
+  server instance with that configuration, installs the server, configures the
+  server properly and launches the cronjobs.</li>
+<li>There are approximately 1 million solutions for this. Use them. One of
+    the current users (in Australia) supposedly worked on a Docker
+    configuration for e-mission. You can contact <a href="https://github.com/asiripanich">https://github.com/asiripanich</a> to see if you
+    can start with that.</li>
+</ul>
+</li>
+<li>Run various workloads against various deployment configurations and figure
+out how the server scales</li>
+<li>If the performance is sub-optimal, look at the logs to figure out what is
+    slow and fix it.<ul>
+<li>I suspect that the first fix will involve swapping out the database
+  server from mongodb to a real timeseries database. Or maybe there is a
+  better way to use mongodb to store intermittent timeseries data?</li>
+<li>This may not solve the scalability issues, in which case you need to
+  figure out what the next bottleneck is, and rinse and repeat</li>
+</ul>
+</li>
+<li>Once you get to the limits of performance with the current architecture,
+    explore other techniques, primarily for elasticity<ul>
+<li>Serverless computations, particularly if they can be combined with secure
+  execution, could allow us to simply store user data and spin up
+  computation on demand</li>
+<li>Supporting longer response times for older data would allow us to support
+  long-term data collection (decades or more). The standard techniques for
+  this is tiered storage; and it has been implemented already, primarily
+  for photo retrieval at Facebook/Google. Look for an existing OSS solution
+  before rolling your own.</li>
+</ul>
+</li>
+</ol>
+<h3 id="a-note-on-not-invented-here">A note on Not Invented Here<a class="headerlink" href="#a-note-on-not-invented-here" title="Permanent link">&para;</a></h3>
+<p>Note that for several of these, there are existing solutions within academia.
+They will almost certainly not be as polished as commercial solutions, but
+please try to use them anyway. Grad students will be excited to have you use
+their work, and should be supportive as long as you are not asking them basic
+questions (e.g. how do I look at a log file?).</p>
+<p>And note that this is a <em>research</em> project, not a commercial one. This means
+that in addition to getting things done, which you must do, we want to enter
+into a dialog about how systems should be built. Using academic projects allows
+us to have that conversation with other systems researchers, and to hopefully,
+discover underlying principles that can be generalized and reused.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
