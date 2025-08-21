@@ -60,26 +60,20 @@ Follow the established directory structure:
 
 ## e-mission Ecosystem Context
 
-This documentation repository covers the entire e-mission platform consisting of:
+This documentation repository covers the entire e-mission platform. The e-mission platform consists of multiple repositories:
 
 ### Core Repositories
 - **e-mission-docs** (this repo): Comprehensive documentation
-- **e-mission-server**: Python backend with MongoDB, analysis pipelines
-- **e-mission-phone**: Cordova mobile app for iOS and Android  
+- **e-mission-server**: Python backend - refer to that repository for server setup and development
+- **e-mission-phone**: Cordova mobile app - refer to that repository for mobile development  
 - **e-mission-devapp**: Development app for testing
 - **e-mission-docker**: Docker deployment configurations
 
-### Understanding the Architecture
-The platform uses:
-- **Backend**: Python server with MongoDB database
-- **Frontend**: Cordova/Ionic mobile app
-- **Development**: PhoneGap DevApp for testing UI changes
-- **Authentication**: Multiple providers (Google, OpenID, etc.)
-- **Data Pipeline**: Automated analysis and mode inference
+**This repository is documentation-only** - no server setup or mobile app development is required here.
 
-## Common Development Workflows
+## Documentation Workflow
 
-### For Documentation Changes (This Repository)
+### For Documentation Changes (This Repository Only)
 ```bash
 # 1. Make changes to Markdown files in docs/
 # 2. Build and test
@@ -88,23 +82,7 @@ python3 -m mkdocs serve --dev-addr=0.0.0.0:8000
 # 3. Commit changes (site/ directory is automatically ignored)
 ```
 
-### For e-mission Application Development
-When working on the broader e-mission platform, you typically need:
-
-1. **Server Setup** (e-mission-server):
-   - MongoDB database
-   - Python environment with conda
-   - Configuration files in `conf/`
-
-2. **Mobile Development** (e-mission-phone):
-   - Cordova CLI
-   - Android Studio / Xcode
-   - PhoneGap DevApp for testing
-
-3. **End-to-end Development**:
-   - Server running locally
-   - DevApp connected to local server
-   - Test data loaded for development user
+**For server setup, mobile development, or platform development**, refer to the respective repositories listed above rather than this documentation repository.
 
 ## Key Documentation Sections
 
@@ -115,12 +93,10 @@ When working on the broader e-mission platform, you typically need:
 - `docs/dev/front/high_level_faq.md` - Common development issues
 - `docs/contribute_to_the_doc/CONTRIBUTING.md` - Documentation contribution guide
 
-### Development Workflows by Component
-- **UI Changes**: Use devapp + local server, test with user "test_july_22"
-- **Server Changes**: Local Python environment, MongoDB, analysis pipeline
-- **Plugin Development**: Clone plugins locally, add to phone project, rebuild
-- **Authentication**: Configure keys in `conf/net/auth/` directory
-- **Production Deployment**: Use Docker setup from e-mission-docker
+### Documentation Development Workflow
+- **Documentation Changes**: Edit markdown files in `docs/`, build with MkDocs, test locally
+- **Asset Management**: Add images to `assets/` directory with relative paths
+- **Navigation**: Update `mkdocs.yml` for new pages
 
 ## Repository-Specific Details
 
