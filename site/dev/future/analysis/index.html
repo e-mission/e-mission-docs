@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>5. Analysis - e-mission Docs</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../install/manual_install/" class="dropdown-item">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="../../../install/multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../use/end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="../../../manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="../../tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../archi/data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="../../archi/module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="../../archi/mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="../../archi/pipeline_details/" class="dropdown-item">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../front/phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="../../front/high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="../../front/create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="../../front/you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="../../front/guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="../../front/how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="../../front/how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="../../front/accessing_public_heatmap_and_incident_information/" class="dropdown-item">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="../../back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="../privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="../differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="../secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="../scalability/" class="dropdown-item">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="../unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../../contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../secure_execution_options/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../scalability/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#analysis-improvements" class="nav-link">Analysis Improvements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="analysis-improvements">Analysis Improvements<a class="headerlink" href="#analysis-improvements" title="Permanent link">&para;</a></h2>
+<p>As algorithms rule more of our lives, there are concerns that they are not well
+understood. There is a need for greater transparency into the algorithm
+mechanisms (<code>how does my feed work?"</code>) and the algorithm outputs (<code>what is
+this algorithm trying to determine about me?"</code>).  As researchers propose
+multiple algorithms, we need mechanisms to compare their accuracy against one
+another, so that users can choose the algorithms that are most suitable for
+themselves.  Finally, if we want algorithm results to drive policy and choose
+between competing real-world alternatives, the inferences need to be generated
+from algorithms with well-defined error parameters.</p>
+<p>As Micheal Jordan argued in his blog post (<a href="https://rise.cs.berkeley.edu/blog/michael-i-jordan-artificial-intelligence%e2%80%8a-%e2%80%8athe-revolution-hasnt-happened-yet/">https://rise.cs.berkeley.edu/blog/michael-i-jordan-artificial-intelligence%e2%80%8a-%e2%80%8athe-revolution-hasnt-happened-yet/</a>):</p>
+<blockquote>
+<p>In the current era, we have a real opportunity to conceive of something
+historically new — a human-centric engineering discipline.</p>
+</blockquote>
+<p>These challenges are common across multiple domains. The standard technique to
+overcome them is to use benchmarking. For example, the ImageNet benchmark is
+commonly used to evaluate algorithms for image processing. The RISE lab has
+recently announced an initiative to identify benchmarking datasets for multiple
+common machine learning algorithms (<a href="https://rise.cs.berkeley.edu/blog/mlperf-spec-for-ml/">https://rise.cs.berkeley.edu/blog/mlperf-spec-for-ml/</a>).</p>
+<p>However, there are several specific challenges to working on location data and
+travel patterns.
+1. The data is privacy sensitive. This has led to a dearth of publicly
+available, ground truthed data that can be used for benchmarking. The standard
+datasets either do not have ground truth (e.g. fMRI, MDC), or are old and based
+on GPS devices (e.g. GeoLife) so do not have other sensor data.
+2. Inferences that deal with user perceptions and motivations typically require
+periodic user interaction, not only sensor data. It is unclear how to evaluate
+them using static datasets.
+3. Similarly, data collection does not occur in isolation - while it is
+possible to collect very high frequency, high quality data from smartphones, it
+comes at a significant energy cost. Is it possible to compensate for low power
+data collection with smart algorithms? We will need to evaluate the data
+collection and inference together to answer such questions.
+4. As with all benchmarks, there are questions about how applicable the
+benchmark is. This is particularly true given the potentially combinatorial
+nature of multi-modal travel patterns (<a href="https://www.overleaf.com/read/khdbzrxsgkyz">https://www.overleaf.com/read/khdbzrxsgkyz</a>, section "Proposed Benchmarking Details") and the differences in modes between
+countries (e.g. developed countries typically focus on 5 modes - walk, bicycle,
+bus, car, train, but developing countries make heavy use of motorcycles and
+informal transit). While this can theoretically be handled by expanding the
+benchmark, the expansion itself needs to be data-driven.</p>
+<p>Before we discuss how to address these challenges, let us understand the 
+two broad evaluation mechanisms.
+- <strong>data to code</strong>: ground-truthed datasets are made publicly available,
+  researchers download them and run their algorithms on them (e.g. MNIST,
+  <a href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a>)
+- <strong>code to data</strong>: researchers upload their code, system runs it against the data
+  and generates a score. If multiple researchers submit algorithms, they can
+  compete to get the best results. Note that in this case, the underlying data
+  does not <em>need</em> to be published, although it typically is. (e.g. kaggle)</p>
+<p>I argue that we need to support both kinds of datasets in order to evaluate
+machine learning algorithms in this domain. Machine learning researchers will
+need access to raw data for exploratory analysis and algorithm development. But
+because location data is so privacy sensitive, we will also need to support
+code-to-data so that we can evaluate the algorithms without exposing the raw
+data.</p>
+<p>While applying these approaches to the mobility domain, we can see the broad outlines of solutions,
+although there are still unresolved challenges.</p>
+<h3 id="data-to-code-crowdsourced-benchmarking">Data to code: Crowdsourced benchmarking<a class="headerlink" href="#data-to-code-crowdsourced-benchmarking" title="Permanent link">&para;</a></h3>
+<p>This would involve creating a completely open and public dataset based on
+researchers performing a consistent set of pre-defined trips that constitute a
+benchmark. Since the trips are performed to satisfy the benchmark, they do not
+represent real travel patterns, and do not constitute a privacy risk. For more
+details, see <a href="https://www.overleaf.com/read/khdbzrxsgkyz">em-benchmark</a> (currently
+under development).</p>
+<h4 id="static-dataset">Static dataset<a class="headerlink" href="#static-dataset" title="Permanent link">&para;</a></h4>
+<p>In the simplest form, this data collection will create a static, ground truthed
+dataset that can be used to compare new inference algorithms. Note
+that because the dataset is static, the algorithms cannot experiment with
+different data collection techniques or user interaction; they can only experiment
+with featurization and ML techniques such as k-NN, regression models, kernels etc.
+This is basically what kaggle does today; technically we could publish this dataset
+as part of a Kaggle contest.  This would conceptually look like
+<img alt="Static dataset benchmarking strategy" src="../../../assets/future_work/benchmarking_strategy_static.png" /></p>
+<h4 id="dynamic-user-interaction">Dynamic user interaction<a class="headerlink" href="#dynamic-user-interaction" title="Permanent link">&para;</a></h4>
+<p>It is more challenging to account for differences in the <em>data collection</em>,
+including the use of alternate sensors and user confirmation. We can cover the
+use of alternate sensors and the power-accuracy trade-off by requiring
+researchers to perform the benchmark set of trips with <strong>their</strong> data collection
+mechanism. But how do we account for user confirmation? I actually don't know
+the answer to this question. Do we give algorithms a budget of a certain number
+of prompts? How do we come up with that budget? Or do we just have the number
+of prompts as a different argument for the metric?</p>
+<h3 id="code-to-data-running-algorithms-against-private-data">Code to data: Running algorithms against private data<a class="headerlink" href="#code-to-data-running-algorithms-against-private-data" title="Permanent link">&para;</a></h3>
+<p>In the previous section, we looked at comparing multiple algorithms against a
+standard, public dataset. Although this is the closest to existing benchmarking
+techniques, given the combinatorial variations in travel patterns, especially with multi-modal
+travel, it would be good to evaluate algorithms against real data. However, we
+do not want to release real data because of the privacy implications. Instead,
+we want to run the algorithms directly against the mobility data and only
+return the results.</p>
+<h4 id="algorithm-execution-with-privacy">Algorithm execution with privacy<a class="headerlink" href="#algorithm-execution-with-privacy" title="Permanent link">&para;</a></h4>
+<p>Conceptually, this approach can use techniques from the <a href="../privacy/">privacy
+task</a> to run uploaded scripts/queries directly against user data.
+However, we need additional investigation into how exactly this would work.</p>
+<ul>
+<li>If we run the algorithms directly against encrypted data, how does the
+  executor see the results to compare them? Note that the idea behind working
+  directly with encrypted data is that you return encrypted results which the
+  user can decrypt using their key. But in this case, the evaluator would not
+  have the user's key.</li>
+<li>If we use a secure execution environment instead, do we place restrictions on
+  the scripts? How? Because allowing execution of arbitrary code against the data
+  could allow people to just upload the data to their own servers.</li>
+<li>alternatively, if we want to use the aggregate queries, would the scripts
+  that people want to use work against aggregated data (e.g.  sum/mean, etc)? I
+  suspect not. Can we use the sum/mean methods to compare results instead of
+  aggregating them?</li>
+</ul>
+<h4 id="collecting-ground-truth">Collecting ground truth<a class="headerlink" href="#collecting-ground-truth" title="Permanent link">&para;</a></h4>
+<p>In order to evaluate the accuracy against real travel patterns, we need ground
+truth for them. While we can expect benchmarked data to have ground truth, it
+is unlikely for regular users to provide a lot of ground truth without 
+additional prompting. We may also to need prompt users in order to train algorithms
+that incorporate reinforcement learning. However, if we prompt too often (e.g. for every trip),
+we run the risk of having the user get annoyed and uninstalling the app. We need to
+come up with a mechanism that allows the user to control how often she is prompted,
+and then prompts based on the budget.</p>
+<h3 id="task-list">Task list<a class="headerlink" href="#task-list" title="Permanent link">&para;</a></h3>
+<p>Given all these requirements, it looks like we have a few sub-projects that
+people can choose to tackle.
+- Explore kaggle or (better) build a simple system similar to kaggle that runs
+  static algorithms against existing data repositories. NREL has a <a href="https://www.nrel.gov/transportation/secure-transportation-data/tsdc-about.html">travel data
+  repository</a>
+  and it would be great to talk with them about hosting something like this and running
+  analysis challenges as part of transportation conferences.
+- Use examples of power v/s accuracy and determine how to measure
+  attention/prompting for user interaction
+- Build a prompting mechanism that potentially works with an ensemble of
+  regular algorithms and an attention budget. A SUPERB student worked on the
+  prompting harness earlier.
+  - poster: <a href="http://people.eecs.berkeley.edu/~shankari/SteffensBerkeleyPoster.pdf">http://people.eecs.berkeley.edu/~shankari/SteffensBerkeleyPoster.pdf</a>
+  - slides: <a href="http://people.eecs.berkeley.edu/~shankari/SteffensEndOfSummerPresentationBerkeley.pptx">http://people.eecs.berkeley.edu/~shankari/SteffensEndOfSummerPresentationBerkeley.pptx</a>
+  - one-slide architecture summary: <a href="http://people.eecs.berkeley.edu/~shankari/Experiment_Diagram.pdf">http://people.eecs.berkeley.edu/~shankari/Experiment_Diagram.pdf</a>
+  - current code: <a href="https://github.com/jensteff/e-mission-server/pull/1">https://github.com/jensteff/e-mission-server/pull/1</a>), but did not complete it.
+- Work with the person focusing on the privacy task to run at least static
+  algorithms against private data. This has the most dependencies and is the
+  least well-understood piece of the project.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

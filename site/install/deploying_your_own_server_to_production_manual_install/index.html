@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Deploying Your Own Server to Production - e-mission Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../manual_install/" class="dropdown-item">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="../deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="../configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="../multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../use/end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/archi/data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/pipeline_details/" class="dropdown-item">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/front/phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="../../dev/front/how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="../../dev/front/how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/accessing_public_heatmap_and_incident_information/" class="dropdown-item">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="../../dev/back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/future/overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/analysis/" class="dropdown-item">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/scalability/" class="dropdown-item">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#deploying-your-own-server-to-production" class="nav-link">Deploying Your Own Server to Production</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic-instructions" class="nav-link">Basic instructions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#suggested-improvements" class="nav-link">Suggested improvements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="deploying-your-own-server-to-production">Deploying Your Own Server to Production<a class="headerlink" href="#deploying-your-own-server-to-production" title="Permanent link">&para;</a></h1>
+<hr />
+<p>Projects that want to control their own data under protocols different from e-mission, can run their own copy of e-mission.</p>
+<p><strong>We recommend using <a href="https://github.com/e-mission/e-mission-docker">docker for installation on production</a></strong> In particular, we recommend using the <a href="https://github.com/e-mission/e-mission-docker/tree/master/examples/em-server-multi-tier-cronjob">multi-tier setup example</a>, which creates separate webapp and analysis containers and automatically sets up a cronjob on the analysis container. You can set the config options below in a <code>conf</code> directory which is automatically mounted into the containers as a volume</p>
+<p>However, if for some reason, you really want to run e-mission on a server where you cannot use docker, this document outlines the steps to set up a manual installation of e-mission on a server of your choice. Note that this assumes a unix or unix-like server. If you only have access to Windows, please provision a unix docker container or VM and use it instead.</p>
+<h2 id="basic-instructions">Basic instructions<a class="headerlink" href="#basic-instructions" title="Permanent link">&para;</a></h2>
+<p>The e-mission server is easy to install on a laptop for local development, and the same steps can be used to install a basic server on *nix for small projects. This page lists the few additional steps for such a deployment. It also provides recommendations for <a href="#suggested-improvements">more complex deployments</a>. These are intended as deployment notes for reasonably experienced sysadmin. If you are not sure what is going on here, please use the docker installation. If you need additional help on how to run the commands, please check the commands in the Dockerfile. The Dockerfile is validated through CI, so it is always known to work.</p>
+<h3 id="development-installation">Development installation<a class="headerlink" href="#development-installation" title="Permanent link">&para;</a></h3>
+<p>Install the server following the development installation instructions (<a href="https://github.com/e-mission/e-mission-docs/blob/master/docs/install/manual_install.md">https://github.com/e-mission/e-mission-docs/blob/master/docs/install/manual_install.md</a>).</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/e-mission/e-mission-server.git
+</code></pre></div>
+<p>While following the instructions to start the server, <strong>make sure to point to the python binary from the anaconda distribution</strong>.</p>
+<h3 id="upgrade-to-production">Upgrade to production<a class="headerlink" href="#upgrade-to-production" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Install NTP (<a href="https://help.ubuntu.com/lts/serverguide/NTP.html">https://help.ubuntu.com/lts/serverguide/NTP.html</a>). If this is
+  not done, the server can become too far out of sync with the client, and we
+  end up with errors related to expired tokens</li>
+<li>If running on a cloud provider, note that the cloud provider admins by looking at the disk image directly. you can choose to <a href="#cryptfs-suggested">install an encrypted
+  filesystem to store the data</a></li>
+</ul>
+<h3 id="configure-the-server">Configure the server<a class="headerlink" href="#configure-the-server" title="Permanent link">&para;</a></h3>
+<p>All server configuration files are in <code>conf</code>. You need to copy the corresponding sample files to copy specific functionality - e.g.</p>
+<div class="highlight"><pre><span></span><code>$ cp conf/net/ext_service/habitica.json.sample conf/net/ext_service/habitica.json
+</code></pre></div>
+<p>Full list of sample files can be determined dynamically.</p>
+<div class="highlight"><pre><span></span><code>$ find conf -name \*.sample
+conf/analysis/debug.conf.json.sample
+conf/storage/db.conf.sample
+conf/net/keys.json.sample
+conf/net/api/webserver.conf.sample
+...
+conf/log/webserver.conf.sample
+conf/log/intake.conf.sample
+</code></pre></div>
+<h4 id="configuring-the-webserver">Configuring the webserver<a class="headerlink" href="#configuring-the-webserver" title="Permanent link">&para;</a></h4>
+<p>By default, the server runs over <code>http</code>. But for production systems, you should really use SSL. It's easy to use SSL, with services like <a href="https://letsencrypt.org/2014/11/18/announcing-lets-encrypt.html">https://letsencrypt.org/2014/11/18/announcing-lets-encrypt.html</a>. Just do it now.</p>
+<p>We use cheroot to provide SSL support. The SSL certificate and private key should be specified in <code>conf/net/keys.json</code>. 
+<div class="highlight"><pre><span></span><code>$ cp conf/net/keys.json.sample conf/net/keys.json
+$ vim conf/net/keys.json
+</code></pre></div></p>
+<p>For scalability, you can also choose to run <a href=#running-behind-a-reverse-proxyload-balancer>behind a reverse proxy, or <a href="#running-the-database-on-a-different-server">run your database on a different server</a>.</p>
+<h4 id="configuring-authentication">Configuring authentication<a class="headerlink" href="#configuring-authentication" title="Permanent link">&para;</a></h4>
+<p>This is configured in two steps.
+- The auth method is configured in <code>conf/net/api/webserver.conf</code>
+- The settings for the auth method are configured in <code>conf/net/auth/&lt;auth_method&gt;.json</code>. </p>
+<p>For more details on configuring an auth method, see <a href="https://github.com/e-mission/e-mission-docs/blob/master/docs/e-mission-both/configuring_authentication.md">https://github.com/e-mission/e-mission-docs/blob/master/docs/e-mission-both/configuring_authentication.md</a> </p>
+<h4 id="configuring-push">Configuring push<a class="headerlink" href="#configuring-push" title="Permanent link">&para;</a></h4>
+<p>We use silent push notifications on iOS as a backup in case the visit
+notifications don't work (there have been some reports of this on iPhone7
+devices). So configuring push is a good idea to avoid excessive power drain on
+iOS.</p>
+<p>Push notifications are configured in <code>conf/net/ext_service/push.json</code>.</p>
+<ul>
+<li>If you are deploying a new UI on the existing e-mission app, ask me for the
+  auth token.</li>
+<li>If you are deploying your own app, create an ionic account, register your
+  app, and obtain an auth token for push.</li>
+</ul>
+<p>The push notification feature is "off" by default. We have a placeholder push notification config so everything will compile, but you need to get the push notification config for your own app from your own firebase account. You would get an  <code>INVALID_SENDER</code> error if you compile the app without push notifications configured.  Alternatively, if you don't want/need push notifications, you can remove the push plugin and the error will go away:</p>
+<div class="highlight"><pre><span></span><code>npx cordova plugin rm phonegap-plugin-push
+</code></pre></div>
+<p>Check with your study admin if you need this feature. </p>
+<h4 id="configuring-other-services">Configuring other services<a class="headerlink" href="#configuring-other-services" title="Permanent link">&para;</a></h4>
+<p>The server has a number of integrations with both internal and external
+services - e.g. nominatim, habitica, push notifications, etc. The relevant
+configurations are in the <code>conf/net/int_services</code> and <code>conf/net/ext_services</code>
+directories. Since these are integrations, they are not core to the
+functionality of the server, and can be configured as desired.</p>
+<h4 id="configuring-logs">Configuring logs<a class="headerlink" href="#configuring-logs" title="Permanent link">&para;</a></h4>
+<p>The sample log configuration is intended to be reasonable. The one caveat is
+that it logs to <code>/var/tmp</code> by default which is unencrypted. So if deployed on a
+cloud server, the cloud admins can see the logs and try to reconstruct the
+data. So to be really careful, the logs should also be set to a location on
+<code>edfs</code> - e.g. setup</p>
+<div class="highlight"><pre><span></span><code>$ sudo cryptsetup -y luksFormat /dev/xvdc
+$ sudo cryptsetup luksOpen /dev/xvdc xvdc
+$ sudo mount /dev/mapper/xvdc /mnt/logs
+</code></pre></div>
+<p>and then change the config to point to <code>/mnt/logs</code>, e.g.</p>
+<div class="highlight"><pre><span></span><code>&quot;filename&quot;: &quot;/mnt/logs/emission/intake-errors.log.gz&quot;
+</code></pre></div>
+<h4 id="configuring-the-phone-app">Configuring the phone app<a class="headerlink" href="#configuring-the-phone-app" title="Permanent link">&para;</a></h4>
+<p>The connection settings on the phone are at <code>www/json/connectionConfig.json</code>. The sample file (<code>connectionConfig.production.json.sample</code>) should be filled in with the URL of the production server and the auth method from <a href="#configuring-authentication">Configuring Authentication</a></p>
+<p>Note, you should also cutomize your client-app with a custom server: <a href="../../dev/front/create_a_new_custom_client/">Create a new custom client</a>.
+Currently, the aggregate related URLs (heatmap, metrics tab) are hardcoded. They need to be changed to your server URL in:</p>
+<ul>
+<li><code>www/js/heatmap.js</code></li>
+<li><code>www/js/metrics.js</code></li>
+</ul>
+<p>It is also necessary to edit the Content-Security-Policy in <code>www/index.html</code> so that connections to your own server URL are allowed.</p>
+<h3 id="starting-processes">Starting processes<a class="headerlink" href="#starting-processes" title="Permanent link">&para;</a></h3>
+<p>The server needs three ongoing processes.</p>
+<h4 id="the-webserver">The webserver<a class="headerlink" href="#the-webserver" title="Permanent link">&para;</a></h4>
+<p>It would be good to have this set up with a watchdog so that it can
+  automatically restart if it goes down (e.g. due to out of memory errors).  I
+  use the <code>supervisord</code> watchdog (<a href="http://supervisord.org/">http://supervisord.org/</a>). If you want to use
+  the same, the e-mission configuration that I use is</p>
+<p><div class="highlight"><pre><span></span><code>[program:emissionpy]
+command=sudo ./e-mission-py.bash emission/net/api/cfc_webapp.py
+directory=/code/e-mission-server
+autostart=true
+autorestart=true
+stderr_logfile=/log/emission/emissionpy.err.log
+stdout_logfile=/log/emission/emissionpy.out.log
+</code></pre></div>
+  where <code>/code/</code> and <code>/log/</code> are separate encrypted filesystems.</p>
+<ol>
+<li>Note that supervisord only runs on python 2.7, although e-mission is now on python 3.6. You need to set up a parallel py27 environment to run it. <a href="https://github.com/e-mission/e-mission-server/issues/530#issuecomment-351776014">https://github.com/e-mission/e-mission-server/issues/530#issuecomment-351776014</a>
+  <div class="highlight"><pre><span></span><code>$ conda create -n py27 python=2.7
+$ source activate py27
+</code></pre></div></li>
+<li>Setup supervisord and configure it based on the instructions (<a href="http://supervisord.org/installing.html">http://supervisord.org/installing.html</a>) - e.g.
+  <div class="highlight"><pre><span></span><code>$ pip install supervisor
+$ echo_supervisord_conf &gt; ~/supervisord.conf
+</code></pre></div></li>
+<li>Since supervisord will run from the <code>py27</code> environment, but we want e-mission to run from the <code>emission</code> environment, use an absolute path in the batch file <code>/code/e-mission-server/e-mission-py.bash</code> by replacing <code>python -&gt; /home/ubuntu/miniconda3/envs/emission/bin/python</code>.</li>
+<li>Run supervisord (<a href="http://supervisord.org/running.html">http://supervisord.org/running.html</a>) - e.g.
+  <div class="highlight"><pre><span></span><code>$ supervisord -c ~/supervisord.conf
+$ ps -aef | grep python
+ubuntu 24344     1  0 04:02 ?        00:00:00 /home/ubuntu/miniconda3/envs/py27/bin/python /home/ubuntu/miniconda3/envs/py27/bin/supervisord -c /home/ubuntu/supervisord.conf
+root   24347 24346 17 04:02 ?        00:00:00 /home/ubuntu/miniconda3/envs/emission/bin/python emission/net/api/cfc_webapp.py
+</code></pre></div></li>
+<li>If your install requires a password for sudo, you may only see one python program after start, and get an error in the  <code>/log/emission/emissionpy.err.log</code> file (<code>sudo: no tty present and no askpass program specified</code>). You can fix this by <a href="http://jeromejaglale.com/doc/unix/ubuntu_sudo_without_password">enabling passwordless sudo for your root/admin user</a>.</li>
+</ol>
+<h4 id="the-analysis-pipeline">The analysis pipeline<a class="headerlink" href="#the-analysis-pipeline" title="Permanent link">&para;</a></h4>
+<p>This pipeline segments the trips, segments legs within the trips, smoothes, assigns modes, etc. It is run via a cronjob. You can customize the frequency of the cronjob depending on the load on the server. A typical <code>cronjob</code> that runs once a day is</p>
+<div class="highlight"><pre><span></span><code>@daily cd /mnt/e-mission/e-mission-server &amp;&amp; PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/intake_multiprocess.py 3 &gt;&gt; /mnt/logs/emission/intake.stdinout 2&gt;&amp;1
+</code></pre></div>
+<h4 id="the-ios-silent-push">The iOS silent push<a class="headerlink" href="#the-ios-silent-push" title="Permanent link">&para;</a></h4>
+<p>As described earlier, we use iOS silent push as a backup for trip end
+detection. We also use it to trigger periodic syncs, and we allow users to
+configure their sync frequencies. So we need to have scripts that generate
+pushes for all iOS phones for the supported sync frequencies. This is also done
+using <code>cron</code>.</p>
+<div class="highlight"><pre><span></span><code>*/1 * * * * cd /mnt/e-mission/e-mission-server &amp;&amp; PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/push/silent_ios_push.py 60 &gt;&gt; /home/e-mission/silent_ios_push.stdinoutlog 2&gt;&amp;1
+*/10 * * * * cd /mnt/e-mission/e-mission-server &amp;&amp; PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/push/silent_ios_push.py 600 &gt;&gt; /home/e-mission/silent_ios_push.stdinoutlog 2&gt;&amp;1
+*/30 * * * * cd /mnt/e-mission/e-mission-server &amp;&amp; PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/push/silent_ios_push.py 1800 &gt;&gt; /home/e-mission/silent_ios_push.stdinoutlog 2&gt;&amp;1
+@hourly cd /mnt/e-mission/e-mission-server &amp;&amp; PYTHONPATH=. /home/ubuntu/anaconda/bin/python bin/push/silent_ios_push.py 3600 &gt;&gt; /home/e-mission/silent_ios_push.stdinoutlog 2&gt;&amp;1
+</code></pre></div>
+<h2 id="suggested-improvements">Suggested improvements<a class="headerlink" href="#suggested-improvements" title="Permanent link">&para;</a></h2>
+<h3 id="cryptfs-suggested">cryptfs (suggested)<a class="headerlink" href="#cryptfs-suggested" title="Permanent link">&para;</a></h3>
+<p>If you are running your server on a cloud provider, and want to ensure that the
+cloud provider cannot access your data by looking at the files directly, you need to encrypt your filesystem. Some cloud providers provide encrypted storage solutions such as EBS on AWS, but they do not allow you to specify the encryption key (<em>NOTE</em>: This may have recently changed. Need to look up AWS key management services).</p>
+<p>In order to have more control, you can use an encrypted filesystem such as cryptfs. Instructions for using cryptfs on ubuntu are at <a href="http://sleepyhead.de/howto/?href=cryptpart">http://sleepyhead.de/howto/?href=cryptpart</a>. You want to ensure that the partitions for data and logs are encrypted - data for obvious reasons, and logs because they print a lot of private information that can potentially be reconstructed.</p>
+<p>In order to ensure that a disk is mount encrypted, use the cryptfs instruction to create and open it in encrypted mode. Then you can simply replace the instructions using an unencrypted disk with the instructions for using an encrypted disk. For example, if you were going to use <code>/dev/foo</code>, you would first follow the instructions at <a href="http://sleepyhead.de/howto/?href=cryptpart">http://sleepyhead.de/howto/?href=cryptpart</a> to get <code>/dev/mapper/foo</code>. Then instead of creating a filesystem on and mounting <code>/dev/foo</code>, you would perform the same operations on <code>/dev/mapper/foo</code>.</p>
+<h4 id="decrypt-mount-after-reboot">Decrypt + mount after reboot<a class="headerlink" href="#decrypt-mount-after-reboot" title="Permanent link">&para;</a></h4>
+<p>Note that if you encrypt the filesystem, you will need to decrypt the
+filesystem every time you reboot to allow the OS to continue accessing the data
+on it.</p>
+<div class="highlight"><pre><span></span><code>$ sudo cryptsetup luksOpen /dev/foo foo
+$ sudo mount /dev/mapper/foo &lt;mount_point&gt;
+</code></pre></div>
+<h3 id="running-behind-a-reverse-proxyload-balancer">Running behind a reverse proxy/load balancer<a class="headerlink" href="#running-behind-a-reverse-proxyload-balancer" title="Permanent link">&para;</a></h3>
+<p>TROUBLESHOOTING : If some encounter cannot access the app and the e-mission web site, setting up a Reverse Proxy (RP) is a solution (see: <a href="https://github.com/fabmob/e-mission-docs/blob/e-mission-contrib/docs/manage/troubleshooting_server_faq.md">troubleshooting server FAQ </a>).</p>
+<p>Here is <a href="https://github.com/fabmob/e-mission-docs/blob/master/docs/assets/RP-conf.sample">an example Apache httpd virtual host configuration</a> for an e-mission RP. <br />
+In our case the original port for the bottle.py e-mission web server was 8080. <br />
+We added a reverse proxy on apache2 httpd listening on 8080, and passing the requests to the e-mission server now on port 8081.<br />
+Besides adding a virtual host in the httpd.conf and changing the port number in the e-mission conf/net/api/webserver.conf file to 8081, it is necessary to install the mod_proxy and mod_ssl extension and configure SSL (with letsencryt, e.g.).  </p>
+<p>For more explanations see the following links:
+<a href="https://www.digitalocean.com/community/tutorials/how-to-use-apache-as-a-reverse-proxy-with-mod_proxy-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-use-apache-as-a-reverse-proxy-with-mod_proxy-on-ubuntu-16-04</a> <br />
+<a href="https://admin-ahead.com/forum/general-linux/configure-to-listen-on-multiple-ports-apache/">https://admin-ahead.com/forum/general-linux/configure-to-listen-on-multiple-ports-apache/</a> <br />
+<a href="https://httpd.apache.org/docs/2.4/en/vhosts/examples.html">https://httpd.apache.org/docs/2.4/en/vhosts/examples.html</a>   </p>
+<p>You can also choose to run the server behind a reverse proxy/load balancer such as <code>ngnix</code>. In that case, the actual e-mission server will continue to run over HTTP. However, in order to make the development flow smoother, if the server is running over HTTP as opposed to HTTPS, it has no security. It uses the <code>dummy-dev</code> authentication method, which returns the user email as the (dummy) authentication token. This means that anybody who knows a users' email address can download their detailed timeline. This is very bad.</p>
+<p>To force authentication, edit <code>emission/net/api/cfc_webapp.py</code> and set <code>skipAuth = False</code>.</p>
+<div class="highlight"><pre><span></span><code>818       # not really an important use case now, and it makes people have to change
+819       # two values and increases the chance of bugs. So let&#39;s key the auth skipping from this as well.
+820       skipAuth = True
+821       print &quot;Running with HTTPS turned OFF, skipAuth = True&quot;
+822
+</code></pre></div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Getting Started with an NREL Hosted Deployment of OpenPATH - e-mission Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../install/manual_install/" class="dropdown-item">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="../../install/deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="../../install/configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="../../install/multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/archi/data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/pipeline_details/" class="dropdown-item">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/front/phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="../../dev/front/how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="../../dev/front/how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/accessing_public_heatmap_and_incident_information/" class="dropdown-item">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="../../dev/back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/future/overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/analysis/" class="dropdown-item">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/scalability/" class="dropdown-item">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#getting-started-with-an-nrel-hosted-deployment-of-openpath" class="nav-link">Getting Started with an NREL Hosted Deployment of OpenPATH</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#customizing-your-project" class="nav-link">Customizing Your Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#approval-and-merge" class="nav-link">Approval and Merge</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#something-went-wrong" class="nav-link">Something Went Wrong</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-do-i-edit-after-submitting" class="nav-link">How do I Edit After Submitting?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#additional-files" class="nav-link">Additional Files?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#custom-reminder-schemes" class="nav-link">Custom Reminder Schemes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started-with-an-nrel-hosted-deployment-of-openpath">Getting Started with an NREL Hosted Deployment of OpenPATH<a class="headerlink" href="#getting-started-with-an-nrel-hosted-deployment-of-openpath" title="Permanent link">&para;</a></h1>
+<p>The first step is to contact NREL to draw up an agreement, if you have not contacted us yet please reach out to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#111;&#112;&#101;&#110;&#112;&#97;&#116;&#104;&#64;&#110;&#114;&#101;&#108;&#46;&#103;&#111;&#118;">&#111;&#112;&#101;&#110;&#112;&#97;&#116;&#104;&#64;&#110;&#114;&#101;&#108;&#46;&#103;&#111;&#118;</a> to get started. We look forward to hearing about how you plan to use OpenPATH!</p>
+<h2 id="customizing-your-project">Customizing Your Project<a class="headerlink" href="#customizing-your-project" title="Permanent link">&para;</a></h2>
+<h3 id="fill-out-the-form">Fill Out the Form<a class="headerlink" href="#fill-out-the-form" title="Permanent link">&para;</a></h3>
+<p>In order to provide you with a deployment suited to your project's specific needs, we use a special JSON file to configure your app. To create that file, please fill out the form: <a href="https://github.com/e-mission/nrel-openpath-deploy-configs/issues/new?assignees=&amp;labels=new+config&amp;projects=&amp;template=add-new-config.yml&amp;title=New+Project+Configuration+-+%5BPROJECT%5D">HERE</a>. Please follow all instructions carefully, as this allows the automated workflow to function as intended and your file to be ready faster!</p>
+<p>You will be asked to provide information such as the name of your project, the purpose behind it, project-specific translations, and preferences for app configurations like the onboarding survey, trip labeling, and reminder schemes. It might help to gather the information before beginning to fill out the form. </p>
+<h3 id="view-issue-and-workflow">View Issue and Workflow<a class="headerlink" href="#view-issue-and-workflow" title="Permanent link">&para;</a></h3>
+<p>After you fill out the form and click submit, you will see a page with a GitHub Issue containing the information that you input into the form. Please save the link to this page, we may need you to provide it to us. </p>
+<p>If everything went well, you should see a message at the bottom of the page saying that a bot referenced this issue - this means your config file has been created sucessfully! </p>
+<p>To see the generated pull request, click on "Pull requests" in the toolbar at the top of the page and find the one with the same number as the issue you opened in the title. This Pull Request will add the configuration for your project to our repo. If you're curious, you can see the generated file by clicking "Files changed" in the top of the pull request. </p>
+<h2 id="approval-and-merge">Approval and Merge<a class="headerlink" href="#approval-and-merge" title="Permanent link">&para;</a></h2>
+<p>Once the file is ready, a developer will check it over and if everything looks good will merge the new file into the repository.</p>
+<p>Please note that any additonal files, like custom label options or surveys, will also need to be submitted before we can get your project completly ready for testing.</p>
+<h2 id="something-went-wrong">Something Went Wrong<a class="headerlink" href="#something-went-wrong" title="Permanent link">&para;</a></h2>
+<p>If you do not see a message at the end of your issue form from a bot within a few minutes of clicking submit, something probably went wrong with the automatic file generation process. </p>
+<p>Don't worry! You can edit the issue to fix the issue. The most likely cause is that you did not follow the instructions on the form. To learn more about the problem, click "actions" in the GitHub toolbar at the top of the page, and then click on the one with [Your Project Name], if it has a red X to the left of the name, there was a problem. Click on the Action and look for an idication of the error, this may help you know what to edit in your issue to fix the problem. </p>
+<p>A green check next to the workflow means everything went smoothly, if you still don't see the bot message please contact us with the link to your issue and we will investigate. </p>
+<h2 id="how-do-i-edit-after-submitting">How do I Edit After Submitting?<a class="headerlink" href="#how-do-i-edit-after-submitting" title="Permanent link">&para;</a></h2>
+<p>To edit your form after you submit, from the issue page that showed up when you clicked submit, click the 3 dots in the right hand corner of the box containing your form, then click edit. </p>
+<p>The box with your form will now be a text editor. Make updates as needed, ensuring that you keep the formatting intact. The rows starting with "###" are labels from the form, do not change them. </p>
+<p>When you're done, click "Update Comment" at the bottom right of the box.</p>
+<h2 id="additional-files">Additional Files?<a class="headerlink" href="#additional-files" title="Permanent link">&para;</a></h2>
+<p>If you are choosing a more highly custom route, you might have to provide us with additonal files. Please use the files linked in the descriptions of those fields on the form as examples. Since this is slightly more complex than relying on the default options, there are some manual steps involved. You can submit the files using a GitHub pull request. If you are new to GitHub, this is a good <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">guide on pull requests </a>. If you do create pull requests for additional files, it would help us out if you could link them in a comment in your issue. </p>
+<h3 id="custom-onboarding-survey">Custom Onboarding Survey<a class="headerlink" href="#custom-onboarding-survey" title="Permanent link">&para;</a></h3>
+<p>We provide a default onboarding survey, but if your project needs specialized demographic information, you can write your own survey. The best way to do this is to use KoboToolbox to create the survey, then download the files and submit a pull request to add them to our repository.</p>
+<h3 id="custom-trip-labels">Custom Trip Labels<a class="headerlink" href="#custom-trip-labels" title="Permanent link">&para;</a></h3>
+<p>We have a default set of trip mode and purpose labels, but you can also choose to provide your own. Please create a file like the example for a <a href="https://github.com/e-mission/nrel-openpath-deploy-configs/blob/main/label_options/example-program-label-options.json">program</a> or a <a href="https://github.com/e-mission/nrel-openpath-deploy-configs/blob/main/label_options/example-study-label-options.json">study</a> and submit it as a pull request. </p>
+<p>Modes are somewhat complex. The <code>value</code> is what's used behind the scenes. For the <code>baseMode</code>, you must choose from <a href="https://github.com/e-mission/e-mission-phone/blob/922a62b7c2601f195bfe8df54654986135e99b25/www/js/diary/diaryHelper.ts#L20">those in our code base</a>, these control the icon and color associated with the mode. The <code>met</code> or <code>met_equivalent</code> relates to the "metabolic equivalent of task" for each mode, you can specify a custom value, or choose an equivalent from [WALKING, BICYCLING, UNKNOWN, or IN_VEHICLE]. Make sure you specify all needed translations, failing to do so could result in poor UI in your version of the app. </p>
+<h3 id="custom-trip-surveys">Custom Trip Surveys<a class="headerlink" href="#custom-trip-surveys" title="Permanent link">&para;</a></h3>
+<p>If your data-gathering needs extend beyond travel mode and purpose, you can ask participants to fill out a survey for each trip. Like the onboarding survey, it is best if you create this with KoboToolbox and submit the files with a pull request. If you do this, the dashboard screen will not be avaliable to participants in the app, as it relies too heavily on traditional labels to be insightful without them. </p>
+<h2 id="custom-reminder-schemes">Custom Reminder Schemes<a class="headerlink" href="#custom-reminder-schemes" title="Permanent link">&para;</a></h2>
+<p>If you want to customize the schedule on which notificiations are sent to participants to open the app and label their trips, or what those notifications say, please indicate your preferences in the appropriate field on the form and a developer will translate that into the appropriate JSON in your config.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>1. Manual install - e-mission Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">e-mission Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/e-mission/e-mission-docs/issues" class="nav-link">Issues</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">1. Install</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">1. Manual install</a>
+</li>
+                                    
+<li>
+    <a href="../deploying_your_own_server_to_production.md" class="dropdown-item">2. Deploying your own server to production</a>
+</li>
+                                    
+<li>
+    <a href="../configuring_authentication/" class="dropdown-item">3. Configuring authentication</a>
+</li>
+                                    
+<li>
+    <a href="../multi_layer_stack/" class="dropdown-item">4. Multi-layer stack</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">2. Use</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../use/end_user/" class="dropdown-item">Use the app</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">3. Manage</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../manage/troubleshooting_app_faq/" class="dropdown-item">1. Troubleshooting the app</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/troubleshooting_server_faq/" class="dropdown-item">2. Troubleshooting the server</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/evaluation_procedure.md" class="dropdown-item">3. Evaluation procedure</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/requesting_data_as_a_collaborator/" class="dropdown-item">4. Requesting data as a collaborator</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/pushing_surveys_from_the_server_to_the_phone/" class="dropdown-item">5. Pushing surveys from server to phone</a>
+</li>
+                                    
+<li>
+    <a href="../../manage/adding_limesurvey_support/" class="dropdown-item">5b. Adding LimeSurvey</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">4. Develop</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Tutorial</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/tutorial/hands-on-overview/" class="dropdown-item">Workshop intro</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/logistics/" class="dropdown-item">Workshop fall 2018</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Small UI changes</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/quickstart/" class="dropdown-item">1. Quickstart</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/easiest_way_to_change_text/" class="dropdown-item">2. Easiest way to change text</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/simple_client_changes/" class="dropdown-item">3. Simple client changes</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/summary_and_consent/" class="dropdown-item">4. Summary and consent</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/change_trip_end_prompt/" class="dropdown-item">5. Change trip end prompt</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/remove_tab/" class="dropdown-item">6. Remove tabs</a>
+</li>
+            
+<li>
+    <a href="../../dev/tutorial/small_ui_changes/changes_needed_when_the_set_of_tabs_changes/" class="dropdown-item">7. Changes needed when the set of tabs changes</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Architecture</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/archi/data_model/" class="dropdown-item">1. Data model</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/module_structure/" class="dropdown-item">2. Module structure</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/mode_inference_pipeline_design/" class="dropdown-item">3. Mode inference pipeline</a>
+</li>
+            
+<li>
+    <a href="../../dev/archi/pipeline_details/" class="dropdown-item">4. Pipeline details</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Front (Web/Mobile app)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/front/phone_module_structure/" class="dropdown-item">1. Phone module structure</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/high_level_faq/" class="dropdown-item">2. App UI dev FAQ</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/create_a_new_custom_client/" class="dropdown-item">3. Create a new custom client</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/you_have_a_branch_for_your_custom_client_now_what/" class="dropdown-item">4. You have a branch for you custom client, now what?</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/guidelines_to_support_i18n/" class="dropdown-item">5a. Guidelines to i18n </a>
+</li>
+            
+<li>
+    <a href="../../dev/front/how_to_add_a_language/" class="dropdown-item">5b. How to add a language </a>
+</li>
+            
+<li>
+    <a href="../../dev/front/how_to_embed_an_external_survey_in_the_app/" class="dropdown-item">6. How to embed an external survey in the app</a>
+</li>
+            
+<li>
+    <a href="../../dev/front/accessing_public_heatmap_and_incident_information/" class="dropdown-item">7. Accessing public heatmap and incident info</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Back (Server)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/back/adding_a_new_data_type/" class="dropdown-item">1. Adding a new data type</a>
+</li>
+            
+<li>
+    <a href="../../dev/back/supporting_user_inputs/" class="dropdown-item">2. Supporting user inputs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Future</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../dev/future/overview/" class="dropdown-item">1. Overview</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/privacy/" class="dropdown-item">2. Privacy</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/differential_privacy_deep_dive_lit_review/" class="dropdown-item">3. privacy litt. review</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/secure_execution_options/" class="dropdown-item">4. Secure execution</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/analysis/" class="dropdown-item">5. Analysis</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/scalability/" class="dropdown-item">6. Scalability</a>
+</li>
+            
+<li>
+    <a href="../../dev/future/unanswered_questions/" class="dropdown-item">7. Unanswered questions</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">5. Documenting</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../contribute_to_the_doc/CONTRIBUTING/" class="dropdown-item">Contributing</a>
+</li>
+                                    
+<li>
+    <a href="../../contribute_to_the_doc/migration_reason/" class="dropdown-item">Docs reorganisation</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../.." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../configuring_authentication/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#manual-installation" class="nav-link">Manual installation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#installupdate" class="nav-link">Install/update:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dependencies" class="nav-link">Dependencies:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#run" class="nav-link">Run</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="manual-installation">Manual installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h1>
+<p>If you don't want to use docker, or you want to contribute to server development, you can also install the server directly. We use a virtual environment for the installation, so it will not mess up your regular python install.</p>
+<p>The installation instructions below are generally targeted towards OSX and *nix shells such as bash. If you want to use Windows, we recomend using a POSIX compliant shell such as <a href="https://openhatch.org/missions/windows-setup/install-git-bash">gitbash</a>, which provides similarly rich commands. If you really want to use the Command Prompt, most commands should work, but you may need to convert <code>/</code> -&gt; <code>\</code> to make the commands work.</p>
+<h2 id="installupdate">Install/update:<a class="headerlink" href="#installupdate" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>is as simple as cloning the github repository.</p>
+<ul>
+<li>If you do not plan to make changes to the code, clone the master repository.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/e-mission/e-mission-server.git
+</code></pre></div>
+<ul>
+<li>If you might make changes or develop new features, fork (<a href="https://help.github.com/articles/fork-a-repo/">https://help.github.com/articles/fork-a-repo/</a>) and clone your fork.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/&lt;username&gt;/e-mission-server.git
+</code></pre></div>
+<h3 id="update">Update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
+<p>is as simple as pulling new changes.</p>
+<ul>
+<li>If you are working off the master repository</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ git pull origin master
+</code></pre></div>
+<ul>
+<li>If you are working off your fork, you will need to sync your fork with the main repository (<a href="https://help.github.com/articles/syncing-a-fork/">https://help.github.com/articles/syncing-a-fork/</a>) and then pull from your fork.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ git pull origin master
+</code></pre></div>
+<h2 id="dependencies">Dependencies:<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="database-mongodb">Database (mongodb)<a class="headerlink" href="#database-mongodb" title="Permanent link">&para;</a></h3>
+<p>Start <a href="http://www.mongodb.org/">Mongodb</a>, version 8.0.4.</p>
+<h4 id="using-docker-recommended">Using docker (recommended)<a class="headerlink" href="#using-docker-recommended" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ docker run -p 27017:27017 mongo:8.0.4
+</code></pre></div>
+<p>Note that the command above <em>does not persist</em> the data if the container is restarted. Docker has additional options for persistence, composition, etc.</p>
+<h4 id="using-manual-install">Using manual install<a class="headerlink" href="#using-manual-install" title="Permanent link">&para;</a></h4>
+<ol>
+<li><em>Windows</em>: mongodb appears to be installed as a service on Windows devices and it starts automatically on reboot</li>
+<li><em>OSX</em>: You want to install homebrew and then use homebrew to install mongodb. Follow these instruction on how to do so ---&gt; (<a href="https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/">https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/</a>)</li>
+<li>
+<p><em>Ubuntu</em>: <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</a></p>
+</li>
+<li>
+<p>Start it at the default port</p>
+<p><code>$ mongod</code></p>
+</li>
+</ol>
+<h3 id="python-distribution">Python distribution<a class="headerlink" href="#python-distribution" title="Permanent link">&para;</a></h3>
+<p>We will use a distribution of python that is optimized for scientific
+computing. The <a href="https://store.continuum.io/cshop/anaconda/">anaconda</a>
+distribution is available for a wide variety of platforms and includes the
+python scientific computing libraries (numpy/scipy/scikit-learn) along with
+native implementations for performance. Using the distribution avoids native
+library inconsistencies between versions.</p>
+<p>The distribution also includes its own version of pip, and a separate environment
+management tool called 'conda'.</p>
+<p>The distribution also includes an environment management tool called 'conda'. We will set up a separate <code>emission</code>
+environment within anaconda to avoid conflicts with other applications.</p>
+<ul>
+<li>Install miniconda</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>$ source setup/setup_conda.sh
+</code></pre></div>
+  IMPORTANT: this script works for MacOSX and Ubuntu based Linux distributions, the OS must be specified on the command with one of two choices: <code>Linux-x86_64</code> or <code>MacOSX-x86_64</code>. The final command would be this <code>source setup/setup_conda.sh Linux-x86_64</code> or this <code>source setup/setup_conda.sh MacOSX-x86_64</code>.</p>
+<ul>
+<li>Setup the <code>emission</code> environment.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ source setup/setup.sh
+</code></pre></div>
+<ul>
+<li>If you want to use an ipython notebook, use <code>$ source setup/setup_notebook.sh</code> instead.</li>
+<li>
+<p>If you want to use a less optimized version that uses less disk space, use <code>$ source setup/setup_nomkl.sh</code> instead. Note that this has not been extensively tested.</p>
+</li>
+<li>
+<p>Verify that you are in the right environment - your prompt should start with
+  <code>(emission)</code> and the <code>emission</code> environment should be starred.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>(emission) ...$ conda env list
+# conda environments:
+#
+aws                      /..../anaconda/envs/aws
+emission              *  /..../anaconda/envs/emission
+firebase                 /..../anaconda/envs/firebase
+py27                     /..../anaconda/envs/py27
+py36                     /..../anaconda/envs/py36
+xbos                     /..../anaconda/envs/xbos
+root                     /..../anaconda
+</code></pre></div>
+<ul>
+<li>If you have setup the environment already and just need to switch to it, </li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ source setup/activate.sh
+</code></pre></div>
+<p>To switch out of the emission environment, or to manipulate it in other ways, read the conda documentation on environments <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html</a></p>
+<ul>
+<li>Remember to re-run the setup script every time you pull from the main repository because the dependencies may have changed.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ source setup/setup.sh
+</code></pre></div>
+<ul>
+<li>When you are done working with e-mission, you can cleanup the environment and then just delete the entire directory.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ source setup/teardown.sh
+$ cd ..
+$ rm -rf e-mission-server
+</code></pre></div>
+<ul>
+<li>If you are not using </li>
+</ul>
+<h3 id="javascript-dependencies">Javascript dependencies<a class="headerlink" href="#javascript-dependencies" title="Permanent link">&para;</a></h3>
+<p>Note: It is required only if the user needs a  web interface for the server. Otherwise one can do without it as well.</p>
+<p>Tip: Run "bower install" instead if you are prompted password for '<a href="https://github.com">https://github.com</a>' after running "bower update".</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>webapp
+$<span class="w"> </span>bower<span class="w"> </span>update
+</code></pre></div>
+
+<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
+<hr />
+<ol>
+<li>Activate the <code>emission</code> conda environment</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ source setup/activate.sh
+</code></pre></div>
+<ol>
+<li>
+<p>For OSX manual installs, start the database  (Note: mongodb appears to be installed as a service on Windows devices and it starts automatically on reboot). </p>
+<div class="codehilite"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="n">mongod</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span><span class="nl">T11</span><span class="p">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">07.576</span><span class="o">-</span><span class="mi">0700</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">CONTROL</span><span class="w">  </span><span class="o">[</span><span class="n">initandlisten</span><span class="o">]</span><span class="w"> </span><span class="n">MongoDB</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">pid</span><span class="o">=</span><span class="mi">60899</span><span class="w"> </span><span class="n">port</span><span class="o">=</span><span class="mi">27017</span><span class="w"> </span><span class="n">dbpath</span><span class="o">=/</span><span class="k">data</span><span class="o">/</span><span class="n">db</span><span class="w"> </span><span class="mi">64</span><span class="o">-</span><span class="nc">bit</span><span class="w"> </span><span class="p">...</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span><span class="nl">T11</span><span class="p">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">07.576</span><span class="o">-</span><span class="mi">0700</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">CONTROL</span><span class="w">  </span><span class="o">[</span><span class="n">initandlisten</span><span class="o">]</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">v3</span><span class="mf">.6.2</span>
+<span class="p">...</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span><span class="nl">T11</span><span class="p">:</span><span class="mi">06</span><span class="err">:</span><span class="mf">08.420</span><span class="o">-</span><span class="mi">0700</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">FTDC</span><span class="w">     </span><span class="o">[</span><span class="n">initandlisten</span><span class="o">]</span><span class="w"> </span><span class="n">Initializing</span><span class="w"> </span><span class="k">full</span><span class="o">-</span><span class="nc">time</span><span class="w"> </span><span class="n">diagnostic</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">capture</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="s1">&#39;/data/db/diagnostic.data&#39;</span>
+</code></pre></div>
+
+</li>
+<li>
+<p><strong>Optional</strong> Copy configuration files. The files in <code>conf</code> can be used to customize the app with custom authentication options or enable external features such as place lookup and the game integration. Look at the samples in <code>conf/*</code>, copy them over and modify as necessary - e.g.</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>conf<span class="w"> </span>-name<span class="w"> </span><span class="se">\*</span>.sample
+<span class="c1"># For the location -&gt; name reverse lookup. Client will lookup if not populated.</span>
+$<span class="w"> </span>cp<span class="w"> </span>conf/net/ext_service/nominatim.json.sample<span class="w"> </span>conf/net/ext_service/nominatim.json
+</code></pre></div>
+
+</li>
+<li>
+<p>Start the server</p>
+<div class="codehilite"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="o">./</span><span class="n">e</span><span class="o">-</span><span class="n">mission</span><span class="o">-</span><span class="n">py</span><span class="o">.</span><span class="n">bash</span><span class="w"> </span><span class="n">emission</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">cfc_webapp</span><span class="o">.</span><span class="n">py</span>
+<span class="n">storage</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">configured</span><span class="p">,</span><span class="w"> </span><span class="n">falling</span><span class="w"> </span><span class="n">back</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">sample</span><span class="p">,</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">configuration</span>
+<span class="n">Connecting</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">database</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">localhost</span>
+<span class="n">analysis</span><span class="o">.</span><span class="n">debug</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">configured</span><span class="p">,</span><span class="w"> </span><span class="n">falling</span><span class="w"> </span><span class="n">back</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">sample</span><span class="p">,</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">configuration</span>
+<span class="n">Finished</span><span class="w"> </span><span class="n">configuring</span><span class="w"> </span><span class="n">logging</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">&lt;</span><span class="n">RootLogger</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="p">(</span><span class="n">WARNING</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="n">Replaced</span><span class="w"> </span><span class="n">json_dumps</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">plugin</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">bson</span>
+<span class="n">Changing</span><span class="w"> </span><span class="n">bt</span><span class="o">.</span><span class="n">json_loads</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">&lt;</span><span class="n">function</span><span class="w"> </span><span class="o">&lt;</span><span class="n">lambda</span><span class="o">&gt;</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mh">0x10f5fdb70</span><span class="o">&gt;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">&lt;</span><span class="n">function</span><span class="w"> </span><span class="n">loads</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="mh">0x1104b6ae8</span><span class="o">&gt;</span>
+<span class="n">Running</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">HTTPS</span><span class="w"> </span><span class="n">turned</span><span class="w"> </span><span class="n">OFF</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">reverse</span><span class="w"> </span><span class="n">proxy</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">production</span>
+<span class="n">Bottle</span><span class="w"> </span><span class="n">v0</span><span class="o">.</span><span class="mi">13</span><span class="o">-</span><span class="n">dev</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="p">(</span><span class="n">using</span><span class="w"> </span><span class="n">CherootServer</span><span class="p">())</span><span class="o">...</span>
+<span class="n">Listening</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span>
+<span class="n">Hit</span><span class="w"> </span><span class="n">Ctrl</span><span class="o">-</span><span class="n">C</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">quit</span><span class="o">.</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Test your connection to the server</p>
+</li>
+<li>Using a web browser, go to <a href="http://localhost:8080">http://localhost:8080</a></li>
+<li>Using safari in the iOS emulator, go to <a href="http://localhost:8080">http://localhost:8080</a></li>
+<li>Using chrome in the android emulator:<ul>
+<li>change <code>server.host</code> in <code>conf/net/api/webserver.conf</code> to 0.0.0.0, and </li>
+<li>go to the special IP for the current host in the android emulator - <a href="https://developer.android.com/tools/devices/emulator.html#networkaddresses">10.0.2.2</a></li>
+</ul>
+</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
