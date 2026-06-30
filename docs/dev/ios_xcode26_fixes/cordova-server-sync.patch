@@ -1,0 +1,26 @@
+From 958271756d8084e19b5be979a638c11f4815cd5d Mon Sep 17 00:00:00 2001
+From: GitHub Copilot <223556219+Copilot@users.noreply.github.com>
+Date: Tue, 30 Jun 2026 20:58:38 +0000
+Subject: [PATCH] Add UIKit import for UIBackgroundFetchResult compatibility
+ with Xcode 26
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+---
+ src/ios/BEMServerSyncCommunicationHelper.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/ios/BEMServerSyncCommunicationHelper.h b/src/ios/BEMServerSyncCommunicationHelper.h
+index 736abec..b86f375 100644
+--- a/src/ios/BEMServerSyncCommunicationHelper.h
++++ b/src/ios/BEMServerSyncCommunicationHelper.h
+@@ -8,6 +8,7 @@
+ 
+ #import <Foundation/Foundation.h>
+ #import <CoreLocation/CoreLocation.h>
++#import <UIKit/UIKit.h>
+ #import "Bolts/BFTask.h"
+ 
+ typedef void (^SilentPushCompletionHandler)(UIBackgroundFetchResult);
+-- 
+2.54.0
+

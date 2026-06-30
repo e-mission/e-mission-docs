@@ -1,0 +1,40 @@
+From 8ed0577e1b2e7ac08106b7fd64bb825df00dd0fa Mon Sep 17 00:00:00 2001
+From: GitHub Copilot <223556219+Copilot@users.noreply.github.com>
+Date: Tue, 30 Jun 2026 20:58:43 +0000
+Subject: [PATCH] Fix iOS build errors with Xcode 26
+
+Add UIKit imports needed for stricter Xcode 26 module checks in Battery.h and StatsEvent.m.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+---
+ src/ios/Wrapper/Battery.h    | 1 +
+ src/ios/Wrapper/StatsEvent.m | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/src/ios/Wrapper/Battery.h b/src/ios/Wrapper/Battery.h
+index 312d206..c2e6354 100644
+--- a/src/ios/Wrapper/Battery.h
++++ b/src/ios/Wrapper/Battery.h
+@@ -7,6 +7,7 @@
+ //
+ 
+ #import <Foundation/Foundation.h>
++#import <UIKit/UIKit.h>
+ 
+ @interface Battery : NSObject
+ 
+diff --git a/src/ios/Wrapper/StatsEvent.m b/src/ios/Wrapper/StatsEvent.m
+index a77f718..2ce7210 100644
+--- a/src/ios/Wrapper/StatsEvent.m
++++ b/src/ios/Wrapper/StatsEvent.m
+@@ -7,6 +7,7 @@
+ //
+ 
+ #import "StatsEvent.h"
++#import <UIKit/UIKit.h>
+ 
+ static NSDictionary *statsNamesDict;
+ static NSString* appVersion;
+-- 
+2.54.0
+

@@ -1,0 +1,312 @@
+From bb398c258c05e3e437962dd0fac18270e7177786 Mon Sep 17 00:00:00 2001
+From: GitHub Copilot <223556219+Copilot@users.noreply.github.com>
+Date: Tue, 30 Jun 2026 21:02:04 +0000
+Subject: [PATCH] Fix iOS build errors with Xcode 26: remove
+ cordova-custom-config, update launch-review, add advanced-http hook
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+---
+ .../ios/ios_fix_advanced_http.js              |  46 ++++++
+ package-lock.json                             | 140 ++----------------
+ package.json                                  |   4 +-
+ 3 files changed, 57 insertions(+), 133 deletions(-)
+ create mode 100644 hooks/after_prepare/ios/ios_fix_advanced_http.js
+
+diff --git a/hooks/after_prepare/ios/ios_fix_advanced_http.js b/hooks/after_prepare/ios/ios_fix_advanced_http.js
+new file mode 100644
+index 00000000..fce388c6
+--- /dev/null
++++ b/hooks/after_prepare/ios/ios_fix_advanced_http.js
+@@ -0,0 +1,46 @@
++// Fix for Xcode 26 build errors in cordova-plugin-advanced-http
++// AFNetworking uses private header <netinet6/in6.h> which is not allowed with strict module checks
++// SDNetworkActivityIndicator uses UIKit types without importing UIKit
++//
++// After `cordova prepare`, plugin source files are copied flat into:
++//   platforms/ios/App/Plugins/cordova-plugin-advanced-http/
++// (no subdirectories, regardless of the source layout in the plugin)
++//
++// Based on fix described in: https://github.com/e-mission/e-mission-docs/issues/1144
++
++const fs = require('fs');
++const path = require('path');
++
++console.log('Hook: Fixing cordova-plugin-advanced-http for Xcode 26 compatibility');
++
++// Fix AFNetworking files: remove private #import <netinet6/in6.h>
++// The fix comes from: https://github.com/e-mission/e-mission-docs/issues/1144#issuecomment-4833815337
++const pluginDir = path.join('platforms', 'ios', 'App', 'Plugins', 'cordova-plugin-advanced-http');
++if (!fs.existsSync(pluginDir)) {
++    console.log(`Plugin directory not found: ${pluginDir}`);
++} else {
++    const allFiles = fs.readdirSync(pluginDir).filter(f => /\.(m|h)$/.test(f));
++    console.log(`Found ${allFiles.length} plugin files to check`);
++
++    for (const file of allFiles) {
++        const filePath = path.join(pluginDir, file);
++        let content = fs.readFileSync(filePath, { encoding: 'utf-8' });
++
++        // Fix 1: remove private AFNetworking header; <netinet/in.h> and <arpa/inet.h> (already present) suffice
++        if (content.includes('#import <netinet6/in6.h>')) {
++            content = content.replace('#import <netinet6/in6.h>\n', '');
++            fs.writeFileSync(filePath, content);
++            console.log(`Fixed AFNetworking netinet6 import in: ${filePath}`);
++        }
++
++        // Fix 2: add UIKit import to SDNetworkActivityIndicator.h (uses UIApplication)
++        // The fix comes from: https://github.com/e-mission/e-mission-docs/issues/1144#issuecomment-4846939083
++        if (file === 'SDNetworkActivityIndicator.h' && !content.includes('#import <UIKit/UIKit.h>')) {
++            content = content.replace('#import <Foundation/Foundation.h>', '#import <Foundation/Foundation.h>\n#import <UIKit/UIKit.h>');
++            fs.writeFileSync(filePath, content);
++            console.log(`Fixed UIKit import in: ${filePath}`);
++        }
++    }
++}
++
++console.log('Hook: Done fixing cordova-plugin-advanced-http for Xcode 26 compatibility');
+diff --git a/package-lock.json b/package-lock.json
+index d5b0a63e..1b5d328e 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -27,7 +27,6 @@
+         "cordova-android": "14.0.1",
+         "cordova-browser": "^7.0.0",
+         "cordova-clipboard": "^1.3.0",
+-        "cordova-custom-config": "^5.1.1",
+         "cordova-ios": "7.1.1",
+         "cordova-plugin-advanced-http": "3.3.1",
+         "cordova-plugin-androidx-adapter": "1.1.3",
+@@ -97,7 +96,7 @@
+         "babel-plugin-optional-require": "^0.3.1",
+         "concurrently": "^8.0.1",
+         "cordova": "12.0.0",
+-        "cordova-launch-review": "^4.1.3",
++        "cordova-launch-review": "github:dpa99c/cordova-launch-review",
+         "css-loader": "^6.7.4",
+         "exports-loader": "^4.0.0",
+         "expose-loader": "^4.1.0",
+@@ -6320,14 +6319,6 @@
+         "node": ">=0.8.0"
+       }
+     },
+-    "node_modules/bplist-creator": {
+-      "version": "0.0.7",
+-      "resolved": "https://registry.npmjs.org/bplist-creator/-/bplist-creator-0.0.7.tgz",
+-      "integrity": "sha512-xp/tcaV3T5PCiaY04mXga7o/TE+t95gqeLmADeBI1CvZtdWTbgBt3uLpvh4UWtenKeBhCV6oVxGk38yZr2uYEA==",
+-      "dependencies": {
+-        "stream-buffers": "~2.2.0"
+-      }
+-    },
+     "node_modules/bplist-parser": {
+       "version": "0.3.2",
+       "resolved": "https://registry.npmjs.org/bplist-parser/-/bplist-parser-0.3.2.tgz",
+@@ -7213,14 +7204,6 @@
+       "integrity": "sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==",
+       "dev": true
+     },
+-    "node_modules/colors": {
+-      "version": "1.4.0",
+-      "resolved": "https://registry.npmjs.org/colors/-/colors-1.4.0.tgz",
+-      "integrity": "sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==",
+-      "engines": {
+-        "node": ">=0.1.90"
+-      }
+-    },
+     "node_modules/com.unarin.cordova.beacon": {
+       "version": "3.8.1",
+       "resolved": "git+ssh://git@github.com/e-mission/cordova-plugin-ibeacon.git#bf2b3dd58ef094291c6bcf2b50957c039675b9b0",
+@@ -7966,38 +7949,6 @@
+         "node": ">=14.14"
+       }
+     },
+-    "node_modules/cordova-custom-config": {
+-      "version": "5.1.1",
+-      "resolved": "https://registry.npmjs.org/cordova-custom-config/-/cordova-custom-config-5.1.1.tgz",
+-      "integrity": "sha512-GH/W0yVCvrxobcs1zp3ARcbG8/XlnCglQqBgUsFkQnf/gVzaA9Eh+Q55W1tgp6yiNZv17aBTPlJYBaKqGsIrFQ==",
+-      "dependencies": {
+-        "colors": "1.4.0",
+-        "elementtree": "^0.1.6",
+-        "lodash": "^4.17.11",
+-        "plist": "^3.0.1",
+-        "q": "^1.4.1",
+-        "shelljs": "^0.7.0",
+-        "tostr": "^0.1.0",
+-        "xcode": "^1.0.0"
+-      }
+-    },
+-    "node_modules/cordova-custom-config/node_modules/shelljs": {
+-      "version": "0.7.8",
+-      "resolved": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.8.tgz",
+-      "integrity": "sha512-/YF5Uk8hcwi7ima04ppkbA4RaRMdPMBfwAvAf8sufYOxsJRtbdoBsT8vGvlb+799BrlGdYrd+oczIA2eN2JdWA==",
+-      "dependencies": {
+-        "glob": "^7.0.0",
+-        "interpret": "^1.0.0",
+-        "rechoir": "^0.6.2"
+-      },
+-      "bin": {
+-        "shjs": "bin/shjs"
+-      },
+-      "engines": {
+-        "iojs": "*",
+-        "node": ">=0.11.0"
+-      }
+-    },
+     "node_modules/cordova-fetch": {
+       "version": "4.0.0",
+       "resolved": "https://registry.npmjs.org/cordova-fetch/-/cordova-fetch-4.0.0.tgz",
+@@ -8147,10 +8098,15 @@
+       }
+     },
+     "node_modules/cordova-launch-review": {
+-      "version": "4.1.3",
+-      "resolved": "https://registry.npmjs.org/cordova-launch-review/-/cordova-launch-review-4.1.3.tgz",
+-      "integrity": "sha512-4MHwvaLVJ7u1+BYqW9xwSIEeeGHJytCAm16lrFId00jyTCxQHeHUJi3xOvHSb9XjKUqi4EClV9xmfArkgwpXWQ==",
+-      "dev": true
++      "version": "4.2.0",
++      "resolved": "git+ssh://git@github.com/dpa99c/cordova-launch-review.git#72e2104e1efbd8c1f8f2d5f018681de87fa145e3",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "cordova": ">=10.0.0",
++        "cordova-android": ">=10.0.0",
++        "cordova-ios": ">=6.0.0"
++      }
+     },
+     "node_modules/cordova-lib": {
+       "version": "12.0.2",
+@@ -25974,47 +25930,6 @@
+         "tail": "^0.4.0"
+       }
+     },
+-    "node_modules/simple-plist": {
+-      "version": "0.2.1",
+-      "resolved": "https://registry.npmjs.org/simple-plist/-/simple-plist-0.2.1.tgz",
+-      "integrity": "sha512-1xgqR0IwahCZDfwUp36DmxKX0dwoh/KtnxbY8D5cs19BF5889ZlRSViTAknEWO39ND573T2NBBHqP7Qf6spPPQ==",
+-      "dependencies": {
+-        "bplist-creator": "0.0.7",
+-        "bplist-parser": "0.1.1",
+-        "plist": "2.0.1"
+-      }
+-    },
+-    "node_modules/simple-plist/node_modules/base64-js": {
+-      "version": "1.1.2",
+-      "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-1.1.2.tgz",
+-      "integrity": "sha512-AIxxJSNK6fMJTnRuY14y/+86h+R4Ybztcchea+Al8aPIPFa6LvDSV90VN5EH81DVXQmh6YjIqpLyG/ljQDoqeQ=="
+-    },
+-    "node_modules/simple-plist/node_modules/bplist-parser": {
+-      "version": "0.1.1",
+-      "resolved": "https://registry.npmjs.org/bplist-parser/-/bplist-parser-0.1.1.tgz",
+-      "integrity": "sha512-2AEM0FXy8ZxVLBuqX0hqt1gDwcnz2zygEkQ6zaD5Wko/sB9paUNwlpawrFtKeHUAQUOzjVy9AO4oeonqIHKA9Q==",
+-      "dependencies": {
+-        "big-integer": "^1.6.7"
+-      }
+-    },
+-    "node_modules/simple-plist/node_modules/plist": {
+-      "version": "2.0.1",
+-      "resolved": "https://registry.npmjs.org/plist/-/plist-2.0.1.tgz",
+-      "integrity": "sha512-pLZ1xkqqdO0puqm8g9kHzGb9oPkW32RPprDsNtjyVJ1cAWdglIgq+k+kO3sFAm5fEGIW04B4oa27JsfzncnHkA==",
+-      "dependencies": {
+-        "base64-js": "1.1.2",
+-        "xmlbuilder": "8.2.2",
+-        "xmldom": "0.1.x"
+-      }
+-    },
+-    "node_modules/simple-plist/node_modules/xmlbuilder": {
+-      "version": "8.2.2",
+-      "resolved": "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-8.2.2.tgz",
+-      "integrity": "sha512-eKRAFz04jghooy8muekqzo8uCSVNeyRedbuJrp0fovbLIi7wlsYtdUn3vBAAPq2Y3/0xMz2WMEUQ8yhVVO9Stw==",
+-      "engines": {
+-        "node": ">=4.0"
+-      }
+-    },
+     "node_modules/simple-swizzle": {
+       "version": "0.2.2",
+       "resolved": "https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz",
+@@ -27560,11 +27475,6 @@
+         "node": ">=0.6"
+       }
+     },
+-    "node_modules/tostr": {
+-      "version": "0.1.0",
+-      "resolved": "https://registry.npmjs.org/tostr/-/tostr-0.1.0.tgz",
+-      "integrity": "sha512-1YTd+Ua5nVO+wQ5fkQxetxj2pdj6JuMeu2WJwO2Q3Daph1wUtkRwScFwkRDosUVUc/exuVCtCp35tm/oPmgkvg=="
+-    },
+     "node_modules/tough-cookie": {
+       "version": "4.1.4",
+       "resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-4.1.4.tgz",
+@@ -29291,27 +29201,6 @@
+         }
+       }
+     },
+-    "node_modules/xcode": {
+-      "version": "1.1.0",
+-      "resolved": "https://registry.npmjs.org/xcode/-/xcode-1.1.0.tgz",
+-      "integrity": "sha512-hllHFtfsNu5WbVzj8KbGNdI3NgOYmTLZqyF4a9c9J1aGMhAdxmLLsXlpG0Bz8fEtKh6I3pyargRXN0ZlLpcF5w==",
+-      "dependencies": {
+-        "simple-plist": "^0.2.1",
+-        "uuid": "^3.3.2"
+-      },
+-      "engines": {
+-        "node": ">=0.6.7"
+-      }
+-    },
+-    "node_modules/xcode/node_modules/uuid": {
+-      "version": "3.4.0",
+-      "resolved": "https://registry.npmjs.org/uuid/-/uuid-3.4.0.tgz",
+-      "integrity": "sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==",
+-      "deprecated": "Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.",
+-      "bin": {
+-        "uuid": "bin/uuid"
+-      }
+-    },
+     "node_modules/xdg-basedir": {
+       "version": "4.0.0",
+       "resolved": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-4.0.0.tgz",
+@@ -29349,15 +29238,6 @@
+       "integrity": "sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==",
+       "dev": true
+     },
+-    "node_modules/xmldom": {
+-      "version": "0.1.31",
+-      "resolved": "https://registry.npmjs.org/xmldom/-/xmldom-0.1.31.tgz",
+-      "integrity": "sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==",
+-      "deprecated": "Deprecated due to CVE-2021-21366 resolved in 0.5.0",
+-      "engines": {
+-        "node": ">=0.1"
+-      }
+-    },
+     "node_modules/xmlhttprequest-ssl": {
+       "version": "1.6.3",
+       "resolved": "https://registry.npmjs.org/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.6.3.tgz",
+diff --git a/package.json b/package.json
+index 0d29229a..160db55c 100644
+--- a/package.json
++++ b/package.json
+@@ -38,7 +38,7 @@
+     "babel-plugin-optional-require": "^0.3.1",
+     "concurrently": "^8.0.1",
+     "cordova": "12.0.0",
+-    "cordova-launch-review": "^4.1.3",
++    "cordova-launch-review": "github:dpa99c/cordova-launch-review",
+     "css-loader": "^6.7.4",
+     "exports-loader": "^4.0.0",
+     "expose-loader": "^4.1.0",
+@@ -80,7 +80,6 @@
+     "cordova-android": "14.0.1",
+     "cordova-browser": "^7.0.0",
+     "cordova-clipboard": "^1.3.0",
+-    "cordova-custom-config": "^5.1.1",
+     "cordova-ios": "7.1.1",
+     "cordova-plugin-advanced-http": "3.3.1",
+     "cordova-plugin-androidx-adapter": "1.1.3",
+@@ -191,7 +190,6 @@
+         "ANDROID_SUPPORT_V4_VERSION": "27.+"
+       },
+       "cordova-plugin-bluetooth-classic-serial-port": {},
+-      "cordova-custom-config": {},
+       "cordova-launch-review": {}
+     }
+   },
+-- 
+2.54.0
+
